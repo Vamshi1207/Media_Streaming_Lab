@@ -1,0 +1,9 @@
+services:
+  media-server:
+    build: ./backend
+    container_name: media-server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped

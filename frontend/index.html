@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Media Server</title>
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      width: 250px;
+      cursor: pointer;
+    }
+
+    .thumbnail {
+      width: 100%;
+      height: 140px;
+      background: black;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .title {
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    video#player {
+      margin-top: 30px;
+      width: 800px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🎬 My Media Server</h1>
+
+  <div class="grid" id="movies"></div>
+
+  <video id="player" controls></video>
+
+  <script>
+    fetch("http://localhost:3000/movies")
+      .then(res => res.json())
+      .then(movies => {
+        const container = document.getElementById("movies");
+
+        movies.forEach(movie => {
+          const card = document.createElement("div");
+          card.className = "card";
+
+          const thumb = document.createElement("video");
+          thumb.className = "thumbnail";
+          thumb.src = "http://localhost:3000" + encodeURI(movie.videoUrl);
+          thumb.muted = true;
+          thumb.currentTime = 1; // show frame
+          thumb.pause();
+
+          const title = document.createElement("div");
+          title.className = "title";
+          title.innerText = movie.title;
+
+          card.onclick = () => {
+        const url = "http://localhost:3000" + encodeURI(movie.videoUrl);
+        console.log("Playing:", url);
+
+        const player = document.getElementById("player");
+        player.src = url;
+        player.load();
+        player.play();
+        };
+
+          card.appendChild(thumb);
+          card.appendChild(title);
+          container.appendChild(card);
+        });
+      });
+  </script>
+</body>
+</html>
