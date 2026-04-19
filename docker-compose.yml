@@ -1,9 +1,124 @@
+# Project port policy:
+# - Keep all host ports in the 7000 series for this repo.
+# - Use spaced service blocks: 7100, 7200, 7300, 7400...
+# - Reserve 7100 for the main entry point/homepage (`media-server`).
+# - Reserve 7200, 7300, 7400... for top-level services.
+# - Use sub-service ports inside the same block when needed, for example 7201, 7202.
+# - If a service needs both TCP and UDP for the same internal port, it may share one host port.
+# - The next available top-level block after the entries below is 7700.
 services:
   media-server:
-    build: ./backend
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
     container_name: media-server
     ports:
-      - "3000:3000"
+      - "7100:3000"
     volumes:
+      - ./data:/data
+      - ./config/radarr:/config/radarr:ro
+      - ./config/sonarr:/config/sonarr:ro
+      - ./config/prowlarr:/config/prowlarr:ro
+    environment:
+      - JELLYFIN_URL=http://jellyfin:8096
+      - RADARR_URL=http://radarr:7878
+      - RADARR_CONFIG_PATH=/config/radarr/config.xml
+      - SONARR_URL=http://sonarr:8989
+      - SONARR_CONFIG_PATH=/config/sonarr/config.xml
+      - PROWLARR_URL=http://prowlarr:9696
+      - PROWLARR_CONFIG_PATH=/config/prowlarr/config.xml
+      - QBITTORRENT_URL=http://qbittorrent:8080
+      - QBITTORRENT_USERNAME=admin
+      - QBITTORRENT_PASSWORD=media-server-lab
+      - DOWNLOADS_PATH=/data/torrents
+    depends_on:
+      - jellyfin
+      - radarr
+      - sonarr
+      - prowlarr
+      - qbittorrent
+    restart: unless-stopped
+
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    ports:
+      - "7200:8080"
+      - "7201:6881"
+      - "7201:6881/udp"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+      - WEBUI_PORT=8080
+    volumes:
+      - ./config/qbittorrent:/config
+      - ./data/torrents:/data/torrents
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    ports:
+      - "7400:7878"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+    volumes:
+      - ./config/radarr:/config
+      - ./data:/data
+    restart: unless-stopped
+
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    ports:
+      - "7500:8096"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+    volumes:
+      - ./config/jellyfin:/config
+      - ./data/media:/data/media:ro
+    restart: unless-stopped
+
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    ports:
+      - "7600:5055"
+    environment:
+      - LOG_LEVEL=info
+      - TZ=America/Toronto
+    volumes:
+      - ./config/jellyseerr:/app/config
+    restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    ports:
+      - "7300:9696"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+    volumes:
+      - ./config/prowlarr:/config
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    ports:
+      - "7700:8989"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+    volumes:
+      - ./config/sonarr:/config
       - ./data:/data
     restart: unless-stopped

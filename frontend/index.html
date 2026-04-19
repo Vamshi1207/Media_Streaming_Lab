@@ -1,95 +1,715 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Media Server</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media Stack Dashboard</title>
   <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(10, 22, 39, 0.82);
+      --panel-border: rgba(148, 163, 184, 0.16);
+      --text: #e5eef8;
+      --muted: #9db0c3;
+      --accent: #f59e0b;
+      --accent-soft: rgba(245, 158, 11, 0.18);
+      --ok: #22c55e;
+      --error: #f87171;
+      --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: #111;
-      color: white;
-      font-family: Arial;
-      padding: 20px;
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(245, 158, 11, 0.2), transparent 28%),
+        linear-gradient(180deg, #0b1730 0%, var(--bg) 52%, #040914 100%);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero {
+      margin-bottom: 28px;
+      padding: 28px;
+      border: 1px solid var(--panel-border);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(15, 30, 54, 0.95), rgba(7, 17, 31, 0.92));
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #ffd48a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin-bottom: 20px;
+      margin: 16px 0 10px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
     }
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+    .hero p {
+      max-width: 760px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .summary-grid,
+    .service-grid,
+    .downloads-grid,
+    .library-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .summary-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin-bottom: 28px;
+    }
+
+    .service-grid,
+    .downloads-grid,
+    .library-grid {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
     .card {
-      width: 250px;
+      padding: 18px;
+      border: 1px solid var(--panel-border);
+      border-radius: 20px;
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head button {
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #231402;
+      font-weight: 700;
       cursor: pointer;
     }
 
-    .thumbnail {
-      width: 100%;
-      height: 140px;
-      background: black;
-      object-fit: cover;
-      border-radius: 8px;
+    .label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
     }
 
-    .title {
-      margin-top: 8px;
+    .value {
+      margin-top: 10px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .subtle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .status-pill.online {
+      background: rgba(34, 197, 94, 0.16);
+      color: #8ff0b2;
+    }
+
+    .status-pill.offline {
+      background: rgba(248, 113, 113, 0.16);
+      color: #ffb4b4;
+    }
+
+    .service-name {
+      margin: 14px 0 6px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .service-url,
+    .error,
+    .mono {
+      color: var(--muted);
+      font-size: 13px;
+      font-family: ui-monospace, "SFMono-Regular", monospace;
+      word-break: break-word;
+    }
+
+    .detail-list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+
+    .detail-list li {
+      color: var(--muted);
       font-size: 14px;
     }
 
-    video#player {
-      margin-top: 30px;
-      width: 800px;
-      display: block;
+    .detail-list strong {
+      color: var(--text);
+      margin-right: 6px;
+    }
+
+    .download-name,
+    .movie-title {
+      margin: 12px 0 8px;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .progress-track {
+      height: 10px;
+      margin: 12px 0 10px;
+      border-radius: 999px;
+      background: rgba(148, 163, 184, 0.14);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #f59e0b, #fde68a);
+    }
+
+    .empty-state {
+      padding: 24px;
+      border: 1px dashed var(--panel-border);
+      border-radius: 20px;
+      color: var(--muted);
+      text-align: center;
+      background: rgba(8, 14, 26, 0.5);
+    }
+
+    .search-container {
+      margin: 24px 0;
+      position: relative;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 16px 24px;
+      font-size: 18px;
+      border: 1px solid var(--panel-border);
+      border-radius: 999px;
+      background: rgba(10, 22, 39, 0.9);
+      color: var(--text);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+    }
+
+    .add-btn {
+      margin-top: 14px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 99px;
+      background: var(--accent);
+      color: #111;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.2s;
+    }
+
+    .add-btn:hover:not(:disabled) {
+      background: #fde68a;
+    }
+
+    .add-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .remove-btn {
+      background: rgba(248, 113, 113, 0.1);
+      color: var(--error);
+      border: 1px solid rgba(248, 113, 113, 0.2);
+      border-radius: 6px;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .remove-btn:hover {
+      background: var(--error);
+      color: #111;
+    }
+
+    @media (max-width: 720px) {
+      main {
+        width: min(100% - 20px, 1120px);
+        padding-top: 22px;
+      }
+
+      .hero,
+      .card {
+        border-radius: 18px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
   </style>
 </head>
-
 <body>
-  <h1>🎬 My Media Server</h1>
+  <main>
+    <section class="hero">
+      <span class="eyebrow">Servarr Backend</span>
+      <h1>Media stack first, custom UI later.</h1>
+      <p>
+        This backend now acts as a lightweight dashboard for the automation stack:
+        Radarr for movies, Prowlarr for indexers, and qBittorrent for active transfers.
+      </p>
+    </section>
 
-  <div class="grid" id="movies"></div>
+    <div class="search-container">
+      <input type="text" id="search-input" class="search-input" placeholder="Search for movies or TV shows..." autocomplete="off">
+    </div>
 
-  <video id="player" controls></video>
+    <section class="section" id="search-section" style="display: none; margin-top:0;">
+      <div class="section-head">
+        <h2>Discover & Search</h2>
+      </div>
+      <div class="library-grid" id="search-results"></div>
+    </section>
+
+    <section class="summary-grid" id="summary"></section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Service Status</h2>
+        <button id="refresh-button" type="button">Refresh</button>
+      </div>
+      <div class="service-grid" id="services"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Active Downloads</h2>
+        <div>
+          <input type="file" id="torrent-upload" accept=".torrent" style="display: none;">
+          <button id="upload-btn" type="button" onclick="document.getElementById('torrent-upload').click()">Upload .torrent</button>
+        </div>
+      </div>
+      <div class="downloads-grid" id="downloads"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Movies Library</h2>
+      </div>
+      <div class="library-grid" id="library"></div>
+    </section>
+  </main>
 
   <script>
-    fetch("http://localhost:3000/movies")
-      .then(res => res.json())
-      .then(movies => {
-        const container = document.getElementById("movies");
+    const summaryContainer = document.getElementById("summary");
+    const servicesContainer = document.getElementById("services");
+    const downloadsContainer = document.getElementById("downloads");
+    const libraryContainer = document.getElementById("library");
+    const refreshButton = document.getElementById("refresh-button");
 
-        movies.forEach(movie => {
-          const card = document.createElement("div");
-          card.className = "card";
+    function formatBytes(bytes) {
+      if (!bytes) {
+        return "Unknown";
+      }
 
-          const thumb = document.createElement("video");
-          thumb.className = "thumbnail";
-          thumb.src = "http://localhost:3000" + encodeURI(movie.videoUrl);
-          thumb.muted = true;
-          thumb.currentTime = 1; // show frame
-          thumb.pause();
+      const units = ["B", "KB", "MB", "GB", "TB"];
+      let value = bytes;
+      let unitIndex = 0;
 
-          const title = document.createElement("div");
-          title.className = "title";
-          title.innerText = movie.title;
+      while (value >= 1024 && unitIndex < units.length - 1) {
+        value /= 1024;
+        unitIndex += 1;
+      }
 
-          card.onclick = () => {
-        const url = "http://localhost:3000" + encodeURI(movie.videoUrl);
-        console.log("Playing:", url);
+      return `${value.toFixed(value >= 10 || unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
+    }
 
-        const player = document.getElementById("player");
-        player.src = url;
-        player.load();
-        player.play();
-        };
+    function formatRelativeDate(value) {
+      if (!value) {
+        return "Unknown";
+      }
 
-          card.appendChild(thumb);
-          card.appendChild(title);
-          container.appendChild(card);
+      const date = new Date(value);
+
+      if (Number.isNaN(date.getTime())) {
+        return "Unknown";
+      }
+
+      return date.toLocaleString();
+    }
+
+    function renderSummary(system, services, downloads, library) {
+      const onlineCount = services.filter(service => service.status === "online").length;
+
+      summaryContainer.innerHTML = [
+        {
+          label: "Mode",
+          value: system.mode || "unknown",
+          subtle: `Media root: ${system.mediaPath || "n/a"}`,
+        },
+        {
+          label: "Services Online",
+          value: `${onlineCount}/${services.length}`,
+          subtle: `Downloads root: ${system.downloadsPath || "n/a"}`,
+        },
+        {
+          label: "Active Downloads",
+          value: String(downloads.length),
+          subtle: "Tracked through qBittorrent",
+        },
+        {
+          label: "Movies Known",
+          value: String(library.length),
+          subtle: "Loaded from Radarr, with filesystem fallback",
+        },
+      ].map(item => `
+        <article class="card">
+          <div class="label">${item.label}</div>
+          <div class="value">${item.value}</div>
+          <div class="subtle">${item.subtle}</div>
+        </article>
+      `).join("");
+    }
+
+    function renderServices(services) {
+      if (!services.length) {
+        servicesContainer.innerHTML = '<div class="empty-state">No services configured.</div>';
+        return;
+      }
+
+      servicesContainer.innerHTML = services.map(service => {
+        const details = service.details || {};
+        const detailEntries = Object.entries(details);
+
+        return `
+          <article class="card">
+            <span class="status-pill ${service.status}">${service.status}</span>
+            <div class="service-name">${service.name}</div>
+            <div class="service-url">${service.url}</div>
+            ${detailEntries.length ? `
+              <ul class="detail-list">
+                ${detailEntries.map(([key, value]) => `
+                  <li><strong>${key}</strong>${value}</li>
+                `).join("")}
+              </ul>
+            ` : ""}
+            ${service.error ? `<div class="error" style="margin-top: 14px;">${service.error}</div>` : ""}
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderDownloads(downloads) {
+      if (!downloads.length) {
+        downloadsContainer.innerHTML = '<div class="empty-state">No active downloads in qBittorrent.</div>';
+        return;
+      }
+
+      downloadsContainer.innerHTML = downloads.map(download => `
+        <article class="card">
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <span class="status-pill ${download.state.includes("error") ? "offline" : "online"}">${download.state}</span>
+            <button class="remove-btn" onclick="removeDownload('${download.hash}', this)" title="Cancel & Delete">✕</button>
+          </div>
+          <div class="download-name">${download.name}</div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: ${(download.progress || 0) * 100}%"></div>
+          </div>
+          <ul class="detail-list">
+            <li><strong>Progress</strong>${Math.round((download.progress || 0) * 100)}%</li>
+            <li><strong>Size</strong>${formatBytes(download.size)}</li>
+            <li><strong>Speed</strong>${formatBytes(download.dlspeed)}/s</li>
+            <li><strong>Seeds</strong>${download.seeds !== undefined ? download.seeds : 'Unknown'}</li>
+            <li><strong>Peers</strong>${download.peers !== undefined ? download.peers : 'Unknown'}</li>
+            <li><strong>Category</strong>${download.category || "none"}</li>
+            <li><strong>Save Path</strong><span class="mono">${download.savePath || "Unknown"}</span></li>
+          </ul>
+        </article>
+      `).join("");
+    }
+
+    function renderLibrary(library) {
+      if (!library.length) {
+        libraryContainer.innerHTML = '<div class="empty-state">No movies found yet. Once Radarr imports titles, they will show up here.</div>';
+        return;
+      }
+
+      libraryContainer.innerHTML = library.map(movie => `
+        <article class="card">
+          <span class="status-pill ${movie.hasFile ? "online" : "offline"}">${movie.hasFile ? "available" : "missing"}</span>
+          <div class="movie-title">${movie.title}${movie.year ? ` (${movie.year})` : ""}</div>
+          <ul class="detail-list">
+            <li><strong>Source</strong>${movie.source || "unknown"}</li>
+            <li><strong>Monitored</strong>${movie.monitored === false ? "No" : "Yes"}</li>
+            <li><strong>Added</strong>${formatRelativeDate(movie.added)}</li>
+            <li><strong>Path</strong><span class="mono">${movie.path || "Unknown"}</span></li>
+            <li><strong>Size</strong>${formatBytes(movie.size)}</li>
+          </ul>
+        </article>
+      `).join("");
+    }
+
+    async function loadDashboard() {
+      refreshButton.disabled = true;
+      refreshButton.textContent = "Refreshing...";
+
+      try {
+        const [system, services, downloads, library] = await Promise.all([
+          fetch("/api/system").then(response => response.json()),
+          fetch("/api/services").then(response => response.json()),
+          fetch("/api/downloads").then(async response => response.ok ? response.json() : []),
+          fetch("/api/library/movies").then(response => response.json()),
+        ]);
+
+        renderSummary(system, services, downloads, library);
+        renderServices(services);
+        renderDownloads(downloads);
+        renderLibrary(library);
+      } catch (error) {
+        servicesContainer.innerHTML = `<div class="empty-state">Unable to load dashboard: ${error.message}</div>`;
+      } finally {
+        refreshButton.disabled = false;
+        refreshButton.textContent = "Refresh";
+      }
+    }
+
+    refreshButton.addEventListener("click", loadDashboard);
+    loadDashboard();
+
+    setInterval(async () => {
+      try {
+        const downloads = await fetch("/api/downloads").then(async response => response.ok ? response.json() : []);
+        renderDownloads(downloads);
+      } catch (error) {
+        // ignore errors on silent background poll
+      }
+    }, 2000);
+
+    const searchInput = document.getElementById("search-input");
+    const searchSection = document.getElementById("search-section");
+    const searchResults = document.getElementById("search-results");
+
+    let searchTimeout;
+    let currentSearchResults = [];
+
+    searchInput.addEventListener("input", (e) => {
+      const query = e.target.value.trim();
+      clearTimeout(searchTimeout);
+
+      if (!query) {
+        searchSection.style.display = "none";
+        searchResults.innerHTML = "";
+        return;
+      }
+
+      searchTimeout = setTimeout(async () => {
+        searchSection.style.display = "block";
+        searchResults.innerHTML = '<div class="empty-state">Searching...</div>';
+        
+        try {
+          const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+          const items = await res.json();
+          renderSearchResults(items);
+        } catch(err) {
+          searchResults.innerHTML = '<div class="empty-state">Search failed.</div>';
+        }
+      }, 500);
+    });
+
+    function renderSearchResults(items) {
+      currentSearchResults = items;
+      if (!items.length) {
+        searchResults.innerHTML = '<div class="empty-state">No results found.</div>';
+        return;
+      }
+      
+      searchResults.innerHTML = items.map((item, index) => {
+        const typeLabel = item.isTv ? "TV Show" : "Movie";
+        const year = item.year ? `(${item.year})` : "";
+        
+        return `
+          <article class="card">
+            <span class="status-pill ${item.isTv ? 'online' : 'offline'}" style="${item.isTv ? '' : 'background: rgba(245, 158, 11, 0.16); color: #fde68a;'}">${typeLabel}</span>
+            <div class="movie-title">${item.title} ${year}</div>
+            <div class="subtle" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:12px;">${item.overview || "No overview available."}</div>
+            <button class="add-btn" onclick="downloadMedia(this, ${index})">Add to Library</button>
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function downloadMedia(btn, index) {
+      const item = currentSearchResults[index];
+      if (!item) return;
+      
+      const originalText = btn.textContent;
+      const originalBg = btn.style.background;
+      btn.textContent = "Adding...";
+      btn.disabled = true;
+
+      try {
+        const res = await fetch("/api/download", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(item)
         });
-      });
+
+        if (!res.ok) {
+          const errorMsg = await res.text();
+          throw new Error(errorMsg);
+        }
+
+        btn.textContent = "Added!";
+        btn.style.background = "var(--ok)";
+        btn.style.color = "white";
+      } catch (err) {
+        btn.textContent = "Error";
+        btn.style.background = "var(--error)";
+        btn.style.color = "white";
+      }
+      
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.background = originalBg;
+        btn.style.color = "#111";
+      }, 3000);
+    }
+
+    const torrentUpload = document.getElementById("torrent-upload");
+    const uploadBtn = document.getElementById("upload-btn");
+
+    torrentUpload.addEventListener("change", async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const originalText = uploadBtn.textContent;
+      const originalBg = uploadBtn.style.background;
+      uploadBtn.textContent = "Uploading...";
+      uploadBtn.disabled = true;
+
+      const formData = new FormData();
+      formData.append("torrent", file);
+
+      try {
+        const res = await fetch("/api/upload-torrent", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!res.ok) throw new Error(await res.text());
+
+        uploadBtn.textContent = "Success!";
+        uploadBtn.style.background = "var(--ok)";
+        uploadBtn.style.color = "white";
+        
+        fetch("/api/downloads").then(async r => {
+          if (r.ok) renderDownloads(await r.json());
+        });
+      } catch (err) {
+        uploadBtn.textContent = "Error";
+        uploadBtn.style.background = "var(--error)";
+        uploadBtn.style.color = "white";
+      }
+
+      setTimeout(() => {
+        uploadBtn.textContent = originalText;
+        uploadBtn.disabled = false;
+        uploadBtn.style.background = originalBg;
+        uploadBtn.style.color = "#111";
+        torrentUpload.value = "";
+      }, 3000);
+    });
+
+    async function removeDownload(hash, btn) {
+      if (!confirm("Are you sure you want to cancel and delete this download?")) return;
+      
+      const originalText = btn.textContent;
+      btn.textContent = "⋯";
+      btn.disabled = true;
+      
+      try {
+        const res = await fetch(`/api/downloads/${hash}`, { method: 'DELETE' });
+        if (res.ok) {
+          btn.closest('article').style.opacity = '0.5';
+          setTimeout(() => btn.closest('article').remove(), 500);
+        } else {
+          throw new Error("Failed");
+        }
+      } catch (e) {
+        btn.textContent = "!";
+        setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+      }
+    }
   </script>
 </body>
 </html>
