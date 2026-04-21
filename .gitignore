@@ -1,0 +1,44 @@
+# OS files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Environment
+.env
+.env.local
+*.pem
+*.key
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Application data
+config/
+data/
+m.json
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+
+# Build artifacts
+dist/
+build/
+.next/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache
+.cache/
+.eslintcache

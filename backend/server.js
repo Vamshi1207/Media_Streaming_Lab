@@ -122,6 +122,31 @@ async function fetchQbittorrent(endpoint) {
   });
 }
 
+async function qbPost(endpoint, params, cookie) {
+  const response = await fetch(`${QBITTORRENT_URL}${endpoint}`, {
+    method: "POST",
+    headers: {
+      "Cookie": cookie,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams(params),
+  });
+  return response.text();
+}
+
+async function setupQbittorrentCategories() {
+  try {
+    const cookie = await loginToQbittorrent();
+    await qbPost("/api/v2/torrents/createCategory", { category: "radarr", savePath: "/data/torrents/movies" }, cookie);
+    await qbPost("/api/v2/torrents/editCategory", { category: "radarr", savePath: "/data/torrents/movies" }, cookie);
+    await qbPost("/api/v2/torrents/createCategory", { category: "sonarr", savePath: "/data/torrents/tv" }, cookie);
+    await qbPost("/api/v2/torrents/editCategory", { category: "sonarr", savePath: "/data/torrents/tv" }, cookie);
+    console.log("✅ qBittorrent categories configured: radarr->/data/torrents/movies, sonarr->/data/torrents/tv");
+  } catch (err) {
+    console.warn("⚠️ Could not configure qBittorrent categories (will retry on next restart):", err.message);
+  }
+}
+
 async function fetchRadarr(endpoint, options = {}) {
   const apiKey = getRadarrApiKey();
 
@@ -432,6 +457,48 @@ app.get("/api/library/movies", async (_req, res) => {
   }
 });
 
+app.delete("/api/library/movies/:id", async (req, res) => {
+  try {
+    await fetchRadarr(`/api/v3/movie/${req.params.id}?deleteFiles=true`, { method: "DELETE" });
+    return res.json({ success: true });
+  } catch (error) {
+    return res.status(502).json({ error: summarizeServiceError(error) });
+  }
+});
+
+app.get("/api/library/tv", async (_req, res) => {
+  try {
+    const series = await fetchSonarr("/api/v3/series");
+    const payload = series.map(show => ({
+      id: show.id,
+      title: show.title,
+      year: show.year,
+      monitored: show.monitored,
+      status: show.status,
+      seasonCount: show.seasons?.length || 0,
+      episodeCount: show.statistics?.episodeCount || 0,
+      episodeFileCount: show.statistics?.episodeFileCount || 0,
+      hasFile: (show.statistics?.episodeFileCount || 0) > 0,
+      sizeOnDisk: show.statistics?.sizeOnDisk || 0,
+      path: show.path,
+      added: show.added,
+      source: "sonarr",
+    }));
+    return res.json(payload);
+  } catch (error) {
+    return res.status(502).json({ error: summarizeServiceError(error) });
+  }
+});
+
+app.delete("/api/library/tv/:id", async (req, res) => {
+  try {
+    await fetchSonarr(`/api/v3/series/${req.params.id}?deleteFiles=true`, { method: "DELETE" });
+    return res.json({ success: true });
+  } catch (error) {
+    return res.status(502).json({ error: summarizeServiceError(error) });
+  }
+});
+
 app.get("/movies", (_req, res) => {
   return res.json(getFilesystemMovies());
 });
@@ -640,4 +707,8 @@ app.get("/", (_req, res) => {
   res.sendFile(path.join(FRONTEND_PATH, "index.html"));
 });
 
-app.listen(3000, () => console.log("🚀 Server running on port 3000"));
+app.listen(3000, () => {
+  console.log("🚀 Server running on port 3000");
+  // Auto-configure qBittorrent category paths after a short delay to allow qBittorrent to be ready
+  setTimeout(setupQbittorrentCategories, 5000);
+});

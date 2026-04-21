@@ -367,6 +367,13 @@
       </div>
       <div class="library-grid" id="library"></div>
     </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>TV Shows Library</h2>
+      </div>
+      <div class="library-grid" id="tv-library"></div>
+    </section>
   </main>
 
   <script>
@@ -374,6 +381,7 @@
     const servicesContainer = document.getElementById("services");
     const downloadsContainer = document.getElementById("downloads");
     const libraryContainer = document.getElementById("library");
+    const tvLibraryContainer = document.getElementById("tv-library");
     const refreshButton = document.getElementById("refresh-button");
 
     function formatBytes(bytes) {
@@ -407,7 +415,7 @@
       return date.toLocaleString();
     }
 
-    function renderSummary(system, services, downloads, library) {
+    function renderSummary(system, services, downloads, library, tvLibrary) {
       const onlineCount = services.filter(service => service.status === "online").length;
 
       summaryContainer.innerHTML = [
@@ -430,6 +438,11 @@
           label: "Movies Known",
           value: String(library.length),
           subtle: "Loaded from Radarr, with filesystem fallback",
+        },
+        {
+          label: "TV Shows Known",
+          value: String(tvLibrary.length),
+          subtle: "Loaded from Sonarr",
         },
       ].map(item => `
         <article class="card">
@@ -505,7 +518,10 @@
 
       libraryContainer.innerHTML = library.map(movie => `
         <article class="card">
-          <span class="status-pill ${movie.hasFile ? "online" : "offline"}">${movie.hasFile ? "available" : "missing"}</span>
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <span class="status-pill ${movie.hasFile ? "online" : "offline"}">${movie.hasFile ? "available" : "missing"}</span>
+            <button class="remove-btn" onclick="removeFromLibrary('movies', ${movie.id}, this)" title="Remove from Library">✕</button>
+          </div>
           <div class="movie-title">${movie.title}${movie.year ? ` (${movie.year})` : ""}</div>
           <ul class="detail-list">
             <li><strong>Source</strong>${movie.source || "unknown"}</li>
@@ -518,22 +534,49 @@
       `).join("");
     }
 
+    function renderTvLibrary(tvLibrary) {
+      if (!tvLibrary.length) {
+        tvLibraryContainer.innerHTML = '<div class="empty-state">No TV shows found yet. Once Sonarr imports episodes, they will show up here.</div>';
+        return;
+      }
+
+      tvLibraryContainer.innerHTML = tvLibrary.map(show => `
+        <article class="card">
+          <div style="display: flex; justify-content: space-between; align-items: start;">
+            <span class="status-pill ${show.hasFile ? "online" : "offline"}">${show.hasFile ? "available" : "missing"}</span>
+            <button class="remove-btn" onclick="removeFromLibrary('tv', ${show.id}, this)" title="Remove from Library">✕</button>
+          </div>
+          <div class="movie-title">${show.title}${show.year ? ` (${show.year})` : ""}</div>
+          <ul class="detail-list">
+            <li><strong>Status</strong>${show.status || "unknown"}</li>
+            <li><strong>Seasons</strong>${show.seasonCount}</li>
+            <li><strong>Episodes</strong>${show.episodeFileCount} / ${show.episodeCount} downloaded</li>
+            <li><strong>Monitored</strong>${show.monitored === false ? "No" : "Yes"}</li>
+            <li><strong>Added</strong>${formatRelativeDate(show.added)}</li>
+            <li><strong>Size</strong>${formatBytes(show.sizeOnDisk)}</li>
+          </ul>
+        </article>
+      `).join("");
+    }
+
     async function loadDashboard() {
       refreshButton.disabled = true;
       refreshButton.textContent = "Refreshing...";
 
       try {
-        const [system, services, downloads, library] = await Promise.all([
+        const [system, services, downloads, library, tvLibrary] = await Promise.all([
           fetch("/api/system").then(response => response.json()),
           fetch("/api/services").then(response => response.json()),
           fetch("/api/downloads").then(async response => response.ok ? response.json() : []),
           fetch("/api/library/movies").then(response => response.json()),
+          fetch("/api/library/tv").then(async response => response.ok ? response.json() : []),
         ]);
 
-        renderSummary(system, services, downloads, library);
+        renderSummary(system, services, downloads, library, tvLibrary);
         renderServices(services);
         renderDownloads(downloads);
         renderLibrary(library);
+        renderTvLibrary(tvLibrary);
       } catch (error) {
         servicesContainer.innerHTML = `<div class="empty-state">Unable to load dashboard: ${error.message}</div>`;
       } finally {
@@ -701,6 +744,28 @@
         const res = await fetch(`/api/downloads/${hash}`, { method: 'DELETE' });
         if (res.ok) {
           btn.closest('article').style.opacity = '0.5';
+          setTimeout(() => btn.closest('article').remove(), 500);
+        } else {
+          throw new Error("Failed");
+        }
+      } catch (e) {
+        btn.textContent = "!";
+        setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+      }
+    }
+
+    async function removeFromLibrary(type, id, btn) {
+      if (!confirm(`Are you sure you want to remove this from your library? This will also delete all downloaded files.`)) return;
+
+      const originalText = btn.textContent;
+      btn.textContent = "⋯";
+      btn.disabled = true;
+
+      try {
+        const endpoint = type === 'tv' ? `/api/library/tv/${id}` : `/api/library/movies/${id}`;
+        const res = await fetch(endpoint, { method: 'DELETE' });
+        if (res.ok) {
+          btn.closest('article').style.opacity = '0.4';
           setTimeout(() => btn.closest('article').remove(), 500);
         } else {
           throw new Error("Failed");
