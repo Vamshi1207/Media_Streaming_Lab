@@ -9,174 +9,286 @@
       --bg: #07111f;
       --panel: rgba(10, 22, 39, 0.82);
       --panel-border: rgba(148, 163, 184, 0.16);
+      --panel-border-light: rgba(148, 163, 184, 0.24);
       --text: #e5eef8;
+      --text-secondary: #cbd5e1;
       --muted: #9db0c3;
       --accent: #f59e0b;
       --accent-soft: rgba(245, 158, 11, 0.18);
+      --accent-glow: rgba(245, 158, 11, 0.1);
       --ok: #22c55e;
+      --ok-soft: rgba(34, 197, 94, 0.12);
       --error: #f87171;
+      --error-soft: rgba(248, 113, 113, 0.12);
       --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 25px 80px rgba(0, 0, 0, 0.5);
+      --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Avenir Next", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top, rgba(245, 158, 11, 0.2), transparent 28%),
+        radial-gradient(circle at 20% -10%, rgba(245, 158, 11, 0.15), transparent 35%),
         linear-gradient(180deg, #0b1730 0%, var(--bg) 52%, #040914 100%);
     }
 
     main {
-      width: min(1120px, calc(100% - 32px));
+      width: min(1140px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 48px 0 64px;
+      padding: 56px 0 80px;
     }
 
     .hero {
-      margin-bottom: 28px;
-      padding: 28px;
-      border: 1px solid var(--panel-border);
-      border-radius: 24px;
+      margin-bottom: 40px;
+      padding: 40px;
+      border: 1px solid var(--panel-border-light);
+      border-radius: 28px;
       background: linear-gradient(135deg, rgba(15, 30, 54, 0.95), rgba(7, 17, 31, 0.92));
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.08), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero > * {
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
       display: inline-block;
-      padding: 6px 10px;
+      padding: 8px 14px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: #ffd48a;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     h1 {
-      margin: 16px 0 10px;
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
+      margin: 18px 0 12px;
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--text) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 800px;
       margin: 0;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 15px;
+      line-height: 1.7;
+      opacity: 0.95;
     }
 
     .summary-grid,
     .service-grid,
+    .requests-grid,
     .downloads-grid,
     .library-grid {
       display: grid;
-      gap: 16px;
+      gap: 18px;
     }
 
     .summary-grid {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      margin-bottom: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-bottom: 36px;
     }
 
     .service-grid,
+    .requests-grid,
     .downloads-grid,
     .library-grid {
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
     .card {
-      padding: 18px;
+      padding: 24px;
       border: 1px solid var(--panel-border);
-      border-radius: 20px;
-      background: var(--panel);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
+      border-radius: 24px;
+      background: linear-gradient(135deg, var(--panel) 0%, rgba(10, 22, 39, 0.7) 100%);
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: var(--panel-border-light);
+      box-shadow: var(--shadow-hover), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .section {
-      margin-top: 26px;
+      margin-top: 36px;
     }
 
     .section-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 14px;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--panel-border);
     }
 
     .section-head h2 {
       margin: 0;
-      font-size: 18px;
-      letter-spacing: -0.02em;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-head h2::before {
+      content: '';
+      width: 4px;
+      height: 20px;
+      background: linear-gradient(180deg, var(--accent), transparent);
+      border-radius: 99px;
     }
 
     .section-head button {
-      padding: 10px 14px;
-      border: 0;
+      padding: 10px 16px;
+      border: 1px solid var(--accent);
       border-radius: 999px;
-      background: var(--accent);
-      color: #231402;
-      font-weight: 700;
+      background: var(--accent-glow);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 13px;
       cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .section-head button:hover {
+      background: var(--accent);
+      color: #111;
+    }
+
+    .section-head > div {
+      display: flex;
+      gap: 10px;
     }
 
     .label {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 11px;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
     }
 
     .value {
-      margin-top: 10px;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
+      margin-top: 8px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .subtle {
-      margin-top: 6px;
+      margin-top: 8px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.6;
+      opacity: 0.85;
     }
 
     .status-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
+      gap: 6px;
+      padding: 8px 12px;
       border-radius: 999px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
+      border: 1px solid;
     }
 
     .status-pill.online {
-      background: rgba(34, 197, 94, 0.16);
-      color: #8ff0b2;
+      background: var(--ok-soft);
+      color: #7ee8ae;
+      border-color: rgba(34, 197, 94, 0.3);
+      box-shadow: inset 0 1px 0 rgba(34, 197, 94, 0.2);
     }
 
     .status-pill.offline {
-      background: rgba(248, 113, 113, 0.16);
-      color: #ffb4b4;
+      background: var(--error-soft);
+      color: #ff9898;
+      border-color: rgba(248, 113, 113, 0.3);
+      box-shadow: inset 0 1px 0 rgba(248, 113, 113, 0.2);
+    }
+
+    .status-pill::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
     }
 
     .service-name {
-      margin: 14px 0 6px;
-      font-size: 20px;
+      margin: 12px 0 8px;
+      font-size: 18px;
       font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .service-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .service-link:hover {
+      color: #ffd48a;
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .service-url,
@@ -185,135 +297,189 @@
       color: var(--muted);
       font-size: 13px;
       font-family: ui-monospace, "SFMono-Regular", monospace;
-      word-break: break-word;
+      word-break: break-all;
+      opacity: 0.8;
     }
 
     .detail-list {
-      margin: 14px 0 0;
+      margin: 16px 0 0;
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 8px;
+      gap: 10px;
     }
 
     .detail-list li {
       color: var(--muted);
-      font-size: 14px;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
     }
 
     .detail-list strong {
-      color: var(--text);
-      margin-right: 6px;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-right: 8px;
+      flex-shrink: 0;
     }
 
     .download-name,
     .movie-title {
-      margin: 12px 0 8px;
-      font-size: 16px;
+      margin: 12px 0 10px;
+      font-size: 17px;
       font-weight: 700;
-      line-height: 1.35;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
     }
 
     .progress-track {
-      height: 10px;
-      margin: 12px 0 10px;
+      height: 8px;
+      margin: 14px 0 12px;
       border-radius: 999px;
-      background: rgba(148, 163, 184, 0.14);
+      background: rgba(148, 163, 184, 0.12);
       overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.08);
     }
 
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, #f59e0b, #fde68a);
+      background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 50%, #fde68a 100%);
+      border-radius: 999px;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
     }
 
     .empty-state {
-      padding: 24px;
-      border: 1px dashed var(--panel-border);
-      border-radius: 20px;
+      padding: 32px 24px;
+      border: 2px dashed var(--panel-border);
+      border-radius: 24px;
       color: var(--muted);
       text-align: center;
-      background: rgba(8, 14, 26, 0.5);
+      background: linear-gradient(135deg, rgba(8, 14, 26, 0.6), rgba(10, 22, 39, 0.3));
+      font-size: 14px;
     }
 
     .search-container {
-      margin: 24px 0;
+      margin: 28px 0;
       position: relative;
     }
 
     .search-input {
       width: 100%;
       padding: 16px 24px;
-      font-size: 18px;
+      font-size: 15px;
       border: 1px solid var(--panel-border);
       border-radius: 999px;
-      background: rgba(10, 22, 39, 0.9);
+      background: linear-gradient(135deg, rgba(10, 22, 39, 0.95), rgba(10, 22, 39, 0.85));
       color: var(--text);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      transition: all 0.2s;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .search-input::placeholder {
+      color: var(--muted);
+      opacity: 0.6;
     }
 
     .search-input:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
+      background: linear-gradient(135deg, rgba(10, 22, 39, 0.98), rgba(10, 22, 39, 0.92));
+      box-shadow: 0 8px 32px rgba(245, 158, 11, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08);
     }
 
     .add-btn {
       margin-top: 14px;
-      padding: 10px 16px;
+      padding: 12px 16px;
       border: none;
       border-radius: 99px;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), #fbbf24);
       color: #111;
       font-weight: 700;
+      font-size: 13px;
       cursor: pointer;
       width: 100%;
-      transition: background 0.2s;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
     }
 
     .add-btn:hover:not(:disabled) {
-      background: #fde68a;
+      background: linear-gradient(135deg, #fbbf24, #fde68a);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+      transform: translateY(-2px);
     }
 
     .add-btn:disabled {
-      opacity: 0.7;
+      opacity: 0.6;
       cursor: not-allowed;
     }
 
     .remove-btn {
-      background: rgba(248, 113, 113, 0.1);
-      color: var(--error);
-      border: 1px solid rgba(248, 113, 113, 0.2);
-      border-radius: 6px;
-      width: 28px;
-      height: 28px;
+      background: var(--error-soft);
+      color: #ff9898;
+      border: 1px solid rgba(248, 113, 113, 0.3);
+      border-radius: 8px;
+      width: 32px;
+      height: 32px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       transition: all 0.2s;
+      font-weight: 700;
+      font-size: 16px;
     }
 
     .remove-btn:hover {
       background: var(--error);
-      color: #111;
+      color: #fff;
+      border-color: var(--error);
+      transform: scale(1.05);
     }
 
     @media (max-width: 720px) {
       main {
-        width: min(100% - 20px, 1120px);
-        padding-top: 22px;
+        width: min(100% - 20px, 1140px);
+        padding: 40px 0 60px;
       }
 
-      .hero,
+      .hero {
+        padding: 28px;
+        margin-bottom: 28px;
+      }
+
+      .hero::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      h1 {
+        font-size: clamp(28px, 6vw, 40px);
+      }
+
       .card {
-        border-radius: 18px;
+        padding: 18px;
       }
 
       .section-head {
         align-items: flex-start;
         flex-direction: column;
+        border-bottom: none;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .service-grid,
+      .requests-grid,
+      .downloads-grid,
+      .library-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head h2::before {
+        display: none;
       }
     }
   </style>
@@ -321,11 +487,11 @@
 <body>
   <main>
     <section class="hero">
-      <span class="eyebrow">Servarr Backend</span>
+      <span class="eyebrow">Server Backend</span>
       <h1>Media stack first, custom UI later.</h1>
       <p>
         This backend now acts as a lightweight dashboard for the automation stack:
-        Radarr for movies, Prowlarr for indexers, and qBittorrent for active transfers.
+        Radarr for movies, Jellyseerr for requests, Prowlarr for indexers, and qBittorrent for active transfers.
       </p>
     </section>
 
@@ -355,10 +521,18 @@
         <h2>Active Downloads</h2>
         <div>
           <input type="file" id="torrent-upload" accept=".torrent" style="display: none;">
+          <button id="clear-downloads-btn" type="button">Clear Active</button>
           <button id="upload-btn" type="button" onclick="document.getElementById('torrent-upload').click()">Upload .torrent</button>
         </div>
       </div>
       <div class="downloads-grid" id="downloads"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Recent Requests</h2>
+      </div>
+      <div class="requests-grid" id="requests"></div>
     </section>
 
     <section class="section">
@@ -374,15 +548,34 @@
       </div>
       <div class="library-grid" id="tv-library"></div>
     </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Notes & Credentials</h2>
+      </div>
+      <div class="library-grid">
+        <article class="card">
+          <div class="label">Bazarr</div>
+          <div class="movie-title">Subtitle Management</div>
+          <ul class="detail-list">
+            <li><strong>Username</strong><span class="mono">vamshislab</span></li>
+            <li><strong>Password</strong><span class="mono">Bazarr+creds@123</span></li>
+          </ul>
+          <div class="subtle" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--panel-border);">Store these credentials securely. Update them regularly for security.</div>
+        </article>
+      </div>
+    </section>
   </main>
 
   <script>
     const summaryContainer = document.getElementById("summary");
     const servicesContainer = document.getElementById("services");
     const downloadsContainer = document.getElementById("downloads");
+    const requestsContainer = document.getElementById("requests");
     const libraryContainer = document.getElementById("library");
     const tvLibraryContainer = document.getElementById("tv-library");
     const refreshButton = document.getElementById("refresh-button");
+    const clearDownloadsBtn = document.getElementById("clear-downloads-btn");
 
     function formatBytes(bytes) {
       if (!bytes) {
@@ -415,7 +608,19 @@
       return date.toLocaleString();
     }
 
-    function renderSummary(system, services, downloads, library, tvLibrary) {
+    function getRequestStatusLabel(status) {
+      const labels = {
+        1: "pending",
+        2: "approved",
+        3: "declined",
+        4: "available",
+        5: "partial",
+      };
+
+      return labels[status] || "unknown";
+    }
+
+    function renderSummary(system, services, downloads, library, tvLibrary, requests) {
       const onlineCount = services.filter(service => service.status === "online").length;
 
       summaryContainer.innerHTML = [
@@ -433,6 +638,11 @@
           label: "Active Downloads",
           value: String(downloads.length),
           subtle: "Tracked through qBittorrent",
+        },
+        {
+          label: "Recent Requests",
+          value: String(requests.length),
+          subtle: "Attributed through Jellyseerr profiles",
         },
         {
           label: "Movies Known",
@@ -462,12 +672,16 @@
       servicesContainer.innerHTML = services.map(service => {
         const details = service.details || {};
         const detailEntries = Object.entries(details);
+        const serviceTitle = service.externalUrl
+          ? `<a class="service-link" href="${service.externalUrl}" target="_blank" rel="noreferrer">${service.name}</a>`
+          : service.name;
 
         return `
           <article class="card">
             <span class="status-pill ${service.status}">${service.status}</span>
-            <div class="service-name">${service.name}</div>
-            <div class="service-url">${service.url}</div>
+            <div class="service-name">${serviceTitle}</div>
+            ${service.externalUrl ? `<div class="service-url">Browser: ${service.externalUrl}</div>` : ""}
+            <div class="service-url">Internal: ${service.internalUrl}</div>
             ${detailEntries.length ? `
               <ul class="detail-list">
                 ${detailEntries.map(([key, value]) => `
@@ -503,11 +717,41 @@
             <li><strong>Speed</strong>${formatBytes(download.dlspeed)}/s</li>
             <li><strong>Seeds</strong>${download.seeds !== undefined ? download.seeds : 'Unknown'}</li>
             <li><strong>Peers</strong>${download.peers !== undefined ? download.peers : 'Unknown'}</li>
+            <li><strong>Subtitles</strong>${download.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
+            ${download.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${download.subtitleFiles.join(', ')}</span></li>` : ""}
             <li><strong>Category</strong>${download.category || "none"}</li>
             <li><strong>Save Path</strong><span class="mono">${download.savePath || "Unknown"}</span></li>
           </ul>
         </article>
       `).join("");
+    }
+
+    function renderRequests(requests) {
+      if (!requests.length) {
+        requestsContainer.innerHTML = '<div class="empty-state">No recent Jellyseerr requests.</div>';
+        return;
+      }
+
+      requestsContainer.innerHTML = requests.map(request => {
+        const requester = request.requestedBy || request.modifiedBy || {};
+        const year = request.media?.year ? ` (${new Date(request.media.year).getFullYear()})` : "";
+        const title = request.media?.title ? `${request.media.title}${year}` : `${request.type || "Media"} request`;
+        const status = getRequestStatusLabel(request.status);
+
+        return `
+          <article class="card">
+            <span class="status-pill ${status === "declined" ? "offline" : "online"}">${status}</span>
+            <div class="movie-title">${title}</div>
+            <ul class="detail-list">
+              <li><strong>Type</strong>${request.type || "unknown"}</li>
+              <li><strong>Requested By</strong>${requester.displayName || requester.email || "Unknown profile"}</li>
+              <li><strong>Requested</strong>${formatRelativeDate(request.createdAt)}</li>
+              <li><strong>Profile</strong>${request.profileId || "Unknown"}</li>
+              <li><strong>Root</strong><span class="mono">${request.rootFolder || "Unknown"}</span></li>
+            </ul>
+          </article>
+        `;
+      }).join("");
     }
 
     function renderLibrary(library) {
@@ -529,6 +773,8 @@
             <li><strong>Added</strong>${formatRelativeDate(movie.added)}</li>
             <li><strong>Path</strong><span class="mono">${movie.path || "Unknown"}</span></li>
             <li><strong>Size</strong>${formatBytes(movie.size)}</li>
+            <li><strong>Subtitles</strong>${movie.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
+            ${movie.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${movie.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
         </article>
       `).join("");
@@ -554,6 +800,8 @@
             <li><strong>Monitored</strong>${show.monitored === false ? "No" : "Yes"}</li>
             <li><strong>Added</strong>${formatRelativeDate(show.added)}</li>
             <li><strong>Size</strong>${formatBytes(show.sizeOnDisk)}</li>
+            <li><strong>Subtitles</strong>${show.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
+            ${show.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${show.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
         </article>
       `).join("");
@@ -564,17 +812,19 @@
       refreshButton.textContent = "Refreshing...";
 
       try {
-        const [system, services, downloads, library, tvLibrary] = await Promise.all([
+        const [system, services, downloads, requests, library, tvLibrary] = await Promise.all([
           fetch("/api/system").then(response => response.json()),
           fetch("/api/services").then(response => response.json()),
           fetch("/api/downloads").then(async response => response.ok ? response.json() : []),
+          fetch("/api/requests").then(async response => response.ok ? response.json() : []),
           fetch("/api/library/movies").then(response => response.json()),
           fetch("/api/library/tv").then(async response => response.ok ? response.json() : []),
         ]);
 
-        renderSummary(system, services, downloads, library, tvLibrary);
+        renderSummary(system, services, downloads, library, tvLibrary, requests);
         renderServices(services);
         renderDownloads(downloads);
+        renderRequests(requests);
         renderLibrary(library);
         renderTvLibrary(tvLibrary);
       } catch (error) {
@@ -586,6 +836,31 @@
     }
 
     refreshButton.addEventListener("click", loadDashboard);
+    clearDownloadsBtn.addEventListener("click", async () => {
+      if (!confirm("Clear all active qBittorrent downloads and delete their files?")) return;
+
+      const originalText = clearDownloadsBtn.textContent;
+      clearDownloadsBtn.textContent = "Clearing...";
+      clearDownloadsBtn.disabled = true;
+
+      try {
+        const response = await fetch("/api/downloads", { method: "DELETE" });
+
+        if (!response.ok) {
+          throw new Error("Failed to clear downloads");
+        }
+
+        clearDownloadsBtn.textContent = "Cleared";
+        renderDownloads([]);
+      } catch (error) {
+        clearDownloadsBtn.textContent = "Error";
+      }
+
+      setTimeout(() => {
+        clearDownloadsBtn.textContent = originalText;
+        clearDownloadsBtn.disabled = false;
+      }, 2500);
+    });
     loadDashboard();
 
     setInterval(async () => {

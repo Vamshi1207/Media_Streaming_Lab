@@ -12,16 +12,60 @@ const MEDIA_PATHS = [
 ];
 const FRONTEND_PATH = path.join(__dirname, "..", "frontend");
 const JELLYFIN_URL = process.env.JELLYFIN_URL || "http://jellyfin:8096";
+const JELLYSEERR_URL = process.env.JELLYSEERR_URL || "http://jellyseerr:5055";
+const JELLYSEERR_CONFIG_PATH = process.env.JELLYSEERR_CONFIG_PATH || "/config/jellyseerr/settings.json";
 const RADARR_URL = process.env.RADARR_URL || "http://radarr:7878";
 const RADARR_CONFIG_PATH = process.env.RADARR_CONFIG_PATH || "/config/radarr/config.xml";
 const SONARR_URL = process.env.SONARR_URL || "http://sonarr:8989";
 const SONARR_CONFIG_PATH = process.env.SONARR_CONFIG_PATH || "/config/sonarr/config.xml";
 const PROWLARR_URL = process.env.PROWLARR_URL || "http://prowlarr:9696";
 const PROWLARR_CONFIG_PATH = process.env.PROWLARR_CONFIG_PATH || "/config/prowlarr/config.xml";
+const BAZARR_URL = process.env.BAZARR_URL || "http://bazarr:6767";
 const QBITTORRENT_URL = process.env.QBITTORRENT_URL || "http://qbittorrent:8080";
 const QBITTORRENT_USERNAME = process.env.QBITTORRENT_USERNAME || "admin";
 const QBITTORRENT_PASSWORD = process.env.QBITTORRENT_PASSWORD || "";
 const DOWNLOADS_PATH = process.env.DOWNLOADS_PATH || "/data/torrents";
+const SERVICE_EXTERNAL_PORTS = {
+  jellyfin: 7500,
+  jellyseerr: 7600,
+  radarr: 7400,
+  sonarr: 7700,
+  prowlarr: 7300,
+  bazarr: 7800,
+  qbittorrent: 7200,
+};
+const SERVICE_EXTERNAL_URLS = {
+  jellyfin: process.env.JELLYFIN_EXTERNAL_URL || "",
+  jellyseerr: process.env.JELLYSEERR_EXTERNAL_URL || "",
+  radarr: process.env.RADARR_EXTERNAL_URL || "",
+  sonarr: process.env.SONARR_EXTERNAL_URL || "",
+  prowlarr: process.env.PROWLARR_EXTERNAL_URL || "",
+  bazarr: process.env.BAZARR_EXTERNAL_URL || "",
+  qbittorrent: process.env.QBITTORRENT_EXTERNAL_URL || "",
+};
+const ACTIVE_DOWNLOAD_STATES = new Set([
+  "metaDL",
+  "forcedMetaDL",
+  "downloading",
+  "forcedDL",
+  "stalledDL",
+  "queuedDL",
+  "checkingDL",
+  "pausedDL",
+  "checkingResumeData",
+  "moving",
+]);
+
+const SUBTITLE_EXTENSIONS = new Set([
+  ".srt",
+  ".ass",
+  ".ssa",
+  ".vtt",
+  ".sub",
+  ".idx",
+  ".ttml",
+  ".xml",
+]);
 
 function getMediaPath() {
   return MEDIA_PATHS.find(fs.existsSync) || MEDIA_PATHS[0];
@@ -48,6 +92,16 @@ function getSonarrApiKey() {
 
 function getProwlarrApiKey() {
   return getApiKeyFromXml(PROWLARR_CONFIG_PATH);
+}
+
+function getJellyseerrApiKey() {
+  if (!fs.existsSync(JELLYSEERR_CONFIG_PATH)) {
+    return null;
+  }
+
+  const settings = JSON.parse(fs.readFileSync(JELLYSEERR_CONFIG_PATH, "utf8"));
+
+  return settings.main?.apiKey || null;
 }
 
 async function loginToQbittorrent() {
@@ -92,7 +146,9 @@ async function fetchJson(url, options = {}) {
     throw new Error(errorText || `Request failed with status ${response.status}`);
   }
 
-  return response.json();
+  const text = await response.text();
+
+  return text ? JSON.parse(text) : null;
 }
 
 async function fetchText(url, options = {}) {
@@ -193,8 +249,154 @@ async function fetchProwlarr(endpoint) {
   });
 }
 
+async function fetchJellyseerr(endpoint) {
+  const apiKey = getJellyseerrApiKey();
+
+  if (!apiKey) {
+    throw new Error("Jellyseerr API key is unavailable.");
+  }
+
+  return fetchJson(`${JELLYSEERR_URL}${endpoint}`, {
+    headers: {
+      "X-Api-Key": apiKey,
+    },
+  });
+}
+
+async function getJellyseerrMediaDetails(media) {
+  if (!media?.tmdbId || !media?.mediaType) {
+    return {};
+  }
+
+  try {
+    const endpoint = media.mediaType === "tv" ? `/api/v1/tv/${media.tmdbId}` : `/api/v1/movie/${media.tmdbId}`;
+    const details = await fetchJellyseerr(endpoint);
+
+    return {
+      title: details.title || details.name || details.originalTitle || details.originalName,
+      year: details.releaseDate || details.firstAirDate || details.release_date || details.first_air_date,
+    };
+  } catch (_error) {
+    return {};
+  }
+}
+
 function summarizeServiceError(error) {
   return error instanceof Error ? error.message : String(error);
+}
+
+function isActiveDownload(torrent) {
+  const progress = Number(torrent.progress || 0);
+
+  return progress < 1 || ACTIVE_DOWNLOAD_STATES.has(torrent.state);
+}
+
+function getRequestHostname(req) {
+  const forwardedHost = req.headers["x-forwarded-host"];
+  const hostHeader = forwardedHost || req.headers.host || "";
+
+  if (!hostHeader) {
+    return "localhost";
+  }
+
+  if (hostHeader.startsWith("[")) {
+    const closingBracketIndex = hostHeader.indexOf("]");
+    return closingBracketIndex === -1 ? hostHeader : hostHeader.slice(0, closingBracketIndex + 1);
+  }
+
+  return hostHeader.split(":")[0];
+}
+
+function getRequestProtocol(req) {
+  const forwardedProto = req.headers["x-forwarded-proto"];
+
+  if (typeof forwardedProto === "string" && forwardedProto.length) {
+    return forwardedProto.split(",")[0].trim();
+  }
+
+  return req.protocol || "http";
+}
+
+function findSubtitleFiles(savePath, torrentName) {
+  const subtitleFiles = new Set();
+  const candidateDirs = [savePath, path.join(savePath, torrentName)];
+
+  candidateDirs.forEach(dir => {
+    try {
+      if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) {
+        return;
+      }
+
+      fs.readdirSync(dir).forEach(file => {
+        const ext = path.extname(file).toLowerCase();
+        if (SUBTITLE_EXTENSIONS.has(ext)) {
+          subtitleFiles.add(file);
+        }
+      });
+    } catch (_err) {
+      // ignore inaccessible directories
+    }
+  });
+
+  return Array.from(subtitleFiles);
+}
+
+function findSubtitleFilesInDirectory(directory) {
+  const subtitleFiles = new Set();
+  const stack = [directory];
+
+  while (stack.length) {
+    const currentDir = stack.pop();
+
+    try {
+      if (!fs.existsSync(currentDir) || !fs.statSync(currentDir).isDirectory()) {
+        continue;
+      }
+
+      fs.readdirSync(currentDir).forEach(entry => {
+        const entryPath = path.join(currentDir, entry);
+        try {
+          const stat = fs.statSync(entryPath);
+
+          if (stat.isDirectory()) {
+            stack.push(entryPath);
+            return;
+          }
+
+          const ext = path.extname(entry).toLowerCase();
+          if (SUBTITLE_EXTENSIONS.has(ext)) {
+            subtitleFiles.add(path.relative(directory, entryPath));
+          }
+        } catch (_err) {
+          // ignore unreadable files
+        }
+      });
+    } catch (_err) {
+      // ignore inaccessible directories
+    }
+  }
+
+  return Array.from(subtitleFiles);
+}
+
+function getExternalServiceUrl(req, serviceId) {
+  if (SERVICE_EXTERNAL_URLS[serviceId]) {
+    return SERVICE_EXTERNAL_URLS[serviceId];
+  }
+
+  const hostname = getRequestHostname(req);
+
+  if (hostname !== "localhost" && hostname !== "127.0.0.1" && hostname !== "::1") {
+    return null;
+  }
+
+  const port = SERVICE_EXTERNAL_PORTS[serviceId];
+
+  if (!port) {
+    return null;
+  }
+
+  return `${getRequestProtocol(req)}://${hostname}:${port}`;
 }
 
 function guessContentType(fileName) {
@@ -228,6 +430,7 @@ function getFilesystemMovies() {
 
     const files = fs.readdirSync(folderPath);
     const video = files.find(file => file.endsWith(".mp4") || file.endsWith(".mkv"));
+    const subtitleFiles = findSubtitleFilesInDirectory(folderPath);
 
     movies.push({
       title: folder,
@@ -235,18 +438,20 @@ function getFilesystemMovies() {
       hasFile: Boolean(video),
       videoUrl: video ? `/stream/${folder}/${video}` : null,
       path: folderPath,
+      subtitlesAvailable: subtitleFiles.length > 0,
+      subtitleFiles,
     });
   });
 
   return movies;
 }
 
-async function getServiceStatuses() {
+async function getServiceStatuses(req) {
   const checks = [
     {
       id: "jellyfin",
       name: "Jellyfin",
-      url: JELLYFIN_URL,
+      internalUrl: JELLYFIN_URL,
       check: async () => {
         const status = await fetchJson(`${JELLYFIN_URL}/System/Info/Public`);
 
@@ -258,9 +463,23 @@ async function getServiceStatuses() {
       },
     },
     {
+      id: "jellyseerr",
+      name: "Jellyseerr",
+      internalUrl: JELLYSEERR_URL,
+      check: async () => {
+        const status = await fetchJellyseerr("/api/v1/status");
+
+        return {
+          version: status.version,
+          updateAvailable: status.updateAvailable,
+          restartRequired: status.restartRequired,
+        };
+      },
+    },
+    {
       id: "radarr",
       name: "Radarr",
-      url: RADARR_URL,
+      internalUrl: RADARR_URL,
       check: async () => {
         const status = await fetchRadarr("/api/v3/system/status");
 
@@ -274,7 +493,7 @@ async function getServiceStatuses() {
     {
       id: "sonarr",
       name: "Sonarr",
-      url: SONARR_URL,
+      internalUrl: SONARR_URL,
       check: async () => {
         const status = await fetchSonarr("/api/v3/system/status");
 
@@ -288,7 +507,7 @@ async function getServiceStatuses() {
     {
       id: "prowlarr",
       name: "Prowlarr",
-      url: PROWLARR_URL,
+      internalUrl: PROWLARR_URL,
       check: async () => {
         const status = await fetchProwlarr("/api/v1/system/status");
 
@@ -300,9 +519,27 @@ async function getServiceStatuses() {
       },
     },
     {
+      id: "bazarr",
+      name: "Bazarr",
+      internalUrl: BAZARR_URL,
+      check: async () => {
+        const response = await fetch(BAZARR_URL, {
+          signal: AbortSignal.timeout(5000),
+        });
+
+        if (!response.ok) {
+          throw new Error(`Bazarr status check failed with ${response.status}`);
+        }
+
+        return {
+          web: "reachable",
+        };
+      },
+    },
+    {
       id: "qbittorrent",
       name: "qBittorrent",
-      url: QBITTORRENT_URL,
+      internalUrl: QBITTORRENT_URL,
       check: async () => {
         const cookie = await loginToQbittorrent();
         const [appVersion, webApiVersion] = await Promise.all([
@@ -333,7 +570,8 @@ async function getServiceStatuses() {
       return {
         id: service.id,
         name: service.name,
-        url: service.url,
+        internalUrl: service.internalUrl,
+        externalUrl: getExternalServiceUrl(req, service.id),
         status: "online",
         details,
       };
@@ -341,7 +579,8 @@ async function getServiceStatuses() {
       return {
         id: service.id,
         name: service.name,
-        url: service.url,
+        internalUrl: service.internalUrl,
+        externalUrl: getExternalServiceUrl(req, service.id),
         status: "offline",
         error: summarizeServiceError(error),
       };
@@ -360,19 +599,19 @@ app.use((req, res, next) => {
 app.use(express.json());
 app.use(express.static(FRONTEND_PATH));
 
-app.get("/api/system", async (_req, res) => {
-  const services = await getServiceStatuses();
+app.get("/api/system", async (req, res) => {
+  const services = await getServiceStatuses(req);
 
   return res.json({
-    mode: "servarr-stack",
+    mode: "server-stack",
     mediaPath: getMediaPath(),
     downloadsPath: DOWNLOADS_PATH,
     services,
   });
 });
 
-app.get("/api/services", async (_req, res) => {
-  const services = await getServiceStatuses();
+app.get("/api/services", async (req, res) => {
+  const services = await getServiceStatuses(req);
   const hasFailures = services.some(service => service.status !== "online");
 
   return res.status(hasFailures ? 207 : 200).json(services);
@@ -381,21 +620,26 @@ app.get("/api/services", async (_req, res) => {
 app.get("/api/downloads", async (_req, res) => {
   try {
     const torrents = await fetchQbittorrent("/api/v2/torrents/info");
+    const payload = torrents.filter(isActiveDownload).map(torrent => {
+      const subtitleFiles = findSubtitleFiles(torrent.save_path, torrent.name);
 
-    const payload = torrents.map(torrent => ({
-      hash: torrent.hash,
-      name: torrent.name,
-      state: torrent.state,
-      progress: torrent.progress,
-      size: torrent.size,
-      downloaded: torrent.downloaded,
-      dlspeed: torrent.dlspeed,
-      eta: torrent.eta,
-      savePath: torrent.save_path,
-      category: torrent.category,
-      seeds: torrent.num_seeds,
-      peers: torrent.num_leechs,
-    }));
+      return {
+        hash: torrent.hash,
+        name: torrent.name,
+        state: torrent.state,
+        progress: torrent.progress,
+        size: torrent.size,
+        downloaded: torrent.downloaded,
+        dlspeed: torrent.dlspeed,
+        eta: torrent.eta,
+        savePath: torrent.save_path,
+        category: torrent.category,
+        seeds: torrent.num_seeds,
+        peers: torrent.num_leechs,
+        subtitlesAvailable: subtitleFiles.length > 0,
+        subtitleFiles,
+      };
+    });
 
     return res.json(payload);
   } catch (error) {
@@ -403,6 +647,85 @@ app.get("/api/downloads", async (_req, res) => {
       error: "Unable to fetch qBittorrent downloads.",
       details: error.message,
     });
+  }
+});
+
+app.get("/api/requests", async (_req, res) => {
+  try {
+    const payload = await fetchJellyseerr("/api/v1/request?take=12&skip=0");
+    const requests = await Promise.all((payload.results || []).map(async request => {
+      const details = await getJellyseerrMediaDetails(request.media);
+
+      return {
+        id: request.id,
+        type: request.type,
+        status: request.status,
+        createdAt: request.createdAt,
+        updatedAt: request.updatedAt,
+        profileId: request.profileId,
+        rootFolder: request.rootFolder,
+        requestedBy: request.requestedBy ? {
+          id: request.requestedBy.id,
+          displayName: request.requestedBy.displayName,
+          email: request.requestedBy.email,
+        } : null,
+        modifiedBy: request.modifiedBy ? {
+          id: request.modifiedBy.id,
+          displayName: request.modifiedBy.displayName,
+          email: request.modifiedBy.email,
+        } : null,
+        media: request.media ? {
+          title: details.title || request.media.title || request.media.name,
+          year: details.year,
+          tmdbId: request.media.tmdbId,
+          tvdbId: request.media.tvdbId,
+          mediaType: request.media.mediaType,
+          status: request.media.status,
+          externalServiceId: request.media.externalServiceId,
+          externalServiceSlug: request.media.externalServiceSlug,
+          mediaUrl: request.media.mediaUrl,
+        } : null,
+      };
+    }));
+
+    return res.json(requests);
+  } catch (error) {
+    return res.status(502).json({
+      error: "Unable to fetch Jellyseerr requests.",
+      details: error.message,
+    });
+  }
+});
+
+app.delete("/api/downloads", async (_req, res) => {
+  try {
+    const torrents = await fetchQbittorrent("/api/v2/torrents/info");
+    const active = torrents.filter(isActiveDownload);
+
+    if (!active.length) {
+      return res.json({ success: true, deleted: 0 });
+    }
+
+    const cookie = await loginToQbittorrent();
+    const response = await fetch(`${QBITTORRENT_URL}/api/v2/torrents/delete`, {
+      method: "POST",
+      headers: {
+        "Cookie": cookie,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        hashes: active.map(torrent => torrent.hash).join("|"),
+        deleteFiles: "true",
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Delete failed: ${response.status}`);
+    }
+
+    return res.json({ success: true, deleted: active.length });
+  } catch (error) {
+    return res.status(502).json({ error: summarizeServiceError(error) });
   }
 });
 
@@ -437,19 +760,26 @@ app.delete("/api/downloads/:hash", async (req, res) => {
 app.get("/api/library/movies", async (_req, res) => {
   try {
     const movies = await fetchRadarr("/api/v3/movie");
-    const payload = movies.map(movie => ({
-      id: movie.id,
-      title: movie.title,
-      year: movie.year,
-      monitored: movie.monitored,
-      hasFile: movie.hasFile,
-      minimumAvailability: movie.minimumAvailability,
-      qualityProfileId: movie.qualityProfileId,
-      path: movie.path,
-      size: movie.movieFile?.size || null,
-      added: movie.added,
-      source: "radarr",
-    }));
+    const payload = movies.map(movie => {
+      const moviePath = movie.path || movie.movieFile?.path || "";
+      const subtitleFiles = moviePath ? findSubtitleFilesInDirectory(moviePath) : [];
+
+      return {
+        id: movie.id,
+        title: movie.title,
+        year: movie.year,
+        monitored: movie.monitored,
+        hasFile: movie.hasFile,
+        minimumAvailability: movie.minimumAvailability,
+        qualityProfileId: movie.qualityProfileId,
+        path: movie.path,
+        size: movie.movieFile?.size || null,
+        added: movie.added,
+        source: "radarr",
+        subtitlesAvailable: subtitleFiles.length > 0,
+        subtitleFiles,
+      };
+    });
 
     return res.json(payload);
   } catch (_error) {
@@ -469,21 +799,27 @@ app.delete("/api/library/movies/:id", async (req, res) => {
 app.get("/api/library/tv", async (_req, res) => {
   try {
     const series = await fetchSonarr("/api/v3/series");
-    const payload = series.map(show => ({
-      id: show.id,
-      title: show.title,
-      year: show.year,
-      monitored: show.monitored,
-      status: show.status,
-      seasonCount: show.seasons?.length || 0,
-      episodeCount: show.statistics?.episodeCount || 0,
-      episodeFileCount: show.statistics?.episodeFileCount || 0,
-      hasFile: (show.statistics?.episodeFileCount || 0) > 0,
-      sizeOnDisk: show.statistics?.sizeOnDisk || 0,
-      path: show.path,
-      added: show.added,
-      source: "sonarr",
-    }));
+    const payload = series.map(show => {
+      const subtitleFiles = show.path ? findSubtitleFilesInDirectory(show.path) : [];
+
+      return {
+        id: show.id,
+        title: show.title,
+        year: show.year,
+        monitored: show.monitored,
+        status: show.status,
+        seasonCount: show.seasons?.length || 0,
+        episodeCount: show.statistics?.episodeCount || 0,
+        episodeFileCount: show.statistics?.episodeFileCount || 0,
+        hasFile: (show.statistics?.episodeFileCount || 0) > 0,
+        sizeOnDisk: show.statistics?.sizeOnDisk || 0,
+        path: show.path,
+        added: show.added,
+        source: "sonarr",
+        subtitlesAvailable: subtitleFiles.length > 0,
+        subtitleFiles,
+      };
+    });
     return res.json(payload);
   } catch (error) {
     return res.status(502).json({ error: summarizeServiceError(error) });
