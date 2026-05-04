@@ -1,0 +1,384 @@
+[2026-04-29 03:29:23.545 -04:00] [ERR] [88] Jellyfin.Api.Middleware.ExceptionMiddleware: Error processing request. URL "GET" "/Items".
+System.ArgumentException: Invalid parent id: 767bffe4-f11c-93ef-34b8-05451a696a4e
+   at Jellyfin.Api.Controllers.ItemsController.GetItems(Nullable`1 userId, String maxOfficialRating, Nullable`1 hasThemeSong, Nullable`1 hasThemeVideo, Nullable`1 hasSubtitles, Nullable`1 hasSpecialFeature, Nullable`1 hasTrailer, Nullable`1 adjacentTo, Nullable`1 indexNumber, Nullable`1 parentIndexNumber, Nullable`1 hasParentalRating, Nullable`1 isHd, Nullable`1 is4K, LocationType[] locationTypes, LocationType[] excludeLocationTypes, Nullable`1 isMissing, Nullable`1 isUnaired, Nullable`1 minCommunityRating, Nullable`1 minCriticRating, Nullable`1 minPremiereDate, Nullable`1 minDateLastSaved, Nullable`1 minDateLastSavedForUser, Nullable`1 maxPremiereDate, Nullable`1 hasOverview, Nullable`1 hasImdbId, Nullable`1 hasTmdbId, Nullable`1 hasTvdbId, Nullable`1 isMovie, Nullable`1 isSeries, Nullable`1 isNews, Nullable`1 isKids, Nullable`1 isSports, Guid[] excludeItemIds, Nullable`1 startIndex, Nullable`1 limit, Nullable`1 recursive, String searchTerm, SortOrder[] sortOrder, Nullable`1 parentId, ItemFields[] fields, BaseItemKind[] excludeItemTypes, BaseItemKind[] includeItemTypes, ItemFilter[] filters, Nullable`1 isFavorite, MediaType[] mediaTypes, ImageType[] imageTypes, ItemSortBy[] sortBy, Nullable`1 isPlayed, String[] genres, String[] officialRatings, String[] tags, Int32[] years, Nullable`1 enableUserData, Nullable`1 imageTypeLimit, ImageType[] enableImageTypes, String person, Guid[] personIds, String[] personTypes, String[] studios, String[] artists, Guid[] excludeArtistIds, Guid[] artistIds, Guid[] albumArtistIds, Guid[] contributingArtistIds, String[] albums, Guid[] albumIds, Guid[] ids, VideoType[] videoTypes, String minOfficialRating, Nullable`1 isLocked, Nullable`1 isPlaceHolder, Nullable`1 hasOfficialRating, Nullable`1 collapseBoxSetItems, Nullable`1 minWidth, Nullable`1 minHeight, Nullable`1 maxWidth, Nullable`1 maxHeight, Nullable`1 is3D, SeriesStatus[] seriesStatus, String nameStartsWithOrGreater, String nameStartsWith, String nameLessThan, Guid[] studioIds, Guid[] genreIds, Boolean enableTotalRecordCount, Nullable`1 enableImages)
+   at lambda_method1075(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Jellyfin.Api.Middleware.ServerStartupMessageMiddleware.Invoke(HttpContext httpContext, IServerApplicationHost serverApplicationHost, ILocalizationManager localizationManager)
+   at Jellyfin.Api.Middleware.WebSocketHandlerMiddleware.Invoke(HttpContext httpContext, IWebSocketManager webSocketManager)
+   at Jellyfin.Api.Middleware.IPBasedAccessValidationMiddleware.Invoke(HttpContext httpContext, INetworkManager networkManager)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Jellyfin.Api.Middleware.QueryStringDecodingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.ReDoc.ReDocMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Jellyfin.Api.Middleware.RobotsRedirectionMiddleware.Invoke(HttpContext httpContext)
+   at Jellyfin.Api.Middleware.LegacyEmbyRouteRewriteMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Jellyfin.Api.Middleware.ResponseTimeMiddleware.Invoke(HttpContext context, IServerConfigurationManager serverConfigurationManager)
+   at Jellyfin.Api.Middleware.ExceptionMiddleware.Invoke(HttpContext context)
+[2026-04-29 05:42:30.692 -04:00] [WRN] [84] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.15": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 12:13:37.704 -04:00] [INF] [33] Emby.Server.Implementations.IO.LibraryMonitor: "movies" ("/data/media/movies") will be refreshed.
+[2026-04-29 17:05:31.621 -04:00] [INF] [88] Emby.Server.Implementations.Session.SessionManager: Sending shutdown notifications
+[2026-04-29 17:05:31.638 -04:00] [INF] [93] Main: Running query planner optimizations in the database... This might take a while
+[2026-04-29 17:05:31.683 -04:00] [INF] [94] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/movies"
+[2026-04-29 17:05:31.684 -04:00] [INF] [94] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/tv"
+[2026-04-29 17:05:31.686 -04:00] [INF] [93] Emby.Server.Implementations.ApplicationHost: Disposing "CoreAppHost"
+[2026-04-29 17:05:31.686 -04:00] [INF] [93] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzArtistProvider"
+[2026-04-29 17:05:31.687 -04:00] [INF] [93] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzAlbumProvider"
+[2026-04-29 17:05:31.687 -04:00] [INF] [93] Emby.Server.Implementations.ApplicationHost: Disposing "PluginManager"
+[2026-04-29 17:05:33.633 -04:00] [INF] [1] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-29 17:05:33.761 -04:00] [INF] [11] Jellyfin.Server.ServerSetupApp.SetupServer: Kestrel is listening on "all interfaces"
+[2026-04-29 17:05:33.779 -04:00] [INF] [11] Main: Jellyfin version: "10.11.8"
+[2026-04-29 17:05:33.781 -04:00] [INF] [11] Main: Environment Variables: ["[JELLYFIN_CACHE_DIR, /config/cache]", "[JELLYFIN_LOG_DIR, /config/log]", "[JELLYFIN_CONFIG_DIR, /config]", "[JELLYFIN_WEB_DIR, /usr/share/jellyfin/web]", "[JELLYFIN_DATA_DIR, /config/data]"]
+[2026-04-29 17:05:33.782 -04:00] [INF] [11] Main: Arguments: ["/usr/lib/jellyfin/bin/jellyfin.dll", "--ffmpeg=/usr/lib/jellyfin-ffmpeg/ffmpeg"]
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Operating system: "Ubuntu 24.04.4 LTS"
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Architecture: Arm64
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: 64-Bit Process: True
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: User Interactive: True
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Processor count: 8
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Program data path: "/config/data"
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Log directory path: "/config/log"
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Config directory path: "/config"
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Cache path: "/config/cache"
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Temp directory path: "/tmp/jellyfin"
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Web resources path: "/usr/share/jellyfin/web"
+[2026-04-29 17:05:33.783 -04:00] [INF] [11] Main: Application directory: "/usr/lib/jellyfin/bin/"
+[2026-04-29 17:05:33.788 -04:00] [INF] [11] Jellyfin.Server.Startup: Storage path `"/config/data/data"` (Unknown) successfully checked with "188.4TiB" free which is over the minimum of "2GiB".
+[2026-04-29 17:05:33.789 -04:00] [INF] [11] Jellyfin.Server.Startup: Storage path `"/config/cache"` (Unknown) successfully checked with "188.4TiB" free which is over the minimum of "2GiB".
+[2026-04-29 17:05:33.789 -04:00] [INF] [11] Jellyfin.Server.Startup: Storage path `"/config/data"` (Unknown) successfully checked with "188.4TiB" free which is over the minimum of "2GiB".
+[2026-04-29 17:05:33.791 -04:00] [INF] [11] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-29 17:05:33.815 -04:00] [INF] [11] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-29 17:05:33.817 -04:00] [INF] [11] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-29 17:05:33.817 -04:00] [INF] [11] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-29 17:05:33.828 -04:00] [INF] [11] Jellyfin.Server.Migrations.JellyfinMigrationService: Initialise Migration service.
+[2026-04-29 17:05:34.164 -04:00] [INF] [11] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage PreInitialisation.
+[2026-04-29 17:05:34.169 -04:00] [INF] [11] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-29 17:05:34.222 -04:00] [INF] [11] Emby.Server.Implementations.ApplicationHost: Loading assemblies
+[2026-04-29 17:05:34.236 -04:00] [INF] [11] Jellyfin.Networking.Manager.NetworkManager: Defined LAN subnets: ["192.168.2.0/24"]
+[2026-04-29 17:05:34.236 -04:00] [INF] [11] Jellyfin.Networking.Manager.NetworkManager: Defined LAN exclusions: []
+[2026-04-29 17:05:34.236 -04:00] [INF] [11] Jellyfin.Networking.Manager.NetworkManager: Used LAN subnets: ["192.168.2.0/24"]
+[2026-04-29 17:05:34.236 -04:00] [INF] [11] Jellyfin.Networking.Manager.NetworkManager: Filtered interface addresses: []
+[2026-04-29 17:05:34.237 -04:00] [INF] [11] Jellyfin.Networking.Manager.NetworkManager: Bind Addresses ["::"]
+[2026-04-29 17:05:34.237 -04:00] [INF] [11] Jellyfin.Networking.Manager.NetworkManager: Remote IP filter is "Allowlist"
+[2026-04-29 17:05:34.237 -04:00] [INF] [11] Jellyfin.Networking.Manager.NetworkManager: Filtered subnets: []
+[2026-04-29 17:05:34.278 -04:00] [WRN] [10] Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService: Health check "StartupCheck" with status Degraded completed after 0.286ms with message '"Server is still starting up."'
+[2026-04-29 17:05:34.280 -04:00] [INF] [11] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-29 17:05:34.280 -04:00] [INF] [11] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-29 17:05:34.280 -04:00] [INF] [11] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-29 17:05:34.282 -04:00] [INF] [11] Main: Prepare system for possible migrations
+[2026-04-29 17:05:34.300 -04:00] [INF] [11] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage CoreInitialisation.
+[2026-04-29 17:05:34.501 -04:00] [INF] [11] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "TMDb" "10.11.8.0"
+[2026-04-29 17:05:34.502 -04:00] [INF] [11] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "Studio Images" "10.11.8.0"
+[2026-04-29 17:05:34.502 -04:00] [INF] [11] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "OMDb" "10.11.8.0"
+[2026-04-29 17:05:34.506 -04:00] [INF] [11] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "MusicBrainz" "10.11.8.0"
+[2026-04-29 17:05:34.506 -04:00] [INF] [11] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "AudioDB" "10.11.8.0"
+[2026-04-29 17:05:34.527 -04:00] [INF] [11] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage AppInitialisation.
+[2026-04-29 17:05:34.546 -04:00] [INF] [11] Main: Kestrel is listening on "all interfaces"
+[2026-04-29 17:05:34.798 -04:00] [WRN] [11] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: The WebRootPath was not found: "/run/s6-rc:s6-rc-init:EHhKcj/servicedirs/svc-jellyfin/wwwroot". Static files may be unavailable.
+[2026-04-29 17:05:34.811 -04:00] [INF] [11] Emby.Server.Implementations.ApplicationHost: Running startup tasks
+[2026-04-29 17:05:34.813 -04:00] [INF] [7] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/tv"
+[2026-04-29 17:05:34.814 -04:00] [INF] [9] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/movies"
+[2026-04-29 17:05:34.815 -04:00] [INF] [11] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Generate Trickplay Images" set to fire at 2026-04-30 03:00:00.000 -04:00, which is 09:54:25.1842624 from now.
+[2026-04-29 17:05:34.820 -04:00] [INF] [11] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Extract Chapter Images" set to fire at 2026-04-30 02:00:00.000 -04:00, which is 08:54:25.1797035 from now.
+[2026-04-29 17:05:34.835 -04:00] [INF] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Found ffmpeg version "7.1.3"
+[2026-04-29 17:05:34.848 -04:00] [INF] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "decoders": ["libdav1d", "av1", "av1_cuvid", "av1_rkmpp", "h264", "h264_rkmpp", "h264_cuvid", "hevc", "hevc_rkmpp", "hevc_cuvid", "mpeg1_rkmpp", "mpeg2video", "mpeg2_rkmpp", "mpeg2_cuvid", "mpeg4", "mpeg4_rkmpp", "mpeg4_cuvid", "msmpeg4", "vc1_cuvid", "vp8", "vp8_rkmpp", "libvpx", "vp8_cuvid", "vp9", "vp9_rkmpp", "libvpx-vp9", "vp9_cuvid", "aac", "ac3", "ac4", "dca", "flac", "mp3", "truehd"]
+[2026-04-29 17:05:34.854 -04:00] [INF] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "encoders": ["libsvtav1", "av1_nvenc", "libx264", "h264_nvenc", "h264_v4l2m2m", "h264_rkmpp", "libx265", "hevc_nvenc", "hevc_rkmpp", "mjpeg_rkmpp", "aac", "libfdk_aac", "ac3", "alac", "dca", "flac", "libmp3lame", "libopus", "truehd", "libvorbis", "srt"]
+[2026-04-29 17:05:34.860 -04:00] [INF] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available filters: ["bwdif_cuda", "bwdif_opencl", "hwupload_cuda", "overlay_opencl", "overlay_cuda", "overlay_rkrga", "scale_cuda", "scale_opencl", "scale_rkrga", "tonemapx", "tonemap_cuda", "tonemap_opencl", "transpose_cuda", "transpose_opencl", "vpp_rkrga", "yadif_cuda", "yadif_opencl", "zscale", "alphasrc"]
+[2026-04-29 17:05:34.888 -04:00] [WRN] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vaapi" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-29 17:05:34.892 -04:00] [WRN] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vulkan" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-29 17:05:34.937 -04:00] [INF] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available hwaccel types: ["cuda", "drm", "opencl", "rkmpp"]
+[2026-04-29 17:05:37.825 -04:00] [INF] [9] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean Transcode Directory" Completed after 0 minute(s) and 0 seconds
+[2026-04-29 17:05:37.826 -04:00] [INF] [7] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean up collections and playlists" Completed after 0 minute(s) and 0 seconds
+[2026-04-29 17:05:38.142 -04:00] [INF] [7] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Update Plugins" Completed after 0 minute(s) and 0 seconds
+[2026-04-29 17:05:41.362 -04:00] [INF] [11] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: FFmpeg: "/usr/lib/jellyfin-ffmpeg/ffmpeg"
+[2026-04-29 17:05:41.362 -04:00] [INF] [11] Emby.Server.Implementations.ApplicationHost: ServerId: "3b7bf31d74a4418a8d9b202fcb638c73"
+[2026-04-29 17:05:41.362 -04:00] [INF] [11] Emby.Server.Implementations.ApplicationHost: Core startup complete
+[2026-04-29 17:05:41.362 -04:00] [INF] [11] Main: Startup complete 0:00:08.0370912
+[2026-04-29 18:01:59.907 -04:00] [WRN] [45] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:01:59.907 -04:00] [WRN] [48] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:05:53.664 -04:00] [WRN] [59] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:05:53.664 -04:00] [WRN] [58] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:07:18.391 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:07:18.404 -04:00] [WRN] [48] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:07:19.787 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:07:19.797 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:11:49.070 -04:00] [WRN] [64] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:11:49.070 -04:00] [WRN] [65] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:16:06.209 -04:00] [WRN] [71] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:16:06.210 -04:00] [WRN] [64] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:17:37.546 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:17:37.551 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:17:46.842 -04:00] [WRN] [64] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:17:46.856 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:18:52.792 -04:00] [WRN] [41] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 18:18:52.799 -04:00] [WRN] [64] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:18:17.358 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:18:17.360 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:18:21.640 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:18:21.651 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:19:18.344 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:19:18.351 -04:00] [WRN] [39] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:19:29.214 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:19:29.219 -04:00] [WRN] [39] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:27:26.692 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:27:26.692 -04:00] [WRN] [48] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:45:08.141 -04:00] [WRN] [48] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:45:08.143 -04:00] [WRN] [81] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:14.103 -04:00] [WRN] [63] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:17.950 -04:00] [WRN] [63] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:34.572 -04:00] [WRN] [57] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:34.574 -04:00] [WRN] [59] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:41.672 -04:00] [WRN] [56] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:42.029 -04:00] [WRN] [41] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:42.071 -04:00] [WRN] [53] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:42.197 -04:00] [WRN] [53] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:46:42.310 -04:00] [INF] [41] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-29 19:50:06.893 -04:00] [WRN] [68] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:50:06.904 -04:00] [WRN] [68] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:50:30.314 -04:00] [INF] [67] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 19:50:33.615 -04:00] [WRN] [72] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:50:33.615 -04:00] [WRN] [84] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:50:44.956 -04:00] [WRN] [72] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:50:44.957 -04:00] [WRN] [67] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:21.405 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:22.709 -04:00] [WRN] [58] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:22.808 -04:00] [WRN] [58] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:22.925 -04:00] [WRN] [66] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:53.514 -04:00] [WRN] [84] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:53.658 -04:00] [WRN] [84] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:53.739 -04:00] [WRN] [43] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:51:53.832 -04:00] [WRN] [43] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:52:26.189 -04:00] [WRN] [31] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:52:34.067 -04:00] [WRN] [44] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:53:17.108 -04:00] [WRN] [31] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:54:18.339 -04:00] [INF] [83] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 19:54:54.432 -04:00] [WRN] [34] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:54:54.433 -04:00] [WRN] [33] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:56:29.996 -04:00] [WRN] [31] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:56:30.005 -04:00] [WRN] [43] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:56:42.057 -04:00] [INF] [51] Emby.Server.Implementations.Session.SessionManager: Logging out access token "978ff7ee81b64bc4a84c9358c60f01b5"
+[2026-04-29 19:57:01.271 -04:00] [INF] [35] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-29 19:57:01.273 -04:00] [INF] [54] Emby.Server.Implementations.Session.SessionManager: Logging out access token "0b456ef2ab114e88a5fa79eb117397a9"
+[2026-04-29 19:57:01.405 -04:00] [INF] [31] Jellyfin.Api.Auth.CustomAuthenticationHandler: "CustomAuthentication" was not authenticated. Failure message: "Invalid token."
+[2026-04-29 19:57:01.405 -04:00] [INF] [31] Jellyfin.Api.Auth.CustomAuthenticationHandler: "CustomAuthentication" was not authenticated. Failure message: "Invalid token."
+[2026-04-29 19:57:01.406 -04:00] [INF] [31] Jellyfin.Api.Auth.CustomAuthenticationHandler: AuthenticationScheme: "CustomAuthentication" was challenged.
+[2026-04-29 19:57:14.635 -04:00] [INF] [31] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-29 19:57:14.636 -04:00] [INF] [31] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 0/0
+[2026-04-29 19:57:14.636 -04:00] [INF] [31] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-29 19:57:14.793 -04:00] [INF] [31] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-29 19:57:59.732 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 19:58:19.049 -04:00] [WRN] [43] Microsoft.EntityFrameworkCore.Query: Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-04-29 19:59:17.548 -04:00] [INF] [67] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-29 19:59:17.570 -04:00] [INF] [67] Emby.Server.Implementations.Session.SessionManager: Logging out access token "f54e11db2792429d8295c7fd377a7bb7"
+[2026-04-29 19:59:23.068 -04:00] [INF] [69] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "Sandeep" has succeeded.
+[2026-04-29 19:59:23.068 -04:00] [INF] [69] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "Sandeep": 0/0
+[2026-04-29 19:59:23.068 -04:00] [INF] [69] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 9e565cd9-95d1-46a6-b504-1e823ddf5850
+[2026-04-29 19:59:23.200 -04:00] [INF] [35] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-29 20:00:11.461 -04:00] [INF] [70] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "Sandeep" has succeeded.
+[2026-04-29 20:00:11.462 -04:00] [INF] [70] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "Sandeep": 1/0
+[2026-04-29 20:00:11.462 -04:00] [INF] [70] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 9e565cd9-95d1-46a6-b504-1e823ddf5850
+[2026-04-29 20:00:18.196 -04:00] [INF] [70] Emby.Server.Implementations.Session.SessionManager: Logging out access token "58d7b3f3982047fe8d1eb2b5a50fab12"
+[2026-04-29 20:00:22.426 -04:00] [INF] [70] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-29 20:00:22.426 -04:00] [INF] [70] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 0/0
+[2026-04-29 20:00:22.426 -04:00] [INF] [70] Emby.Server.Implementations.Session.SessionManager: Logging out access token "71af219cdd9544b39d34e564c8672a5d"
+[2026-04-29 20:00:22.429 -04:00] [INF] [70] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-29 20:00:33.337 -04:00] [INF] [70] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-29 20:00:33.346 -04:00] [INF] [70] Emby.Server.Implementations.Session.SessionManager: Logging out access token "62d9089659b7449db6a84fa449b3b163"
+[2026-04-29 20:00:33.398 -04:00] [INF] [70] Jellyfin.Api.Auth.CustomAuthenticationHandler: "CustomAuthentication" was not authenticated. Failure message: "Invalid token."
+[2026-04-29 20:00:33.398 -04:00] [INF] [70] Jellyfin.Api.Auth.CustomAuthenticationHandler: "CustomAuthentication" was not authenticated. Failure message: "Invalid token."
+[2026-04-29 20:00:33.398 -04:00] [INF] [70] Jellyfin.Api.Auth.CustomAuthenticationHandler: AuthenticationScheme: "CustomAuthentication" was challenged.
+[2026-04-29 20:00:36.493 -04:00] [INF] [60] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-29 20:00:36.493 -04:00] [INF] [60] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 1/0
+[2026-04-29 20:00:36.493 -04:00] [INF] [60] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-29 20:00:36.626 -04:00] [INF] [60] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-29 20:02:24.627 -04:00] [INF] [67] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 20:02:36.626 -04:00] [INF] [58] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 20:02:48.627 -04:00] [INF] [65] Emby.Server.Implementations.Session.SessionWebSocketListener: Lost 1 WebSockets.
+[2026-04-29 20:02:49.651 -04:00] [INF] [65] Emby.Server.Implementations.IO.LibraryMonitor: "movies" ("/data/media/movies") will be refreshed.
+[2026-04-29 20:02:49.762 -04:00] [INF] [40] Emby.Server.Implementations.Library.LibraryManager: Removing item, Type: "Movie", Name: "Dune", Path: "/data/media/movies/Dune (2021)/Dune (2021) [1080p] [BluRay].mp4", Id: f9c5ba06-047b-0ab0-61da-7f8348ce5599
+[2026-04-29 20:02:49.795 -04:00] [INF] [40] Emby.Server.Implementations.Library.LibraryManager: Removing item, Type: "Movie", Name: "Hoppers", Path: "/data/media/movies/Hoppers (2026)/Hoppers.2026.REPACK.1080p.WEB.h264-GRACE.mkv", Id: 98f2d541-8fae-ac1f-5797-e18574e18119
+[2026-04-29 20:02:49.818 -04:00] [INF] [40] Emby.Server.Implementations.Library.LibraryManager: Removing item, Type: "Movie", Name: "Vaazha", Path: "/data/media/movies/Vaazha (2024)/Vaazha Biopic Of A Billion Boys (2024) [1080p] [WEBRip] [5.1] [YTS.MX].mp4", Id: a01bd615-ca72-146d-c6df-0b276f8ca41f
+[2026-04-29 20:02:54.349 -04:00] [INF] [78] Emby.Server.Implementations.IO.LibraryMonitor: "movies" ("/data/media/movies") will be refreshed.
+[2026-04-29 20:05:25.406 -04:00] [WRN] [11] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:05:25.406 -04:00] [WRN] [9] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:11:27.014 -04:00] [WRN] [66] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:12:19.958 -04:00] [WRN] [17] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:12:41.512 -04:00] [WRN] [72] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:18:26.433 -04:00] [WRN] [35] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-29 20:18:26.440 -04:00] [INF] [35] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-29 20:27:19.067 -04:00] [WRN] [24] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:27:19.068 -04:00] [WRN] [24] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:28:51.960 -04:00] [WRN] [78] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:28:51.962 -04:00] [WRN] [35] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:31:56.129 -04:00] [WRN] [83] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:31:56.155 -04:00] [WRN] [24] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:32:13.266 -04:00] [INF] [83] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-29 20:32:17.356 -04:00] [WRN] [24] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:32:19.968 -04:00] [WRN] [86] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:32:20.488 -04:00] [WRN] [24] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:32:21.216 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:33:38.087 -04:00] [ERR] [40] Jellyfin.Api.Middleware.ExceptionMiddleware: Error processing request. URL "GET" "/Items".
+System.ArgumentException: Invalid parent id: 767bffe4-f11c-93ef-34b8-05451a696a4e
+   at Jellyfin.Api.Controllers.ItemsController.GetItems(Nullable`1 userId, String maxOfficialRating, Nullable`1 hasThemeSong, Nullable`1 hasThemeVideo, Nullable`1 hasSubtitles, Nullable`1 hasSpecialFeature, Nullable`1 hasTrailer, Nullable`1 adjacentTo, Nullable`1 indexNumber, Nullable`1 parentIndexNumber, Nullable`1 hasParentalRating, Nullable`1 isHd, Nullable`1 is4K, LocationType[] locationTypes, LocationType[] excludeLocationTypes, Nullable`1 isMissing, Nullable`1 isUnaired, Nullable`1 minCommunityRating, Nullable`1 minCriticRating, Nullable`1 minPremiereDate, Nullable`1 minDateLastSaved, Nullable`1 minDateLastSavedForUser, Nullable`1 maxPremiereDate, Nullable`1 hasOverview, Nullable`1 hasImdbId, Nullable`1 hasTmdbId, Nullable`1 hasTvdbId, Nullable`1 isMovie, Nullable`1 isSeries, Nullable`1 isNews, Nullable`1 isKids, Nullable`1 isSports, Guid[] excludeItemIds, Nullable`1 startIndex, Nullable`1 limit, Nullable`1 recursive, String searchTerm, SortOrder[] sortOrder, Nullable`1 parentId, ItemFields[] fields, BaseItemKind[] excludeItemTypes, BaseItemKind[] includeItemTypes, ItemFilter[] filters, Nullable`1 isFavorite, MediaType[] mediaTypes, ImageType[] imageTypes, ItemSortBy[] sortBy, Nullable`1 isPlayed, String[] genres, String[] officialRatings, String[] tags, Int32[] years, Nullable`1 enableUserData, Nullable`1 imageTypeLimit, ImageType[] enableImageTypes, String person, Guid[] personIds, String[] personTypes, String[] studios, String[] artists, Guid[] excludeArtistIds, Guid[] artistIds, Guid[] albumArtistIds, Guid[] contributingArtistIds, String[] albums, Guid[] albumIds, Guid[] ids, VideoType[] videoTypes, String minOfficialRating, Nullable`1 isLocked, Nullable`1 isPlaceHolder, Nullable`1 hasOfficialRating, Nullable`1 collapseBoxSetItems, Nullable`1 minWidth, Nullable`1 minHeight, Nullable`1 maxWidth, Nullable`1 maxHeight, Nullable`1 is3D, SeriesStatus[] seriesStatus, String nameStartsWithOrGreater, String nameStartsWith, String nameLessThan, Guid[] studioIds, Guid[] genreIds, Boolean enableTotalRecordCount, Nullable`1 enableImages)
+   at lambda_method1075(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Jellyfin.Api.Middleware.ServerStartupMessageMiddleware.Invoke(HttpContext httpContext, IServerApplicationHost serverApplicationHost, ILocalizationManager localizationManager)
+   at Jellyfin.Api.Middleware.WebSocketHandlerMiddleware.Invoke(HttpContext httpContext, IWebSocketManager webSocketManager)
+   at Jellyfin.Api.Middleware.IPBasedAccessValidationMiddleware.Invoke(HttpContext httpContext, INetworkManager networkManager)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Jellyfin.Api.Middleware.QueryStringDecodingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.ReDoc.ReDocMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Jellyfin.Api.Middleware.RobotsRedirectionMiddleware.Invoke(HttpContext httpContext)
+   at Jellyfin.Api.Middleware.LegacyEmbyRouteRewriteMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Jellyfin.Api.Middleware.ResponseTimeMiddleware.Invoke(HttpContext context, IServerConfigurationManager serverConfigurationManager)
+   at Jellyfin.Api.Middleware.ExceptionMiddleware.Invoke(HttpContext context)
+[2026-04-29 20:34:43.091 -04:00] [WRN] [7] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:34:43.185 -04:00] [WRN] [7] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:34:43.282 -04:00] [WRN] [7] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:34:43.324 -04:00] [WRN] [17] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:34:43.451 -04:00] [INF] [7] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-29 20:35:19.733 -04:00] [ERR] [7] Jellyfin.Api.Middleware.ExceptionMiddleware: Error processing request. URL "GET" "/Items".
+System.ArgumentException: Invalid parent id: 767bffe4-f11c-93ef-34b8-05451a696a4e
+   at Jellyfin.Api.Controllers.ItemsController.GetItems(Nullable`1 userId, String maxOfficialRating, Nullable`1 hasThemeSong, Nullable`1 hasThemeVideo, Nullable`1 hasSubtitles, Nullable`1 hasSpecialFeature, Nullable`1 hasTrailer, Nullable`1 adjacentTo, Nullable`1 indexNumber, Nullable`1 parentIndexNumber, Nullable`1 hasParentalRating, Nullable`1 isHd, Nullable`1 is4K, LocationType[] locationTypes, LocationType[] excludeLocationTypes, Nullable`1 isMissing, Nullable`1 isUnaired, Nullable`1 minCommunityRating, Nullable`1 minCriticRating, Nullable`1 minPremiereDate, Nullable`1 minDateLastSaved, Nullable`1 minDateLastSavedForUser, Nullable`1 maxPremiereDate, Nullable`1 hasOverview, Nullable`1 hasImdbId, Nullable`1 hasTmdbId, Nullable`1 hasTvdbId, Nullable`1 isMovie, Nullable`1 isSeries, Nullable`1 isNews, Nullable`1 isKids, Nullable`1 isSports, Guid[] excludeItemIds, Nullable`1 startIndex, Nullable`1 limit, Nullable`1 recursive, String searchTerm, SortOrder[] sortOrder, Nullable`1 parentId, ItemFields[] fields, BaseItemKind[] excludeItemTypes, BaseItemKind[] includeItemTypes, ItemFilter[] filters, Nullable`1 isFavorite, MediaType[] mediaTypes, ImageType[] imageTypes, ItemSortBy[] sortBy, Nullable`1 isPlayed, String[] genres, String[] officialRatings, String[] tags, Int32[] years, Nullable`1 enableUserData, Nullable`1 imageTypeLimit, ImageType[] enableImageTypes, String person, Guid[] personIds, String[] personTypes, String[] studios, String[] artists, Guid[] excludeArtistIds, Guid[] artistIds, Guid[] albumArtistIds, Guid[] contributingArtistIds, String[] albums, Guid[] albumIds, Guid[] ids, VideoType[] videoTypes, String minOfficialRating, Nullable`1 isLocked, Nullable`1 isPlaceHolder, Nullable`1 hasOfficialRating, Nullable`1 collapseBoxSetItems, Nullable`1 minWidth, Nullable`1 minHeight, Nullable`1 maxWidth, Nullable`1 maxHeight, Nullable`1 is3D, SeriesStatus[] seriesStatus, String nameStartsWithOrGreater, String nameStartsWith, String nameLessThan, Guid[] studioIds, Guid[] genreIds, Boolean enableTotalRecordCount, Nullable`1 enableImages)
+   at lambda_method1075(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Jellyfin.Api.Middleware.ServerStartupMessageMiddleware.Invoke(HttpContext httpContext, IServerApplicationHost serverApplicationHost, ILocalizationManager localizationManager)
+   at Jellyfin.Api.Middleware.WebSocketHandlerMiddleware.Invoke(HttpContext httpContext, IWebSocketManager webSocketManager)
+   at Jellyfin.Api.Middleware.IPBasedAccessValidationMiddleware.Invoke(HttpContext httpContext, INetworkManager networkManager)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Jellyfin.Api.Middleware.QueryStringDecodingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.ReDoc.ReDocMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Jellyfin.Api.Middleware.RobotsRedirectionMiddleware.Invoke(HttpContext httpContext)
+   at Jellyfin.Api.Middleware.LegacyEmbyRouteRewriteMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Jellyfin.Api.Middleware.ResponseTimeMiddleware.Invoke(HttpContext context, IServerConfigurationManager serverConfigurationManager)
+   at Jellyfin.Api.Middleware.ExceptionMiddleware.Invoke(HttpContext context)
+[2026-04-29 20:36:23.750 -04:00] [INF] [16] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-29 20:37:37.194 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:37:37.200 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:37:38.888 -04:00] [WRN] [59] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:37:38.891 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:38:37.266 -04:00] [INF] [82] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 20:42:25.259 -04:00] [INF] [57] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 20:44:51.626 -04:00] [WRN] [72] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:44:51.627 -04:00] [WRN] [19] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:46:37.203 -04:00] [INF] [24] Emby.Server.Implementations.IO.LibraryMonitor: "movies" ("/data/media/movies") will be refreshed.
+[2026-04-29 20:46:50.822 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:46:50.822 -04:00] [WRN] [72] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 20:49:37.251 -04:00] [INF] [72] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 20:53:25.290 -04:00] [INF] [42] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 20:58:37.281 -04:00] [INF] [65] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 21:00:00.049 -04:00] [WRN] [19] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.15": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:01:09.116 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:01:09.116 -04:00] [WRN] [56] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:01:59.344 -04:00] [WRN] [82] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.1": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:01:59.405 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.1": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:01:59.495 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.1": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:01:59.499 -04:00] [WRN] [78] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.1": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:01:59.503 -04:00] [INF] [42] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.1" request
+[2026-04-29 21:02:02.479 -04:00] [INF] [59] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.1" closed
+[2026-04-29 21:02:25.278 -04:00] [INF] [42] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 21:03:32.783 -04:00] [WRN] [59] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:03:32.793 -04:00] [WRN] [58] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:06:13.058 -04:00] [WRN] [9] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:06:13.061 -04:00] [WRN] [9] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:06:13.274 -04:00] [INF] [9] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 21:07:52.005 -04:00] [WRN] [9] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:07:52.006 -04:00] [WRN] [17] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:09:11.787 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:09:11.809 -04:00] [WRN] [41] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:10:37.270 -04:00] [INF] [68] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 21:12:36.848 -04:00] [INF] [64] Emby.Server.Implementations.IO.LibraryMonitor: "movies" ("/data/media/movies") will be refreshed.
+[2026-04-29 21:13:34.735 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:13:34.735 -04:00] [WRN] [33] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:13:36.015 -04:00] [WRN] [41] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:13:36.028 -04:00] [WRN] [41] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:14:28.322 -04:00] [INF] [17] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-29 21:14:37.542 -04:00] [INF] [17] MediaBrowser.MediaEncoding.Subtitles.SubtitleEncoder: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-i file:\"/data/media/movies/Dune (2021)/Dune (2021) [2160p] [4K] [WEB] [HDR] [5.1] [YTS.MX].mkv\" -map 0:2 -an -vn -c:s copy -flush_packets 1 \"/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/2.srt\" -map 0:3 -an -vn -c:s copy -flush_packets 1 \"/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/3.srt\" -map 0:4 -an -vn -c:s copy -flush_packets 1 \"/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/4.srt\" -map 0:5 -an -vn -c:s copy -flush_packets 1 \"/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/5.srt\""
+[2026-04-29 21:14:42.236 -04:00] [INF] [54] MediaBrowser.MediaEncoding.Subtitles.SubtitleEncoder: ffmpeg subtitle extraction completed for "file:\"/data/media/movies/Dune (2021)/Dune (2021) [2160p] [4K] [WEB] [HDR] [5.1] [YTS.MX].mkv\"" to "/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/2.srt"
+[2026-04-29 21:14:42.236 -04:00] [INF] [54] MediaBrowser.MediaEncoding.Subtitles.SubtitleEncoder: ffmpeg subtitle extraction completed for "file:\"/data/media/movies/Dune (2021)/Dune (2021) [2160p] [4K] [WEB] [HDR] [5.1] [YTS.MX].mkv\"" to "/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/3.srt"
+[2026-04-29 21:14:42.236 -04:00] [INF] [54] MediaBrowser.MediaEncoding.Subtitles.SubtitleEncoder: ffmpeg subtitle extraction completed for "file:\"/data/media/movies/Dune (2021)/Dune (2021) [2160p] [4K] [WEB] [HDR] [5.1] [YTS.MX].mkv\"" to "/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/4.srt"
+[2026-04-29 21:14:42.236 -04:00] [INF] [54] MediaBrowser.MediaEncoding.Subtitles.SubtitleEncoder: ffmpeg subtitle extraction completed for "file:\"/data/media/movies/Dune (2021)/Dune (2021) [2160p] [4K] [WEB] [HDR] [5.1] [YTS.MX].mkv\"" to "/config/data/data/subtitles/14/148d3c16-c8cc-067a-d042-5275d13dfc5e/5.srt"
+[2026-04-29 21:15:04.534 -04:00] [INF] [54] Emby.Server.Implementations.Session.SessionManager: Playback stopped reported by app "Jellyfin Web" "10.11.8" playing "Dune". Stopped at "26110" ms
+[2026-04-29 21:15:06.029 -04:00] [INF] [31] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-29 21:16:06.364 -04:00] [INF] [84] Emby.Server.Implementations.Session.SessionManager: Playback stopped reported by app "Jellyfin Web" "10.11.8" playing "Dune". Stopped at "88352" ms
+[2026-04-29 21:17:21.376 -04:00] [WRN] [58] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:17:21.378 -04:00] [WRN] [58] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:19:37.301 -04:00] [INF] [63] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 21:23:25.301 -04:00] [INF] [47] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 21:27:13.300 -04:00] [INF] [47] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-29 21:27:19.333 -04:00] [INF] [63] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-29 21:27:27.077 -04:00] [WRN] [63] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:27:27.079 -04:00] [WRN] [40] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:30:26.618 -04:00] [WRN] [27] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:30:26.620 -04:00] [WRN] [27] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:30:51.301 -04:00] [WRN] [81] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:30:51.319 -04:00] [WRN] [27] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-29 21:33:32.180 -04:00] [INF] [63] Emby.Server.Implementations.Session.SessionManager: Sending shutdown notifications
+[2026-04-29 21:33:32.190 -04:00] [INF] [40] Main: Running query planner optimizations in the database... This might take a while
+[2026-04-29 21:33:32.210 -04:00] [INF] [47] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/movies"
+[2026-04-29 21:33:32.211 -04:00] [INF] [47] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/tv"
+[2026-04-29 21:33:32.213 -04:00] [INF] [40] Emby.Server.Implementations.ApplicationHost: Disposing "CoreAppHost"
+[2026-04-29 21:33:32.214 -04:00] [INF] [40] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzArtistProvider"
+[2026-04-29 21:33:32.214 -04:00] [INF] [40] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzAlbumProvider"
+[2026-04-29 21:33:32.214 -04:00] [INF] [40] Emby.Server.Implementations.ApplicationHost: Disposing "PluginManager"

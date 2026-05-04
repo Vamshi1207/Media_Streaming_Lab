@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "text": "Welcome to the new announcement section. It will keep you up-to-date with important news. You can dismiss this announcement by clicking on the button at the end of this line.",
+      "link": "",
+      "hash": "",
+      "dismissible": true,
+      "timestamp": 1676235999,
+      "enabled": true
+    },
+    {
+      "text": "Opensubtitles.org is now only accessible to VIP users. If you're still using it and do not plan to get a VIP subscription, you should consider disabling it and move to opensubtitles.com.",
+      "link": "",
+      "hash": "",
+      "dismissible": true,
+      "timestamp": 1700791126,
+      "enabled": true
+    },
+    {
+      "text": "We're about to drop support for legacy Sonarr and Radarr versions (prior to v3). If you're still using those legacy versions, please consider upgrading ASAP.",
+      "link": "",
+      "hash": "",
+      "dismissible": true,
+      "timestamp": 1731247748,
+      "enabled": true
+    },
+    {
+      "text": "OpenSubtitles.org is finally shutting down for all users. If you’re still using it, you should consider disabling it and moving to OpenSubtitles.com. It will be removed from future Bazarr releases.",
+      "link": "https://forum.opensubtitles.org/viewtopic.php?t=19471",
+      "hash": "",
+      "dismissible": true,
+      "timestamp": 1769802583,
+      "enabled": true
+    }
+  ]
+}

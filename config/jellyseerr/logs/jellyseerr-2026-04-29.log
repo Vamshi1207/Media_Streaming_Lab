@@ -1,0 +1,1250 @@
+2026-04-29T05:26:29.147Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.152Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"47919861-4772-4d47-b7ae-eb715452d5a4"}
+2026-04-29T05:26:29.155Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.159Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.159Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7dfb4a2c-8657-434b-9aff-99fdb7e5af51"}
+2026-04-29T05:26:29.162Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.163Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.168Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.168Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2329f298-37e7-4a45-9913-60d5422cccef"}
+2026-04-29T05:26:29.174Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.176Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.176Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"26d62fdc-e3aa-4be5-8077-c955ab1b4c5b"}
+2026-04-29T05:26:29.183Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.184Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.184Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"02e1afa1-1364-49c8-b778-583addb7d571"}
+2026-04-29T05:26:29.185Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.190Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.191Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.192Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.192Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"75a1e2d0-5376-4b7c-a3fe-0faf465fe259"}
+2026-04-29T05:26:29.195Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.195Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.201Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.201Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6605edfb-ac5c-4acc-897c-a3fd4636a594"}
+2026-04-29T05:26:29.202Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.203Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.210Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.211Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"fc5b1e73-1972-4543-be4b-8e4eb2205bf1"}
+2026-04-29T05:26:29.214Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.217Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.217Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"9fe0503b-2865-412d-a139-32c5d9062eba"}
+2026-04-29T05:26:29.226Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.226Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f1ff6ca5-5cae-4984-84b3-6bc7a354ddfc"}
+2026-04-29T05:26:29.227Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.232Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.234Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.235Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.235Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"0365e263-39eb-4084-bd3c-87d1adcab32e"}
+2026-04-29T05:26:29.236Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.238Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.239Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.243Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.243Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"95f4831e-ef71-40ae-8f15-1291b228e967"}
+2026-04-29T05:26:29.256Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.258Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.258Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"1a506eac-9594-436c-858e-96593e334bb7"}
+2026-04-29T05:26:29.268Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.268Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.269Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.269Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"e8160c92-9888-4efb-890e-f43bb85557aa"}
+2026-04-29T05:26:29.272Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.273Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.277Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.277Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"43ee99d9-a4f5-4f81-9d46-54653194f76a"}
+2026-04-29T05:26:29.279Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.284Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.284Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"03b1bdaa-5ece-4722-97eb-04359a21a495"}
+2026-04-29T05:26:29.294Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.296Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.296Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.296Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"1656a26c-7e12-4898-92c0-bebdf636d096"}
+2026-04-29T05:26:29.299Z [info][Jobs]: Starting scheduled job: Download Sync Reset 
+2026-04-29T05:26:29.302Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.303Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.308Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.308Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8f84dfcd-fd25-4151-89d2-1ff24c001a91"}
+2026-04-29T05:26:29.311Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.312Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.316Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.316Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"de323dbc-9fc4-4516-a98d-e3756d886c23"}
+2026-04-29T05:26:29.322Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.325Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.326Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.326Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ceceabb8-8c65-4535-9114-ffe31e62adbb"}
+2026-04-29T05:26:29.335Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.336Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.340Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.341Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"382519f2-1483-4046-a206-27c95c54aa4f"}
+2026-04-29T05:26:29.344Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.345Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:29.346Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:26:29.346Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"bf4b0eed-8c9f-471b-999a-7f96f50c00f7"}
+2026-04-29T05:26:29.349Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:26:29.352Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:33.269Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:33.271Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:33.302Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:33.381Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T05:26:33.403Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:26:37.453Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T05:55:14.753Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:55:14.754Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f247706a-af1b-4707-9c6b-a76983dcffb7"}
+2026-04-29T05:55:14.760Z [info][Jobs]: Starting scheduled job: Process Blacklisted Tags 
+2026-04-29T05:55:14.772Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:55:14.775Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:55:14.776Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"4b30d282-48d8-47b1-9445-1e420242f9a7"}
+2026-04-29T05:55:14.782Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:55:14.786Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:55:14.786Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"12e7053a-6fe6-47d9-9f40-b4a9d16b3eeb"}
+2026-04-29T05:55:14.789Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:55:14.790Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:55:14.791Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:55:14.795Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:55:14.795Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"708ecd35-f5bc-4a74-bdd5-62788b41831b"}
+2026-04-29T05:55:14.797Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:55:14.799Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:55:14.802Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:55:14.802Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"092bd6c5-4a77-41ab-a5a7-44a89a3a3c94"}
+2026-04-29T05:55:14.803Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:55:14.804Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:55:14.812Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T05:55:14.812Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"671e545f-d080-4e49-974c-e897e9be6de8"}
+2026-04-29T05:55:14.814Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T05:55:18.991Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T05:55:18.994Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T05:55:23.052Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T06:39:21.424Z [error][Jellyfin Sync]: Failed to process Jellyfin item, id: db75e140a2c22a22f2318990ab24e226 {"errorMessage":"[TMDB] Failed to find media using external IMDb ID: [TMDB] Failed to find by external ID: socket hang up","jellyfinitem":{"Name":"Mahavatar Narsimha","ServerId":"3b7bf31d74a4418a8d9b202fcb638c73","Id":"db75e140a2c22a22f2318990ab24e226","HasSubtitles":true,"Container":"mkv","PremiereDate":"2025-07-25T04:00:00.0000000Z","ChannelId":null,"CommunityRating":7.525,"RunTimeTicks":78793390000,"ProductionYear":2025,"IsFolder":false,"Type":"Movie","UserData":{"PlayedPercentage":32.32182872065791,"PlaybackPositionTicks":25467464559,"PlayCount":3,"IsFavorite":false,"LastPlayedDate":"2026-04-21T01:39:47.2004395Z","Played":false,"Key":"1383072","ItemId":"db75e140a2c22a22f2318990ab24e226"},"ChildCount":0,"VideoType":"VideoFile","ImageTags":{"Logo":"12c71195a16f2b1522b490165d391811","Primary":"9966bf2781bbafe2eeeba596ca549235","Thumb":"268d6d33e68ce8a9415ada85a4e5e567"},"BackdropImageTags":["81acf6af2e0149b43edb83ae618492e6"],"ImageBlurHashes":{"Backdrop":{"81acf6af2e0149b43edb83ae618492e6":"WMIym.I;9b%KV_NH0is:EiM}xst60$WWxssnjZWV^gWVoft6RQer"},"Logo":{"12c71195a16f2b1522b490165d391811":"WDA]WwWB0zxG-VR%9ca}I:kC%1WBELf8xHfhWTflo[oL=yWBIpoM"},"Primary":{"9966bf2781bbafe2eeeba596ca549235":"dHBejioK0$xG}roLEgo2E3s.S}NHIqa}SzNb$%R+WVxZ"},"Thumb":{"268d6d33e68ce8a9415ada85a4e5e567":"WI9s6hxF0$SO%1NaxEoLS5WXaxfP9vWX-TjYeoxGnlWWX5oJsoj["}},"LocationType":"FileSystem","MediaType":"Video"}}
+2026-04-29T06:39:25.426Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"Sync was aborted."}
+2026-04-29T07:29:19.330Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.330Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"c134cffa-971f-4c1f-8456-3eb10f2b7af5"}
+2026-04-29T07:29:19.335Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.341Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.341Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"70732cd5-a07c-4300-8868-6d8900152573"}
+2026-04-29T07:29:19.346Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.347Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.351Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.351Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"4fcc8885-5443-492e-addb-9dd30e8cb859"}
+2026-04-29T07:29:19.356Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.356Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.360Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.360Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"801739a9-8667-486d-9f13-493911d66efe"}
+2026-04-29T07:29:19.362Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.362Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.366Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.366Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"c1444c0d-4f7d-4dec-87bf-ebde6c8dad6c"}
+2026-04-29T07:29:19.368Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.369Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.374Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.374Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"e4d5d67b-a78f-4a39-b7eb-7fa63a8d9ff4"}
+2026-04-29T07:29:19.377Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.380Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.380Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"92c8d26c-8f9e-4ff8-9e85-99071045e448"}
+2026-04-29T07:29:19.385Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.387Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.387Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.387Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ea2f313f-57bb-4393-a7a2-5a84c37736f3"}
+2026-04-29T07:29:19.389Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.389Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.397Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.397Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b306c658-229d-43c4-9f86-56f7089ca6c2"}
+2026-04-29T07:29:19.404Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.404Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.405Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"c4877b71-237f-4d46-86a0-909137818693"}
+2026-04-29T07:29:19.406Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.407Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.412Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.412Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d73b192b-8a08-4e1f-ba22-ef4f22ab2119"}
+2026-04-29T07:29:19.415Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.419Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.419Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"5023108e-09da-499f-a2d8-86d74efc8307"}
+2026-04-29T07:29:19.422Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.424Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.426Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.426Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"95d19087-aaa8-4d79-8189-00289dfaa19b"}
+2026-04-29T07:29:19.429Z [info][Jobs]: Starting scheduled job: Jellyfin Full Scan 
+2026-04-29T07:29:19.429Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8c7e5315-5e11-4f74-bf6d-28ee6d3b6f6c"}
+2026-04-29T07:29:19.437Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.437Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.438Z [info][Jellyfin Sync]: Beginning to process library: Movies 
+2026-04-29T07:29:19.438Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.438Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"969b7785-3fd0-4ea7-91c5-c5ee18a4751e"}
+2026-04-29T07:29:19.442Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.443Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.444Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.444Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"e9bd243e-2cda-482b-b237-d797f0e142bc"}
+2026-04-29T07:29:19.446Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.446Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.450Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.450Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"958990ec-e707-4be3-befd-b9b7a728c1b3"}
+2026-04-29T07:29:19.453Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.456Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.456Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ea7cd8a1-c466-4f7d-b7be-9f8a8dd2da49"}
+2026-04-29T07:29:19.461Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.462Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.464Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T07:29:19.464Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"be0d652c-5f8c-45e6-9dea-776e8846daa9"}
+2026-04-29T07:29:19.469Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:19.469Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T07:29:19.486Z [error][Jellyfin Sync]: Failed to process Jellyfin item, id: 3a2ba261750c319f917b38a267fc776f {"errorMessage":"Unable to find TMDb ID","jellyfinitem":{"Name":"TestMovie (2024)","ServerId":"3b7bf31d74a4418a8d9b202fcb638c73","Id":"3a2ba261750c319f917b38a267fc776f","Container":"mov,mp4,m4a,3gp,3g2,mj2","ChannelId":null,"RunTimeTicks":4064420860,"ProductionYear":2024,"IsFolder":false,"Type":"Movie","VideoType":"VideoFile","ImageTags":{"Primary":"a1815cbd2c8f5f94729fac19613700bd"},"BackdropImageTags":[],"ImageBlurHashes":{"Primary":{"a1815cbd2c8f5f94729fac19613700bd":"W9BU]k$%5T-nxawg1Os;AHJU^O$k9zoz^Oa$kC=_}q%1=x$%NeXS"}},"LocationType":"FileSystem","MediaType":"Video"}}
+2026-04-29T07:29:23.510Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:23.511Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:23.511Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:23.536Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T07:29:23.539Z [info][Jellyfin Sync]: Beginning to process library: TV Shows 
+2026-04-29T07:29:23.542Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T07:29:23.564Z [error][Jellyfin API]: Something went wrong while getting library content from the Jellyfin server: Request failed with status code 400 {"error":400}
+2026-04-29T07:29:23.564Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":""}
+2026-04-29T07:29:27.587Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T08:02:47.485Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:02:47.486Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"81956ab9-7bc3-4842-bf1b-e3ebbc03ad7b"}
+2026-04-29T08:02:47.493Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:02:47.498Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:02:47.499Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"95c5d7de-2c98-4119-80a9-00f039f04139"}
+2026-04-29T08:02:47.508Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:02:47.509Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:02:47.509Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"eb3ec790-bee2-4d87-8b16-32721655dbc9"}
+2026-04-29T08:02:47.511Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:02:47.514Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:02:47.516Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:02:47.516Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"74de7549-9b5a-46a5-8d67-5c27b928c2e0"}
+2026-04-29T08:02:47.517Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:02:47.519Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:02:47.519Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:02:47.523Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:02:47.524Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"80d73a28-e65f-4554-9ba2-26e20c0b6f44"}
+2026-04-29T08:02:47.525Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:02:47.525Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:02:47.532Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:02:47.532Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ea388bd6-e869-4e81-92c0-067a167c784b"}
+2026-04-29T08:02:47.539Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:02:47.540Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:02:47.540Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"3cbd43d5-b488-46e4-b1c5-901d5bce85d3"}
+2026-04-29T08:02:47.543Z [info][Jobs]: Starting scheduled job: Radarr Scan 
+2026-04-29T08:02:47.543Z [info][Radarr Scan]: Scan starting {"sessionId":"dbab1aa9-1a5d-4427-87fa-8528e8fa2811"}
+2026-04-29T08:02:47.543Z [info][Radarr Scan]: Radarr scan complete 
+2026-04-29T08:02:47.546Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:02:47.546Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:02:51.613Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:02:51.614Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T08:02:55.670Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T08:41:51.262Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.263Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ee1d7ea6-a575-42a7-9c2d-897b1860c1d4"}
+2026-04-29T08:41:51.267Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:51.275Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.275Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"e4ffc91e-05c9-4a46-8e49-961b7347ed4a"}
+2026-04-29T08:41:51.279Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:41:51.280Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:51.285Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.285Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b60c87f3-183e-46df-bbf8-499703b66a22"}
+2026-04-29T08:41:51.287Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:41:51.289Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:51.292Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.293Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2cb432d8-a7ec-4d0a-ac27-2c7bff3466b9"}
+2026-04-29T08:41:51.294Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:41:51.295Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:51.302Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.302Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"a1bf51b5-8c0e-4e63-942f-c55f363dc6c2"}
+2026-04-29T08:41:51.305Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:51.308Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.308Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b3de3685-d0b8-4c0b-aa9b-4376facc26a1"}
+2026-04-29T08:41:51.311Z [info][Jobs]: Starting scheduled job: Sonarr Scan 
+2026-04-29T08:41:51.311Z [info][Sonarr Scan]: Scan starting {"sessionId":"d75b7111-3738-466d-8860-16701ae3256d"}
+2026-04-29T08:41:51.312Z [info][Sonarr Scan]: Sonarr scan complete 
+2026-04-29T08:41:51.314Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:41:51.314Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:51.319Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.319Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"821f0899-93e8-4c52-829b-5797e1ca8f45"}
+2026-04-29T08:41:51.323Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:51.329Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T08:41:51.329Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f6190da2-af3e-4028-9f95-99a50b7c5050"}
+2026-04-29T08:41:51.333Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T08:41:55.504Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:41:55.506Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:41:55.506Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T08:41:55.506Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T08:41:59.554Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T09:42:30.655Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.655Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"4d8bbdc7-c389-4fab-82a1-25b060e2a0d9"}
+2026-04-29T09:42:30.659Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.663Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.664Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b71ec081-a212-4304-862a-11151587ef6a"}
+2026-04-29T09:42:30.665Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:30.665Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.671Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.671Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"159b01be-c65a-427d-8d08-64d90e303451"}
+2026-04-29T09:42:30.674Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.678Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.679Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"436c3a07-a2b0-462c-b53f-439ad5bcb57d"}
+2026-04-29T09:42:30.680Z [info][Jobs]: Starting scheduled job: Image Cache Cleanup 
+2026-04-29T09:42:30.681Z [info][Jobs]: Starting scheduled job: Media Availability Sync 
+2026-04-29T09:42:30.681Z [info][Availability Sync]: Starting availability sync... 
+2026-04-29T09:42:30.682Z [error][Image Cache]: ENOENT: no such file or directory, scandir '/app/config/cache/images/tmdb' 
+2026-04-29T09:42:30.682Z [info][Image Cache]: Cleared 0 stale image(s) from cache 'tmdb' 
+2026-04-29T09:42:30.683Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:30.685Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.687Z [info][Image Cache]: Cleared 1 stale image(s) from cache 'avatar' 
+2026-04-29T09:42:30.688Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.688Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"655c58b9-1d81-4105-845a-8f28a7908a9f"}
+2026-04-29T09:42:30.690Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.697Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.697Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"0848115b-5dcc-4e3f-8475-17b87fa8cd65"}
+2026-04-29T09:42:30.700Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.703Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.703Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"18901ea5-a204-488a-9f2a-8bef09729131"}
+2026-04-29T09:42:30.704Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:30.705Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.709Z [info][AvailabilitySync]: The non-4K show [TMDB ID 124364] still exists. Preventing removal. 
+2026-04-29T09:42:30.710Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:30.710Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.710Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"0d04043b-b6b8-40a9-a6bb-730d486e92bc"}
+2026-04-29T09:42:30.711Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:30.712Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.713Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 1383072] still exists. Preventing removal. 
+2026-04-29T09:42:30.716Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.716Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ee4f9e75-29ee-42e9-9cc6-59c4e9b391d9"}
+2026-04-29T09:42:30.716Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:30.716Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 1226863] still exists. Preventing removal. 
+2026-04-29T09:42:30.717Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.719Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 980477] still exists. Preventing removal. 
+2026-04-29T09:42:30.721Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 438631] still exists. Preventing removal. 
+2026-04-29T09:42:30.723Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.723Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"025e595b-14ab-4a54-9aa9-1120ddd24cb3"}
+2026-04-29T09:42:30.728Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.728Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 1189518] still exists. Preventing removal. 
+2026-04-29T09:42:30.730Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.731Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8bebd99a-41b1-4a1d-8ee3-c13158555402"}
+2026-04-29T09:42:30.736Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:30.737Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 615453] still exists. Preventing removal. 
+2026-04-29T09:42:30.738Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.738Z [info][Availability Sync]: Availability sync complete. 
+2026-04-29T09:42:30.739Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T09:42:30.739Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6bb92e0b-5978-4868-a296-2463ae9af9a9"}
+2026-04-29T09:42:30.741Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T09:42:30.742Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:34.831Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:34.831Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:34.832Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T09:42:34.832Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T09:42:38.896Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T10:43:56.781Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.782Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"e76cefe8-31f1-4bfe-9503-62db4d192da4"}
+2026-04-29T10:43:56.790Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.798Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.798Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"264b3806-1ff3-4a0c-b7a0-e1616ba8cdbf"}
+2026-04-29T10:43:56.800Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:43:56.801Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.808Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.808Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"fa606b12-a262-4c14-bde8-56c193c53ee4"}
+2026-04-29T10:43:56.812Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.818Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.818Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7ac3a900-4a15-47aa-ac86-2e21b226fba7"}
+2026-04-29T10:43:56.823Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.824Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:43:56.826Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.826Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"97319088-8b04-4b60-905b-77e579c7b83c"}
+2026-04-29T10:43:56.828Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:43:56.831Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.836Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.836Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f9dd8b10-a06e-45f3-8989-ebab9a2e616a"}
+2026-04-29T10:43:56.838Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.842Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.842Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"1a479a94-59e3-4528-8909-0ca64d0760d0"}
+2026-04-29T10:43:56.850Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:43:56.850Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.853Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.853Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b6f3d70c-b03a-4b5a-8369-418d6c5927c9"}
+2026-04-29T10:43:56.854Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:43:56.854Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.860Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.860Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7ababc85-2b61-44bd-832d-ea0274f2f341"}
+2026-04-29T10:43:56.862Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.868Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.868Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"75dd041c-2c0d-4705-a0ba-1ae62a1d9640"}
+2026-04-29T10:43:56.872Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.876Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.876Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2fbe3fdf-10e3-4bf2-b80d-5643a2831cca"}
+2026-04-29T10:43:56.881Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:43:56.883Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:43:56.885Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T10:43:56.885Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2bb8006f-7857-4533-a900-43c7fe713cb3"}
+2026-04-29T10:43:56.891Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:43:56.891Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T10:44:00.894Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:44:00.910Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T10:44:00.915Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:44:00.928Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:44:00.935Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T10:44:04.960Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T11:44:20.406Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.407Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"5b43c6d6-b528-4447-9f58-aaa8e69bb289"}
+2026-04-29T11:44:20.414Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.417Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.417Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"34af3e82-a733-4d9f-9c88-a362d7069d70"}
+2026-04-29T11:44:20.422Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.426Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.426Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"e3d64066-1019-4038-af96-12b9fa4371ac"}
+2026-04-29T11:44:20.429Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:20.431Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.433Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.433Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"064d8643-7909-4bfd-ab68-ee852cc4fc36"}
+2026-04-29T11:44:20.435Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:20.436Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.437Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:20.439Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.440Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"77f047c5-bf69-4df7-915e-8e017a5749e3"}
+2026-04-29T11:44:20.441Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:20.442Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.447Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.448Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"44fcdb27-2798-4c41-a771-99962b9609dc"}
+2026-04-29T11:44:20.452Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.454Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.454Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6c112875-fa52-4d64-a2c5-9e000023f534"}
+2026-04-29T11:44:20.458Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.460Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:20.462Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.462Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8f5c7517-b953-4a31-a0dd-06c03c5452e1"}
+2026-04-29T11:44:20.463Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:20.463Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.470Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.471Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d16d4696-c49b-4d35-a156-91b9d0844eaf"}
+2026-04-29T11:44:20.473Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.477Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.477Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f658ba65-cc27-4990-84c8-530a956c18b6"}
+2026-04-29T11:44:20.478Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:20.478Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.486Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.486Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"35f052ea-b0ca-4463-bef8-62bc00d7de8a"}
+2026-04-29T11:44:20.489Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:20.494Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T11:44:20.494Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7d30a0de-9e81-411c-be6d-2c2da6935c7f"}
+2026-04-29T11:44:20.498Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T11:44:24.582Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:24.583Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:24.587Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:24.588Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T11:44:24.588Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T11:44:28.639Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T12:00:02.173Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T12:00:02.174Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"dc3147e9-e711-482a-8d0a-58cacb7015a1"}
+2026-04-29T12:00:02.178Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T12:00:02.186Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T12:00:02.186Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"33d4e23f-d753-4007-9253-cab2c4c9506a"}
+2026-04-29T12:00:02.192Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T12:00:02.193Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T12:00:02.196Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T12:00:02.196Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"89d0f418-2899-4a95-b8ea-234b8eab273f"}
+2026-04-29T12:00:02.200Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T12:00:02.201Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T12:00:02.204Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T12:00:02.204Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8445050c-7b50-42cd-ae11-1c5360332bbf"}
+2026-04-29T12:00:02.205Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T12:00:02.206Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T12:00:06.306Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T12:00:10.361Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T13:01:10.881Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.883Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"0d54a8c7-2bea-455f-a07d-37291dc7b304"}
+2026-04-29T13:01:10.892Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.899Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.899Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d7b64e14-435c-445e-8295-f1fb3b41fb16"}
+2026-04-29T13:01:10.903Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.911Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.911Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"cf33db20-999c-4688-871f-e8e029897e34"}
+2026-04-29T13:01:10.915Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:10.915Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:10.917Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.919Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.919Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"38ec6ba9-33ce-4c9b-a26d-3a6a63b37c46"}
+2026-04-29T13:01:10.921Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:10.922Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.927Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.927Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"bdcae4fc-c1ad-4595-ad97-43b72bbecd10"}
+2026-04-29T13:01:10.931Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.937Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.937Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6943e495-4b9e-49c5-92f4-01c9c8a4a4f5"}
+2026-04-29T13:01:10.940Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:10.941Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.945Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.945Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"dc3145e9-afe6-4468-8e70-402b79dcd928"}
+2026-04-29T13:01:10.946Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.952Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.952Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"756a2f59-1b3d-4d22-a977-e332469763cd"}
+2026-04-29T13:01:10.954Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:10.956Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.959Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.959Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"a5087139-d75f-4307-bad6-a2a4cfb21fc8"}
+2026-04-29T13:01:10.960Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.968Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.968Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"acb48faa-d4dc-4b91-9e9d-fa97a3c94b37"}
+2026-04-29T13:01:10.979Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.980Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.980Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6b411a3e-b4db-415b-9b2a-02dab0637cf9"}
+2026-04-29T13:01:10.986Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:10.987Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:10.989Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:01:10.989Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"42fb029d-19d9-4a1f-9d18-4d149ca5db17"}
+2026-04-29T13:01:10.992Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:10.992Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:01:15.111Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:15.111Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:15.112Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:15.112Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:01:15.112Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T13:01:19.167Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T13:46:16.703Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.703Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"98a451b9-ab4a-4f52-8416-e409174666e7"}
+2026-04-29T13:46:16.708Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.714Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.714Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"3e0d620d-cc84-431f-b95a-7011cf35ded6"}
+2026-04-29T13:46:16.717Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.722Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:16.723Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.723Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"49591e67-a7e3-422c-9f1a-ff2e0fe06ee4"}
+2026-04-29T13:46:16.727Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.729Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:16.729Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.729Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"c104f9f2-c5ac-4096-9d1d-9566493e6a71"}
+2026-04-29T13:46:16.731Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.733Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:16.740Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.740Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"dde89447-db6f-48d0-9eca-60b4b753c3aa"}
+2026-04-29T13:46:16.744Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.749Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.749Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b7ded580-e47e-440b-820a-937407270184"}
+2026-04-29T13:46:16.750Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:16.752Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.756Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.756Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ea287c27-982f-4894-aefe-26a4eef8f8b9"}
+2026-04-29T13:46:16.758Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.762Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.763Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f9efebd3-778a-4f06-b137-51652c6ce991"}
+2026-04-29T13:46:16.766Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.769Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T13:46:16.770Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"db402482-9af2-428b-a39e-9595dce9d64b"}
+2026-04-29T13:46:16.771Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:16.771Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T13:46:16.864Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:20.957Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:20.958Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T13:46:20.958Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T13:46:25.015Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T14:47:30.345Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.345Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6639fa83-0a65-40db-b569-98e41a59376c"}
+2026-04-29T14:47:30.351Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.356Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.357Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d6bfaac1-a32e-4733-b736-19e3cde28179"}
+2026-04-29T14:47:30.362Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.363Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:30.368Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.368Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"45974670-a9bc-4bd6-beb9-82010e0245e3"}
+2026-04-29T14:47:30.370Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:30.372Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.376Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.376Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"fcb87da0-7780-4e26-840d-fd7917a9863b"}
+2026-04-29T14:47:30.378Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:30.379Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.385Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.385Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6bb80a28-3ff3-4163-86da-e814c0836c04"}
+2026-04-29T14:47:30.388Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.393Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.393Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8691a4d5-599b-4a55-b5da-6bf3ff91cdb4"}
+2026-04-29T14:47:30.399Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.399Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.399Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"dfb97031-04d5-487d-ad3b-8031ef50913c"}
+2026-04-29T14:47:30.399Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:30.401Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.403Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:30.406Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.406Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"4c8229f4-faf1-41f1-880f-d1ebdc241c4e"}
+2026-04-29T14:47:30.408Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.413Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.414Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d8d72aa5-b790-4cbf-98d2-3bdf558db3df"}
+2026-04-29T14:47:30.416Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.423Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.423Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7423fd16-92ea-440f-aa90-7c89172195d4"}
+2026-04-29T14:47:30.426Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.432Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.432Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"de7a5ae1-8420-4847-a6b7-a76011077f0c"}
+2026-04-29T14:47:30.437Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:30.439Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T14:47:30.439Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"34eed1d6-0e7b-4e61-b4b6-a8d0c04405e1"}
+2026-04-29T14:47:30.441Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:30.442Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:30.442Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T14:47:34.768Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:34.769Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T14:47:34.771Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:34.771Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:34.771Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T14:47:38.819Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T15:04:28.333Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:04:28.333Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6df97880-c76c-4c96-899c-27641cdfbbf1"}
+2026-04-29T15:04:28.337Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:04:28.343Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:04:28.343Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"08e4881b-6117-495e-b17a-64a85a94d8f2"}
+2026-04-29T15:04:28.349Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:04:28.352Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:04:28.352Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6d86e073-35e7-4ba2-bc7d-083a559dfefd"}
+2026-04-29T15:04:28.353Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T15:04:28.356Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:04:28.358Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T15:04:32.443Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T15:04:36.494Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T15:05:11.961Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:05:11.961Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f8d83bd9-fb6d-45b1-be8e-05c06c23c65b"}
+2026-04-29T15:05:11.965Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:05:16.001Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T15:07:54.600Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T15:10:00.008Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:10:00.008Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"93035e20-ea74-4642-afaf-b01dd7e48e46"}
+2026-04-29T15:10:00.012Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:10:04.111Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T15:10:08.165Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T15:16:56.043Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:16:56.043Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"77b23c4e-370c-4e36-b7e7-667cb02069d5"}
+2026-04-29T15:16:56.047Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:17:00.144Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T15:17:04.210Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T15:48:54.134Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:48:54.135Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"63a3f68b-696b-4b51-8161-194993c08bcb"}
+2026-04-29T15:48:54.146Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:48:54.151Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:48:54.151Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ed7d0123-bfa4-433a-916f-bbaa648f7305"}
+2026-04-29T15:48:54.156Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:48:54.161Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:48:54.161Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f02b73ee-cff4-492e-a1ca-3a6f2711bc78"}
+2026-04-29T15:48:54.166Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T15:48:54.166Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:48:54.167Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T15:48:54.169Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:48:54.169Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"cd8b1480-13db-4b10-9eba-57a5c4a5b30b"}
+2026-04-29T15:48:54.171Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T15:48:54.171Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:48:54.182Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:48:54.182Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7edaec1b-f2ee-4097-b513-8aa901e2d09f"}
+2026-04-29T15:48:54.190Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:48:54.191Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:48:54.192Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"648bc3dc-caab-47cb-8ac2-338adc4bb001"}
+2026-04-29T15:48:54.198Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T15:48:54.198Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:48:58.408Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T15:48:58.411Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T15:51:12.719Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T15:53:59.903Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:53:59.903Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"214ea6ef-bd7f-4d11-a4fc-700df7ea0537"}
+2026-04-29T15:53:59.910Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:54:06.463Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T15:54:10.518Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T15:56:11.805Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T15:56:11.805Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"845d68a1-49c6-47a5-b6d3-cc823c1926c3"}
+2026-04-29T15:56:11.810Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T15:56:34.649Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T15:56:38.699Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T16:13:53.748Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:13:53.749Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"72837730-ee24-4edd-be85-3d9458dafd4e"}
+2026-04-29T16:13:53.752Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:13:53.759Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:13:53.760Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"05a62f1d-cee8-4e91-a140-e4ef2c283cf9"}
+2026-04-29T16:13:53.762Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T16:13:53.764Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:13:53.770Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:13:53.770Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"895658f0-dd7f-4372-af2d-bee8ce7b868b"}
+2026-04-29T16:13:53.772Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T16:13:53.773Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:13:54.042Z [info][Jellyfin Sync]: Request for Hoppers exists. New media types set to AVAILABLE 
+2026-04-29T16:13:54.053Z [info][Notifications]: Sending notification(s) for MEDIA_AVAILABLE {"subject":"Hoppers (2026)"}
+2026-04-29T16:13:58.049Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T16:14:02.109Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T16:29:02.219Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:29:02.219Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"fd0ea8d7-2ee0-43a5-b412-4615d4cfebf3"}
+2026-04-29T16:29:02.226Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:29:02.234Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:29:02.234Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"c75892b6-cf66-4c46-8a99-796d6a3b21ff"}
+2026-04-29T16:29:02.237Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T16:29:02.238Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:29:02.245Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:29:02.245Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"a5e1deda-61ab-433e-8f88-8f8e6e934ba5"}
+2026-04-29T16:29:02.247Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T16:29:02.248Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:29:06.503Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T16:29:12.315Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T16:45:00.709Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:45:00.709Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"dfd8ac5e-1f47-45eb-a6cf-b29ceb4cc496"}
+2026-04-29T16:45:00.714Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:45:00.722Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:45:00.723Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"3890fb8b-c561-49f3-8d7b-c81cd369e837"}
+2026-04-29T16:45:00.728Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:45:00.729Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T16:45:00.734Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:45:00.734Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"84228b6f-9b4a-4a66-9d5b-9170545b14ec"}
+2026-04-29T16:45:00.738Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T16:45:00.738Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:45:00.742Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:45:00.742Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"c7f009a7-7b72-4353-8e51-f72860e1c2e3"}
+2026-04-29T16:45:00.743Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T16:45:00.744Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:45:04.838Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T16:45:08.882Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T16:52:08.630Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:52:08.630Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8d06c437-a58c-45d9-a5a6-ce2e706f6d91"}
+2026-04-29T16:52:08.634Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:52:12.841Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T16:52:16.902Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T16:56:05.956Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T16:56:05.957Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ce7ff021-ef31-48a4-b3df-9be7b0c8072d"}
+2026-04-29T16:56:05.960Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T16:56:10.002Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T16:56:14.064Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T17:32:39.283Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:32:39.283Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b1e49007-dcd4-4a74-90ad-9c8562a2405b"}
+2026-04-29T17:32:39.289Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:32:39.294Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:32:39.294Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"1559cfa1-abbc-4bb2-af4c-b321af4e078d"}
+2026-04-29T17:32:39.300Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:32:39.301Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:32:39.303Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:32:39.303Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6ca787e0-b1c9-49d5-b67b-39ebb8c9f004"}
+2026-04-29T17:32:39.305Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:32:39.308Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:32:39.311Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:32:39.311Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"3f4f449b-7b87-405d-8725-6ec159db6379"}
+2026-04-29T17:32:39.313Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:32:39.315Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:32:39.317Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:32:39.317Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"687bef18-397f-4394-adf1-525c79725bdd"}
+2026-04-29T17:32:39.319Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:32:39.319Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:32:39.324Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:32:39.324Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"10433f6e-501e-4806-a61f-b08aa226d150"}
+2026-04-29T17:32:39.330Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:32:39.334Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:32:39.334Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"a1c86ca2-1c86-4bbe-8f77-066c89e165ac"}
+2026-04-29T17:32:39.343Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:32:39.344Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:32:43.499Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T17:32:43.502Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:32:47.549Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T17:51:03.513Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:51:03.514Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2c932d41-1760-472b-83f5-60648fdc3789"}
+2026-04-29T17:51:03.518Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:51:03.523Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:51:03.524Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"34d2eacf-c4bd-4e4e-8eda-999c03ada239"}
+2026-04-29T17:51:03.529Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:51:03.531Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:51:03.534Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:51:03.534Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ce91f953-449d-48a4-b627-a21e35a3b04c"}
+2026-04-29T17:51:03.537Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T17:51:03.538Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:51:03.541Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T17:51:03.542Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f64d8bca-e4fb-4b24-bcc2-e30cdbf3bd00"}
+2026-04-29T17:51:03.544Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T17:51:03.544Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:06:27.954Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T18:06:32.003Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T18:13:03.058Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:13:03.058Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6d6f973b-6be6-487d-9a2c-6688c1a7669a"}
+2026-04-29T18:13:03.065Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:13:03.069Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:13:03.070Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"85408a9d-0145-4629-8983-6687fbce903b"}
+2026-04-29T18:13:03.075Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:13:03.076Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:13:03.081Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:13:03.081Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"caf88966-9635-4580-b95f-cea075d8a3d9"}
+2026-04-29T18:13:03.084Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:13:03.085Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:13:03.090Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:13:03.090Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"1929b996-f54e-458f-b0c1-20a33045ad9f"}
+2026-04-29T18:13:03.094Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:13:07.202Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:13:07.204Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T18:29:25.879Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T18:30:22.428Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:30:22.429Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"23fef326-b62e-4a13-aa5e-9130d57a9197"}
+2026-04-29T18:30:22.437Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:30:22.440Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:30:22.440Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"99b2b1f9-f300-4923-9a5b-238104f8fc12"}
+2026-04-29T18:30:22.443Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:30:22.447Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:30:22.449Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:30:22.449Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"a97c2f7a-f633-4628-8912-90d84ebbe983"}
+2026-04-29T18:30:22.452Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:30:22.454Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:30:22.459Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:30:22.460Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"414795ec-7f9f-49f0-8942-3cee320dd611"}
+2026-04-29T18:30:22.463Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:30:26.651Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:30:26.652Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T18:30:30.702Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T18:46:49.886Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:46:49.887Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8f1faca6-0ccb-4809-b5d9-5f951cf99e2d"}
+2026-04-29T18:46:49.891Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:46:49.895Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:46:49.895Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2bf6156f-c45f-480d-b986-bff668f59fc0"}
+2026-04-29T18:46:49.897Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:46:49.901Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:46:49.906Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T18:46:49.906Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f64ace3d-323b-4210-8a8b-647165066296"}
+2026-04-29T18:46:49.913Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T18:47:01.782Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T18:47:01.785Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T18:47:05.841Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T19:08:32.595Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:08:32.595Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ea4ab8c8-3362-4f5e-8be7-2262b618f569"}
+2026-04-29T19:08:32.600Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:08:32.607Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:08:32.607Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"aee73567-f586-4fd1-812f-33e1bb709a7e"}
+2026-04-29T19:08:32.615Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:08:32.618Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:08:32.619Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:08:32.619Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"51932c02-d883-41f7-8baa-cf1475f92116"}
+2026-04-29T19:08:32.621Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:08:32.624Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:08:32.629Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:08:32.629Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8ffd87c4-e300-4f76-a6cf-b4dd713c6237"}
+2026-04-29T19:08:32.631Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:08:36.736Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:08:36.738Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T19:08:40.795Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T19:32:30.229Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:32:30.229Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"09a441e8-20e8-40e5-a8cc-f949f25280f5"}
+2026-04-29T19:32:30.234Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:32:30.237Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:32:30.237Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"aab436fb-b874-4103-8dcb-37c3c8cef018"}
+2026-04-29T19:32:30.242Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:32:30.247Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:32:30.247Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"56446c04-fc44-46ed-a32c-e8551e9cceff"}
+2026-04-29T19:32:30.249Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:32:30.251Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:32:30.253Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:32:30.256Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:32:30.256Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b4786457-922e-4c79-b2e6-e5125796a658"}
+2026-04-29T19:32:30.257Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:32:30.258Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:32:30.264Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:32:30.264Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ad8e43f9-6331-4086-bdce-049b92449919"}
+2026-04-29T19:32:30.267Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:33:30.627Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:33:30.628Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T19:33:34.688Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T19:37:09.463Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:37:09.464Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"df75e112-2781-446b-abac-10027e10bbd1"}
+2026-04-29T19:37:09.469Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:37:13.520Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T19:37:17.579Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T19:52:35.287Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:52:35.288Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6046e01c-e93d-43b8-88ae-d97a04834cd0"}
+2026-04-29T19:52:35.293Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:52:35.300Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:52:35.300Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b107d7cf-2286-4131-9f68-c73a4fda654d"}
+2026-04-29T19:52:35.305Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:52:35.306Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:52:35.310Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T19:52:35.310Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"67bcae50-4a12-4317-8999-40ca5ba1eaf9"}
+2026-04-29T19:52:35.312Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T19:52:35.313Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T19:52:39.422Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T19:52:52.656Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T20:14:50.281Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:14:50.281Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f00df378-a197-42b9-a0cb-27ef94dd559a"}
+2026-04-29T20:14:50.288Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:14:50.295Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:14:50.295Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"a3e644fd-1f28-4180-b40d-f0860ee2d424"}
+2026-04-29T20:14:50.298Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:14:50.303Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:14:50.304Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:14:50.304Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"9a9f970c-13ab-45f2-818f-e7551e883a3b"}
+2026-04-29T20:14:50.308Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:14:50.308Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:14:50.315Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:14:50.316Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2973105d-e7c9-4007-bc44-476364077f65"}
+2026-04-29T20:14:50.318Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:14:54.421Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T20:14:54.424Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:14:58.481Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T20:15:00.015Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:15:00.015Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"95af632d-b7f9-46b4-ac7c-61346092843f"}
+2026-04-29T20:15:00.019Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:15:04.055Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T20:15:08.107Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T20:32:07.119Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:32:07.120Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d1333e53-42e9-4c61-9a4a-1be7a7fc8547"}
+2026-04-29T20:32:07.129Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:32:07.137Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:32:07.138Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7994e748-e342-4531-9176-a5bca7ef3db8"}
+2026-04-29T20:32:07.144Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:32:07.150Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:32:07.150Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2cd30327-273d-4a78-8959-083c84e1bf4e"}
+2026-04-29T20:32:07.151Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:32:07.153Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:32:07.154Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:32:12.451Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T20:32:16.507Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T20:53:19.264Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:53:19.265Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"b083c2c5-f1e1-4e60-83f6-9240a21bf28f"}
+2026-04-29T20:53:19.270Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:53:19.277Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:53:19.277Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ecef48ba-2d1a-4f1f-b31a-96deacc8d84f"}
+2026-04-29T20:53:19.280Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:53:19.281Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:53:19.287Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:53:19.287Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"9ea68472-8fbe-4cc3-9d95-89e4f6e5d53c"}
+2026-04-29T20:53:19.289Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:53:19.290Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:53:19.295Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T20:53:19.295Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"612c1537-b098-4d2d-8a73-a05edf79e47b"}
+2026-04-29T20:53:19.297Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":"New session was started. Old session aborted."}
+2026-04-29T20:53:19.298Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T20:53:23.395Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T20:53:27.453Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:05:32.576Z [info]: Commit Tag: $GIT_SHA 
+2026-04-29T21:05:32.721Z [info]: Starting Jellyseerr version 2.7.3 
+2026-04-29T21:05:32.945Z [info][Notifications]: Registered notification agents 
+2026-04-29T21:05:32.956Z [info][Jobs]: Scheduled jobs loaded 
+2026-04-29T21:05:33.003Z [info][Server]: Server ready on port 5055 
+2026-04-29T21:10:00.029Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:10:00.030Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6e7f00bf-2dae-4b4e-8caa-1f39187706c9"}
+2026-04-29T21:10:00.035Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:10:04.514Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:10:08.694Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:15:00.011Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:15:00.011Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7b7245f6-daa4-4b45-8886-51337a88c02b"}
+2026-04-29T21:15:00.015Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:15:04.063Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:15:08.178Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:20:00.006Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:20:00.006Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d6b0f336-fcf4-4061-a89f-ac282a0304cf"}
+2026-04-29T21:20:00.011Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:20:04.049Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:20:08.103Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:25:00.014Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:25:00.015Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"57d2c420-0bef-40b3-a63c-f0b8edb983f1"}
+2026-04-29T21:25:00.018Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:25:04.155Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:25:08.239Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:30:00.037Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:30:00.039Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"60a47835-86d0-4647-9be5-78e639c514d8"}
+2026-04-29T21:30:00.049Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:30:04.105Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:30:08.225Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:35:00.039Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:35:00.040Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"3a7a90d2-d8a7-4125-80d0-419c16f40fb6"}
+2026-04-29T21:35:00.042Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:35:04.095Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:35:08.150Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:40:00.037Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:40:00.038Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ecb59bee-caea-406d-b3f3-00cd59d5a351"}
+2026-04-29T21:40:00.043Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:40:04.248Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:40:08.304Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:45:00.039Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:45:00.040Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"eb9ec768-2d45-460f-97e2-ef5f992916cd"}
+2026-04-29T21:45:00.048Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:45:04.105Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:45:08.326Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:50:00.013Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:50:00.015Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"fafd9dae-68c8-4931-9f07-b8680eef363a"}
+2026-04-29T21:50:00.029Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:50:04.090Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:50:08.159Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T21:55:00.036Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T21:55:00.037Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"834cc3f7-bcc7-498d-9572-992f972a0dc7"}
+2026-04-29T21:55:00.041Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T21:55:04.179Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T21:55:08.245Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:00:00.040Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:00:00.041Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"1cf08b2c-fb15-4ea0-b21d-729f293dbf77"}
+2026-04-29T22:00:00.058Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:00:04.128Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:00:08.257Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:05:00.036Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:05:00.037Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6490218a-dd4b-462d-82f2-4647dd214a3b"}
+2026-04-29T22:05:00.043Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:05:04.096Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:05:08.157Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:10:00.036Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:10:00.038Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"1207aec9-22d8-4247-a720-de92266f96b5"}
+2026-04-29T22:10:00.049Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:10:04.174Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:10:08.248Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:15:00.034Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:15:00.035Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"9aceee67-f4f7-4cc1-8ca4-799aaa098da4"}
+2026-04-29T22:15:00.038Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:15:04.087Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:15:08.192Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:20:00.029Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:20:00.030Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ccf658a7-36e9-4583-b3cc-6861a618fefc"}
+2026-04-29T22:20:00.036Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:20:04.076Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:20:08.131Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:25:00.035Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:25:00.036Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"3191ebf1-c95e-457b-a574-0b59a2e97d4f"}
+2026-04-29T22:25:00.044Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:25:04.256Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:25:08.332Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:30:00.015Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:30:00.016Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"4c86d635-e54b-4f4a-a7a6-0431d8d9bda1"}
+2026-04-29T22:30:00.020Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:30:04.061Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:30:08.189Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:35:00.005Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:35:00.005Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"06a57533-8f06-4ae3-b6da-0be4f5dd206d"}
+2026-04-29T22:35:00.009Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:35:04.042Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:35:08.107Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:40:00.040Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:40:00.041Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"340c023f-47bd-4917-b038-a7ca11e86dc9"}
+2026-04-29T22:40:00.045Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:40:04.156Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:40:08.226Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:45:00.029Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:45:00.030Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ee5f7177-0179-4386-b481-3ee79558e0ce"}
+2026-04-29T22:45:00.033Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:45:04.083Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:45:08.206Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:50:00.039Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:50:00.040Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"31ae0122-fa35-4480-b937-e4162ecaaef9"}
+2026-04-29T22:50:00.043Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:50:04.088Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:50:08.150Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T22:55:00.033Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T22:55:00.033Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6bf8511c-c6d2-4412-a0de-0885296d5489"}
+2026-04-29T22:55:00.037Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T22:55:04.189Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T22:55:08.247Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:00:00.006Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:00:00.007Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7f7fdbcc-2358-4ab8-856a-8813b02d0712"}
+2026-04-29T23:00:00.011Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:00:04.057Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:00:08.250Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:05:00.002Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:05:00.003Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"56e0124b-628b-4582-beb3-a7f3552e5fce"}
+2026-04-29T23:05:00.005Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:05:04.036Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:05:08.092Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:10:00.019Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:10:00.019Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"da9f9569-6888-4fed-a961-08cf076c2c3c"}
+2026-04-29T23:10:00.023Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:10:04.131Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:10:08.194Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:15:00.038Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:15:00.038Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"71c8b3af-e914-4203-9066-9338fe062c71"}
+2026-04-29T23:15:00.041Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:15:04.085Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:15:08.196Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:20:00.031Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:20:00.032Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"77ef84f0-8add-4089-bcbe-c505f9d6bd33"}
+2026-04-29T23:20:00.035Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:20:04.080Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:20:08.133Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:25:00.018Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:25:00.018Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"160a5404-51a2-47f9-9710-1352e73c4b16"}
+2026-04-29T23:25:00.022Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:25:04.147Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:25:08.214Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:30:00.019Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:30:00.021Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"4512eb94-23e4-44fb-add7-9803db5dc5a7"}
+2026-04-29T23:30:00.029Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:30:04.087Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:30:08.215Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:35:00.019Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:35:00.020Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"5c0bbb70-ee23-460e-8036-e327dcc605d4"}
+2026-04-29T23:35:00.025Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:35:04.077Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:35:08.135Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:40:00.006Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:40:00.006Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"e0f96705-f28a-4991-877b-a28adc04124e"}
+2026-04-29T23:40:00.010Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:40:04.154Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:40:08.215Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:45:00.013Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:45:00.014Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"408d9d78-caeb-4fb5-9808-4cc7178ff705"}
+2026-04-29T23:45:00.020Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:45:04.069Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:45:08.349Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:50:00.007Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:50:00.009Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f566544c-7224-4ccb-9a9e-57836c0f66f5"}
+2026-04-29T23:50:00.015Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:50:04.138Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:50:08.180Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:52:20.508Z [info]: Commit Tag: $GIT_SHA 
+2026-04-29T23:52:20.629Z [info]: Starting Jellyseerr version 2.7.3 
+2026-04-29T23:52:20.830Z [info][Notifications]: Registered notification agents 
+2026-04-29T23:52:20.840Z [info][Jobs]: Scheduled jobs loaded 
+2026-04-29T23:52:20.883Z [info][Server]: Server ready on port 5055 
+2026-04-29T23:55:00.009Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-29T23:55:00.012Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"c589becc-602a-49d5-b450-c74c09ec9235"}
+2026-04-29T23:55:00.017Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-29T23:55:04.136Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-29T23:55:08.186Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-29T23:56:42.077Z [info][Auth]: Successfully logged out user {"userId":1}
+2026-04-30T00:00:00.017Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:00:00.019Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8e9b4883-4b83-489b-b302-56046dd7a572"}
+2026-04-30T00:00:00.025Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:00:04.070Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:00:08.179Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:00:11.466Z [info][API]: Sign-in attempt from Jellyfin user with access to the media server; creating new Jellyseerr user {"ip":"::ffff:172.20.0.17","jellyfinUsername":"Sandeep"}
+2026-04-30T00:00:18.204Z [info][Auth]: Successfully logged out user {"userId":2}
+2026-04-30T00:00:22.434Z [info][API]: Found matching Jellyfin user; updating user with Jellyfin {"ip":"::ffff:172.20.0.17","jellyfinUsername":"admin"}
+2026-04-30T00:05:00.016Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:05:00.018Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2f32a351-3ac9-4136-8d21-261b553bcbc5"}
+2026-04-30T00:05:00.025Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:05:04.058Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:05:08.099Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:10:00.017Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:10:00.019Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"95a1b079-fc04-4501-bc30-c2c0d51d2171"}
+2026-04-30T00:10:00.026Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:10:04.228Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:10:08.280Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:15:00.015Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:15:00.016Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"56257e5e-130c-436d-9d43-92c134b49a23"}
+2026-04-30T00:15:00.018Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:15:04.055Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:15:08.247Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:20:00.019Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:20:00.020Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"96deb70e-f551-4ab1-bf7d-6e85eca69169"}
+2026-04-30T00:20:00.025Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:20:04.067Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:20:08.102Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:25:00.016Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:25:00.018Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"99b0520e-76de-47b9-b838-ddad5db7cfe1"}
+2026-04-30T00:25:00.028Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:25:04.172Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:25:08.226Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:30:00.013Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:30:00.014Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2b453a05-9bd5-433c-ad2e-99d9c5031aad"}
+2026-04-30T00:30:00.017Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:30:04.058Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:30:08.261Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:33:34.029Z [info][Jobs]: Starting scheduled job: Jellyfin Full Scan 
+2026-04-30T00:33:34.030Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"d42f192a-b02e-4597-9528-5b3233756081"}
+2026-04-30T00:33:34.035Z [info][Jellyfin Sync]: Beginning to process library: Movies 
+2026-04-30T00:33:34.078Z [error][Jellyfin Sync]: Failed to process Jellyfin item, id: 3a2ba261750c319f917b38a267fc776f {"errorMessage":"Unable to find TMDb ID","jellyfinitem":{"Name":"TestMovie (2024)","ServerId":"3b7bf31d74a4418a8d9b202fcb638c73","Id":"3a2ba261750c319f917b38a267fc776f","Container":"mov,mp4,m4a,3gp,3g2,mj2","ChannelId":null,"RunTimeTicks":4064420860,"ProductionYear":2024,"IsFolder":false,"Type":"Movie","VideoType":"VideoFile","ImageTags":{"Primary":"a1815cbd2c8f5f94729fac19613700bd"},"BackdropImageTags":[],"ImageBlurHashes":{"Primary":{"a1815cbd2c8f5f94729fac19613700bd":"W9BU]k$%5T-nxawg1Os;AHJU^O$k9zoz^Oa$kC=_}q%1=x$%NeXS"}},"LocationType":"FileSystem","MediaType":"Video"}}
+2026-04-30T00:33:38.080Z [info][Jellyfin Sync]: Beginning to process library: TV Shows 
+2026-04-30T00:33:38.096Z [error][Jellyfin API]: Something went wrong while getting library content from the Jellyfin server: Request failed with status code 400 {"error":400}
+2026-04-30T00:33:38.096Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":""}
+2026-04-30T00:35:00.008Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:35:00.009Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"ee12d48c-3910-4ef5-8638-e92a09cdf459"}
+2026-04-30T00:35:00.012Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:35:04.056Z [info][Jellyfin Sync]: Beginning to process recently added for library: TV Shows 
+2026-04-30T00:35:08.094Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:35:15.639Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"9eed0434-e8c4-4c9d-bb6d-fb1199ae773b"}
+2026-04-30T00:35:15.643Z [info][Jellyfin Sync]: Beginning to process library: Movies 
+2026-04-30T00:35:15.654Z [error][Jellyfin Sync]: Failed to process Jellyfin item, id: 3a2ba261750c319f917b38a267fc776f {"errorMessage":"Unable to find TMDb ID","jellyfinitem":{"Name":"TestMovie (2024)","ServerId":"3b7bf31d74a4418a8d9b202fcb638c73","Id":"3a2ba261750c319f917b38a267fc776f","Container":"mov,mp4,m4a,3gp,3g2,mj2","ChannelId":null,"RunTimeTicks":4064420860,"ProductionYear":2024,"IsFolder":false,"Type":"Movie","VideoType":"VideoFile","ImageTags":{"Primary":"a1815cbd2c8f5f94729fac19613700bd"},"BackdropImageTags":[],"ImageBlurHashes":{"Primary":{"a1815cbd2c8f5f94729fac19613700bd":"W9BU]k$%5T-nxawg1Os;AHJU^O$k9zoz^Oa$kC=_}q%1=x$%NeXS"}},"LocationType":"FileSystem","MediaType":"Video"}}
+2026-04-30T00:35:19.727Z [info][Jellyfin Sync]: Beginning to process library: TV Shows 
+2026-04-30T00:35:19.736Z [error][Jellyfin API]: Something went wrong while getting library content from the Jellyfin server: Request failed with status code 400 {"error":400}
+2026-04-30T00:35:19.736Z [error][Jellyfin Sync]: Sync interrupted {"errorMessage":""}
+2026-04-30T00:36:40.168Z [error][Media]: [Radarr] Failed to remove movie: Request failed with status code 404 
+2026-04-30T00:36:43.274Z [error][Media]: [Radarr] Failed to remove movie: Request failed with status code 404 
+2026-04-30T00:36:55.890Z [error][Media]: [Radarr] Failed to remove movie: Request failed with status code 404 
+2026-04-30T00:37:32.020Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Dune (2021)"}
+2026-04-30T00:37:32.022Z [info][Media Request]: Sent request to Radarr {"requestId":18,"mediaId":17}
+2026-04-30T00:37:32.119Z [info][Radarr]: Radarr accepted request 
+2026-04-30T00:40:00.016Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:40:00.018Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"4645ce74-6f2c-4e5d-ad23-e17336e74321"}
+2026-04-30T00:40:00.023Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:40:04.065Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T00:40:08.091Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:44:20.116Z [info]: [Radarr] Removed movie Dune 
+2026-04-30T00:44:22.745Z [error][Media]: [Radarr] Failed to remove movie: Request failed with status code 404 
+2026-04-30T00:44:30.351Z [error][Media]: [Radarr] Failed to remove movie: Request failed with status code 404 
+2026-04-30T00:44:36.316Z [error][Media]: [Radarr] Failed to remove movie: Request failed with status code 404 
+2026-04-30T00:44:46.864Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Dune (2021)"}
+2026-04-30T00:44:46.870Z [info][Media Request]: Sent request to Radarr {"requestId":19,"mediaId":18}
+2026-04-30T00:44:46.991Z [info][Radarr]: Radarr accepted request 
+2026-04-30T00:45:00.007Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:45:00.008Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"49e51d60-2416-49d0-a241-35bf5b5fe6f7"}
+2026-04-30T00:45:00.011Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:45:04.203Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T00:45:08.212Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:45:37.183Z [info]: [Radarr] Removed movie Dune 
+2026-04-30T00:45:42.358Z [error][Media]: [Radarr] Failed to remove movie: Request failed with status code 404 
+2026-04-30T00:46:46.639Z [info][Media Request]: Sent request to Radarr {"requestId":20,"mediaId":19}
+2026-04-30T00:46:46.641Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Dune (2021)"}
+2026-04-30T00:46:46.726Z [info][Radarr]: Radarr accepted request 
+2026-04-30T00:47:03.022Z [info]: [Radarr] Removed movie Dune 
+2026-04-30T00:50:00.018Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:50:00.020Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6d265e98-b537-4be5-b7e7-f0c95935fe17"}
+2026-04-30T00:50:00.029Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:50:04.068Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T00:50:08.084Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:55:00.016Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T00:55:00.017Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"2c83152e-6441-4e8c-88e0-557c243b3589"}
+2026-04-30T00:55:00.026Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T00:55:04.152Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T00:55:08.165Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T00:56:41.830Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Dune (2021)"}
+2026-04-30T00:56:41.835Z [info][Media Request]: Sent request to Radarr {"requestId":21,"mediaId":20}
+2026-04-30T00:56:42.040Z [info][Radarr]: Radarr accepted request 
+2026-04-30T01:00:00.014Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T01:00:00.015Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7e8ee608-9389-476b-aa40-96de2fa9c6cb"}
+2026-04-30T01:00:00.019Z [info][Jobs]: Starting scheduled job: Media Availability Sync 
+2026-04-30T01:00:00.020Z [info][Availability Sync]: Starting availability sync... 
+2026-04-30T01:00:00.023Z [info][Jobs]: Starting scheduled job: Sonarr Scan 
+2026-04-30T01:00:00.024Z [info][Sonarr Scan]: Scan starting {"sessionId":"1033e378-4d33-46c1-ab9c-65fb6e352fc9"}
+2026-04-30T01:00:00.024Z [info][Sonarr Scan]: Sonarr scan complete 
+2026-04-30T01:00:00.027Z [info][Jobs]: Starting scheduled job: Radarr Scan 
+2026-04-30T01:00:00.027Z [info][Radarr Scan]: Scan starting {"sessionId":"2ed7b72e-f269-4a42-854a-41ec6c9425d5"}
+2026-04-30T01:00:00.028Z [info][Radarr Scan]: Radarr scan complete 
+2026-04-30T01:00:00.031Z [info][Jobs]: Starting scheduled job: Jellyfin Full Scan 
+2026-04-30T01:00:00.031Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"155b3eea-891d-4e2d-a121-41a7b8053e06"}
+2026-04-30T01:00:00.034Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T01:00:00.038Z [info][Jellyfin Sync]: Beginning to process library: Movies 
+2026-04-30T01:00:00.072Z [error][Jellyfin Sync]: Failed to process Jellyfin item, id: 3a2ba261750c319f917b38a267fc776f {"errorMessage":"Unable to find TMDb ID","jellyfinitem":{"Name":"TestMovie (2024)","ServerId":"3b7bf31d74a4418a8d9b202fcb638c73","Id":"3a2ba261750c319f917b38a267fc776f","Container":"mov,mp4,m4a,3gp,3g2,mj2","ChannelId":null,"RunTimeTicks":4064420860,"ProductionYear":2024,"IsFolder":false,"Type":"Movie","VideoType":"VideoFile","ImageTags":{"Primary":"a1815cbd2c8f5f94729fac19613700bd"},"BackdropImageTags":[],"ImageBlurHashes":{"Primary":{"a1815cbd2c8f5f94729fac19613700bd":"W9BU]k$%5T-nxawg1Os;AHJU^O$k9zoz^Oa$kC=_}q%1=x$%NeXS"}},"LocationType":"FileSystem","MediaType":"Video"}}
+2026-04-30T01:00:00.073Z [info][AvailabilitySync]: The non-4K show [TMDB ID 124364] still exists. Preventing removal. 
+2026-04-30T01:00:00.078Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 1383072] still exists. Preventing removal. 
+2026-04-30T01:00:00.080Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 1226863] still exists. Preventing removal. 
+2026-04-30T01:00:00.083Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 980477] still exists. Preventing removal. 
+2026-04-30T01:00:00.085Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 1189518] was not found in any Radarr and jellyfin instance. Status will be changed to deleted. 
+2026-04-30T01:00:00.090Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 615453] still exists. Preventing removal. 
+2026-04-30T01:00:00.091Z [info][AvailabilitySync]: The non-4K movie [TMDB ID 1327819] was not found in any Radarr and jellyfin instance. Status will be changed to deleted. 
+2026-04-30T01:00:00.094Z [info][Availability Sync]: Availability sync complete. 
+2026-04-30T01:00:04.082Z [info][Jellyfin Sync]: Beginning to process library: Shows 
+2026-04-30T01:00:04.084Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T01:00:08.097Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T01:00:08.127Z [info][Jellyfin Sync]: Full Scan Complete 
+2026-04-30T01:00:59.757Z [info][Media Request]: Sent request to Radarr {"requestId":22,"mediaId":21}
+2026-04-30T01:00:59.760Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Dune (2021)"}
+2026-04-30T01:00:59.845Z [info][Radarr]: Movie is already monitored in Radarr. Skipping add and returning success 
+2026-04-30T01:03:57.762Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Dune (2021)"}
+2026-04-30T01:03:57.765Z [info][Media Request]: Sent request to Radarr {"requestId":23,"mediaId":21}
+2026-04-30T01:03:57.985Z [info][Radarr]: Radarr accepted request 
+2026-04-30T01:04:35.281Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Vaazha (2024)"}
+2026-04-30T01:04:35.283Z [info][Media Request]: Sent request to Radarr {"requestId":24,"mediaId":11}
+2026-04-30T01:04:35.392Z [info][Radarr]: Radarr accepted request 
+2026-04-30T01:05:00.010Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T01:05:00.010Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"8c4dac45-fc2e-48d7-8e7e-c759dc58dacc"}
+2026-04-30T01:05:00.013Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T01:05:04.311Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T01:05:08.318Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T01:10:00.011Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T01:10:00.012Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"7971be20-460a-4547-aeef-f9ece8ed13cf"}
+2026-04-30T01:10:00.014Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T01:10:04.054Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T01:10:08.065Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T01:15:00.015Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T01:15:00.019Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6a87c38e-bd0d-40f6-bafc-5cc3b79d967b"}
+2026-04-30T01:15:00.028Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T01:15:00.173Z [info][Jellyfin Sync]: Request for Dune exists. New media types set to AVAILABLE 
+2026-04-30T01:15:00.181Z [info][Notifications]: Sending notification(s) for MEDIA_AVAILABLE {"subject":"Dune (2021)"}
+2026-04-30T01:15:04.179Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T01:15:08.190Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T01:16:34.879Z [info]: [Radarr] Removed movie Vaazha 
+2026-04-30T01:16:57.039Z [info][Media Request]: Request has an override quality profile ID: 4 {"requestId":25,"mediaId":22}
+2026-04-30T01:16:57.045Z [info][Notifications]: Sending notification(s) for MEDIA_AUTO_APPROVED {"subject":"Vaazha (2024)"}
+2026-04-30T01:16:57.047Z [info][Media Request]: Sent request to Radarr {"requestId":25,"mediaId":22}
+2026-04-30T01:16:57.117Z [info][Radarr]: Radarr accepted request 
+2026-04-30T01:20:00.025Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T01:20:00.026Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"f61d0888-2261-4529-8b82-a09e66e455ba"}
+2026-04-30T01:20:00.030Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T01:20:04.078Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T01:20:08.088Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T01:25:00.007Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T01:25:00.009Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"6b356794-8149-48b3-b009-64466f8d14b7"}
+2026-04-30T01:25:00.018Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T01:25:04.142Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T01:25:08.149Z [info][Jellyfin Sync]: Recently Added Scan Complete 
+2026-04-30T01:30:00.017Z [info][Jobs]: Starting scheduled job: Jellyfin Recently Added Scan 
+2026-04-30T01:30:00.018Z [info][Jellyfin Sync]: Jellyfin Sync Starting {"sessionId":"88531a5d-f390-45ff-993d-3f20483f7047"}
+2026-04-30T01:30:00.021Z [info][Jellyfin Sync]: Beginning to process recently added for library: Movies 
+2026-04-30T01:30:04.073Z [info][Jellyfin Sync]: Beginning to process recently added for library: Shows 
+2026-04-30T01:30:08.083Z [info][Jellyfin Sync]: Recently Added Scan Complete 

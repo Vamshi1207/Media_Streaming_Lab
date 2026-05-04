@@ -1,0 +1,789 @@
+[2026-04-28 09:46:43.840 -04:00] [INF] [1] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 09:46:43.974 -04:00] [INF] [7] Jellyfin.Server.ServerSetupApp.SetupServer: Kestrel is listening on "all interfaces"
+[2026-04-28 09:46:43.995 -04:00] [INF] [7] Main: Jellyfin version: "10.11.8"
+[2026-04-28 09:46:43.996 -04:00] [INF] [7] Main: Environment Variables: ["[JELLYFIN_CACHE_DIR, /config/cache]", "[JELLYFIN_DATA_DIR, /config/data]", "[JELLYFIN_WEB_DIR, /usr/share/jellyfin/web]", "[JELLYFIN_CONFIG_DIR, /config]", "[JELLYFIN_LOG_DIR, /config/log]"]
+[2026-04-28 09:46:43.997 -04:00] [INF] [7] Main: Arguments: ["/usr/lib/jellyfin/bin/jellyfin.dll", "--ffmpeg=/usr/lib/jellyfin-ffmpeg/ffmpeg"]
+[2026-04-28 09:46:43.997 -04:00] [INF] [7] Main: Operating system: "Ubuntu 24.04.4 LTS"
+[2026-04-28 09:46:43.997 -04:00] [INF] [7] Main: Architecture: Arm64
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: 64-Bit Process: True
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: User Interactive: True
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Processor count: 8
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Program data path: "/config/data"
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Log directory path: "/config/log"
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Config directory path: "/config"
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Cache path: "/config/cache"
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Temp directory path: "/tmp/jellyfin"
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Web resources path: "/usr/share/jellyfin/web"
+[2026-04-28 09:46:43.998 -04:00] [INF] [7] Main: Application directory: "/usr/lib/jellyfin/bin/"
+[2026-04-28 09:46:44.006 -04:00] [INF] [7] Jellyfin.Server.Startup: Storage path `"/config/data/data"` (Unknown) successfully checked with "193.1TiB" free which is over the minimum of "2GiB".
+[2026-04-28 09:46:44.006 -04:00] [INF] [7] Jellyfin.Server.Startup: Storage path `"/config/cache"` (Unknown) successfully checked with "193.1TiB" free which is over the minimum of "2GiB".
+[2026-04-28 09:46:44.007 -04:00] [INF] [7] Jellyfin.Server.Startup: Storage path `"/config/data"` (Unknown) successfully checked with "193.1TiB" free which is over the minimum of "2GiB".
+[2026-04-28 09:46:44.009 -04:00] [INF] [7] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 09:46:44.050 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-28 09:46:44.053 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-28 09:46:44.053 -04:00] [INF] [7] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-28 09:46:44.070 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: Initialise Migration service.
+[2026-04-28 09:46:44.398 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage PreInitialisation.
+[2026-04-28 09:46:44.406 -04:00] [INF] [7] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 09:46:44.456 -04:00] [INF] [7] Emby.Server.Implementations.ApplicationHost: Loading assemblies
+[2026-04-28 09:46:44.480 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Defined LAN subnets: ["192.168.2.0/24"]
+[2026-04-28 09:46:44.480 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Defined LAN exclusions: []
+[2026-04-28 09:46:44.481 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Used LAN subnets: ["192.168.2.0/24"]
+[2026-04-28 09:46:44.481 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Filtered interface addresses: []
+[2026-04-28 09:46:44.481 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Bind Addresses ["::"]
+[2026-04-28 09:46:44.481 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Remote IP filter is "Allowlist"
+[2026-04-28 09:46:44.481 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Filtered subnets: []
+[2026-04-28 09:46:44.501 -04:00] [WRN] [16] Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService: Health check "StartupCheck" with status Degraded completed after 0.3922ms with message '"Server is still starting up."'
+[2026-04-28 09:46:44.554 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-28 09:46:44.555 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-28 09:46:44.555 -04:00] [INF] [7] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-28 09:46:44.558 -04:00] [INF] [7] Main: Prepare system for possible migrations
+[2026-04-28 09:46:44.572 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage CoreInitialisation.
+[2026-04-28 09:46:44.817 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "TMDb" "10.11.8.0"
+[2026-04-28 09:46:44.818 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "Studio Images" "10.11.8.0"
+[2026-04-28 09:46:44.818 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "OMDb" "10.11.8.0"
+[2026-04-28 09:46:44.832 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "MusicBrainz" "10.11.8.0"
+[2026-04-28 09:46:44.832 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "AudioDB" "10.11.8.0"
+[2026-04-28 09:46:44.859 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage AppInitialisation.
+[2026-04-28 09:46:44.879 -04:00] [INF] [7] Main: Kestrel is listening on "all interfaces"
+[2026-04-28 09:46:45.150 -04:00] [WRN] [7] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: The WebRootPath was not found: "/run/s6-rc:s6-rc-init:OmoOCn/servicedirs/svc-jellyfin/wwwroot". Static files may be unavailable.
+[2026-04-28 09:46:45.160 -04:00] [INF] [7] Emby.Server.Implementations.ApplicationHost: Running startup tasks
+[2026-04-28 09:46:45.161 -04:00] [INF] [13] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/tv"
+[2026-04-28 09:46:45.162 -04:00] [INF] [10] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/movies"
+[2026-04-28 09:46:45.164 -04:00] [INF] [7] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Generate Trickplay Images" set to fire at 2026-04-29 03:00:00.000 -04:00, which is 17:13:14.8351293 from now.
+[2026-04-28 09:46:45.171 -04:00] [INF] [7] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Extract Chapter Images" set to fire at 2026-04-29 02:00:00.000 -04:00, which is 16:13:14.8283710 from now.
+[2026-04-28 09:46:45.232 -04:00] [INF] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Found ffmpeg version "7.1.3"
+[2026-04-28 09:46:45.247 -04:00] [INF] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "decoders": ["libdav1d", "av1", "av1_cuvid", "av1_rkmpp", "h264", "h264_rkmpp", "h264_cuvid", "hevc", "hevc_rkmpp", "hevc_cuvid", "mpeg1_rkmpp", "mpeg2video", "mpeg2_rkmpp", "mpeg2_cuvid", "mpeg4", "mpeg4_rkmpp", "mpeg4_cuvid", "msmpeg4", "vc1_cuvid", "vp8", "vp8_rkmpp", "libvpx", "vp8_cuvid", "vp9", "vp9_rkmpp", "libvpx-vp9", "vp9_cuvid", "aac", "ac3", "ac4", "dca", "flac", "mp3", "truehd"]
+[2026-04-28 09:46:45.253 -04:00] [INF] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "encoders": ["libsvtav1", "av1_nvenc", "libx264", "h264_nvenc", "h264_v4l2m2m", "h264_rkmpp", "libx265", "hevc_nvenc", "hevc_rkmpp", "mjpeg_rkmpp", "aac", "libfdk_aac", "ac3", "alac", "dca", "flac", "libmp3lame", "libopus", "truehd", "libvorbis", "srt"]
+[2026-04-28 09:46:45.259 -04:00] [INF] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available filters: ["bwdif_cuda", "bwdif_opencl", "hwupload_cuda", "overlay_opencl", "overlay_cuda", "overlay_rkrga", "scale_cuda", "scale_opencl", "scale_rkrga", "tonemapx", "tonemap_cuda", "tonemap_opencl", "transpose_cuda", "transpose_opencl", "vpp_rkrga", "yadif_cuda", "yadif_opencl", "zscale", "alphasrc"]
+[2026-04-28 09:46:45.283 -04:00] [WRN] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vaapi" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-28 09:46:45.287 -04:00] [WRN] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vulkan" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-28 09:46:45.330 -04:00] [INF] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available hwaccel types: ["cuda", "drm", "opencl", "rkmpp"]
+[2026-04-28 09:46:48.178 -04:00] [INF] [13] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean Transcode Directory" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 09:46:48.178 -04:00] [INF] [10] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean up collections and playlists" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 09:46:48.515 -04:00] [INF] [10] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Update Plugins" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 09:46:51.579 -04:00] [INF] [7] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: FFmpeg: "/usr/lib/jellyfin-ffmpeg/ffmpeg"
+[2026-04-28 09:46:51.579 -04:00] [INF] [7] Emby.Server.Implementations.ApplicationHost: ServerId: "3b7bf31d74a4418a8d9b202fcb638c73"
+[2026-04-28 09:46:51.579 -04:00] [INF] [7] Emby.Server.Implementations.ApplicationHost: Core startup complete
+[2026-04-28 09:46:51.579 -04:00] [INF] [7] Main: Startup complete 0:00:08.0192867
+[2026-04-28 09:47:21.619 -04:00] [INF] [7] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 09:47:21.620 -04:00] [INF] [7] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 0/0
+[2026-04-28 09:47:21.621 -04:00] [INF] [7] Emby.Server.Implementations.Session.SessionManager: Logging out access token "12172086dec440139dbd74eea2275535"
+[2026-04-28 09:47:21.629 -04:00] [INF] [7] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 09:50:31.296 -04:00] [INF] [26] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 09:50:31.297 -04:00] [INF] [26] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 1/0
+[2026-04-28 09:50:31.297 -04:00] [INF] [26] Emby.Server.Implementations.Session.SessionManager: Logging out access token "a40c2c1a43bf41ee803c599dc4890739"
+[2026-04-28 09:50:31.300 -04:00] [INF] [26] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 10:48:53.307 -04:00] [WRN] [33] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:48:53.737 -04:00] [WRN] [26] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:48:53.780 -04:00] [WRN] [26] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:48:53.830 -04:00] [WRN] [34] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:48:53.951 -04:00] [INF] [33] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 10:51:23.022 -04:00] [WRN] [49] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:51:23.499 -04:00] [WRN] [52] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:51:23.499 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:51:23.542 -04:00] [WRN] [52] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 10:51:31.767 -04:00] [INF] [46] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 10:51:31.767 -04:00] [INF] [46] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 2/0
+[2026-04-28 10:51:31.767 -04:00] [INF] [46] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 10:51:31.977 -04:00] [INF] [52] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 10:51:40.299 -04:00] [WRN] [51] Microsoft.EntityFrameworkCore.Query: Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-04-28 10:51:46.504 -04:00] [INF] [49] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 10:51:47.384 -04:00] [INF] [49] Jellyfin.Api.Controllers.DynamicHlsController: Current HLS implementation doesn't support non-keyframe breaks but one is requested, ignoring that request
+[2026-04-28 10:51:47.393 -04:00] [INF] [49] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -fflags +genpts  -i file:\"/data/media/movies/The Super Mario Galaxy Movie (2026)/The Super Mario Galaxy Movie 2026 1080p Webrip HEVC x265-RMTeam.mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:s -codec:v:0 copy -tag:v:0 hvc1 -bsf:v hevc_mp4toannexb -start_at_zero -codec:a:0 copy -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 6 -hls_segment_type fmp4 -hls_fmp4_init_filename \"678f3a84224662b67ff4c25be5757a34-1.mp4\" -start_number 0 -hls_segment_filename \"/config/cache/transcodes/678f3a84224662b67ff4c25be5757a34%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/678f3a84224662b67ff4c25be5757a34.m3u8\""
+[2026-04-28 10:51:50.742 -04:00] [INF] [51] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 10:51:53.747 -04:00] [INF] [53] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 10:52:41.948 -04:00] [INF] [53] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 10:57:17.934 -04:00] [INF] [59] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:01:05.933 -04:00] [INF] [62] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:04:53.924 -04:00] [INF] [47] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:08:41.913 -04:00] [INF] [76] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:13:18.037 -04:00] [INF] [73] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:17:06.032 -04:00] [INF] [60] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:20:54.034 -04:00] [INF] [60] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:24:42.029 -04:00] [INF] [91] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:27:41.929 -04:00] [WRN] [85] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-28 11:27:41.934 -04:00] [INF] [85] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 11:31:30.373 -04:00] [WRN] [51] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:31:30.528 -04:00] [WRN] [51] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:31:30.606 -04:00] [WRN] [53] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:31:30.665 -04:00] [WRN] [53] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:31:31.320 -04:00] [INF] [51] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:32:02.328 -04:00] [WRN] [49] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:32:16.943 -04:00] [INF] [81] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 11:42:12.361 -04:00] [WRN] [44] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:42:18.885 -04:00] [WRN] [22] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:42:19.340 -04:00] [WRN] [44] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:42:20.804 -04:00] [WRN] [18] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:42:56.917 -04:00] [WRN] [13] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:43:17.635 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:43:18.326 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:43:18.786 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:43:19.124 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:44:44.159 -04:00] [INF] [28] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 11:44:44.159 -04:00] [INF] [28] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 1/0
+[2026-04-28 11:44:44.159 -04:00] [INF] [28] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 11:44:45.372 -04:00] [INF] [27] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:45:22.522 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:45:24.216 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:45:24.617 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:45:25.037 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:46:02.968 -04:00] [WRN] [35] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:46:11.284 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:46:13.256 -04:00] [WRN] [36] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:46:13.559 -04:00] [WRN] [36] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:46:13.899 -04:00] [WRN] [36] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:46:23.157 -04:00] [INF] [35] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 11:46:23.157 -04:00] [INF] [35] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 2/0
+[2026-04-28 11:46:23.158 -04:00] [INF] [35] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 11:46:24.091 -04:00] [INF] [35] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:46:33.372 -04:00] [INF] [36] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:46:33.749 -04:00] [WRN] [96] Microsoft.EntityFrameworkCore.Query: Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-04-28 11:46:45.380 -04:00] [INF] [28] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:46:56.256 -04:00] [INF] [25] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 11:46:57.381 -04:00] [INF] [25] Emby.Server.Implementations.Session.SessionWebSocketListener: Lost 1 WebSockets.
+[2026-04-28 11:47:33.378 -04:00] [INF] [28] Emby.Server.Implementations.Session.SessionManager: Playback stopped reported by app "Jellyfin Android" "2.6.3" playing "Vaazha". Stopped at "3768096" ms
+[2026-04-28 11:48:21.380 -04:00] [INF] [77] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:48:44.948 -04:00] [WRN] [26] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-28 11:48:44.953 -04:00] [INF] [26] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 11:49:09.375 -04:00] [INF] [79] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:49:21.376 -04:00] [INF] [67] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:49:33.379 -04:00] [INF] [36] Emby.Server.Implementations.Session.SessionWebSocketListener: Lost 1 WebSockets.
+[2026-04-28 11:49:52.521 -04:00] [WRN] [67] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-28 11:49:52.527 -04:00] [INF] [67] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 11:53:01.262 -04:00] [WRN] [42] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:03.064 -04:00] [WRN] [42] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:03.359 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:03.618 -04:00] [WRN] [73] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:10.331 -04:00] [WRN] [94] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:14.455 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:15.145 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:15.847 -04:00] [WRN] [50] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:18.370 -04:00] [INF] [94] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 11:53:18.371 -04:00] [INF] [94] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 1/0
+[2026-04-28 11:53:18.371 -04:00] [INF] [94] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 11:53:19.099 -04:00] [INF] [50] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:53:23.906 -04:00] [WRN] [73] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:30.621 -04:00] [WRN] [10] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:32.198 -04:00] [WRN] [10] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:53:34.001 -04:00] [WRN] [10] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:01.028 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:02.078 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:02.345 -04:00] [WRN] [10] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:02.612 -04:00] [WRN] [10] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:12.037 -04:00] [WRN] [73] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:13.727 -04:00] [INF] [16] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 11:54:13.728 -04:00] [INF] [16] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 2/0
+[2026-04-28 11:54:13.728 -04:00] [INF] [16] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 11:54:14.474 -04:00] [INF] [77] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:54:22.309 -04:00] [WRN] [77] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:23.046 -04:00] [WRN] [16] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:25.340 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:54:46.752 -04:00] [INF] [54] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:54:55.033 -04:00] [INF] [16] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 11:54:57.565 -04:00] [INF] [16] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -fflags +genpts  -i file:\"/data/media/tv/FROM/From (2022) - S01E09 - Into the Woods (1080p AMZN WEB-DL x265 t3nzin).mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:s -codec:v:0 copy -tag:v:0 hvc1 -bsf:v hevc_mp4toannexb -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 6 -hls_segment_type fmp4 -hls_fmp4_init_filename \"15fb22ed483d9df5fd665695d7bd6806-1.mp4\" -start_number 0 -hls_segment_filename \"/config/cache/transcodes/15fb22ed483d9df5fd665695d7bd6806%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/15fb22ed483d9df5fd665695d7bd6806.m3u8\""
+[2026-04-28 11:55:12.488 -04:00] [INF] [86] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 11:55:30.961 -04:00] [INF] [86] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: Deleting partial stream file(s) "/config/cache/transcodes/15fb22ed483d9df5fd665695d7bd6806.m3u8"
+[2026-04-28 11:55:31.232 -04:00] [INF] [86] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 11:55:31.831 -04:00] [WRN] [86] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:55:32.419 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:55:32.541 -04:00] [INF] [86] Emby.Server.Implementations.Session.SessionManager: Playback stopped reported by app "Jellyfin Web" "10.11.8" playing "Into the Woods". Stopped at "0" ms
+[2026-04-28 11:55:32.807 -04:00] [WRN] [86] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:55:33.076 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:55:33.900 -04:00] [INF] [37] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:55:43.099 -04:00] [INF] [10] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:55:48.444 -04:00] [INF] [10] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 11:55:48.444 -04:00] [INF] [10] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 4/0
+[2026-04-28 11:55:48.444 -04:00] [INF] [10] Emby.Server.Implementations.Session.SessionManager: Logging out access token "831eed7d141441729eb2e4f8d356615d"
+[2026-04-28 11:55:48.449 -04:00] [INF] [10] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 11:55:48.782 -04:00] [INF] [86] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 11:55:52.171 -04:00] [INF] [37] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 11:55:55.102 -04:00] [INF] [37] Emby.Server.Implementations.Session.SessionWebSocketListener: Lost 1 WebSockets.
+[2026-04-28 11:56:00.613 -04:00] [INF] [25] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 11:56:58.540 -04:00] [INF] [13] Emby.Server.Implementations.Session.SessionManager: Playback stopped reported by app "Jellyfin Web" "10.11.8" playing "Vaazha". Stopped at "351731" ms
+[2026-04-28 11:57:17.119 -04:00] [WRN] [94] Microsoft.EntityFrameworkCore.Query: The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+[2026-04-28 11:58:04.747 -04:00] [INF] [27] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 11:58:04.748 -04:00] [INF] [27] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 4/0
+[2026-04-28 11:58:04.748 -04:00] [INF] [27] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 11:58:39.680 -04:00] [INF] [27] Jellyfin.Server.Implementations.Users.UserManager: Authentication request for "admin" has succeeded.
+[2026-04-28 11:58:39.680 -04:00] [INF] [27] Emby.Server.Implementations.Session.SessionManager: Current/Max sessions for user "admin": 5/0
+[2026-04-28 11:58:39.680 -04:00] [INF] [27] Emby.Server.Implementations.Session.SessionManager: Logging out access token "497f03fe125142ac82450c201f165b8d"
+[2026-04-28 11:58:39.683 -04:00] [INF] [27] Emby.Server.Implementations.Session.SessionManager: Creating new access token for user 8fdd09d5-1dce-4bce-ba65-64657919446e
+[2026-04-28 11:59:43.096 -04:00] [INF] [79] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 11:59:46.215 -04:00] [WRN] [29] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 11:59:46.231 -04:00] [WRN] [29] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:00:25.187 -04:00] [INF] [79] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:00:25.369 -04:00] [WRN] [22] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:00:25.747 -04:00] [WRN] [22] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:00:25.994 -04:00] [WRN] [79] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:00:26.249 -04:00] [WRN] [79] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:00:27.047 -04:00] [INF] [79] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:00:45.107 -04:00] [INF] [18] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:00:54.518 -04:00] [WRN] [79] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:00:54.519 -04:00] [WRN] [18] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:01:07.095 -04:00] [INF] [50] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:01:50.966 -04:00] [WRN] [79] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:01:52.441 -04:00] [WRN] [79] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:01:52.691 -04:00] [WRN] [79] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:01:52.717 -04:00] [WRN] [23] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:01:53.465 -04:00] [INF] [84] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:03:59.080 -04:00] [WRN] [89] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-28 12:03:59.088 -04:00] [INF] [89] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:04:55.092 -04:00] [INF] [60] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:06:28.400 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:06:28.401 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:06:43.091 -04:00] [INF] [60] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:08:43.091 -04:00] [INF] [90] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:11:07.181 -04:00] [INF] [44] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:12:04.363 -04:00] [INF] [28] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:12:04.519 -04:00] [WRN] [18] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:04.607 -04:00] [WRN] [18] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:04.782 -04:00] [WRN] [18] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:04.797 -04:00] [WRN] [18] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:04.797 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.16": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:04.831 -04:00] [WRN] [18] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:04.958 -04:00] [INF] [18] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:12:22.716 -04:00] [INF] [33] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:12:22.783 -04:00] [WRN] [94] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:22.851 -04:00] [WRN] [33] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:22.950 -04:00] [WRN] [94] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:22.989 -04:00] [WRN] [33] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:23.181 -04:00] [INF] [94] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:12:31.382 -04:00] [INF] [28] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:12:31.621 -04:00] [WRN] [42] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:32.189 -04:00] [WRN] [42] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:32.450 -04:00] [WRN] [42] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:32.716 -04:00] [WRN] [42] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:33.526 -04:00] [INF] [18] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:12:49.379 -04:00] [INF] [35] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:12:49.539 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:50.139 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:50.401 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:50.668 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:51.444 -04:00] [INF] [37] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:12:56.311 -04:00] [INF] [86] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:12:56.380 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:56.456 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:56.551 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:56.593 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:56.881 -04:00] [INF] [62] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:12:59.665 -04:00] [INF] [62] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:12:59.727 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:12:59.896 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:00.044 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:00.089 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:00.231 -04:00] [INF] [62] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:13:04.916 -04:00] [INF] [54] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:13:04.985 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:05.135 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:05.289 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:05.337 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:05.457 -04:00] [INF] [54] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:13:07.891 -04:00] [INF] [32] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:13:07.904 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:07.961 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:08.064 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:08.106 -04:00] [WRN] [54] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:08.302 -04:00] [INF] [54] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:13:19.360 -04:00] [INF] [35] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:13:19.520 -04:00] [WRN] [35] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:20.093 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:20.340 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:20.596 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:21.329 -04:00] [INF] [35] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:13:41.553 -04:00] [INF] [62] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:13:41.627 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:41.686 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:41.810 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:41.850 -04:00] [WRN] [25] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:41.964 -04:00] [INF] [62] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:13:42.994 -04:00] [INF] [25] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:13:43.055 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:43.117 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:43.215 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:43.261 -04:00] [WRN] [62] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:43.462 -04:00] [INF] [62] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:13:49.782 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:13:50.938 -04:00] [INF] [32] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/movies"
+[2026-04-28 12:13:50.939 -04:00] [INF] [32] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/tv"
+[2026-04-28 12:13:50.940 -04:00] [INF] [32] Emby.Server.Implementations.Library.LibraryManager: Validating media library
+[2026-04-28 12:13:51.042 -04:00] [WRN] [32] MediaBrowser.Controller.Entities.BaseItem: Library folder "/config/data/data/playlists" is inaccessible or empty, skipping
+[2026-04-28 12:13:51.431 -04:00] [WRN] [32] MediaBrowser.Controller.Entities.BaseItem: Library folder "/config/data/data/playlists" is inaccessible or empty, skipping
+[2026-04-28 12:13:51.930 -04:00] [ERR] [35] MediaBrowser.Providers.Movies.MovieMetadataService: Error in "TheMovieDb"
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 2020-01-24 22:39:05 UTC. Path 'videos.results[0].published_at', line 1, position 21140.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at TMDbLib.Utilities.Serializer.TMDbJsonSerializer.Deserialize(Stream source, Type type)
+   at TMDbLib.Utilities.Serializer.SerializerExtensions.Deserialize[T](ITMDbSerializer serializer, Stream source)
+   at TMDbLib.Rest.RestResponse`1.GetDataObject()
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(String imdbId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(Int32 movieId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.TmdbClientManager.GetMovieAsync(Int32 tmdbId, String language, String imageLanguages, String countryCode, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.Movies.TmdbMovieProvider.GetMetadata(MovieInfo info, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Manager.MetadataService`2.ExecuteRemoteProviders(MetadataResult`1 temp, String logName, Boolean replaceData, TIdType id, IEnumerable`1 providers, CancellationToken cancellationToken)
+[2026-04-28 12:13:52.333 -04:00] [ERR] [28] MediaBrowser.Providers.Manager.ProviderManager: "TmdbMovieImageProvider" failed in GetImageInfos for type "Movie" at "/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv"
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 2020-01-24 22:39:05 UTC. Path 'videos.results[0].published_at', line 1, position 31449.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at TMDbLib.Utilities.Serializer.TMDbJsonSerializer.Deserialize(Stream source, Type type)
+   at TMDbLib.Utilities.Serializer.SerializerExtensions.Deserialize[T](ITMDbSerializer serializer, Stream source)
+   at TMDbLib.Rest.RestResponse`1.GetDataObject()
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(String imdbId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(Int32 movieId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.TmdbClientManager.GetMovieAsync(Int32 tmdbId, String language, String imageLanguages, String countryCode, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.Movies.TmdbMovieImageProvider.GetImages(BaseItem item, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Manager.ProviderManager.GetImages(BaseItem item, IRemoteImageProvider provider, String preferredLanguage, Boolean includeAllLanguages, CancellationToken cancellationToken, Nullable`1 type)
+[2026-04-28 12:13:54.803 -04:00] [INF] [35] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Scan Media Library" Completed after 0 minute(s) and 3 seconds
+[2026-04-28 12:13:54.804 -04:00] [INF] [25] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/tv"
+[2026-04-28 12:13:54.830 -04:00] [INF] [28] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/movies"
+[2026-04-28 12:13:59.432 -04:00] [INF] [28] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:13:59.626 -04:00] [WRN] [35] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:14:00.185 -04:00] [WRN] [35] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:14:00.431 -04:00] [WRN] [35] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:14:00.680 -04:00] [WRN] [35] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:14:01.473 -04:00] [INF] [28] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:14:02.800 -04:00] [INF] [25] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/movies"
+[2026-04-28 12:14:02.800 -04:00] [INF] [25] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/tv"
+[2026-04-28 12:14:02.800 -04:00] [INF] [25] Emby.Server.Implementations.Library.LibraryManager: Validating media library
+[2026-04-28 12:14:02.820 -04:00] [WRN] [25] MediaBrowser.Controller.Entities.BaseItem: Library folder "/config/data/data/playlists" is inaccessible or empty, skipping
+[2026-04-28 12:14:02.848 -04:00] [WRN] [54] MediaBrowser.Controller.Entities.BaseItem: Library folder "/config/data/data/playlists" is inaccessible or empty, skipping
+[2026-04-28 12:14:02.993 -04:00] [ERR] [35] MediaBrowser.Providers.Movies.MovieMetadataService: Error in "TheMovieDb"
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 2020-01-24 22:39:05 UTC. Path 'videos.results[0].published_at', line 1, position 21140.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at TMDbLib.Utilities.Serializer.TMDbJsonSerializer.Deserialize(Stream source, Type type)
+   at TMDbLib.Utilities.Serializer.SerializerExtensions.Deserialize[T](ITMDbSerializer serializer, Stream source)
+   at TMDbLib.Rest.RestResponse`1.GetDataObject()
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(String imdbId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(Int32 movieId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.TmdbClientManager.GetMovieAsync(Int32 tmdbId, String language, String imageLanguages, String countryCode, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.Movies.TmdbMovieProvider.GetMetadata(MovieInfo info, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Manager.MetadataService`2.ExecuteRemoteProviders(MetadataResult`1 temp, String logName, Boolean replaceData, TIdType id, IEnumerable`1 providers, CancellationToken cancellationToken)
+[2026-04-28 12:14:03.017 -04:00] [ERR] [35] MediaBrowser.Providers.Manager.ProviderManager: "TmdbMovieImageProvider" failed in GetImageInfos for type "Movie" at "/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv"
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 2020-01-24 22:39:05 UTC. Path 'videos.results[0].published_at', line 1, position 31449.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at TMDbLib.Utilities.Serializer.TMDbJsonSerializer.Deserialize(Stream source, Type type)
+   at TMDbLib.Utilities.Serializer.SerializerExtensions.Deserialize[T](ITMDbSerializer serializer, Stream source)
+   at TMDbLib.Rest.RestResponse`1.GetDataObject()
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(String imdbId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(Int32 movieId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.TmdbClientManager.GetMovieAsync(Int32 tmdbId, String language, String imageLanguages, String countryCode, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.Movies.TmdbMovieImageProvider.GetImages(BaseItem item, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Manager.ProviderManager.GetImages(BaseItem item, IRemoteImageProvider provider, String preferredLanguage, Boolean includeAllLanguages, CancellationToken cancellationToken, Nullable`1 type)
+[2026-04-28 12:14:04.944 -04:00] [INF] [35] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Scan Media Library" Completed after 0 minute(s) and 2 seconds
+[2026-04-28 12:14:04.961 -04:00] [INF] [54] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/tv"
+[2026-04-28 12:14:04.962 -04:00] [INF] [76] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/movies"
+[2026-04-28 12:14:06.440 -04:00] [INF] [76] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/movies"
+[2026-04-28 12:14:06.440 -04:00] [INF] [76] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/tv"
+[2026-04-28 12:14:06.440 -04:00] [INF] [76] Emby.Server.Implementations.Library.LibraryManager: Validating media library
+[2026-04-28 12:14:06.453 -04:00] [WRN] [76] MediaBrowser.Controller.Entities.BaseItem: Library folder "/config/data/data/playlists" is inaccessible or empty, skipping
+[2026-04-28 12:14:06.465 -04:00] [WRN] [76] MediaBrowser.Controller.Entities.BaseItem: Library folder "/config/data/data/playlists" is inaccessible or empty, skipping
+[2026-04-28 12:14:06.609 -04:00] [ERR] [35] MediaBrowser.Providers.Movies.MovieMetadataService: Error in "TheMovieDb"
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 2020-01-24 22:39:05 UTC. Path 'videos.results[0].published_at', line 1, position 21140.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at TMDbLib.Utilities.Serializer.TMDbJsonSerializer.Deserialize(Stream source, Type type)
+   at TMDbLib.Utilities.Serializer.SerializerExtensions.Deserialize[T](ITMDbSerializer serializer, Stream source)
+   at TMDbLib.Rest.RestResponse`1.GetDataObject()
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(String imdbId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(Int32 movieId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.TmdbClientManager.GetMovieAsync(Int32 tmdbId, String language, String imageLanguages, String countryCode, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.Movies.TmdbMovieProvider.GetMetadata(MovieInfo info, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Manager.MetadataService`2.ExecuteRemoteProviders(MetadataResult`1 temp, String logName, Boolean replaceData, TIdType id, IEnumerable`1 providers, CancellationToken cancellationToken)
+[2026-04-28 12:14:06.631 -04:00] [ERR] [35] MediaBrowser.Providers.Manager.ProviderManager: "TmdbMovieImageProvider" failed in GetImageInfos for type "Movie" at "/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv"
+Newtonsoft.Json.JsonReaderException: Could not convert string to DateTime: 2020-01-24 22:39:05 UTC. Path 'videos.results[0].published_at', line 1, position 31449.
+   at Newtonsoft.Json.JsonReader.ReadDateTimeString(String s)
+   at Newtonsoft.Json.JsonTextReader.FinishReadQuotedStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadStringValue(ReadType readType)
+   at Newtonsoft.Json.JsonTextReader.ReadAsDateTime()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at TMDbLib.Utilities.Serializer.TMDbJsonSerializer.Deserialize(Stream source, Type type)
+   at TMDbLib.Utilities.Serializer.SerializerExtensions.Deserialize[T](ITMDbSerializer serializer, Stream source)
+   at TMDbLib.Rest.RestResponse`1.GetDataObject()
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(String imdbId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at TMDbLib.Client.TMDbClient.GetMovieAsync(Int32 movieId, String language, String includeImageLanguage, MovieMethods extraMethods, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.TmdbClientManager.GetMovieAsync(Int32 tmdbId, String language, String imageLanguages, String countryCode, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Plugins.Tmdb.Movies.TmdbMovieImageProvider.GetImages(BaseItem item, CancellationToken cancellationToken)
+   at MediaBrowser.Providers.Manager.ProviderManager.GetImages(BaseItem item, IRemoteImageProvider provider, String preferredLanguage, Boolean includeAllLanguages, CancellationToken cancellationToken, Nullable`1 type)
+[2026-04-28 12:14:08.522 -04:00] [INF] [35] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Scan Media Library" Completed after 0 minute(s) and 2 seconds
+[2026-04-28 12:14:08.540 -04:00] [INF] [76] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/tv"
+[2026-04-28 12:14:08.541 -04:00] [INF] [54] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/movies"
+[2026-04-28 12:14:17.445 -04:00] [INF] [62] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 12:14:19.823 -04:00] [INF] [54] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"fd11c2df7e342d164a2310461cf054af-1.mp4\" -start_number 0 -hls_segment_filename \"/config/cache/transcodes/fd11c2df7e342d164a2310461cf054af%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/fd11c2df7e342d164a2310461cf054af.m3u8\""
+[2026-04-28 12:14:34.597 -04:00] [INF] [32] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 12:14:35.664 -04:00] [INF] [35] Jellyfin.Api.Controllers.DynamicHlsController: Current HLS implementation doesn't support non-keyframe breaks but one is requested, ignoring that request
+[2026-04-28 12:14:35.665 -04:00] [INF] [35] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"762975727e78cc5bd57a7b6fba84e39c-1.mp4\" -start_number 0 -hls_segment_filename \"/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c.m3u8\""
+[2026-04-28 12:14:43.644 -04:00] [INF] [54] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 12:14:43.907 -04:00] [INF] [32] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/fd11c2df7e342d164a2310461cf054af.m3u8"
+[2026-04-28 12:14:44.071 -04:00] [INF] [32] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:14:44.071 -04:00] [INF] [32] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: Deleting partial stream file(s) "/config/cache/transcodes/fd11c2df7e342d164a2310461cf054af.m3u8"
+[2026-04-28 12:14:45.454 -04:00] [INF] [35] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:2 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"e899344ab2dd0f4abbf5a436b7195957-1.mp4\" -start_number 0 -hls_segment_filename \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8\""
+[2026-04-28 12:14:51.660 -04:00] [INF] [28] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c.m3u8"
+[2026-04-28 12:14:52.133 -04:00] [INF] [20] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:14:52.152 -04:00] [INF] [28] Jellyfin.Api.Controllers.DynamicHlsController: Current HLS implementation doesn't support non-keyframe breaks but one is requested, ignoring that request
+[2026-04-28 12:14:52.153 -04:00] [INF] [28] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -ss 00:13:12.000 -noaccurate_seek  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"762975727e78cc5bd57a7b6fba84e39c-1.mp4\" -start_number 264 -hls_segment_filename \"/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c.m3u8\""
+[2026-04-28 12:14:56.026 -04:00] [INF] [35] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c.m3u8"
+[2026-04-28 12:14:56.513 -04:00] [INF] [35] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:14:56.530 -04:00] [INF] [35] Jellyfin.Api.Controllers.DynamicHlsController: Current HLS implementation doesn't support non-keyframe breaks but one is requested, ignoring that request
+[2026-04-28 12:14:56.531 -04:00] [INF] [35] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -ss 00:32:30.000 -noaccurate_seek  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"762975727e78cc5bd57a7b6fba84e39c-1.mp4\" -start_number 650 -hls_segment_filename \"/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c.m3u8\""
+[2026-04-28 12:14:57.717 -04:00] [INF] [28] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8"
+[2026-04-28 12:14:58.405 -04:00] [INF] [28] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:14:58.432 -04:00] [INF] [28] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -ss 00:07:24.000 -noaccurate_seek  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:2 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"e899344ab2dd0f4abbf5a436b7195957-1.mp4\" -start_number 148 -hls_segment_filename \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8\""
+[2026-04-28 12:15:04.990 -04:00] [INF] [54] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c.m3u8"
+[2026-04-28 12:15:05.405 -04:00] [INF] [54] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:15:05.405 -04:00] [INF] [54] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: Deleting partial stream file(s) "/config/cache/transcodes/762975727e78cc5bd57a7b6fba84e39c.m3u8"
+[2026-04-28 12:15:06.941 -04:00] [INF] [62] Emby.Server.Implementations.Session.SessionManager: Playback stopped reported by app "Jellyfin Web" "10.11.8" playing "Ne Zha". Stopped at "1952031" ms
+[2026-04-28 12:15:39.824 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:15:42.350 -04:00] [WRN] [20] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:15:42.734 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:15:43.305 -04:00] [WRN] [28] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:15:44.492 -04:00] [INF] [32] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:16:07.068 -04:00] [INF] [54] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 12:16:40.380 -04:00] [WRN] [20] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:16:41.466 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:16:42.394 -04:00] [WRN] [20] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:16:43.311 -04:00] [WRN] [32] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:16:44.536 -04:00] [INF] [32] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:16:46.538 -04:00] [INF] [32] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:16:47.079 -04:00] [WRN] [32] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-28 12:16:47.084 -04:00] [INF] [32] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:17:28.161 -04:00] [INF] [62] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8"
+[2026-04-28 12:17:28.469 -04:00] [INF] [62] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:17:28.479 -04:00] [INF] [62] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -ss 00:48:42.000 -noaccurate_seek  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:2 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"e899344ab2dd0f4abbf5a436b7195957-1.mp4\" -start_number 974 -hls_segment_filename \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8\""
+[2026-04-28 12:17:30.380 -04:00] [INF] [37] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8"
+[2026-04-28 12:17:30.665 -04:00] [INF] [89] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:17:30.675 -04:00] [INF] [37] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -ss 00:48:39.000 -noaccurate_seek  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:2 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"e899344ab2dd0f4abbf5a436b7195957-1.mp4\" -start_number 973 -hls_segment_filename \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8\""
+[2026-04-28 12:17:50.745 -04:00] [INF] [26] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8"
+[2026-04-28 12:17:50.861 -04:00] [INF] [26] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:17:50.871 -04:00] [INF] [26] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G -ss 01:24:21.000 -noaccurate_seek  -canvas_size 1920x1080 -i file:\"/data/media/movies/Ne Zha (2019)/[Anime Land] Ne Zha (2019) (Dual Audio) (UHD BDRip 1080p HEVC HDR10 DTS+AC3) CHINESE [AAB64623].mkv\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:2 -map -0:0 -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 11524460 -bufsize 23048920 -profile:v:0 high -level 51 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -filter_complex \"[0:3]scale,scale=-1:804:fast_bilinear,crop,pad=max(1920\,iw):max(804\,ih):(ow-iw)/2:(oh-ih)/2:black@0,crop=1920:804[sub];[0:0]setparams=color_primaries=bt2020:color_trc=smpte2084:colorspace=bt2020nc,scale=trunc(min(max(iw\,ih*a)\,min(1920\,804*a))/2)*2:trunc(min(max(iw/a\,ih)\,min(1920/a\,804))/2)*2,tonemapx=tonemap=bt2390:desat=0:peak=100:t=bt709:m=bt709:p=bt709:format=yuv420p[main];[main][sub]overlay=eof_action=pass:repeatlast=0\" -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"e899344ab2dd0f4abbf5a436b7195957-1.mp4\" -start_number 1687 -hls_segment_filename \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/e899344ab2dd0f4abbf5a436b7195957.m3u8\""
+[2026-04-28 12:17:55.533 -04:00] [INF] [26] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:18:06.336 -04:00] [WRN] [37] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-28 12:18:06.338 -04:00] [INF] [37] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:18:07.573 -04:00] [INF] [16] Emby.Server.Implementations.Session.SessionManager: Sending shutdown notifications
+[2026-04-28 12:18:07.587 -04:00] [INF] [89] Main: Running query planner optimizations in the database... This might take a while
+[2026-04-28 12:18:07.662 -04:00] [INF] [32] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/movies"
+[2026-04-28 12:18:07.668 -04:00] [INF] [32] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/tv"
+[2026-04-28 12:18:07.671 -04:00] [INF] [89] Emby.Server.Implementations.ApplicationHost: Disposing "CoreAppHost"
+[2026-04-28 12:18:07.671 -04:00] [INF] [89] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzArtistProvider"
+[2026-04-28 12:18:07.671 -04:00] [INF] [89] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzAlbumProvider"
+[2026-04-28 12:18:07.672 -04:00] [INF] [89] Emby.Server.Implementations.ApplicationHost: Disposing "PluginManager"
+[2026-04-28 12:20:54.378 -04:00] [INF] [1] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 12:20:54.509 -04:00] [INF] [7] Jellyfin.Server.ServerSetupApp.SetupServer: Kestrel is listening on "all interfaces"
+[2026-04-28 12:20:54.522 -04:00] [INF] [7] Main: Jellyfin version: "10.11.8"
+[2026-04-28 12:20:54.524 -04:00] [INF] [7] Main: Environment Variables: ["[JELLYFIN_CACHE_DIR, /config/cache]", "[JELLYFIN_DATA_DIR, /config/data]", "[JELLYFIN_LOG_DIR, /config/log]", "[JELLYFIN_WEB_DIR, /usr/share/jellyfin/web]", "[JELLYFIN_CONFIG_DIR, /config]"]
+[2026-04-28 12:20:54.524 -04:00] [INF] [7] Main: Arguments: ["/usr/lib/jellyfin/bin/jellyfin.dll", "--ffmpeg=/usr/lib/jellyfin-ffmpeg/ffmpeg"]
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Operating system: "Ubuntu 24.04.4 LTS"
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Architecture: Arm64
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: 64-Bit Process: True
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: User Interactive: True
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Processor count: 8
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Program data path: "/config/data"
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Log directory path: "/config/log"
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Config directory path: "/config"
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Cache path: "/config/cache"
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Temp directory path: "/tmp/jellyfin"
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Web resources path: "/usr/share/jellyfin/web"
+[2026-04-28 12:20:54.525 -04:00] [INF] [7] Main: Application directory: "/usr/lib/jellyfin/bin/"
+[2026-04-28 12:20:54.530 -04:00] [INF] [7] Jellyfin.Server.Startup: Storage path `"/config/data/data"` (Unknown) successfully checked with "190.7TiB" free which is over the minimum of "2GiB".
+[2026-04-28 12:20:54.530 -04:00] [INF] [7] Jellyfin.Server.Startup: Storage path `"/config/cache"` (Unknown) successfully checked with "190.7TiB" free which is over the minimum of "2GiB".
+[2026-04-28 12:20:54.531 -04:00] [INF] [7] Jellyfin.Server.Startup: Storage path `"/config/data"` (Unknown) successfully checked with "190.7TiB" free which is over the minimum of "2GiB".
+[2026-04-28 12:20:54.533 -04:00] [INF] [7] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 12:20:54.559 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-28 12:20:54.561 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-28 12:20:54.562 -04:00] [INF] [7] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-28 12:20:54.572 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: Initialise Migration service.
+[2026-04-28 12:20:54.957 -04:00] [WRN] [13] Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService: Health check "StartupCheck" with status Degraded completed after 0.7136ms with message '"Server is still starting up."'
+[2026-04-28 12:20:54.999 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage PreInitialisation.
+[2026-04-28 12:20:55.007 -04:00] [INF] [7] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 12:20:55.082 -04:00] [INF] [7] Emby.Server.Implementations.ApplicationHost: Loading assemblies
+[2026-04-28 12:20:55.101 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Defined LAN subnets: ["192.168.2.0/24"]
+[2026-04-28 12:20:55.101 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Defined LAN exclusions: []
+[2026-04-28 12:20:55.101 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Used LAN subnets: ["192.168.2.0/24"]
+[2026-04-28 12:20:55.101 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Filtered interface addresses: []
+[2026-04-28 12:20:55.101 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Bind Addresses ["::"]
+[2026-04-28 12:20:55.101 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Remote IP filter is "Allowlist"
+[2026-04-28 12:20:55.101 -04:00] [INF] [7] Jellyfin.Networking.Manager.NetworkManager: Filtered subnets: []
+[2026-04-28 12:20:55.134 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-28 12:20:55.135 -04:00] [INF] [7] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-28 12:20:55.135 -04:00] [INF] [7] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-28 12:20:55.138 -04:00] [INF] [7] Main: Prepare system for possible migrations
+[2026-04-28 12:20:55.151 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage CoreInitialisation.
+[2026-04-28 12:20:55.459 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "TMDb" "10.11.8.0"
+[2026-04-28 12:20:55.460 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "Studio Images" "10.11.8.0"
+[2026-04-28 12:20:55.460 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "OMDb" "10.11.8.0"
+[2026-04-28 12:20:55.478 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "MusicBrainz" "10.11.8.0"
+[2026-04-28 12:20:55.478 -04:00] [INF] [7] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "AudioDB" "10.11.8.0"
+[2026-04-28 12:20:55.517 -04:00] [INF] [7] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage AppInitialisation.
+[2026-04-28 12:20:55.540 -04:00] [INF] [13] Main: Kestrel is listening on "all interfaces"
+[2026-04-28 12:20:55.808 -04:00] [WRN] [13] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: The WebRootPath was not found: "/run/s6-rc:s6-rc-init:KDIhCL/servicedirs/svc-jellyfin/wwwroot". Static files may be unavailable.
+[2026-04-28 12:20:55.818 -04:00] [INF] [13] Emby.Server.Implementations.ApplicationHost: Running startup tasks
+[2026-04-28 12:20:55.819 -04:00] [INF] [9] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/tv"
+[2026-04-28 12:20:55.821 -04:00] [INF] [7] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/movies"
+[2026-04-28 12:20:55.822 -04:00] [INF] [13] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Generate Trickplay Images" set to fire at 2026-04-29 03:00:00.000 -04:00, which is 14:39:04.1777071 from now.
+[2026-04-28 12:20:55.827 -04:00] [INF] [13] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Extract Chapter Images" set to fire at 2026-04-29 02:00:00.000 -04:00, which is 13:39:04.1729903 from now.
+[2026-04-28 12:20:55.847 -04:00] [INF] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Found ffmpeg version "7.1.3"
+[2026-04-28 12:20:55.858 -04:00] [INF] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "decoders": ["libdav1d", "av1", "av1_cuvid", "av1_rkmpp", "h264", "h264_rkmpp", "h264_cuvid", "hevc", "hevc_rkmpp", "hevc_cuvid", "mpeg1_rkmpp", "mpeg2video", "mpeg2_rkmpp", "mpeg2_cuvid", "mpeg4", "mpeg4_rkmpp", "mpeg4_cuvid", "msmpeg4", "vc1_cuvid", "vp8", "vp8_rkmpp", "libvpx", "vp8_cuvid", "vp9", "vp9_rkmpp", "libvpx-vp9", "vp9_cuvid", "aac", "ac3", "ac4", "dca", "flac", "mp3", "truehd"]
+[2026-04-28 12:20:55.863 -04:00] [INF] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "encoders": ["libsvtav1", "av1_nvenc", "libx264", "h264_nvenc", "h264_v4l2m2m", "h264_rkmpp", "libx265", "hevc_nvenc", "hevc_rkmpp", "mjpeg_rkmpp", "aac", "libfdk_aac", "ac3", "alac", "dca", "flac", "libmp3lame", "libopus", "truehd", "libvorbis", "srt"]
+[2026-04-28 12:20:55.868 -04:00] [INF] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available filters: ["bwdif_cuda", "bwdif_opencl", "hwupload_cuda", "overlay_opencl", "overlay_cuda", "overlay_rkrga", "scale_cuda", "scale_opencl", "scale_rkrga", "tonemapx", "tonemap_cuda", "tonemap_opencl", "transpose_cuda", "transpose_opencl", "vpp_rkrga", "yadif_cuda", "yadif_opencl", "zscale", "alphasrc"]
+[2026-04-28 12:20:55.892 -04:00] [WRN] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vaapi" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-28 12:20:55.897 -04:00] [WRN] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vulkan" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-28 12:20:55.938 -04:00] [INF] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available hwaccel types: ["cuda", "drm", "opencl", "rkmpp"]
+[2026-04-28 12:20:58.836 -04:00] [INF] [10] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean up collections and playlists" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 12:20:58.954 -04:00] [INF] [15] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean Transcode Directory" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 12:20:59.149 -04:00] [INF] [9] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Update Plugins" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 12:21:02.219 -04:00] [INF] [13] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: FFmpeg: "/usr/lib/jellyfin-ffmpeg/ffmpeg"
+[2026-04-28 12:21:02.222 -04:00] [INF] [13] Emby.Server.Implementations.ApplicationHost: ServerId: "3b7bf31d74a4418a8d9b202fcb638c73"
+[2026-04-28 12:21:02.222 -04:00] [INF] [13] Emby.Server.Implementations.ApplicationHost: Core startup complete
+[2026-04-28 12:21:02.222 -04:00] [INF] [13] Main: Startup complete 0:00:08.180754
+[2026-04-28 12:21:13.011 -04:00] [WRN] [10] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:21:14.293 -04:00] [WRN] [10] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:21:14.632 -04:00] [WRN] [15] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:21:15.895 -04:00] [WRN] [15] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:21:16.965 -04:00] [INF] [10] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:21:26.109 -04:00] [WRN] [9] Microsoft.EntityFrameworkCore.Query: Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+[2026-04-28 12:21:35.238 -04:00] [INF] [18] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 12:21:50.102 -04:00] [INF] [10] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: "/usr/lib/jellyfin-ffmpeg/ffmpeg" "-analyzeduration 200M -probesize 1G  -i file:\"/data/media/movies/Vaazha (2024)/Vaazha Biopic Of A Billion Boys (2024) [1080p] [WEBRip] [5.1] [YTS.MX].mp4\" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:s -codec:v:0 libx264 -preset veryfast -crf 23 -maxrate 560632 -bufsize 1121264 -profile:v:0 high -level 41 -x264opts:0 subme=0:me_range=16:rc_lookahead=10:me=hex:open_gop=0 -force_key_frames:0 \"expr:gte(t,n_forced*3)\" -sc_threshold:v:0 0 -vf \"setparams=color_primaries=bt709:color_trc=bt709:colorspace=bt709,scale=trunc(min(max(iw\,ih*a)\,960)/2)*2:trunc(ow/a/2)*2,format=yuv420p\" -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af \"volume=2\" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 3 -hls_segment_type fmp4 -hls_fmp4_init_filename \"edf608859dde27843f063c1721b96823-1.mp4\" -start_number 0 -hls_segment_filename \"/config/cache/transcodes/edf608859dde27843f063c1721b96823%d.mp4\" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y \"/config/cache/transcodes/edf608859dde27843f063c1721b96823.m3u8\""
+[2026-04-28 12:23:39.548 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: Transcoding kill timer stopped for JobId "05b482dacf804ac4b0d2742c9fa1d814" PlaySessionId "0825439e036744bd91b480bb447496a1". Killing transcoding
+[2026-04-28 12:23:39.549 -04:00] [INF] [9] MediaBrowser.Controller.MediaEncoding.TranscodingJob: Stopping ffmpeg process with q command for "/config/cache/transcodes/edf608859dde27843f063c1721b96823.m3u8"
+[2026-04-28 12:23:39.941 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: FFmpeg exited with code 0
+[2026-04-28 12:23:39.942 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Transcoding.TranscodeManager: Deleting partial stream file(s) "/config/cache/transcodes/edf608859dde27843f063c1721b96823.m3u8"
+[2026-04-28 12:24:04.975 -04:00] [INF] [9] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:24:16.974 -04:00] [INF] [29] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:24:28.972 -04:00] [INF] [18] Emby.Server.Implementations.Session.SessionWebSocketListener: Lost 1 WebSockets.
+[2026-04-28 12:26:28.983 -04:00] [WRN] [36] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:26:29.653 -04:00] [WRN] [37] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:26:30.045 -04:00] [WRN] [34] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:26:30.384 -04:00] [WRN] [34] Jellyfin.Networking.Manager.NetworkManager: "::ffff:172.20.0.17": Only loopback "::1" returned, using that as bind address.
+[2026-04-28 12:26:34.270 -04:00] [INF] [38] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" request
+[2026-04-28 12:26:42.084 -04:00] [INF] [36] Jellyfin.Api.Helpers.MediaInfoHelper: User policy for "admin". EnablePlaybackRemuxing: True EnableVideoPlaybackTranscoding: True EnableAudioPlaybackTranscoding: True
+[2026-04-28 12:28:10.901 -04:00] [INF] [33] Emby.Server.Implementations.Session.SessionManager: Playback stopped reported by app "Jellyfin Android" "2.6.3" playing "Vaazha". Stopped at "21440" ms
+[2026-04-28 12:28:13.394 -04:00] [INF] [33] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:30:22.279 -04:00] [INF] [44] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:30:34.278 -04:00] [INF] [47] Emby.Server.Implementations.Session.SessionWebSocketListener: Sending ForceKeepAlive message to 1 inactive WebSockets.
+[2026-04-28 12:30:46.275 -04:00] [INF] [44] Emby.Server.Implementations.Session.SessionWebSocketListener: Lost 1 WebSockets.
+[2026-04-28 12:36:15.688 -04:00] [WRN] [56] Emby.Server.Implementations.HttpServer.WebSocketConnection: WS "172.20.0.17" error receiving data: "The remote party closed the WebSocket connection without completing the close handshake."
+[2026-04-28 12:36:15.692 -04:00] [INF] [56] Emby.Server.Implementations.HttpServer.WebSocketManager: WS "::ffff:172.20.0.17" closed
+[2026-04-28 12:36:17.000 -04:00] [INF] [43] Emby.Server.Implementations.Session.SessionManager: Sending shutdown notifications
+[2026-04-28 12:36:17.010 -04:00] [INF] [57] Main: Running query planner optimizations in the database... This might take a while
+[2026-04-28 12:36:17.036 -04:00] [INF] [56] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/movies"
+[2026-04-28 12:36:17.036 -04:00] [INF] [56] Emby.Server.Implementations.IO.LibraryMonitor: Stopping directory watching for path "/data/media/tv"
+[2026-04-28 12:36:17.038 -04:00] [INF] [57] Emby.Server.Implementations.ApplicationHost: Disposing "CoreAppHost"
+[2026-04-28 12:36:17.038 -04:00] [INF] [57] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzArtistProvider"
+[2026-04-28 12:36:17.038 -04:00] [INF] [57] Emby.Server.Implementations.ApplicationHost: Disposing "MusicBrainzAlbumProvider"
+[2026-04-28 12:36:17.038 -04:00] [INF] [57] Emby.Server.Implementations.ApplicationHost: Disposing "PluginManager"
+[2026-04-28 16:55:33.660 -04:00] [INF] [1] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 16:55:33.791 -04:00] [INF] [9] Jellyfin.Server.ServerSetupApp.SetupServer: Kestrel is listening on "all interfaces"
+[2026-04-28 16:55:33.810 -04:00] [INF] [9] Main: Jellyfin version: "10.11.8"
+[2026-04-28 16:55:33.811 -04:00] [INF] [9] Main: Environment Variables: ["[JELLYFIN_DATA_DIR, /config/data]", "[JELLYFIN_CACHE_DIR, /config/cache]", "[JELLYFIN_CONFIG_DIR, /config]", "[JELLYFIN_WEB_DIR, /usr/share/jellyfin/web]", "[JELLYFIN_LOG_DIR, /config/log]"]
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Arguments: ["/usr/lib/jellyfin/bin/jellyfin.dll", "--ffmpeg=/usr/lib/jellyfin-ffmpeg/ffmpeg"]
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Operating system: "Ubuntu 24.04.4 LTS"
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Architecture: Arm64
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: 64-Bit Process: True
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: User Interactive: True
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Processor count: 8
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Program data path: "/config/data"
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Log directory path: "/config/log"
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Config directory path: "/config"
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Cache path: "/config/cache"
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Temp directory path: "/tmp/jellyfin"
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Web resources path: "/usr/share/jellyfin/web"
+[2026-04-28 16:55:33.812 -04:00] [INF] [9] Main: Application directory: "/usr/lib/jellyfin/bin/"
+[2026-04-28 16:55:33.821 -04:00] [INF] [9] Jellyfin.Server.Startup: Storage path `"/config/data/data"` (Unknown) successfully checked with "191.2TiB" free which is over the minimum of "2GiB".
+[2026-04-28 16:55:33.821 -04:00] [INF] [9] Jellyfin.Server.Startup: Storage path `"/config/cache"` (Unknown) successfully checked with "191.2TiB" free which is over the minimum of "2GiB".
+[2026-04-28 16:55:33.822 -04:00] [INF] [9] Jellyfin.Server.Startup: Storage path `"/config/data"` (Unknown) successfully checked with "191.2TiB" free which is over the minimum of "2GiB".
+[2026-04-28 16:55:33.825 -04:00] [INF] [9] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 16:55:33.867 -04:00] [INF] [9] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-28 16:55:33.870 -04:00] [INF] [9] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-28 16:55:33.870 -04:00] [INF] [9] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-28 16:55:33.886 -04:00] [INF] [9] Jellyfin.Server.Migrations.JellyfinMigrationService: Initialise Migration service.
+[2026-04-28 16:55:34.213 -04:00] [INF] [9] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage PreInitialisation.
+[2026-04-28 16:55:34.218 -04:00] [INF] [9] Emby.Server.Implementations.AppBase.BaseConfigurationManager: Setting cache path: "/config/cache"
+[2026-04-28 16:55:34.282 -04:00] [WRN] [13] Microsoft.Extensions.Diagnostics.HealthChecks.DefaultHealthCheckService: Health check "StartupCheck" with status Degraded completed after 0.2375ms with message '"Server is still starting up."'
+[2026-04-28 16:55:34.304 -04:00] [INF] [9] Emby.Server.Implementations.ApplicationHost: Loading assemblies
+[2026-04-28 16:55:34.323 -04:00] [INF] [9] Jellyfin.Networking.Manager.NetworkManager: Defined LAN subnets: ["192.168.2.0/24"]
+[2026-04-28 16:55:34.323 -04:00] [INF] [9] Jellyfin.Networking.Manager.NetworkManager: Defined LAN exclusions: []
+[2026-04-28 16:55:34.323 -04:00] [INF] [9] Jellyfin.Networking.Manager.NetworkManager: Used LAN subnets: ["192.168.2.0/24"]
+[2026-04-28 16:55:34.323 -04:00] [INF] [9] Jellyfin.Networking.Manager.NetworkManager: Filtered interface addresses: []
+[2026-04-28 16:55:34.324 -04:00] [INF] [9] Jellyfin.Networking.Manager.NetworkManager: Bind Addresses ["::"]
+[2026-04-28 16:55:34.324 -04:00] [INF] [9] Jellyfin.Networking.Manager.NetworkManager: Remote IP filter is "Allowlist"
+[2026-04-28 16:55:34.324 -04:00] [INF] [9] Jellyfin.Networking.Manager.NetworkManager: Filtered subnets: []
+[2026-04-28 16:55:34.379 -04:00] [INF] [9] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLite connection string: "Data Source=/config/data/data/jellyfin.db;Cache=Default;Default Timeout=30;Pooling=True"
+[2026-04-28 16:55:34.379 -04:00] [INF] [9] Jellyfin.Database.Providers.Sqlite.SqliteDatabaseProvider: SQLITE connection pragma command set to: 
+"PRAGMA locking_mode=NORMAL;
+PRAGMA journal_size_limit=134217728;
+PRAGMA synchronous=1;
+PRAGMA temp_store=2;
+"
+[2026-04-28 16:55:34.379 -04:00] [INF] [9] Jellyfin.Database.Implementations.Locking.NoLockBehavior: The database locking mode has been set to: NoLock.
+[2026-04-28 16:55:34.382 -04:00] [INF] [9] Main: Prepare system for possible migrations
+[2026-04-28 16:55:34.391 -04:00] [INF] [9] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage CoreInitialisation.
+[2026-04-28 16:55:34.624 -04:00] [INF] [9] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "TMDb" "10.11.8.0"
+[2026-04-28 16:55:34.624 -04:00] [INF] [9] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "Studio Images" "10.11.8.0"
+[2026-04-28 16:55:34.624 -04:00] [INF] [9] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "OMDb" "10.11.8.0"
+[2026-04-28 16:55:34.629 -04:00] [INF] [9] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "MusicBrainz" "10.11.8.0"
+[2026-04-28 16:55:34.629 -04:00] [INF] [9] Emby.Server.Implementations.Plugins.PluginManager: Loaded plugin: "AudioDB" "10.11.8.0"
+[2026-04-28 16:55:34.661 -04:00] [INF] [9] Jellyfin.Server.Migrations.JellyfinMigrationService: There are 0 migrations for stage AppInitialisation.
+[2026-04-28 16:55:34.678 -04:00] [INF] [9] Main: Kestrel is listening on "all interfaces"
+[2026-04-28 16:55:34.965 -04:00] [WRN] [9] Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware: The WebRootPath was not found: "/run/s6-rc:s6-rc-init:Flknpg/servicedirs/svc-jellyfin/wwwroot". Static files may be unavailable.
+[2026-04-28 16:55:34.981 -04:00] [INF] [9] Emby.Server.Implementations.ApplicationHost: Running startup tasks
+[2026-04-28 16:55:34.983 -04:00] [INF] [10] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/tv"
+[2026-04-28 16:55:34.985 -04:00] [INF] [7] Emby.Server.Implementations.IO.LibraryMonitor: Watching directory "/data/media/movies"
+[2026-04-28 16:55:34.988 -04:00] [INF] [9] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Generate Trickplay Images" set to fire at 2026-04-29 03:00:00.000 -04:00, which is 10:04:25.0111579 from now.
+[2026-04-28 16:55:34.997 -04:00] [INF] [9] Emby.Server.Implementations.ScheduledTasks.TaskManager: Daily trigger for "Extract Chapter Images" set to fire at 2026-04-29 02:00:00.000 -04:00, which is 09:04:25.0024678 from now.
+[2026-04-28 16:55:35.049 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Found ffmpeg version "7.1.3"
+[2026-04-28 16:55:35.064 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "decoders": ["libdav1d", "av1", "av1_cuvid", "av1_rkmpp", "h264", "h264_rkmpp", "h264_cuvid", "hevc", "hevc_rkmpp", "hevc_cuvid", "mpeg1_rkmpp", "mpeg2video", "mpeg2_rkmpp", "mpeg2_cuvid", "mpeg4", "mpeg4_rkmpp", "mpeg4_cuvid", "msmpeg4", "vc1_cuvid", "vp8", "vp8_rkmpp", "libvpx", "vp8_cuvid", "vp9", "vp9_rkmpp", "libvpx-vp9", "vp9_cuvid", "aac", "ac3", "ac4", "dca", "flac", "mp3", "truehd"]
+[2026-04-28 16:55:35.069 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available "encoders": ["libsvtav1", "av1_nvenc", "libx264", "h264_nvenc", "h264_v4l2m2m", "h264_rkmpp", "libx265", "hevc_nvenc", "hevc_rkmpp", "mjpeg_rkmpp", "aac", "libfdk_aac", "ac3", "alac", "dca", "flac", "libmp3lame", "libopus", "truehd", "libvorbis", "srt"]
+[2026-04-28 16:55:35.076 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available filters: ["bwdif_cuda", "bwdif_opencl", "hwupload_cuda", "overlay_opencl", "overlay_cuda", "overlay_rkrga", "scale_cuda", "scale_opencl", "scale_rkrga", "tonemapx", "tonemap_cuda", "tonemap_opencl", "transpose_cuda", "transpose_opencl", "vpp_rkrga", "yadif_cuda", "yadif_opencl", "zscale", "alphasrc"]
+[2026-04-28 16:55:35.099 -04:00] [WRN] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vaapi" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-28 16:55:35.103 -04:00] [WRN] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Filter: "overlay_vulkan" with option "Action to take when encountering EOF from secondary input" is not available
+[2026-04-28 16:55:35.146 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: Available hwaccel types: ["cuda", "drm", "opencl", "rkmpp"]
+[2026-04-28 16:55:38.003 -04:00] [INF] [13] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean Transcode Directory" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 16:55:38.003 -04:00] [INF] [7] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Clean up collections and playlists" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 16:55:38.349 -04:00] [INF] [22] Emby.Server.Implementations.ScheduledTasks.TaskManager: "Update Plugins" Completed after 0 minute(s) and 0 seconds
+[2026-04-28 16:55:41.299 -04:00] [INF] [9] MediaBrowser.MediaEncoding.Encoder.MediaEncoder: FFmpeg: "/usr/lib/jellyfin-ffmpeg/ffmpeg"
+[2026-04-28 16:55:41.299 -04:00] [INF] [9] Emby.Server.Implementations.ApplicationHost: ServerId: "3b7bf31d74a4418a8d9b202fcb638c73"
+[2026-04-28 16:55:41.299 -04:00] [INF] [9] Emby.Server.Implementations.ApplicationHost: Core startup complete
+[2026-04-28 16:55:41.299 -04:00] [INF] [9] Main: Startup complete 0:00:07.9467393

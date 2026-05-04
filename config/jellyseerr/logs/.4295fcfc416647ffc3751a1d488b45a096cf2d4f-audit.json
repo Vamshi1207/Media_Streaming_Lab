@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "/app/config/logs/.4295fcfc416647ffc3751a1d488b45a096cf2d4f-audit.json",
+    "files": [
+        {
+            "date": 1777330538278,
+            "name": "/app/config/logs/jellyseerr-2026-04-27.log",
+            "hash": "35ec4da1fb41be7f1b67dfc0858bc01af6a365a0fbfbba73cf58339e29561721"
+        },
+        {
+            "date": 1777384003745,
+            "name": "/app/config/logs/jellyseerr-2026-04-28.log",
+            "hash": "5f85077ec4f2d94830789b15c4458ae1760053e0badf9cab37e4b5044bedee21"
+        },
+        {
+            "date": 1777440389148,
+            "name": "/app/config/logs/jellyseerr-2026-04-29.log",
+            "hash": "d07c2801f8f71634e0ddfd3de84951067c5e3779c56090b50594fd7043d858d3"
+        },
+        {
+            "date": 1777836892429,
+            "name": "/app/config/logs/jellyseerr-2026-05-03.log",
+            "hash": "35a8a14469fbe1c713bf381fe6d2956e5ff81fad52d40963768c4413310a0b39"
+        }
+    ],
+    "hashType": "sha256"
+}

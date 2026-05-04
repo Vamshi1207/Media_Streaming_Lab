@@ -1,0 +1,261 @@
+{"Protocol":0,"Id":"db75e140a2c22a22f2318990ab24e226","Path":"/data/media/movies/Mahavatar Narsimha (2025)/Mahavatar Narsimha 2025 1080p WEB-DL (Tel \u002B Tam \u002B Hin \u002B Mal \u002B Kan] - ESub.mkv","EncoderPath":null,"EncoderProtocol":null,"Type":0,"Container":"mkv","Size":7930622323,"Name":"Mahavatar Narsimha 2025 1080p WEB-DL (Tel \u002B Tam \u002B Hin \u002B Mal \u002B Kan] - ESub","IsRemote":false,"ETag":"da8b7cf237c36647c6913693e5eaa7d7","RunTimeTicks":78793390000,"ReadAtNativeFramerate":false,"IgnoreDts":false,"IgnoreIndex":false,"GenPtsInput":false,"SupportsTranscoding":true,"SupportsDirectStream":true,"SupportsDirectPlay":true,"IsInfiniteStream":false,"UseMostCompatibleTranscodingProfile":false,"RequiresOpening":false,"OpenToken":null,"RequiresClosing":false,"LiveStreamId":null,"BufferMs":null,"RequiresLooping":false,"SupportsProbing":true,"VideoType":0,"IsoType":null,"Video3DFormat":null,"MediaStreams":[{"Codec":"h264","CodecTag":null,"Language":"eng","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":1,"VideoRangeType":1,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":null,"LocalizedForced":null,"LocalizedExternal":null,"LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - 1080p - H264 - SDR","NalLengthSize":"4","IsInterlaced":false,"IsAVC":true,"ChannelLayout":null,"BitRate":8052068,"BitDepth":8,"RefFrames":1,"PacketLength":null,"Channels":null,"SampleRate":null,"IsDefault":true,"IsForced":false,"IsHearingImpaired":false,"Height":1080,"Width":1920,"AverageFrameRate":30,"RealFrameRate":30,"ReferenceFrameRate":30,"Profile":"High","Type":1,"AspectRatio":"16:9","Index":0,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":"yuv420p","Level":40,"IsAnamorphic":false},{"Codec":"eac3","CodecTag":null,"Language":"tel","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Telugu - Dolby Digital\u002B - 5.1 - Default","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"5.1","BitRate":640000,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":6,"SampleRate":48000,"IsDefault":true,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":null,"Type":0,"AspectRatio":null,"Index":1,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"eac3","CodecTag":null,"Language":"tam","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Tamil - Dolby Digital\u002B - 5.1","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"5.1","BitRate":640000,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":null,"Type":0,"AspectRatio":null,"Index":2,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"eac3","CodecTag":null,"Language":"hin","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Hindi - Dolby Digital\u002B - 5.1","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"5.1","BitRate":640000,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":null,"Type":0,"AspectRatio":null,"Index":3,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"eac3","CodecTag":null,"Language":"mal","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Malayalam - Dolby Digital\u002B - 5.1","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"5.1","BitRate":640000,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":null,"Type":0,"AspectRatio":null,"Index":4,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"eac3","CodecTag":null,"Language":"kan","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Kannada - Dolby Digital\u002B - 5.1","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"5.1","BitRate":640000,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":6,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":null,"Type":0,"AspectRatio":null,"Index":5,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"aac","CodecTag":null,"Language":"tel","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Telugu - HE-AAC - Stereo","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"stereo","BitRate":63999,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":"HE-AAC","Type":0,"AspectRatio":null,"Index":6,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"aac","CodecTag":null,"Language":"tam","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Tamil - HE-AAC - Stereo","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"stereo","BitRate":63999,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":"HE-AAC","Type":0,"AspectRatio":null,"Index":7,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"aac","CodecTag":null,"Language":"hin","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Hindi - HE-AAC - Stereo","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"stereo","BitRate":63999,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":"HE-AAC","Type":0,"AspectRatio":null,"Index":8,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"aac","CodecTag":null,"Language":"mal","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Malayalam - HE-AAC - Stereo","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"stereo","BitRate":63999,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":"HE-AAC","Type":0,"AspectRatio":null,"Index":9,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"aac","CodecTag":null,"Language":"kan","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":null,"LocalizedDefault":"Default","LocalizedForced":null,"LocalizedExternal":"External","LocalizedHearingImpaired":null,"DisplayTitle":"www.5MovieRulz.clinic - Kannada - HE-AAC - Stereo","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":"stereo","BitRate":63999,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":2,"SampleRate":48000,"IsDefault":false,"IsForced":false,"IsHearingImpaired":false,"Height":null,"Width":null,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":"HE-AAC","Type":0,"AspectRatio":null,"Index":10,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":false,"SupportsExternalStream":false,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null},{"Codec":"subrip","CodecTag":null,"Language":"eng","ColorRange":null,"ColorSpace":null,"ColorTransfer":null,"ColorPrimaries":null,"DvVersionMajor":null,"DvVersionMinor":null,"DvProfile":null,"DvLevel":null,"RpuPresentFlag":null,"ElPresentFlag":null,"BlPresentFlag":null,"DvBlSignalCompatibilityId":null,"Rotation":null,"Comment":null,"TimeBase":"1/1000","CodecTimeBase":null,"Title":"www.5MovieRulz.clinic","Hdr10PlusPresentFlag":null,"VideoRange":0,"VideoRangeType":0,"VideoDoViTitle":null,"AudioSpatialFormat":0,"LocalizedUndefined":"Undefined","LocalizedDefault":"Default","LocalizedForced":"Forced","LocalizedExternal":"External","LocalizedHearingImpaired":"Hearing Impaired","DisplayTitle":"www.5MovieRulz.clinic - English - Default - SUBRIP","NalLengthSize":null,"IsInterlaced":false,"IsAVC":false,"ChannelLayout":null,"BitRate":null,"BitDepth":null,"RefFrames":null,"PacketLength":null,"Channels":null,"SampleRate":null,"IsDefault":true,"IsForced":false,"IsHearingImpaired":false,"Height":0,"Width":0,"AverageFrameRate":null,"RealFrameRate":null,"ReferenceFrameRate":null,"Profile":null,"Type":2,"AspectRatio":null,"Index":11,"Score":null,"IsExternal":false,"DeliveryMethod":null,"DeliveryUrl":null,"IsExternalUrl":null,"IsTextSubtitleStream":true,"SupportsExternalStream":true,"Path":null,"PixelFormat":null,"Level":0,"IsAnamorphic":null}],"MediaAttachments":[],"Formats":[],"Bitrate":11572063,"FallbackMaxStreamingBitrate":null,"Timestamp":null,"RequiredHttpHeaders":{},"TranscodingUrl":null,"TranscodingSubProtocol":0,"TranscodingContainer":null,"AnalyzeDurationMs":null,"DefaultAudioStreamIndex":null,"DefaultSubtitleStreamIndex":null,"HasSegments":false}
+
+/usr/lib/jellyfin-ffmpeg/ffmpeg -analyzeduration 200M -probesize 1G -fflags +genpts  -i file:"/data/media/movies/Mahavatar Narsimha (2025)/Mahavatar Narsimha 2025 1080p WEB-DL (Tel + Tam + Hin + Mal + Kan] - ESub.mkv" -map_metadata -1 -map_chapters -1 -threads 0 -map 0:0 -map 0:1 -map -0:s -codec:v:0 copy -bsf:v h264_mp4toannexb -start_at_zero -codec:a:0 libfdk_aac -ac 2 -ab 256000 -af "volume=2" -copyts -avoid_negative_ts disabled -max_muxing_queue_size 2048 -f hls -max_delay 5000000 -hls_time 6 -hls_segment_type fmp4 -hls_fmp4_init_filename "cc46936e47e72306d3498f9ce4d64a45-1.mp4" -start_number 0 -hls_segment_filename "/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a45%d.mp4" -hls_playlist_type vod -hls_list_size 0 -hls_segment_options movflags=+frag_discont -y "/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a45.m3u8"
+
+
+ffmpeg version 7.1.3-Jellyfin Copyright (c) 2000-2025 the FFmpeg developers
+  built with gcc 13 (Ubuntu 13.3.0-6ubuntu2~24.04.1)
+  configuration: --prefix=/usr/lib/jellyfin-ffmpeg --target-os=linux --extra-version=Jellyfin --disable-doc --disable-ffplay --disable-static --disable-libxcb --disable-sdl2 --disable-xlib --enable-lto=auto --enable-gpl --enable-version3 --enable-shared --enable-gmp --enable-gnutls --enable-chromaprint --enable-opencl --enable-libdrm --enable-libxml2 --enable-libass --enable-libfreetype --enable-libfribidi --enable-libfontconfig --enable-libharfbuzz --enable-libbluray --enable-libmp3lame --enable-libopus --enable-libtheora --enable-libvorbis --enable-libopenmpt --enable-libdav1d --enable-libsvtav1 --enable-libwebp --enable-libvpx --enable-libx264 --enable-libx265 --enable-libzvbi --enable-libzimg --enable-libfdk-aac --arch=arm64 --cross-prefix=/usr/bin/aarch64-linux-gnu- --toolchain=hardened --enable-cross-compile --enable-rkmpp --enable-rkrga --enable-ffnvcodec --enable-cuda --enable-cuda-llvm --enable-cuvid --enable-nvdec --enable-nvenc
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+Input #0, matroska,webm, from 'file:/data/media/movies/Mahavatar Narsimha (2025)/Mahavatar Narsimha 2025 1080p WEB-DL (Tel + Tam + Hin + Mal + Kan] - ESub.mkv':
+  Metadata:
+    title           : www.5MovieRulz.clinic
+    encoder         : libebml v1.3.3 + libmatroska v1.4.4
+    creation_time   : 2025-09-19T07:28:47.000000Z
+  Duration: 02:11:19.34, start: 0.000000, bitrate: 8052 kb/s
+  Stream #0:0(eng): Video: h264 (High), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], 30 fps, 30 tbr, 1k tbn (default)
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 4526567
+        BPS-eng         : 4526567
+        DURATION        : 02:11:19.266000000
+        DURATION-eng    : 02:11:19.266000000
+        NUMBER_OF_FRAMES: 236378
+        NUMBER_OF_FRAMES-eng: 236378
+        NUMBER_OF_BYTES : 4458253347
+        NUMBER_OF_BYTES-eng: 4458253347
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:1(tel): Audio: eac3, 48000 Hz, 5.1(side), fltp, 640 kb/s (default)
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 640000
+        BPS-eng         : 640000
+        DURATION        : 02:11:19.232000000
+        DURATION-eng    : 02:11:19.232000000
+        NUMBER_OF_FRAMES: 246226
+        NUMBER_OF_FRAMES-eng: 246226
+        NUMBER_OF_BYTES : 630338560
+        NUMBER_OF_BYTES-eng: 630338560
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:2(tam): Audio: eac3, 48000 Hz, 5.1(side), fltp, 640 kb/s
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 640000
+        BPS-eng         : 640000
+        DURATION        : 02:11:19.232000000
+        DURATION-eng    : 02:11:19.232000000
+        NUMBER_OF_FRAMES: 246226
+        NUMBER_OF_FRAMES-eng: 246226
+        NUMBER_OF_BYTES : 630338560
+        NUMBER_OF_BYTES-eng: 630338560
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:3(hin): Audio: eac3, 48000 Hz, 5.1(side), fltp, 640 kb/s
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 640000
+        BPS-eng         : 640000
+        DURATION        : 02:11:19.232000000
+        DURATION-eng    : 02:11:19.232000000
+        NUMBER_OF_FRAMES: 246226
+        NUMBER_OF_FRAMES-eng: 246226
+        NUMBER_OF_BYTES : 630338560
+        NUMBER_OF_BYTES-eng: 630338560
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:4(mal): Audio: eac3, 48000 Hz, 5.1(side), fltp, 640 kb/s
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 640000
+        BPS-eng         : 640000
+        DURATION        : 02:11:19.232000000
+        DURATION-eng    : 02:11:19.232000000
+        NUMBER_OF_FRAMES: 246226
+        NUMBER_OF_FRAMES-eng: 246226
+        NUMBER_OF_BYTES : 630338560
+        NUMBER_OF_BYTES-eng: 630338560
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:5(kan): Audio: eac3, 48000 Hz, 5.1(side), fltp, 640 kb/s
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 640000
+        BPS-eng         : 640000
+        DURATION        : 02:11:19.232000000
+        DURATION-eng    : 02:11:19.232000000
+        NUMBER_OF_FRAMES: 246226
+        NUMBER_OF_FRAMES-eng: 246226
+        NUMBER_OF_BYTES : 630338560
+        NUMBER_OF_BYTES-eng: 630338560
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:6(tel): Audio: aac (HE-AAC), 48000 Hz, stereo, fltp
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 63999
+        BPS-eng         : 63999
+        DURATION        : 02:11:19.339000000
+        DURATION-eng    : 02:11:19.339000000
+        NUMBER_OF_FRAMES: 184672
+        NUMBER_OF_FRAMES-eng: 184672
+        NUMBER_OF_BYTES : 63034709
+        NUMBER_OF_BYTES-eng: 63034709
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:7(tam): Audio: aac (HE-AAC), 48000 Hz, stereo, fltp
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 63999
+        BPS-eng         : 63999
+        DURATION        : 02:11:19.339000000
+        DURATION-eng    : 02:11:19.339000000
+        NUMBER_OF_FRAMES: 184672
+        NUMBER_OF_FRAMES-eng: 184672
+        NUMBER_OF_BYTES : 63034709
+        NUMBER_OF_BYTES-eng: 63034709
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:8(hin): Audio: aac (HE-AAC), 48000 Hz, stereo, fltp
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 63999
+        BPS-eng         : 63999
+        DURATION        : 02:11:19.339000000
+        DURATION-eng    : 02:11:19.339000000
+        NUMBER_OF_FRAMES: 184672
+        NUMBER_OF_FRAMES-eng: 184672
+        NUMBER_OF_BYTES : 63034709
+        NUMBER_OF_BYTES-eng: 63034709
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:9(mal): Audio: aac (HE-AAC), 48000 Hz, stereo, fltp
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 63999
+        BPS-eng         : 63999
+        DURATION        : 02:11:19.339000000
+        DURATION-eng    : 02:11:19.339000000
+        NUMBER_OF_FRAMES: 184672
+        NUMBER_OF_FRAMES-eng: 184672
+        NUMBER_OF_BYTES : 63034709
+        NUMBER_OF_BYTES-eng: 63034709
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:10(kan): Audio: aac (HE-AAC), 48000 Hz, stereo, fltp
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 63999
+        BPS-eng         : 63999
+        DURATION        : 02:11:19.339000000
+        DURATION-eng    : 02:11:19.339000000
+        NUMBER_OF_FRAMES: 184672
+        NUMBER_OF_FRAMES-eng: 184672
+        NUMBER_OF_BYTES : 63034709
+        NUMBER_OF_BYTES-eng: 63034709
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+  Stream #0:11(eng): Subtitle: subrip (srt) (default)
+      Metadata:
+        title           : www.5MovieRulz.clinic
+        BPS             : 46
+        BPS-eng         : 46
+        DURATION        : 02:07:07.000000000
+        DURATION-eng    : 02:07:07.000000000
+        NUMBER_OF_FRAMES: 1397
+        NUMBER_OF_FRAMES-eng: 1397
+        NUMBER_OF_BYTES : 44794
+        NUMBER_OF_BYTES-eng: 44794
+        _STATISTICS_WRITING_APP: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_APP-eng: mkvmerge v9.0.0 ('Power to progress') 64bit
+        _STATISTICS_WRITING_DATE_UTC: 2025-09-19 07:28:47
+        _STATISTICS_WRITING_DATE_UTC-eng: 2025-09-19 07:28:47
+        _STATISTICS_TAGS: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+        _STATISTICS_TAGS-eng: BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES
+Stream mapping:
+  Stream #0:0 -> #0:0 (copy)
+  Stream #0:1 -> #0:1 (eac3 (native) -> aac (libfdk_aac))
+Press [q] to stop, [?] for help
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a45-1.mp4' for writing
+Output #0, hls, to '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a45.m3u8':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (High), yuv420p(progressive), 1920x1080 [SAR 1:1 DAR 16:9], q=2-31, 30 fps, 30 tbr, 16k tbn (default)
+  Stream #0:1: Audio: aac, 48000 Hz, stereo, s16, 256 kb/s (default)
+      Metadata:
+        encoder         : Lavc61.19.101 libfdk_aac
+      Side data:
+        cpb: bitrate max/min/avg: 256000/256000/256000 buffer size: 0 vbv_delay: N/A
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a450.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a451.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a452.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a453.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a454.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a455.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a456.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a457.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a458.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a459.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a4510.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a4511.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a4512.mp4' for writing
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a4513.mp4' for writing
+
+
+[q] command received. Exiting.
+
+[hls @ 0xaaab0514f5b0] Opening '/config/cache/transcodes/cc46936e47e72306d3498f9ce4d64a4514.mp4' for writing
+[out#0/hls @ 0xaaab050c93a0] video:25601KiB audio:2805KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame= 2682 fps=0.0 q=-1.0 Lsize=N/A time=00:00:00.00 bitrate=N/A speed=   0x    
