@@ -1,0 +1,29 @@
+2026-04-29 20:11:21|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-04-29 20:11:22|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-04-29 20:11:22|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6767|
+2026-04-29 20:11:22|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6767|
+2026-04-29 20:12:19|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-04-29 20:12:20|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-04-29 20:12:20|INFO    |root                            |BAZARR trying to connect to Sonarr SignalR feed...|
+2026-04-29 20:12:20|INFO    |root                            |BAZARR trying to connect to Radarr SignalR feed...|
+2026-04-29 20:12:20|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6767|
+2026-04-29 20:12:20|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6767|
+2026-04-29 20:12:20|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
+2026-04-29 20:12:20|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-04-29 20:26:20|INFO    |root                            |BAZARR throttled providers have been reset (only AuthenticationError, ConfigurationError and PaymentRequired).|
+2026-04-29 20:26:20|INFO    |root                            |BAZARR throttled providers have been reset (only AuthenticationError, ConfigurationError and PaymentRequired).|
+2026-04-29 20:30:39|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-04-29 20:30:39|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-04-29 20:30:39|INFO    |root                            |BAZARR trying to connect to Sonarr SignalR feed...|
+2026-04-29 20:30:39|INFO    |root                            |BAZARR trying to connect to Radarr SignalR feed...|
+2026-04-29 20:30:39|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6767|
+2026-04-29 20:30:39|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6767|
+2026-04-29 20:30:39|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
+2026-04-29 20:30:39|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-04-29 20:43:56|ERROR   |root                            |BAZARR SignalR client for Sonarr connection as been lost. Trying to reconnect...|
+2026-04-29 20:43:56|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-04-29 20:43:57|ERROR   |root                            |BAZARR SignalR client for Radarr connection as been lost. Trying to reconnect...|
+2026-04-29 20:43:57|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
+2026-04-29 20:44:56|INFO    |root                            |Throttling opensubtitlescom for 12 hours, until 26/04/30 08:44, because of: ConfigurationError. Exception info: "'Username and password must be specified' ~ opensubtitlescom.py@169"|
+2026-04-29 20:51:38|ERROR   |root                            |BAZARR SignalR client for Radarr connection as been lost. Trying to reconnect...|
+2026-04-29 20:51:38|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
