@@ -53,7 +53,9 @@ services:
   cloudflared:
     image: cloudflare/cloudflared:latest
     container_name: cloudflared
-    command: tunnel --no-autoupdate run
+    profiles:
+      - remote-access
+    command: tunnel --no-autoupdate --protocol http2 --loglevel debug run
     environment:
       - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     depends_on:
