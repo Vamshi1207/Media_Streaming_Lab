@@ -8,7 +8,7 @@
 # - The next available top-level block after the entries below is 7700.
 services:
   media-server:
-    image: ghcr.io/vamshi1207/media_server_lab-media-server:latest
+    image: ghcr.io/vamshi1207/media_server_lab-media-server:v2
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -154,7 +154,7 @@ services:
     restart: unless-stopped
 
   opensubtitles-scraper:
-    image: ghcr.io/vamshi1207/opensubtitles-scraper-custom:latest
+    image: ghcr.io/vamshi1207/opensubtitles-scraper-custom:v2
     container_name: opensubtitles-scraper
     restart: unless-stopped
     environment:
@@ -164,7 +164,7 @@ services:
         ipv4_address: 172.20.0.19
 
   bazarr:
-    image: ghcr.io/vamshi1207/bazarr-custom:latest
+    image: ghcr.io/vamshi1207/bazarr-custom:v2
     container_name: bazarr
     depends_on:
       - opensubtitles-scraper
