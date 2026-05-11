@@ -795,17 +795,14 @@
             <li><strong>Added</strong>${formatRelativeDate(movie.added)}</li>
             <li><strong>Path</strong><span class="mono">${movie.path || "Unknown"}</span></li>
             <li><strong>Size</strong>${formatBytes(movie.size)}</li>
-            <li><strong>Subtitles</strong>${movie.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
-            ${movie.bazarrStatus ? `
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <strong>Bazarr Status</strong>
-                <span class="status-pill ${movie.bazarrStatus.missing.length > 0 ? "offline" : "online"}" style="font-size: 10px; padding: 2px 6px;">
-                  ${movie.bazarrStatus.missing.length > 0 ? `Missing ${movie.bazarrStatus.missing.map(m => m.name).join(', ')}` : "Up to date"}
-                </span>
-                <button class="tiny-btn" onclick="triggerBazarrSearch('movie', ${movie.id}, this)" title="Trigger Bazarr Search">🔍</button>
-              </li>
-            ` : ""}
-            ${movie.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${movie.subtitleFiles.join(', ')}</span></li>` : ""}
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <strong>Subtitles</strong>
+              <span class="status-pill ${movie.bazarrStatus?.missing.length > 0 ? "offline" : (movie.subtitlesAvailable || (movie.bazarrStatus && movie.bazarrStatus.subtitles.length > 0) ? "online" : "offline")}" style="font-size: 10px; padding: 2px 6px;">
+                ${movie.bazarrStatus ? (movie.bazarrStatus.missing.length > 0 ? `Missing ${movie.bazarrStatus.missing.map(m => m.name).join(', ')}` : "Up to date") : (movie.subtitlesAvailable ? "Available (Local)" : "Missing")}
+              </span>
+              <button class="tiny-btn" onclick="triggerBazarrSearch('movie', ${movie.id}, this)" title="Trigger Bazarr Search">🔍</button>
+            </li>
+            ${movie.subtitlesAvailable ? `<li><strong>External Files</strong><span class="mono">${movie.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
 
         </article>
@@ -832,17 +829,14 @@
             <li><strong>Monitored</strong>${show.monitored === false ? "No" : "Yes"}</li>
             <li><strong>Added</strong>${formatRelativeDate(show.added)}</li>
             <li><strong>Size</strong>${formatBytes(show.sizeOnDisk)}</li>
-            <li><strong>Subtitles</strong>${show.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
-            ${show.bazarrStatus ? `
-              <li style="display: flex; align-items: center; gap: 8px;">
-                <strong>Bazarr Status</strong>
-                <span class="status-pill ${show.bazarrStatus.missing.length > 0 ? "offline" : "online"}" style="font-size: 10px; padding: 2px 6px;">
-                  ${show.bazarrStatus.missing.length > 0 ? "Missing subtitles" : "Up to date"}
-                </span>
-                <button class="tiny-btn" onclick="triggerBazarrSearch('series', ${show.id}, this)" title="Trigger Bazarr Search">🔍</button>
-              </li>
-            ` : ""}
-            ${show.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${show.subtitleFiles.join(', ')}</span></li>` : ""}
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <strong>Subtitles</strong>
+              <span class="status-pill ${show.bazarrStatus?.missing.length > 0 ? "offline" : (show.subtitlesAvailable || (show.bazarrStatus && show.bazarrStatus.subtitles.length > 0) ? "online" : "offline")}" style="font-size: 10px; padding: 2px 6px;">
+                ${show.bazarrStatus ? (show.bazarrStatus.missing.length > 0 ? "Missing subtitles" : "Up to date") : (show.subtitlesAvailable ? "Available (Local)" : "Missing")}
+              </span>
+              <button class="tiny-btn" onclick="triggerBazarrSearch('series', ${show.id}, this)" title="Trigger Bazarr Search">🔍</button>
+            </li>
+            ${show.subtitlesAvailable ? `<li><strong>External Files</strong><span class="mono">${show.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
 
         </article>
