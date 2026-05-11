@@ -1070,6 +1070,34 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
   }
 });
 
+// 📝 Subtitle Upload endpoint
+app.post("/api/upload-subtitle", upload.single("subtitle"), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: "No subtitle file provided." });
+  }
+
+  try {
+    const targetPath = req.body.path;
+    if (!targetPath) {
+      throw new Error("No target path provided for the subtitle.");
+    }
+
+    if (!fs.existsSync(targetPath)) {
+      throw new Error("Target path does not exist.");
+    }
+
+    const destination = path.join(targetPath, req.file.originalname);
+    fs.renameSync(req.file.path, destination);
+
+    return res.json({ success: true, file: req.file.originalname });
+  } catch (error) {
+    if (fs.existsSync(req.file.path)) {
+      fs.unlinkSync(req.file.path);
+    }
+    return res.status(500).json({ error: summarizeServiceError(error) });
+  }
+});
+
 // 🎥 Stream video
 app.get("/stream/:folder/:file", (req, res) => {
   const mediaPath = getMediaPath();

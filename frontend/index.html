@@ -780,6 +780,10 @@
             <li><strong>Subtitles</strong>${movie.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
             ${movie.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${movie.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
+          ${movie.path ? `
+            <input type="file" id="sub-upload-movie-${movie.id}" accept=".srt,.ass,.vtt,.sub" style="display: none;" onchange="uploadSubtitle('${movie.path}', this)">
+            <button class="add-btn" style="margin-top: 14px;" onclick="document.getElementById('sub-upload-movie-${movie.id}').click()">Upload Subtitle</button>
+          ` : ""}
         </article>
       `).join("");
     }
@@ -807,6 +811,10 @@
             <li><strong>Subtitles</strong>${show.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
             ${show.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${show.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
+          ${show.path ? `
+            <input type="file" id="sub-upload-tv-${show.id}" accept=".srt,.ass,.vtt,.sub" style="display: none;" onchange="uploadSubtitle('${show.path}', this)">
+            <button class="add-btn" style="margin-top: 14px;" onclick="document.getElementById('sub-upload-tv-${show.id}').click()">Upload Subtitle</button>
+          ` : ""}
         </article>
       `).join("");
     }
@@ -965,6 +973,52 @@
         btn.style.background = originalBg;
         btn.style.color = "#111";
       }, 3000);
+    }
+
+    async function uploadSubtitle(mediaPath, inputElement) {
+      const file = inputElement.files[0];
+      if (!file || !mediaPath) return;
+
+      const formData = new FormData();
+      formData.append("subtitle", file);
+      formData.append("path", mediaPath);
+
+      const btn = inputElement.nextElementSibling;
+      const originalText = btn.textContent;
+      const originalBg = btn.style.background;
+      btn.textContent = "Uploading...";
+      btn.disabled = true;
+
+      try {
+        const res = await fetch("/api/upload-subtitle", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!res.ok) throw new Error(await res.text());
+
+        btn.textContent = "Success!";
+        btn.style.background = "var(--ok)";
+        btn.style.color = "white";
+
+        // Refresh library slightly after success
+        setTimeout(() => loadDashboard(), 1000);
+      } catch (err) {
+        btn.textContent = "Error";
+        btn.style.background = "var(--error)";
+        btn.style.color = "white";
+        console.error("Subtitle upload error:", err);
+      }
+
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+        btn.style.background = originalBg;
+        btn.style.color = "#111";
+      }, 3000);
+      
+      // Clear input
+      inputElement.value = '';
     }
 
     const torrentUpload = document.getElementById("torrent-upload");
