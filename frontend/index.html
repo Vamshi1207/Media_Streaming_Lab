@@ -520,6 +520,10 @@
       <div class="section-head">
         <h2>Active Downloads</h2>
         <div>
+          <select id="torrent-category" style="padding: 8px 12px; border-radius: 999px; background: rgba(10, 22, 39, 0.82); color: var(--text); border: 1px solid var(--panel-border); margin-right: 10px; outline: none; font-size: 13px;">
+            <option value="radarr">Movie (Radarr)</option>
+            <option value="sonarr">TV Show (Sonarr)</option>
+          </select>
           <input type="file" id="torrent-upload" accept=".torrent" style="display: none;">
           <button id="clear-downloads-btn" type="button">Clear Active</button>
           <button id="upload-btn" type="button" onclick="document.getElementById('torrent-upload').click()">Upload .torrent</button>
@@ -977,6 +981,11 @@
 
       const formData = new FormData();
       formData.append("torrent", file);
+      
+      const categorySelect = document.getElementById("torrent-category");
+      if (categorySelect) {
+        formData.append("category", categorySelect.value);
+      }
 
       try {
         const res = await fetch("/api/upload-torrent", {

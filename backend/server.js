@@ -1035,10 +1035,14 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
   }
 
   try {
+    const category = req.body.category || "radarr";
+    const savepath = category === "sonarr" ? "/data/torrents/tv" : "/data/torrents/movies";
+    
     const fileBuffer = fs.readFileSync(req.file.path);
     const formData = new FormData();
     formData.append("torrents", new Blob([fileBuffer]), req.file.originalname);
-    formData.append("savepath", DOWNLOADS_PATH);
+    formData.append("savepath", savepath);
+    formData.append("category", category);
 
     const cookie = await loginToQbittorrent();
 
