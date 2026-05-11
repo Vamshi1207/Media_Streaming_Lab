@@ -153,7 +153,7 @@ services:
     restart: unless-stopped
 
   opensubtitles-scraper:
-    image: ghcr.io/lavx/opensubtitles-scraper:latest
+    image: ghcr.io/vamshi1207/opensubtitles-scraper:latest
     container_name: opensubtitles-scraper
     restart: unless-stopped
     environment:
@@ -163,7 +163,7 @@ services:
         ipv4_address: 172.20.0.19
 
   bazarr:
-    image: ghcr.io/lavx/bazarr:latest
+    image: ghcr.io/vamshi1207/bazarr:latest
     container_name: bazarr
     depends_on:
       - opensubtitles-scraper
