@@ -672,7 +672,7 @@
       servicesContainer.innerHTML = services.map(service => {
         const details = service.details || {};
         const detailEntries = Object.entries(details);
-        const serviceTitle = service.externalUrl
+        const serviceTitle = (service.externalUrl && (service.id === 'jellyfin' || service.id === 'jellyseerr'))
           ? `<a class="service-link" href="${service.externalUrl}" target="_blank" rel="noreferrer">${service.name}</a>`
           : service.name;
 

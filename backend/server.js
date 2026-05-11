@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
+const http = require("http");
 
 const app = express();
 const upload = multer({ dest: "/tmp/uploads/" });
@@ -446,6 +447,53 @@ function getFilesystemMovies() {
   return movies;
 }
 
+function formatStatsBytes(bytes) {
+  if (bytes === undefined || bytes === null || isNaN(bytes)) return "0 B";
+  if (bytes === 0) return "0 B";
+  const units = ["B", "KB", "MB", "GB", "TB"];
+  let value = bytes;
+  let unitIndex = 0;
+  while (value >= 1024 && unitIndex < units.length - 1) {
+    value /= 1024;
+    unitIndex += 1;
+  }
+  return `${value.toFixed(value >= 10 || unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
+}
+
+function getDockerStats(containerName) {
+  return new Promise((resolve) => {
+    let socketPath = null;
+    if (fs.existsSync('/var/run/docker.sock')) {
+      socketPath = '/var/run/docker.sock';
+    } else if (process.env.HOME && fs.existsSync(process.env.HOME + '/.docker/run/docker.sock')) {
+      socketPath = process.env.HOME + '/.docker/run/docker.sock';
+    }
+    
+    if (!socketPath) {
+      return resolve(null);
+    }
+    
+    const options = {
+      socketPath,
+      path: `/containers/${containerName}/stats?stream=false`,
+      method: 'GET'
+    };
+    const req = http.request(options, res => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          resolve(null);
+        }
+      });
+    });
+    req.on('error', () => resolve(null));
+    req.end();
+  });
+}
+
 async function getServiceStatuses(req) {
   const checks = [
     {
@@ -564,27 +612,48 @@ async function getServiceStatuses(req) {
   ];
 
   const statuses = await Promise.all(checks.map(async service => {
-    try {
-      const details = await service.check();
+    let details = {};
+    let status = "online";
+    let errorStr = undefined;
 
-      return {
-        id: service.id,
-        name: service.name,
-        internalUrl: service.internalUrl,
-        externalUrl: getExternalServiceUrl(req, service.id),
-        status: "online",
-        details,
-      };
+    try {
+      details = await service.check();
     } catch (error) {
-      return {
-        id: service.id,
-        name: service.name,
-        internalUrl: service.internalUrl,
-        externalUrl: getExternalServiceUrl(req, service.id),
-        status: "offline",
-        error: summarizeServiceError(error),
-      };
+      status = "offline";
+      errorStr = summarizeServiceError(error);
     }
+
+    try {
+      const stats = await getDockerStats(service.id);
+      if (stats && stats.memory_stats && stats.memory_stats.usage !== undefined) {
+        details["Memory"] = formatStatsBytes(stats.memory_stats.usage);
+        let rx = 0, tx = 0;
+        if (stats.networks) {
+          for (const net of Object.values(stats.networks)) {
+            rx += net.rx_bytes || 0;
+            tx += net.tx_bytes || 0;
+          }
+        }
+        details["Network I/O"] = `${formatStatsBytes(rx)} ↓ / ${formatStatsBytes(tx)} ↑`;
+      }
+    } catch (e) {
+      // Ignore docker stat fetch errors
+    }
+
+    const result = {
+      id: service.id,
+      name: service.name,
+      internalUrl: service.internalUrl,
+      externalUrl: getExternalServiceUrl(req, service.id),
+      status,
+      details,
+    };
+    
+    if (errorStr) {
+      result.error = errorStr;
+    }
+    
+    return result;
   }));
 
   return statuses;
