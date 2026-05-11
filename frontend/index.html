@@ -142,6 +142,28 @@
       position: relative;
     }
 
+    .tiny-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 2px 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s;
+      margin-left: 4px;
+    }
+
+    .tiny-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .tiny-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     .card:hover {
       transform: translateY(-2px);
       border-color: var(--panel-border-light);
@@ -778,6 +800,15 @@
             <li><strong>Path</strong><span class="mono">${movie.path || "Unknown"}</span></li>
             <li><strong>Size</strong>${formatBytes(movie.size)}</li>
             <li><strong>Subtitles</strong>${movie.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
+            ${movie.bazarrStatus ? `
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <strong>Bazarr Status</strong>
+                <span class="status-pill ${movie.bazarrStatus.missing.length > 0 ? "offline" : "online"}" style="font-size: 10px; padding: 2px 6px;">
+                  ${movie.bazarrStatus.missing.length > 0 ? `Missing ${movie.bazarrStatus.missing.map(m => m.name).join(', ')}` : "Up to date"}
+                </span>
+                <button class="tiny-btn" onclick="triggerBazarrSearch('movie', ${movie.id}, this)" title="Trigger Bazarr Search">🔍</button>
+              </li>
+            ` : ""}
             ${movie.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${movie.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
           ${movie.path ? `
@@ -808,6 +839,15 @@
             <li><strong>Added</strong>${formatRelativeDate(show.added)}</li>
             <li><strong>Size</strong>${formatBytes(show.sizeOnDisk)}</li>
             <li><strong>Subtitles</strong>${show.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
+            ${show.bazarrStatus ? `
+              <li style="display: flex; align-items: center; gap: 8px;">
+                <strong>Bazarr Status</strong>
+                <span class="status-pill ${show.bazarrStatus.missing.length > 0 ? "offline" : "online"}" style="font-size: 10px; padding: 2px 6px;">
+                  ${show.bazarrStatus.missing.length > 0 ? "Missing subtitles" : "Up to date"}
+                </span>
+                <button class="tiny-btn" onclick="triggerBazarrSearch('series', ${show.id}, this)" title="Trigger Bazarr Search">🔍</button>
+              </li>
+            ` : ""}
             ${show.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${show.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
           ${show.path ? `
@@ -1044,6 +1084,28 @@
         btn.textContent = "!";
         setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
       }
+    }
+
+    async function triggerBazarrSearch(type, id, btn) {
+      const originalText = btn.textContent;
+      btn.textContent = "⏳";
+      btn.disabled = true;
+      try {
+        const res = await fetch("/api/bazarr/search", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ type, id })
+        });
+        if (!res.ok) throw new Error("Search failed");
+        btn.textContent = "✅";
+      } catch (err) {
+        btn.textContent = "❌";
+        console.error(err);
+      }
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }, 3000);
     }
 
     async function removeFromLibrary(type, id, btn) {

@@ -69,7 +69,7 @@ general:
   enable_strm_support: false
   enabled_integrations: []
   enabled_providers:
-  - opensubtitlescom
+  - opensubtitles
   - gestdown
   - avistaz
   - tvsubtitles

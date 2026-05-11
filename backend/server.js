@@ -250,6 +250,16 @@ async function fetchProwlarr(endpoint) {
   });
 }
 
+async function fetchBazarr(endpoint, options = {}) {
+  return fetchJson(`${BAZARR_URL}${endpoint}`, {
+    ...options,
+    headers: {
+      "X-Api-Key": "dcf90a1c76161123030ac6669972dd5e",
+      ...(options.headers || {}),
+    },
+  });
+}
+
 async function fetchJellyseerr(endpoint) {
   const apiKey = getJellyseerrApiKey();
 
@@ -828,10 +838,17 @@ app.delete("/api/downloads/:hash", async (req, res) => {
 
 app.get("/api/library/movies", async (_req, res) => {
   try {
-    const movies = await fetchRadarr("/api/v3/movie");
+    const [movies, bazarrMoviesResponse] = await Promise.all([
+      fetchRadarr("/api/v3/movie"),
+      fetchBazarr("/api/movies"),
+    ]);
+
+    const bazarrMovies = bazarrMoviesResponse.data || [];
     const payload = movies.map(movie => {
       const moviePath = movie.path || movie.movieFile?.path || "";
       const subtitleFiles = moviePath ? findSubtitleFilesInDirectory(moviePath) : [];
+      
+      const bazarrMovie = bazarrMovies.find(bm => bm.radarrId === movie.id);
 
       return {
         id: movie.id,
@@ -847,6 +864,10 @@ app.get("/api/library/movies", async (_req, res) => {
         source: "radarr",
         subtitlesAvailable: subtitleFiles.length > 0,
         subtitleFiles,
+        bazarrStatus: bazarrMovie ? {
+          missing: bazarrMovie.missing_subtitles || [],
+          subtitles: bazarrMovie.subtitles || [],
+        } : null,
       };
     });
 
@@ -867,9 +888,15 @@ app.delete("/api/library/movies/:id", async (req, res) => {
 
 app.get("/api/library/tv", async (_req, res) => {
   try {
-    const series = await fetchSonarr("/api/v3/series");
+    const [series, bazarrSeriesResponse] = await Promise.all([
+      fetchSonarr("/api/v3/series"),
+      fetchBazarr("/api/series"),
+    ]);
+
+    const bazarrSeries = bazarrSeriesResponse.data || [];
     const payload = series.map(show => {
       const subtitleFiles = show.path ? findSubtitleFilesInDirectory(show.path) : [];
+      const bazarrShow = bazarrSeries.find(bs => bs.sonarrId === show.id);
 
       return {
         id: show.id,
@@ -880,16 +907,30 @@ app.get("/api/library/tv", async (_req, res) => {
         seasonCount: show.seasons?.length || 0,
         episodeCount: show.statistics?.episodeCount || 0,
         episodeFileCount: show.statistics?.episodeFileCount || 0,
-        hasFile: (show.statistics?.episodeFileCount || 0) > 0,
         sizeOnDisk: show.statistics?.sizeOnDisk || 0,
-        path: show.path,
         added: show.added,
-        source: "sonarr",
+        path: show.path,
         subtitlesAvailable: subtitleFiles.length > 0,
         subtitleFiles,
+        bazarrStatus: bazarrShow ? {
+          missing: bazarrShow.missing_subtitles || [],
+          subtitles: bazarrShow.subtitles || [],
+        } : null,
       };
     });
+
     return res.json(payload);
+  } catch (error) {
+    return res.status(502).json({ error: summarizeServiceError(error) });
+  }
+});
+
+app.post("/api/bazarr/search", async (req, res) => {
+  try {
+    const { episodeId, movieId } = req.body;
+    const endpoint = episodeId ? `/api/episodes/${episodeId}/subtitles/search` : `/api/movies/${movieId}/subtitles/search`;
+    await fetchBazarr(endpoint, { method: "POST" });
+    return res.json({ success: true });
   } catch (error) {
     return res.status(502).json({ error: summarizeServiceError(error) });
   }
