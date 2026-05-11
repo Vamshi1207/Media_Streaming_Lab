@@ -92,6 +92,7 @@ general:
   movie_default_profile: 1
   movie_tag_enabled: true
   multithreading: true
+  notify_if_nothing_is_missing_for_signalr_event: false
   page_size: 25
   parse_embedded_audio_track: false
   path_mappings: []
@@ -100,6 +101,12 @@ general:
   postprocessing_cmd: ''
   postprocessing_threshold: 90
   postprocessing_threshold_movie: 70
+  provider_priorities:
+    avistaz: 30
+    gestdown: 20
+    opensubtitlescom: 10
+    tvsubtitles: 40
+    yifysubtitles: 50
   remove_profile_tags: []
   serie_default_enabled: true
   serie_default_profile: 1
@@ -119,6 +126,7 @@ general:
   use_postprocessing: false
   use_postprocessing_threshold: false
   use_postprocessing_threshold_movie: false
+  use_provider_priority: true
   use_radarr: true
   use_scenename: true
   use_sonarr: true
@@ -153,24 +161,22 @@ log:
   ignore_case: false
   include_filter: ''
   use_regex: false
-movie_scores:
-  audio_codec: 3
-  edition: 1
-  hash: 119
-  hearing_impaired: 1
-  release_group: 13
-  resolution: 2
-  source: 7
-  streaming_service: 1
-  title: 60
-  video_codec: 2
-  year: 30
 napiprojekt:
   only_authors: false
   only_real_names: false
 napisy24:
   password: ''
   username: ''
+opensubtitles:
+  password: ''
+  scraper_service_url: http://opensubtitles-scraper:8000
+  skip_wrong_fps: false
+  ssl: false
+  timeout: 15
+  use_tag_search: false
+  use_web_scraper: true
+  username: ''
+  vip: false
 opensubtitlescom:
   include_ai_translated: false
   include_machine_translated: false
@@ -205,6 +211,7 @@ plex:
   update_series_library: false
   user_id: ''
   username: ''
+  verify_ssl: false
 podnapisi:
   verify_ssl: true
 postgresql:
@@ -241,19 +248,7 @@ radarr:
   ssl: false
   sync_only_monitored_movies: true
   use_ffprobe_cache: true
-series_scores:
-  audio_codec: 3
-  episode: 30
-  hash: 359
-  hearing_impaired: 1
-  release_group: 14
-  resolution: 2
-  season: 30
-  series: 180
-  source: 7
-  streaming_service: 1
-  video_codec: 2
-  year: 90
+  verify_ssl: false
 sonarr:
   apikey: ba1d55a1c9ba45739399447866a6e5b7
   base_url: ''
@@ -274,13 +269,19 @@ sonarr:
   sync_only_monitored_episodes: true
   sync_only_monitored_series: true
   use_ffprobe_cache: true
+  verify_ssl: false
 subdl:
+  anime_mode: false
   api_key: ''
 subf2m:
   user_agent: ''
   verify_ssl: true
+subsarr:
+  base_url: ''
 subsource:
   apikey: ''
+subsro:
+  api_key: ''
 subsync:
   checker:
     blacklisted_languages: []
@@ -307,10 +308,19 @@ titulky:
   username: ''
 translator:
   default_score: 50
-  gemini_key: ''
+  gemini_batch_size: 300
+  gemini_keys: []
   gemini_model: gemini-2.0-flash
   lingarr_token: ''
   lingarr_url: http://lingarr:9876
+  openrouter_api_key: ''
+  openrouter_encryption_key: ''
+  openrouter_max_concurrent: 2
+  openrouter_model: google/gemini-2.5-flash-preview-05-20
+  openrouter_parallel_batches: 4
+  openrouter_reasoning: disabled
+  openrouter_temperature: 0.3
+  openrouter_url: http://subtitle-translator:8765
   translator_info: true
   translator_type: google_translate
 turkcealtyaziorg:

@@ -152,15 +152,29 @@ services:
         ipv4_address: 172.20.0.14
     restart: unless-stopped
 
+  opensubtitles-scraper:
+    image: ghcr.io/lavx/opensubtitles-scraper:latest
+    container_name: opensubtitles-scraper
+    restart: unless-stopped
+    environment:
+      - DEBUG=false
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.19
+
   bazarr:
-    image: lscr.io/linuxserver/bazarr:latest
+    image: ghcr.io/lavx/bazarr:latest
     container_name: bazarr
+    depends_on:
+      - opensubtitles-scraper
     ports:
       - "7800:6767"
     environment:
-      - PUID=501
-      - PGID=20
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Toronto
+      - OPENSUBTITLES_USE_WEB_SCRAPER=true
+      - OPENSUBTITLES_SCRAPER_URL=http://opensubtitles-scraper:8000
     volumes:
       - ./config/bazarr:/config
       - ./data/media:/data/media
