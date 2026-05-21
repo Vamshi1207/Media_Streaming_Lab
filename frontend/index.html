@@ -630,6 +630,18 @@
       return date.toLocaleString();
     }
 
+    function normalizeDetailKey(key) {
+      return String(key).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    }
+
+    function formatResourceValue(key, value) {
+      if (key === "Updated") {
+        return formatRelativeDate(value);
+      }
+
+      return value;
+    }
+
     function getRequestStatusLabel(status) {
       const labels = {
         1: "pending",
@@ -699,7 +711,7 @@
           : service.name;
 
         return `
-          <article class="card">
+          <article class="card" data-service-id="${service.id}">
             <span class="status-pill ${service.status}">${service.status}</span>
             <div class="service-name">${serviceTitle}</div>
             ${service.externalUrl ? `<div class="service-url">Browser: ${service.externalUrl}</div>` : ""}
@@ -707,7 +719,7 @@
             ${detailEntries.length ? `
               <ul class="detail-list">
                 ${detailEntries.map(([key, value]) => `
-                  <li><strong>${key}</strong>${value}</li>
+                  <li data-detail-key="${normalizeDetailKey(key)}"><strong>${key}</strong><span>${formatResourceValue(key, value)}</span></li>
                 `).join("")}
               </ul>
             ` : ""}
@@ -715,6 +727,38 @@
           </article>
         `;
       }).join("");
+    }
+
+    function updateServiceResources(resources) {
+      resources.forEach(service => {
+        const card = servicesContainer.querySelector(`[data-service-id="${service.id}"]`);
+
+        if (!card) {
+          return;
+        }
+
+        let detailList = card.querySelector(".detail-list");
+
+        if (!detailList) {
+          detailList = document.createElement("ul");
+          detailList.className = "detail-list";
+          card.appendChild(detailList);
+        }
+
+        Object.entries(service.resources || {}).forEach(([key, value]) => {
+          const detailKey = normalizeDetailKey(key);
+          let row = detailList.querySelector(`[data-detail-key="${detailKey}"]`);
+
+          if (!row) {
+            row = document.createElement("li");
+            row.dataset.detailKey = detailKey;
+            row.innerHTML = `<strong>${key}</strong><span></span>`;
+            detailList.appendChild(row);
+          }
+
+          row.querySelector("span").textContent = formatResourceValue(key, value);
+        });
+      });
     }
 
     function renderDownloads(downloads) {
@@ -903,6 +947,15 @@
       try {
         const downloads = await fetch("/api/downloads").then(async response => response.ok ? response.json() : []);
         renderDownloads(downloads);
+      } catch (error) {
+        // ignore errors on silent background poll
+      }
+    }, 2000);
+
+    setInterval(async () => {
+      try {
+        const resources = await fetch("/api/services/resources").then(async response => response.ok ? response.json() : []);
+        updateServiceResources(resources);
       } catch (error) {
         // ignore errors on silent background poll
       }

@@ -56,6 +56,15 @@ const ACTIVE_DOWNLOAD_STATES = new Set([
   "checkingResumeData",
   "moving",
 ]);
+const SERVICE_RESOURCE_TARGETS = [
+  { id: "jellyfin", name: "Jellyfin" },
+  { id: "jellyseerr", name: "Jellyseerr" },
+  { id: "radarr", name: "Radarr" },
+  { id: "sonarr", name: "Sonarr" },
+  { id: "prowlarr", name: "Prowlarr" },
+  { id: "bazarr", name: "Bazarr" },
+  { id: "qbittorrent", name: "qBittorrent" },
+];
 
 const SUBTITLE_EXTENSIONS = new Set([
   ".srt",
@@ -470,6 +479,67 @@ function formatStatsBytes(bytes) {
   return `${value.toFixed(value >= 10 || unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
 }
 
+function calculateCpuPercent(stats) {
+  const cpuStats = stats?.cpu_stats;
+  const previousCpuStats = stats?.precpu_stats;
+  const cpuUsage = cpuStats?.cpu_usage?.total_usage;
+  const previousCpuUsage = previousCpuStats?.cpu_usage?.total_usage;
+  const systemUsage = cpuStats?.system_cpu_usage;
+  const previousSystemUsage = previousCpuStats?.system_cpu_usage;
+
+  if (
+    cpuUsage === undefined ||
+    previousCpuUsage === undefined ||
+    systemUsage === undefined ||
+    previousSystemUsage === undefined
+  ) {
+    return null;
+  }
+
+  const cpuDelta = cpuUsage - previousCpuUsage;
+  const systemDelta = systemUsage - previousSystemUsage;
+  const onlineCpus = cpuStats.online_cpus || cpuStats.cpu_usage?.percpu_usage?.length || 1;
+
+  if (cpuDelta <= 0 || systemDelta <= 0) {
+    return null;
+  }
+
+  return (cpuDelta / systemDelta) * onlineCpus * 100;
+}
+
+function extractDockerResourceDetails(stats) {
+  if (!stats) {
+    return {};
+  }
+
+  const details = {};
+  const cpuPercent = calculateCpuPercent(stats);
+
+  if (cpuPercent !== null) {
+    details["CPU"] = `${cpuPercent.toFixed(cpuPercent >= 10 ? 0 : 1)}%`;
+  }
+
+  if (stats.memory_stats?.usage !== undefined) {
+    details["Memory"] = formatStatsBytes(stats.memory_stats.usage);
+  }
+
+  let rx = 0;
+  let tx = 0;
+
+  if (stats.networks) {
+    for (const net of Object.values(stats.networks)) {
+      rx += net.rx_bytes || 0;
+      tx += net.tx_bytes || 0;
+    }
+
+    details["Network I/O"] = `${formatStatsBytes(rx)} ↓ / ${formatStatsBytes(tx)} ↑`;
+  }
+
+  details["Updated"] = new Date().toISOString();
+
+  return details;
+}
+
 function getDockerStats(containerName) {
   return new Promise((resolve) => {
     let socketPath = null;
@@ -502,6 +572,18 @@ function getDockerStats(containerName) {
     req.on('error', () => resolve(null));
     req.end();
   });
+}
+
+async function getServiceResources() {
+  return Promise.all(SERVICE_RESOURCE_TARGETS.map(async service => {
+    const stats = await getDockerStats(service.id);
+
+    return {
+      id: service.id,
+      name: service.name,
+      resources: extractDockerResourceDetails(stats),
+    };
+  }));
 }
 
 async function getServiceStatuses(req) {
@@ -635,17 +717,10 @@ async function getServiceStatuses(req) {
 
     try {
       const stats = await getDockerStats(service.id);
-      if (stats && stats.memory_stats && stats.memory_stats.usage !== undefined) {
-        details["Memory"] = formatStatsBytes(stats.memory_stats.usage);
-        let rx = 0, tx = 0;
-        if (stats.networks) {
-          for (const net of Object.values(stats.networks)) {
-            rx += net.rx_bytes || 0;
-            tx += net.tx_bytes || 0;
-          }
-        }
-        details["Network I/O"] = `${formatStatsBytes(rx)} ↓ / ${formatStatsBytes(tx)} ↑`;
-      }
+      details = {
+        ...details,
+        ...extractDockerResourceDetails(stats),
+      };
     } catch (e) {
       // Ignore docker stat fetch errors
     }
@@ -694,6 +769,12 @@ app.get("/api/services", async (req, res) => {
   const hasFailures = services.some(service => service.status !== "online");
 
   return res.status(hasFailures ? 207 : 200).json(services);
+});
+
+app.get("/api/services/resources", async (_req, res) => {
+  const resources = await getServiceResources();
+
+  return res.json(resources);
 });
 
 app.get("/api/downloads", async (_req, res) => {
