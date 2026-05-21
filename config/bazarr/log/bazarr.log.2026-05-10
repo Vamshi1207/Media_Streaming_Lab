@@ -1,0 +1,45 @@
+2026-05-10 20:15:35|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-05-10 20:15:36|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-05-10 20:15:36|INFO    |root                            |BAZARR trying to connect to Sonarr SignalR feed...|
+2026-05-10 20:15:36|INFO    |root                            |BAZARR trying to connect to Radarr SignalR feed...|
+2026-05-10 20:15:36|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6767|
+2026-05-10 20:15:36|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6767|
+2026-05-10 20:15:36|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
+2026-05-10 20:15:36|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-05-10 20:16:00|INFO    |root                            |Using opensubtitlescom again after 12 hours, (disabled because: ConfigurationError)|
+2026-05-10 20:16:00|INFO    |root                            |Throttling opensubtitlescom for 12 hours, until 26/05/11 08:16, because of: ConfigurationError. Exception info: "'Username and password must be specified' ~ opensubtitlescom.py@169"|
+2026-05-10 20:40:36|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-05-10 20:40:37|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-05-10 20:40:37|INFO    |root                            |BAZARR trying to connect to Sonarr SignalR feed...|
+2026-05-10 20:40:37|INFO    |root                            |BAZARR trying to connect to Radarr SignalR feed...|
+2026-05-10 20:40:37|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6767|
+2026-05-10 20:40:37|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6767|
+2026-05-10 20:40:37|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-05-10 20:40:37|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
+2026-05-10 20:58:54|INFO    |root                            |Migrating throttled_providers.dat from legacy format to JSON. Throttle state reset.|
+2026-05-10 20:58:55|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-05-10 20:58:55|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-05-10 20:58:55|INFO    |root                            |BAZARR trying to connect to Sonarr SignalR feed...|
+2026-05-10 20:58:55|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6768|
+2026-05-10 20:58:55|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6768|
+2026-05-10 20:58:55|INFO    |root                            |BAZARR trying to connect to Radarr SignalR feed...|
+2026-05-10 20:58:55|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
+2026-05-10 20:58:55|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-05-10 21:04:46|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-05-10 21:04:47|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-05-10 21:04:47|INFO    |root                            |BAZARR trying to connect to Sonarr SignalR feed...|
+2026-05-10 21:04:47|INFO    |root                            |BAZARR trying to connect to Radarr SignalR feed...|
+2026-05-10 21:04:47|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6768|
+2026-05-10 21:04:47|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6768|
+2026-05-10 21:04:47|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
+2026-05-10 21:04:47|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-05-10 21:21:12|INFO    |root                            |Throttling opensubtitlescom for 12 hours, until 26/05/11 09:21, because of: ConfigurationError. Exception info: "'Username and password must be specified' ~ opensubtitlescom.py@169"|
+2026-05-10 21:21:13|INFO    |root                            |BAZARR Finished searching for missing Movies Subtitles. Check History for more information.|
+2026-05-10 21:32:39|INFO    |root                            |Scheduler will use this timezone: America/Toronto|
+2026-05-10 21:32:39|INFO    |root                            |Interactive jobs queue started and waiting for tasks|
+2026-05-10 21:32:39|INFO    |root                            |BAZARR trying to connect to Sonarr SignalR feed...|
+2026-05-10 21:32:39|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://***.***.***.***:6768|
+2026-05-10 21:32:39|INFO    |waitress                        |BAZARR is started and waiting for requests on: http://[::]:6768|
+2026-05-10 21:32:39|INFO    |root                            |BAZARR trying to connect to Radarr SignalR feed...|
+2026-05-10 21:32:39|INFO    |root                            |BAZARR SignalR client for Sonarr is connected and waiting for events.|
+2026-05-10 21:32:39|INFO    |root                            |BAZARR SignalR client for Radarr is connected and waiting for events.|
