@@ -37,7 +37,21 @@ build/
 *.db
 *.sqlite
 *.sqlite3
+*.db-shm
+*.db-wal
+*.pid
 
 # Cache
 .cache/
 .eslintcache
+
+# Container runtime files
+config/*/cache/
+config/*/log/
+config/*/logs/
+config/*/Backups/scheduled/
+config/*/db/
+config/*/*.db-shm
+config/*/*.db-wal
+config/*/*.pid
+config/*/INFO
