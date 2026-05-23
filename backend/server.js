@@ -1165,6 +1165,7 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
     formData.append("torrents", new Blob([fileBuffer]), req.file.originalname);
     formData.append("savepath", savepath);
     formData.append("category", category);
+    formData.append("dummy", "dummy"); // Workaround for qBittorrent multipart boundary parsing bug in Node 18+ FormData
 
     const cookie = await loginToQbittorrent();
 
