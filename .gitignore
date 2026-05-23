@@ -55,3 +55,7 @@ config/*/*.db-shm
 config/*/*.db-wal
 config/*/*.pid
 config/*/INFO
+
+# qBittorrent runtime files
+config/qbittorrent/**/*.fastresume
+config/qbittorrent/**/*.conf
