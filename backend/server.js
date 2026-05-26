@@ -27,6 +27,7 @@ const QBITTORRENT_USERNAME = process.env.QBITTORRENT_USERNAME || "admin";
 const QBITTORRENT_PASSWORD = process.env.QBITTORRENT_PASSWORD || "";
 const DOWNLOADS_PATH = process.env.DOWNLOADS_PATH || "/data/torrents";
 const SERVICE_EXTERNAL_PORTS = {
+  "media-server": 7100,
   jellyfin: 7500,
   jellyseerr: 7600,
   radarr: 7400,
@@ -36,6 +37,7 @@ const SERVICE_EXTERNAL_PORTS = {
   qbittorrent: 7200,
 };
 const SERVICE_EXTERNAL_URLS = {
+  "media-server": process.env.MEDIA_SERVER_EXTERNAL_URL || "",
   jellyfin: process.env.JELLYFIN_EXTERNAL_URL || "",
   jellyseerr: process.env.JELLYSEERR_EXTERNAL_URL || "",
   radarr: process.env.RADARR_EXTERNAL_URL || "",
@@ -57,6 +59,7 @@ const ACTIVE_DOWNLOAD_STATES = new Set([
   "moving",
 ]);
 const SERVICE_RESOURCE_TARGETS = [
+  { id: "media-server", name: "Dashboard" },
   { id: "jellyfin", name: "Jellyfin" },
   { id: "jellyseerr", name: "Jellyseerr" },
   { id: "radarr", name: "Radarr" },
@@ -588,6 +591,15 @@ async function getServiceResources() {
 
 async function getServiceStatuses(req) {
   const checks = [
+    {
+      id: "media-server",
+      name: "Dashboard",
+      internalUrl: "http://media-server:3000",
+      check: async () => ({
+        version: process.env.npm_package_version || "1.0.0",
+        uptime: `${Math.floor(process.uptime())}s`,
+      }),
+    },
     {
       id: "jellyfin",
       name: "Jellyfin",
