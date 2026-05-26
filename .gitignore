@@ -46,16 +46,28 @@ build/
 .eslintcache
 
 # Container runtime files
+config/*/.*
 config/*/cache/
 config/*/log/
 config/*/logs/
 config/*/Backups/scheduled/
 config/*/db/
+config/*/MediaCover/
+config/*/Sentry/
 config/*/*.db-shm
 config/*/*.db-wal
 config/*/*.pid
 config/*/INFO
+config/bazarr/config/releases.txt
 
 # qBittorrent runtime files
+config/qbittorrent/**/BT_backup/
+config/qbittorrent/**/GeoDB/
+config/qbittorrent/**/rss/
+config/qbittorrent/**/lockfile
+config/qbittorrent/**/queue
+config/qbittorrent/**/categories.json
+config/qbittorrent/**/watched_folders.json
 config/qbittorrent/**/*.fastresume
+config/qbittorrent/**/*.torrent
 config/qbittorrent/**/*.conf
