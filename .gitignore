@@ -70,4 +70,10 @@ config/qbittorrent/**/categories.json
 config/qbittorrent/**/watched_folders.json
 config/qbittorrent/**/*.fastresume
 config/qbittorrent/**/*.torrent
-config/qbittorrent/**/*.conf
+config/qbittorrent/**/*-data.conf
+
+# Ephemeral auto-generated configs/keys
+config/prowlarr/Definitions/
+config/bazarr/config/announcements.json
+config/*/asp/
+config/jellyseerr/settings.old.json
