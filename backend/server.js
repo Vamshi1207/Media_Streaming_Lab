@@ -6,6 +6,8 @@ const multer = require("multer");
 const app = express();
 const upload = multer({ dest: "/tmp/uploads/" });
 
+const FETCH_TIMEOUT_MS = 10000;
+
 const MEDIA_PATHS = [
   "/data/media/movies",
   "/data/movies",
@@ -118,7 +120,8 @@ async function loginToQbittorrent() {
 
   const text = await response.text();
 
-  if (!response.ok || text.trim() !== "Ok.") {
+  // qBittorrent <5.x returns 200 "Ok.", 5.x+ returns 204 No Content
+  if (!response.ok || (response.status !== 204 && text.trim() !== "Ok.")) {
     throw new Error("Failed to authenticate with qBittorrent.");
   }
 
@@ -138,7 +141,7 @@ async function fetchJson(url, options = {}) {
       "Accept": "application/json",
       ...(options.headers || {}),
     },
-    signal: AbortSignal.timeout(5000),
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
   });
 
   if (!response.ok) {
@@ -157,7 +160,7 @@ async function fetchText(url, options = {}) {
     headers: {
       ...(options.headers || {}),
     },
-    signal: AbortSignal.timeout(5000),
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
   });
 
   if (!response.ok) {
@@ -524,7 +527,7 @@ async function getServiceStatuses(req) {
       internalUrl: BAZARR_URL,
       check: async () => {
         const response = await fetch(BAZARR_URL, {
-          signal: AbortSignal.timeout(5000),
+          signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
         });
 
         if (!response.ok) {

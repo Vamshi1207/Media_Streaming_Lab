@@ -1,0 +1,61 @@
+# Docker Compose for SVCME-51 (192.168.255.51)
+# Services: Radarr, Sonarr, Bazarr, media-server
+
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    ports:
+      - "7400:7878"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - ./config/radarr:/config
+      - ./data:/data
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.12
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    ports:
+      - "7700:8989"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - ./config/sonarr:/config
+      - ./data:/data
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.13
+    restart: unless-stopped
+
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    ports:
+      - "7800:6767"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - ./config/bazarr:/config
+      - ./data/media:/data/media
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.18
+    restart: unless-stopped
+
+networks:
+  media-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -1,0 +1,80 @@
+# Docker Compose for Oracle Cloud VM (192.168.255.50)
+# Services: qbittorrent, prowlarr, jellyseerr
+
+services:
+  qbittorrent:
+    image: lscr.io/linuxserver/qbittorrent:latest
+    container_name: qbittorrent
+    ports:
+      - "7200:7200"
+      - "7201:6881"
+      - "7201:6881/udp"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+      - WEBUI_PORT=7200
+    volumes:
+      - ./config/qbittorrent:/config
+      - ./data/torrents:/data/torrents
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.11
+    restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    ports:
+      - "7300:9696"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - ./config/prowlarr:/config
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.14
+    restart: unless-stopped
+
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    ports:
+      - "7500:8096"
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - ./config/jellyfin:/config
+      - /mnt/media-data/media:/data/media:ro
+    tmpfs:
+      - /config/cache/transcodes:size=4g,mode=0777
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.10
+    restart: unless-stopped
+
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    ports:
+      - "7600:5055"
+    environment:
+      - LOG_LEVEL=info
+      - TZ=America/Toronto
+    volumes:
+      - ./config/jellyseerr:/app/config
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.15
+    restart: unless-stopped
+
+networks:
+  media-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

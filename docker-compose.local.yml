@@ -1,0 +1,65 @@
+# Docker Compose for Local Machine (Mac Mini — 192.168.255.11)
+# Radarr/Sonarr/Jellyseerr/Bazarr → host.docker.internal (same Mac, mapped ports)
+# Prowlarr/qBittorrent → 192.168.255.50 (VM2 via NetBird)
+# Jellyfin → 192.168.255.51 (VM3 via NetBird)
+
+services:
+  media-server:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: media-server
+    ports:
+      - "7100:3000"
+    volumes:
+      - ./config/radarr:/config/radarr:ro
+      - ./config/sonarr:/config/sonarr:ro
+      - ./config/prowlarr:/config/prowlarr:ro
+      - ./config/jellyseerr:/config/jellyseerr:ro
+    environment:
+      - JELLYFIN_URL=http://192.168.255.51:7500
+      - JELLYFIN_EXTERNAL_URL=http://192.168.255.51:7500
+      - JELLYSEERR_URL=http://host.docker.internal:7600
+      - JELLYSEERR_EXTERNAL_URL=http://192.168.255.11:7600
+      - JELLYSEERR_CONFIG_PATH=/config/jellyseerr/settings.json
+      - RADARR_URL=http://host.docker.internal:7400
+      - RADARR_EXTERNAL_URL=http://192.168.255.11:7400
+      - RADARR_CONFIG_PATH=/config/radarr/config.xml
+      - SONARR_URL=http://host.docker.internal:7700
+      - SONARR_EXTERNAL_URL=http://192.168.255.11:7700
+      - SONARR_CONFIG_PATH=/config/sonarr/config.xml
+      - PROWLARR_URL=http://192.168.255.50:7300
+      - PROWLARR_CONFIG_PATH=/config/prowlarr/config.xml
+      - BAZARR_URL=http://host.docker.internal:7800
+      - BAZARR_EXTERNAL_URL=http://192.168.255.11:7800
+      - QBITTORRENT_URL=http://192.168.255.50:7200
+      - QBITTORRENT_USERNAME=admin
+      - QBITTORRENT_PASSWORD=media-server-lab
+      - DOWNLOADS_PATH=/data/torrents
+      - MEDIA_PATH=/data/media
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.16
+    restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflared
+    profiles:
+      - remote-access
+    command: tunnel --no-autoupdate --protocol http2 --loglevel debug run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    depends_on:
+      - media-server
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.17
+    restart: unless-stopped
+
+networks:
+  media-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

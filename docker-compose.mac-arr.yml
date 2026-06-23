@@ -1,0 +1,78 @@
+# Mac Mini (192.168.255.11) — VM1 services relocated here
+# Native arm64 — no QEMU overhead
+# Config: /Users/tito/repos/Media_Streaming_Lab/config/
+# Data:   /Users/tito/repos/Media_Streaming_Lab/data/ (NFS from VM2)
+
+services:
+
+  radarr:
+    image: ghcr.io/vamshi1207/radarr-custom:latest
+    container_name: radarr
+    ports:
+      - "7400:7878"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+    volumes:
+      - /Users/tito/repos/Media_Streaming_Lab/config/radarr:/config
+      - /Users/tito/repos/Media_Streaming_Lab/data:/data
+    restart: unless-stopped
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.12
+
+  sonarr:
+    image: ghcr.io/vamshi1207/sonarr-custom:latest
+    container_name: sonarr
+    ports:
+      - "7700:8989"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+    volumes:
+      - /Users/tito/repos/Media_Streaming_Lab/config/sonarr:/config
+      - /Users/tito/repos/Media_Streaming_Lab/data:/data
+    restart: unless-stopped
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.13
+
+  bazarr:
+    image: ghcr.io/vamshi1207/bazarr-custom:latest
+    container_name: bazarr
+    ports:
+      - "7800:6767"
+    environment:
+      - PUID=501
+      - PGID=1000
+      - TZ=America/Toronto
+    volumes:
+      - /Users/tito/repos/Media_Streaming_Lab/config/bazarr:/config
+      - /Users/tito/repos/Media_Streaming_Lab/data:/data
+    restart: unless-stopped
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.14
+
+  jellyseerr:
+    image: ghcr.io/vamshi1207/jellyseerr-custom:latest
+    container_name: jellyseerr
+    ports:
+      - "7600:5055"
+    environment:
+      - PUID=501
+      - PGID=20
+      - TZ=America/Toronto
+    volumes:
+      - /Users/tito/repos/Media_Streaming_Lab/config/jellyseerr:/app/config
+    restart: unless-stopped
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.15
+
+networks:
+  media-network:
+    external: true
+    name: media_streaming_lab_media-network

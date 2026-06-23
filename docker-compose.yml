@@ -1,11 +1,8 @@
-# Project port policy:
-# - Keep all host ports in the 7000 series for this repo.
-# - Use spaced service blocks: 7100, 7200, 7300, 7400...
-# - Reserve 7100 for the main entry point/homepage (`media-server`).
-# - Reserve 7200, 7300, 7400... for top-level services.
-# - Use sub-service ports inside the same block when needed, for example 7201, 7202.
-# - If a service needs both TCP and UDP for the same internal port, it may share one host port.
-# - The next available top-level block after the entries below is 7700.
+# Docker Compose for Local Machine (Mac Mini)
+# Local: media-server, jellyfin, jellyseerr, cloudflared
+# SVCME-50 (192.168.255.50): qbittorrent, prowlarr
+# SVCME-51 (192.168.255.51): radarr, sonarr, bazarr
+
 services:
   media-server:
     build:
@@ -22,29 +19,27 @@ services:
       - ./config/jellyseerr:/config/jellyseerr:ro
     environment:
       - JELLYFIN_URL=http://jellyfin:8096
-      - JELLYFIN_EXTERNAL_URL=https://jellyfin.vamshislab.com
+      - JELLYFIN_EXTERNAL_URL=http://localhost:7500
       - JELLYSEERR_URL=http://jellyseerr:5055
       - JELLYSEERR_CONFIG_PATH=/config/jellyseerr/settings.json
-      - JELLYSEERR_EXTERNAL_URL=https://jellyseerr.vamshislab.com
-      - RADARR_URL=http://radarr:7878
+      - JELLYSEERR_EXTERNAL_URL=http://localhost:7600
+      - RADARR_URL=http://192.168.255.51:7400
+      - RADARR_EXTERNAL_URL=http://192.168.255.51:7400
       - RADARR_CONFIG_PATH=/config/radarr/config.xml
-      - SONARR_URL=http://sonarr:8989
+      - SONARR_URL=http://192.168.255.51:7700
+      - SONARR_EXTERNAL_URL=http://192.168.255.51:7700
       - SONARR_CONFIG_PATH=/config/sonarr/config.xml
-      - PROWLARR_URL=http://prowlarr:9696
+      - PROWLARR_URL=http://192.168.255.50:7300
       - PROWLARR_CONFIG_PATH=/config/prowlarr/config.xml
-      - BAZARR_URL=http://bazarr:6767
-      - BAZARR_EXTERNAL_URL=http://127.0.0.1:7800
-      - QBITTORRENT_URL=http://qbittorrent:8080
+      - BAZARR_URL=http://192.168.255.51:7800
+      - BAZARR_EXTERNAL_URL=http://192.168.255.51:7800
+      - QBITTORRENT_URL=http://192.168.255.50:7200
       - QBITTORRENT_USERNAME=admin
-      - QBITTORRENT_PASSWORD=media-server-lab
+      - QBITTORRENT_PASSWORD=admin@123456
       - DOWNLOADS_PATH=/data/torrents
+      - MEDIA_PATH=/data/media
     depends_on:
       - jellyfin
-      - radarr
-      - sonarr
-      - prowlarr
-      - bazarr
-      - qbittorrent
     networks:
       media-network:
         ipv4_address: 172.20.0.16
@@ -65,45 +60,8 @@ services:
         ipv4_address: 172.20.0.17
     restart: unless-stopped
 
-  qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest
-    container_name: qbittorrent
-    ports:
-      - "7200:8080"
-      - "7201:6881"
-      - "7201:6881/udp"
-    environment:
-      - PUID=501
-      - PGID=20
-      - TZ=America/Toronto
-      - WEBUI_PORT=8080
-    volumes:
-      - ./config/qbittorrent:/config
-      - ./data/torrents:/data/torrents
-    networks:
-      media-network:
-        ipv4_address: 172.20.0.11
-    restart: unless-stopped
-
-  radarr:
-    image: lscr.io/linuxserver/radarr:latest
-    container_name: radarr
-    ports:
-      - "7400:7878"
-    environment:
-      - PUID=501
-      - PGID=20
-      - TZ=America/Toronto
-    volumes:
-      - ./config/radarr:/config
-      - ./data:/data
-    networks:
-      media-network:
-        ipv4_address: 172.20.0.12
-    restart: unless-stopped
-
   jellyfin:
-    image: lscr.io/linuxserver/jellyfin:latest
+    image: lscr.io/linuxserver/jellyfin:10.8.13
     container_name: jellyfin
     ports:
       - "7500:8096"
@@ -114,7 +72,8 @@ services:
       - TZ=America/Toronto
     volumes:
       - ./config/jellyfin:/config
-      - ./data/media:/data/media:ro
+      - /Volumes/media-data/media:/data/media:ro
+      - ./config/jellyfin/main.jellyfin.bundle.js:/usr/share/jellyfin/web/main.jellyfin.bundle.js:ro
     networks:
       media-network:
         ipv4_address: 172.20.0.10
@@ -130,59 +89,10 @@ services:
       - TZ=America/Toronto
     volumes:
       - ./config/jellyseerr:/app/config
+      - ./config/jellyseerr/jellyfin.js:/app/dist/api/jellyfin.js:ro
     networks:
       media-network:
         ipv4_address: 172.20.0.15
-    restart: unless-stopped
-
-  prowlarr:
-    image: lscr.io/linuxserver/prowlarr:latest
-    container_name: prowlarr
-    ports:
-      - "7300:9696"
-    environment:
-      - PUID=501
-      - PGID=20
-      - TZ=America/Toronto
-    volumes:
-      - ./config/prowlarr:/config
-    networks:
-      media-network:
-        ipv4_address: 172.20.0.14
-    restart: unless-stopped
-
-  bazarr:
-    image: lscr.io/linuxserver/bazarr:latest
-    container_name: bazarr
-    ports:
-      - "7800:6767"
-    environment:
-      - PUID=501
-      - PGID=20
-      - TZ=America/Toronto
-    volumes:
-      - ./config/bazarr:/config
-      - ./data/media:/data/media
-    networks:
-      media-network:
-        ipv4_address: 172.20.0.18
-    restart: unless-stopped
-
-  sonarr:
-    image: lscr.io/linuxserver/sonarr:latest
-    container_name: sonarr
-    ports:
-      - "7700:8989"
-    environment:
-      - PUID=501
-      - PGID=20
-      - TZ=America/Toronto
-    volumes:
-      - ./config/sonarr:/config
-      - ./data:/data
-    networks:
-      media-network:
-        ipv4_address: 172.20.0.13
     restart: unless-stopped
 
 networks:
