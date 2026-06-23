@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
+const http = require("http");
 
 const app = express();
 const upload = multer({ dest: "/tmp/uploads/" });
@@ -28,6 +29,7 @@ const QBITTORRENT_USERNAME = process.env.QBITTORRENT_USERNAME || "admin";
 const QBITTORRENT_PASSWORD = process.env.QBITTORRENT_PASSWORD || "";
 const DOWNLOADS_PATH = process.env.DOWNLOADS_PATH || "/data/torrents";
 const SERVICE_EXTERNAL_PORTS = {
+  "media-server": 7100,
   jellyfin: 7500,
   jellyseerr: 7600,
   radarr: 7400,
@@ -37,6 +39,7 @@ const SERVICE_EXTERNAL_PORTS = {
   qbittorrent: 7200,
 };
 const SERVICE_EXTERNAL_URLS = {
+  "media-server": process.env.MEDIA_SERVER_EXTERNAL_URL || "",
   jellyfin: process.env.JELLYFIN_EXTERNAL_URL || "",
   jellyseerr: process.env.JELLYSEERR_EXTERNAL_URL || "",
   radarr: process.env.RADARR_EXTERNAL_URL || "",
@@ -57,6 +60,16 @@ const ACTIVE_DOWNLOAD_STATES = new Set([
   "checkingResumeData",
   "moving",
 ]);
+const SERVICE_RESOURCE_TARGETS = [
+  { id: "media-server", name: "Dashboard" },
+  { id: "jellyfin", name: "Jellyfin" },
+  { id: "jellyseerr", name: "Jellyseerr" },
+  { id: "radarr", name: "Radarr" },
+  { id: "sonarr", name: "Sonarr" },
+  { id: "prowlarr", name: "Prowlarr" },
+  { id: "bazarr", name: "Bazarr" },
+  { id: "qbittorrent", name: "qBittorrent" },
+];
 
 const SUBTITLE_EXTENSIONS = new Set([
   ".srt",
@@ -248,6 +261,16 @@ async function fetchProwlarr(endpoint) {
   return fetchJson(`${PROWLARR_URL}${endpoint}`, {
     headers: {
       "X-Api-Key": apiKey,
+    },
+  });
+}
+
+async function fetchBazarr(endpoint, options = {}) {
+  return fetchJson(`${BAZARR_URL}${endpoint}`, {
+    ...options,
+    headers: {
+      "X-Api-Key": "dcf90a1c76161123030ac6669972dd5e",
+      ...(options.headers || {}),
     },
   });
 }
@@ -449,8 +472,137 @@ function getFilesystemMovies() {
   return movies;
 }
 
+function formatStatsBytes(bytes) {
+  if (bytes === undefined || bytes === null || isNaN(bytes)) return "0 B";
+  if (bytes === 0) return "0 B";
+  const units = ["B", "KB", "MB", "GB", "TB"];
+  let value = bytes;
+  let unitIndex = 0;
+  while (value >= 1024 && unitIndex < units.length - 1) {
+    value /= 1024;
+    unitIndex += 1;
+  }
+  return `${value.toFixed(value >= 10 || unitIndex === 0 ? 0 : 1)} ${units[unitIndex]}`;
+}
+
+function calculateCpuPercent(stats) {
+  const cpuStats = stats?.cpu_stats;
+  const previousCpuStats = stats?.precpu_stats;
+  const cpuUsage = cpuStats?.cpu_usage?.total_usage;
+  const previousCpuUsage = previousCpuStats?.cpu_usage?.total_usage;
+  const systemUsage = cpuStats?.system_cpu_usage;
+  const previousSystemUsage = previousCpuStats?.system_cpu_usage;
+
+  if (
+    cpuUsage === undefined ||
+    previousCpuUsage === undefined ||
+    systemUsage === undefined ||
+    previousSystemUsage === undefined
+  ) {
+    return null;
+  }
+
+  const cpuDelta = cpuUsage - previousCpuUsage;
+  const systemDelta = systemUsage - previousSystemUsage;
+  const onlineCpus = cpuStats.online_cpus || cpuStats.cpu_usage?.percpu_usage?.length || 1;
+
+  if (cpuDelta <= 0 || systemDelta <= 0) {
+    return null;
+  }
+
+  return (cpuDelta / systemDelta) * onlineCpus * 100;
+}
+
+function extractDockerResourceDetails(stats) {
+  if (!stats) {
+    return {};
+  }
+
+  const details = {};
+  const cpuPercent = calculateCpuPercent(stats);
+
+  if (cpuPercent !== null) {
+    details["CPU"] = `${cpuPercent.toFixed(cpuPercent >= 10 ? 0 : 1)}%`;
+  }
+
+  if (stats.memory_stats?.usage !== undefined) {
+    details["Memory"] = formatStatsBytes(stats.memory_stats.usage);
+  }
+
+  let rx = 0;
+  let tx = 0;
+
+  if (stats.networks) {
+    for (const net of Object.values(stats.networks)) {
+      rx += net.rx_bytes || 0;
+      tx += net.tx_bytes || 0;
+    }
+
+    details["Network I/O"] = `${formatStatsBytes(rx)} ↓ / ${formatStatsBytes(tx)} ↑`;
+  }
+
+  details["Updated"] = new Date().toISOString();
+
+  return details;
+}
+
+function getDockerStats(containerName) {
+  return new Promise((resolve) => {
+    let socketPath = null;
+    if (fs.existsSync('/var/run/docker.sock')) {
+      socketPath = '/var/run/docker.sock';
+    } else if (process.env.HOME && fs.existsSync(process.env.HOME + '/.docker/run/docker.sock')) {
+      socketPath = process.env.HOME + '/.docker/run/docker.sock';
+    }
+    
+    if (!socketPath) {
+      return resolve(null);
+    }
+    
+    const options = {
+      socketPath,
+      path: `/containers/${containerName}/stats?stream=false`,
+      method: 'GET'
+    };
+    const req = http.request(options, res => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          resolve(null);
+        }
+      });
+    });
+    req.on('error', () => resolve(null));
+    req.end();
+  });
+}
+
+async function getServiceResources() {
+  return Promise.all(SERVICE_RESOURCE_TARGETS.map(async service => {
+    const stats = await getDockerStats(service.id);
+
+    return {
+      id: service.id,
+      name: service.name,
+      resources: extractDockerResourceDetails(stats),
+    };
+  }));
+}
+
 async function getServiceStatuses(req) {
   const checks = [
+    {
+      id: "media-server",
+      name: "Dashboard",
+      internalUrl: "http://media-server:3000",
+      check: async () => ({
+        version: process.env.npm_package_version || "1.0.0",
+        uptime: `${Math.floor(process.uptime())}s`,
+      }),
+    },
     {
       id: "jellyfin",
       name: "Jellyfin",
@@ -567,27 +719,41 @@ async function getServiceStatuses(req) {
   ];
 
   const statuses = await Promise.all(checks.map(async service => {
-    try {
-      const details = await service.check();
+    let details = {};
+    let status = "online";
+    let errorStr = undefined;
 
-      return {
-        id: service.id,
-        name: service.name,
-        internalUrl: service.internalUrl,
-        externalUrl: getExternalServiceUrl(req, service.id),
-        status: "online",
-        details,
-      };
+    try {
+      details = await service.check();
     } catch (error) {
-      return {
-        id: service.id,
-        name: service.name,
-        internalUrl: service.internalUrl,
-        externalUrl: getExternalServiceUrl(req, service.id),
-        status: "offline",
-        error: summarizeServiceError(error),
-      };
+      status = "offline";
+      errorStr = summarizeServiceError(error);
     }
+
+    try {
+      const stats = await getDockerStats(service.id);
+      details = {
+        ...details,
+        ...extractDockerResourceDetails(stats),
+      };
+    } catch (e) {
+      // Ignore docker stat fetch errors
+    }
+
+    const result = {
+      id: service.id,
+      name: service.name,
+      internalUrl: service.internalUrl,
+      externalUrl: getExternalServiceUrl(req, service.id),
+      status,
+      details,
+    };
+    
+    if (errorStr) {
+      result.error = errorStr;
+    }
+    
+    return result;
   }));
 
   return statuses;
@@ -618,6 +784,12 @@ app.get("/api/services", async (req, res) => {
   const hasFailures = services.some(service => service.status !== "online");
 
   return res.status(hasFailures ? 207 : 200).json(services);
+});
+
+app.get("/api/services/resources", async (_req, res) => {
+  const resources = await getServiceResources();
+
+  return res.json(resources);
 });
 
 app.get("/api/downloads", async (_req, res) => {
@@ -762,10 +934,17 @@ app.delete("/api/downloads/:hash", async (req, res) => {
 
 app.get("/api/library/movies", async (_req, res) => {
   try {
-    const movies = await fetchRadarr("/api/v3/movie");
+    const [movies, bazarrMoviesResponse] = await Promise.all([
+      fetchRadarr("/api/v3/movie"),
+      fetchBazarr("/api/movies"),
+    ]);
+
+    const bazarrMovies = bazarrMoviesResponse.data || [];
     const payload = movies.map(movie => {
       const moviePath = movie.path || movie.movieFile?.path || "";
       const subtitleFiles = moviePath ? findSubtitleFilesInDirectory(moviePath) : [];
+      
+      const bazarrMovie = bazarrMovies.find(bm => bm.radarrId === movie.id);
 
       return {
         id: movie.id,
@@ -781,6 +960,10 @@ app.get("/api/library/movies", async (_req, res) => {
         source: "radarr",
         subtitlesAvailable: subtitleFiles.length > 0,
         subtitleFiles,
+        bazarrStatus: bazarrMovie ? {
+          missing: bazarrMovie.missing_subtitles || [],
+          subtitles: bazarrMovie.subtitles || [],
+        } : null,
       };
     });
 
@@ -801,9 +984,15 @@ app.delete("/api/library/movies/:id", async (req, res) => {
 
 app.get("/api/library/tv", async (_req, res) => {
   try {
-    const series = await fetchSonarr("/api/v3/series");
+    const [series, bazarrSeriesResponse] = await Promise.all([
+      fetchSonarr("/api/v3/series"),
+      fetchBazarr("/api/series"),
+    ]);
+
+    const bazarrSeries = bazarrSeriesResponse.data || [];
     const payload = series.map(show => {
       const subtitleFiles = show.path ? findSubtitleFilesInDirectory(show.path) : [];
+      const bazarrShow = bazarrSeries.find(bs => bs.sonarrId === show.id);
 
       return {
         id: show.id,
@@ -814,16 +1003,30 @@ app.get("/api/library/tv", async (_req, res) => {
         seasonCount: show.seasons?.length || 0,
         episodeCount: show.statistics?.episodeCount || 0,
         episodeFileCount: show.statistics?.episodeFileCount || 0,
-        hasFile: (show.statistics?.episodeFileCount || 0) > 0,
         sizeOnDisk: show.statistics?.sizeOnDisk || 0,
-        path: show.path,
         added: show.added,
-        source: "sonarr",
+        path: show.path,
         subtitlesAvailable: subtitleFiles.length > 0,
         subtitleFiles,
+        bazarrStatus: bazarrShow ? {
+          missing: bazarrShow.missing_subtitles || [],
+          subtitles: bazarrShow.subtitles || [],
+        } : null,
       };
     });
+
     return res.json(payload);
+  } catch (error) {
+    return res.status(502).json({ error: summarizeServiceError(error) });
+  }
+});
+
+app.post("/api/bazarr/search", async (req, res) => {
+  try {
+    const { episodeId, movieId } = req.body;
+    const endpoint = episodeId ? `/api/episodes/${episodeId}/subtitles/search` : `/api/movies/${movieId}/subtitles/search`;
+    await fetchBazarr(endpoint, { method: "POST" });
+    return res.json({ success: true });
   } catch (error) {
     return res.status(502).json({ error: summarizeServiceError(error) });
   }
@@ -969,10 +1172,15 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
   }
 
   try {
+    const category = req.body.category || "radarr";
+    const savepath = category === "sonarr" ? "/data/torrents/tv" : "/data/torrents/movies";
+    
     const fileBuffer = fs.readFileSync(req.file.path);
     const formData = new FormData();
     formData.append("torrents", new Blob([fileBuffer]), req.file.originalname);
-    formData.append("savepath", DOWNLOADS_PATH);
+    formData.append("savepath", savepath);
+    formData.append("category", category);
+    formData.append("dummy", "dummy"); // Workaround for qBittorrent multipart boundary parsing bug in Node 18+ FormData
 
     const cookie = await loginToQbittorrent();
 
@@ -999,6 +1207,7 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
     }
   }
 });
+
 
 // 🎥 Stream video
 app.get("/stream/:folder/:file", (req, res) => {

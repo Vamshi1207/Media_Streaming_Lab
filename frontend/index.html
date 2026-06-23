@@ -142,6 +142,28 @@
       position: relative;
     }
 
+    .tiny-btn {
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      padding: 2px 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: all 0.2s;
+      margin-left: 4px;
+    }
+
+    .tiny-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .tiny-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     .card:hover {
       transform: translateY(-2px);
       border-color: var(--panel-border-light);
@@ -608,6 +630,18 @@
       return date.toLocaleString();
     }
 
+    function normalizeDetailKey(key) {
+      return String(key).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    }
+
+    function formatResourceValue(key, value) {
+      if (key === "Updated") {
+        return formatRelativeDate(value);
+      }
+
+      return value;
+    }
+
     function getRequestStatusLabel(status) {
       const labels = {
         1: "pending",
@@ -672,12 +706,12 @@
       servicesContainer.innerHTML = services.map(service => {
         const details = service.details || {};
         const detailEntries = Object.entries(details);
-        const serviceTitle = service.externalUrl
+        const serviceTitle = (service.externalUrl && (service.id === 'jellyfin' || service.id === 'jellyseerr'))
           ? `<a class="service-link" href="${service.externalUrl}" target="_blank" rel="noreferrer">${service.name}</a>`
           : service.name;
 
         return `
-          <article class="card">
+          <article class="card" data-service-id="${service.id}">
             <span class="status-pill ${service.status}">${service.status}</span>
             <div class="service-name">${serviceTitle}</div>
             ${service.externalUrl ? `<div class="service-url">Browser: ${service.externalUrl}</div>` : ""}
@@ -685,7 +719,7 @@
             ${detailEntries.length ? `
               <ul class="detail-list">
                 ${detailEntries.map(([key, value]) => `
-                  <li><strong>${key}</strong>${value}</li>
+                  <li data-detail-key="${normalizeDetailKey(key)}"><strong>${key}</strong><span>${formatResourceValue(key, value)}</span></li>
                 `).join("")}
               </ul>
             ` : ""}
@@ -693,6 +727,38 @@
           </article>
         `;
       }).join("");
+    }
+
+    function updateServiceResources(resources) {
+      resources.forEach(service => {
+        const card = servicesContainer.querySelector(`[data-service-id="${service.id}"]`);
+
+        if (!card) {
+          return;
+        }
+
+        let detailList = card.querySelector(".detail-list");
+
+        if (!detailList) {
+          detailList = document.createElement("ul");
+          detailList.className = "detail-list";
+          card.appendChild(detailList);
+        }
+
+        Object.entries(service.resources || {}).forEach(([key, value]) => {
+          const detailKey = normalizeDetailKey(key);
+          let row = detailList.querySelector(`[data-detail-key="${detailKey}"]`);
+
+          if (!row) {
+            row = document.createElement("li");
+            row.dataset.detailKey = detailKey;
+            row.innerHTML = `<strong>${key}</strong><span></span>`;
+            detailList.appendChild(row);
+          }
+
+          row.querySelector("span").textContent = formatResourceValue(key, value);
+        });
+      });
     }
 
     function renderDownloads(downloads) {
@@ -773,9 +839,16 @@
             <li><strong>Added</strong>${formatRelativeDate(movie.added)}</li>
             <li><strong>Path</strong><span class="mono">${movie.path || "Unknown"}</span></li>
             <li><strong>Size</strong>${formatBytes(movie.size)}</li>
-            <li><strong>Subtitles</strong>${movie.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
-            ${movie.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${movie.subtitleFiles.join(', ')}</span></li>` : ""}
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <strong>Subtitles</strong>
+              <span class="status-pill ${movie.bazarrStatus?.missing.length > 0 ? "offline" : (movie.subtitlesAvailable || (movie.bazarrStatus && movie.bazarrStatus.subtitles.length > 0) ? "online" : "offline")}" style="font-size: 10px; padding: 2px 6px;">
+                ${movie.bazarrStatus ? (movie.bazarrStatus.missing.length > 0 ? `Missing ${movie.bazarrStatus.missing.map(m => m.name).join(', ')}` : "Up to date") : (movie.subtitlesAvailable ? "Available (Local)" : "Missing")}
+              </span>
+              <button class="tiny-btn" onclick="triggerBazarrSearch('movie', ${movie.id}, this)" title="Trigger Bazarr Search">🔍</button>
+            </li>
+            ${movie.subtitlesAvailable ? `<li><strong>External Files</strong><span class="mono">${movie.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
+
         </article>
       `).join("");
     }
@@ -800,9 +873,16 @@
             <li><strong>Monitored</strong>${show.monitored === false ? "No" : "Yes"}</li>
             <li><strong>Added</strong>${formatRelativeDate(show.added)}</li>
             <li><strong>Size</strong>${formatBytes(show.sizeOnDisk)}</li>
-            <li><strong>Subtitles</strong>${show.subtitlesAvailable ? `<span style="color: #8ff0b2;">Available</span>` : `<span style="color: #f87171;">Missing</span>`}</li>
-            ${show.subtitlesAvailable ? `<li><strong>Subtitle Files</strong><span class="mono">${show.subtitleFiles.join(', ')}</span></li>` : ""}
+            <li style="display: flex; align-items: center; gap: 8px;">
+              <strong>Subtitles</strong>
+              <span class="status-pill ${show.bazarrStatus?.missing.length > 0 ? "offline" : (show.subtitlesAvailable || (show.bazarrStatus && show.bazarrStatus.subtitles.length > 0) ? "online" : "offline")}" style="font-size: 10px; padding: 2px 6px;">
+                ${show.bazarrStatus ? (show.bazarrStatus.missing.length > 0 ? "Missing subtitles" : "Up to date") : (show.subtitlesAvailable ? "Available (Local)" : "Missing")}
+              </span>
+              <button class="tiny-btn" onclick="triggerBazarrSearch('series', ${show.id}, this)" title="Trigger Bazarr Search">🔍</button>
+            </li>
+            ${show.subtitlesAvailable ? `<li><strong>External Files</strong><span class="mono">${show.subtitleFiles.join(', ')}</span></li>` : ""}
           </ul>
+
         </article>
       `).join("");
     }
@@ -867,6 +947,15 @@
       try {
         const downloads = await fetch("/api/downloads").then(async response => response.ok ? response.json() : []);
         renderDownloads(downloads);
+      } catch (error) {
+        // ignore errors on silent background poll
+      }
+    }, 2000);
+
+    setInterval(async () => {
+      try {
+        const resources = await fetch("/api/services/resources").then(async response => response.ok ? response.json() : []);
+        updateServiceResources(resources);
       } catch (error) {
         // ignore errors on silent background poll
       }
@@ -963,6 +1052,8 @@
       }, 3000);
     }
 
+
+
     const torrentUpload = document.getElementById("torrent-upload");
     const uploadBtn = document.getElementById("upload-btn");
 
@@ -977,6 +1068,11 @@
 
       const formData = new FormData();
       formData.append("torrent", file);
+      
+      const categorySelect = document.getElementById("torrent-category");
+      if (categorySelect) {
+        formData.append("category", categorySelect.value);
+      }
 
       try {
         const res = await fetch("/api/upload-torrent", {
@@ -1027,6 +1123,28 @@
         btn.textContent = "!";
         setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
       }
+    }
+
+    async function triggerBazarrSearch(type, id, btn) {
+      const originalText = btn.textContent;
+      btn.textContent = "⏳";
+      btn.disabled = true;
+      try {
+        const res = await fetch("/api/bazarr/search", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ type, id })
+        });
+        if (!res.ok) throw new Error("Search failed");
+        btn.textContent = "✅";
+      } catch (err) {
+        btn.textContent = "❌";
+        console.error(err);
+      }
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }, 3000);
     }
 
     async function removeFromLibrary(type, id, btn) {
