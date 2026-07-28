@@ -34,6 +34,8 @@ backup:
   retention: 31
 betaseries:
   token: ''
+captchaai:
+  captchaai_key: ''
 cinemaz:
   cookies: ''
   user_agent: ''
@@ -63,13 +65,13 @@ general:
   debug: false
   default_und_audio_lang: ''
   default_und_embedded_subtitles_lang: ''
+  disable_all_providers_ssl_verify: false
   dont_notify_manual_actions: false
   embedded_subs_show_desired: true
   embedded_subtitles_parser: ffprobe
   enable_strm_support: false
   enabled_integrations: []
   enabled_providers:
-  - opensubtitles
   - gestdown
   - avistaz
   - tvsubtitles
@@ -111,6 +113,7 @@ general:
   serie_default_enabled: true
   serie_default_profile: 1
   serie_tag_enabled: true
+  show_live_badge: true
   single_language: false
   skip_hashing: false
   subfolder: current
@@ -122,6 +125,7 @@ general:
   upgrade_subs: true
   use_embedded_subs: true
   use_external_webhook: false
+  use_jellyfin: false
   use_plex: false
   use_postprocessing: false
   use_postprocessing_threshold: false
@@ -130,12 +134,24 @@ general:
   use_radarr: true
   use_scenename: true
   use_sonarr: true
+  use_whisper_fallback: false
+  use_whisper_fallback_series: false
   utf8_encode: true
   wanted_search_frequency: 6
   wanted_search_frequency_movie: 6
 hdbits:
   passkey: ''
   username: ''
+jellyfin:
+  apikey: ''
+  movie_library: []
+  movie_library_ids: []
+  refresh_method: immediate
+  series_library: []
+  series_library_ids: []
+  update_movie_library: false
+  update_series_library: false
+  url: ''
 jimaku:
   api_key: ''
   enable_ai_subs: false
@@ -169,12 +185,12 @@ napisy24:
   username: ''
 opensubtitles:
   password: ''
-  scraper_service_url: http://opensubtitles-scraper:8000
+  scraper_service_url: ''
   skip_wrong_fps: false
   ssl: false
   timeout: 15
   use_tag_search: false
-  use_web_scraper: true
+  use_web_scraper: false
   username: ''
   vip: false
 opensubtitlescom:
@@ -182,6 +198,9 @@ opensubtitlescom:
   include_machine_translated: false
   password: ''
   use_hash: true
+  username: ''
+pipocas:
+  password: ''
   username: ''
 plex:
   apikey: ''
@@ -212,8 +231,6 @@ plex:
   user_id: ''
   username: ''
   verify_ssl: false
-podnapisi:
-  verify_ssl: true
 postgresql:
   database: ''
   enabled: false
@@ -283,6 +300,7 @@ subsource:
 subsro:
   api_key: ''
 subsync:
+  auto_use_original_language: false
   checker:
     blacklisted_languages: []
     blacklisted_providers: []
@@ -293,6 +311,7 @@ subsync:
   no_fix_framerate: true
   subsync_movie_threshold: 70
   subsync_threshold: 90
+  use_original_language: false
   use_subsync: false
   use_subsync_movie_threshold: false
   use_subsync_threshold: false

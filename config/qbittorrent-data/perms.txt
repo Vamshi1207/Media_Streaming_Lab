@@ -1,0 +1,1 @@
+This file prevents ownership and permissions from being applied/re-applied to '/config' and '/data', if you want to reset ownership and permissions then please delete this file and restart the container.

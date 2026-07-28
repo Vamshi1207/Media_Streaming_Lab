@@ -8,7 +8,6 @@
 # - The next available top-level block after the entries below is 7700.
 services:
   media-server:
-    image: ghcr.io/vamshi1207/media_server_lab-media-server:v2
     build:
       context: .
       dockerfile: backend/Dockerfile
@@ -68,33 +67,35 @@ services:
     restart: unless-stopped
 
   qbittorrent:
-    image: ghcr.io/vamshi1207/qbittorrent-custom:latest
+    image: binhex/arch-qbittorrent:latest
     container_name: qbittorrent
     ports:
       - "7200:8080"
       - "7201:6881"
       - "7201:6881/udp"
     environment:
-      - PUID=501
-      - PGID=20
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Toronto
       - WEBUI_PORT=8080
+      - QBITTORRENT_WEBUI_USER=admin
+      - QBITTORRENT_WEBUI_PASSWORD=${QBITTORRENT_PASSWORD}
     volumes:
-      - ./config/qbittorrent:/config
-      - ./data/torrents:/data/torrents
+      - ./config/qbittorrent-data:/config
+      - ./data:/data
     networks:
       media-network:
         ipv4_address: 172.20.0.11
     restart: unless-stopped
 
   radarr:
-    image: ghcr.io/vamshi1207/radarr-custom:latest
+    image: lscr.io/linuxserver/radarr:latest
     container_name: radarr
     ports:
       - "7400:7878"
     environment:
-      - PUID=501
-      - PGID=20
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Toronto
     volumes:
       - ./config/radarr:/config
@@ -105,14 +106,14 @@ services:
     restart: unless-stopped
 
   jellyfin:
-    image: ghcr.io/vamshi1207/jellyfin-custom:latest
+    image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
     ports:
       - "7500:8096"
       - "8096:8096"
     environment:
-      - PUID=501
-      - PGID=20
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Toronto
     volumes:
       - ./config/jellyfin:/config
@@ -123,10 +124,11 @@ services:
     restart: unless-stopped
 
   jellyseerr:
-    image: ghcr.io/vamshi1207/jellyseerr-custom:latest
+    image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
     ports:
       - "7600:5055"
+    user: "1000:1000"
     environment:
       - LOG_LEVEL=info
       - TZ=America/Toronto
@@ -138,13 +140,13 @@ services:
     restart: unless-stopped
 
   prowlarr:
-    image: ghcr.io/vamshi1207/prowlarr-custom:latest
+    image: lscr.io/linuxserver/prowlarr:latest
     container_name: prowlarr
     ports:
       - "7300:9696"
     environment:
-      - PUID=501
-      - PGID=20
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Toronto
     volumes:
       - ./config/prowlarr:/config
@@ -153,29 +155,15 @@ services:
         ipv4_address: 172.20.0.14
     restart: unless-stopped
 
-  opensubtitles-scraper:
-    image: ghcr.io/vamshi1207/opensubtitles-scraper-custom:v2
-    container_name: opensubtitles-scraper
-    restart: unless-stopped
-    environment:
-      - DEBUG=false
-    networks:
-      media-network:
-        ipv4_address: 172.20.0.19
-
   bazarr:
-    image: ghcr.io/vamshi1207/bazarr-custom:v2
+    image: lscr.io/linuxserver/bazarr:latest
     container_name: bazarr
-    depends_on:
-      - opensubtitles-scraper
     ports:
       - "7800:6767"
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=America/Toronto
-      - OPENSUBTITLES_USE_WEB_SCRAPER=true
-      - OPENSUBTITLES_SCRAPER_URL=http://opensubtitles-scraper:8000
     volumes:
       - ./config/bazarr:/config
       - ./data/media:/data/media
@@ -185,13 +173,13 @@ services:
     restart: unless-stopped
 
   sonarr:
-    image: ghcr.io/vamshi1207/sonarr-custom:latest
+    image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
     ports:
       - "7700:8989"
     environment:
-      - PUID=501
-      - PGID=20
+      - PUID=1000
+      - PGID=1000
       - TZ=America/Toronto
     volumes:
       - ./config/sonarr:/config

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServerConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <LogFileRetentionDays>3</LogFileRetentionDays>
-  <IsStartupWizardCompleted>true</IsStartupWizardCompleted>
+  <IsStartupWizardCompleted>false</IsStartupWizardCompleted>
   <EnableMetrics>false</EnableMetrics>
   <EnableNormalizedItemByNameIds>true</EnableNormalizedItemByNameIds>
   <IsPortAuthorized>true</IsPortAuthorized>
@@ -37,7 +37,7 @@
   <InactiveSessionThreshold>0</InactiveSessionThreshold>
   <LibraryMonitorDelay>60</LibraryMonitorDelay>
   <LibraryUpdateDuration>30</LibraryUpdateDuration>
-  <CacheSize>800</CacheSize>
+  <CacheSize>400</CacheSize>
   <ImageSavingConvention>Legacy</ImageSavingConvention>
   <MetadataOptions>
     <MetadataOptions>
@@ -131,7 +131,7 @@
     </MetadataOptions>
   </MetadataOptions>
   <SkipDeserializationForBasicTypes>true</SkipDeserializationForBasicTypes>
-  <ServerName>aa2e71c6bf4a</ServerName>
+  <ServerName />
   <UICulture>en-US</UICulture>
   <SaveMetadataHidden>false</SaveMetadataHidden>
   <ContentTypes />
