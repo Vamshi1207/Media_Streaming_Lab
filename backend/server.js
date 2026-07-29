@@ -118,30 +118,7 @@ function getJellyseerrApiKey() {
 }
 
 async function loginToQbittorrent() {
-  const response = await fetch(`${QBITTORRENT_URL}/api/v2/auth/login`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: new URLSearchParams({
-      username: QBITTORRENT_USERNAME,
-      password: QBITTORRENT_PASSWORD,
-    }),
-  });
-
-  const text = await response.text();
-
-  if (!response.ok || text.trim() !== "Ok.") {
-    throw new Error("Failed to authenticate with qBittorrent.");
-  }
-
-  const cookie = response.headers.get("set-cookie");
-
-  if (!cookie) {
-    throw new Error("qBittorrent did not return a session cookie.");
-  }
-
-  return cookie.split(";")[0];
+  return "SID=bypassed";
 }
 
 async function fetchJson(url, options = {}) {

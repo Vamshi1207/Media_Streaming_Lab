@@ -1,9 +1,9 @@
 {
- "clientId": "bd3a055a-0fa2-4eea-902c-da1ebce3e923",
- "vapidPrivate": "a01hu0YDId1Xtdv_sWn6_oeGsq5z-Vyh5IXI-7VV5bY",
- "vapidPublic": "BJ8m2LpMyZmch6hLnmLUIrUIx1uMSbl1_GZKDZvRD-Nr9OmGCt535yyzf73b0XUNQ9oeSZFuOwOxSYjCzc2ftPc",
+ "clientId": "8fa63200-f3fa-439c-a0c9-f48db6c99673",
+ "vapidPrivate": "gIIuypxxV7gGuQl5ZFjBx6HDa_8HolTNDwye_PVNzek",
+ "vapidPublic": "BKKhTtZph3yfG7LIE6y9EcE9QdP7VTppqFtGnn3UufigGS7tr5bM-abqbrKmRiw6XxcAOdSw2tDw3YdTvKuysxw",
  "main": {
-  "apiKey": "MTc3NjYyMDI1ODQ2MmFkYWY2YTNjLWVhOWMtNDkyNS04Y2YzLTBiY2RjNzM2NzJiZg==",
+  "apiKey": "MTc4NTM1NjIzMTgyMGFjNDM5Y2U5LWI4MjMtNDQ0MS1iNDUxLTgxMzkzYmIxZjgwYg==",
   "applicationTitle": "Jellyseerr",
   "applicationUrl": "",
   "cacheImages": false,
@@ -36,12 +36,12 @@
   "libraries": []
  },
  "jellyfin": {
-  "name": "aa2e71c6bf4a",
+  "name": "vamshi_hp",
   "ip": "jellyfin",
   "port": 8096,
   "useSsl": false,
   "urlBase": "",
-  "externalHostname": "http://192.168.2.27:7500",
+  "externalHostname": "",
   "jellyfinForgotPasswordUrl": "",
   "libraries": [
    {
@@ -51,61 +51,20 @@
     "type": "movie"
    },
    {
-    "id": "767bffe4f11c93ef34b805451a696a4e",
-    "name": "TV Shows",
+    "id": "a656b907eb3a73532e40e44b968d0225",
+    "name": "Shows",
     "enabled": true,
     "type": "show"
    }
   ],
-  "serverId": "3b7bf31d74a4418a8d9b202fcb638c73",
-  "apiKey": "fa8d954417574d42859311fb96bdec89"
+  "serverId": "5a166533a2454b2f8a61f616435c14d1",
+  "apiKey": "fd9821ab1250429db05f9b1df99fc0eb"
  },
  "tautulli": {},
- "radarr": [
-  {
-   "name": "Radarr",
-   "hostname": "radarr",
-   "port": 7878,
-   "apiKey": "0f92b94d62fe4b2a95b3d5ebd622a427",
-   "useSsl": false,
-   "baseUrl": "",
-   "activeProfileId": 1,
-   "activeProfileName": "Any",
-   "activeDirectory": "/data/media/movies",
-   "is4k": false,
-   "minimumAvailability": "released",
-   "tags": [],
-   "isDefault": true,
-   "syncEnabled": false,
-   "preventSearch": false,
-   "tagRequests": false,
-   "id": 0
-  }
- ],
- "sonarr": [
-  {
-   "name": "Sonarr",
-   "hostname": "sonarr",
-   "port": 8989,
-   "apiKey": "ba1d55a1c9ba45739399447866a6e5b7",
-   "useSsl": false,
-   "baseUrl": "",
-   "activeProfileId": 1,
-   "activeProfileName": "Any",
-   "activeDirectory": "/data/media/tv",
-   "tags": [],
-   "animeTags": [],
-   "is4k": false,
-   "isDefault": true,
-   "enableSeasonFolders": false,
-   "syncEnabled": false,
-   "preventSearch": false,
-   "tagRequests": false,
-   "id": 0
-  }
- ],
+ "radarr": [],
+ "sonarr": [],
  "public": {
-  "initialized": true
+  "initialized": false
  },
  "notifications": {
   "agents": {

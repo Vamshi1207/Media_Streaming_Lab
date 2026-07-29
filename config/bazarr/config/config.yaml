@@ -1,9 +1,9 @@
 ---
 addic7ed:
   cookies: ''
-  password: Bazarr+creds@123
+  password: ''
   user_agent: ''
-  username: vamshislab
+  username: ''
   vip: false
 analytics:
   enabled: true
@@ -19,7 +19,7 @@ anticaptcha:
 assrt:
   token: ''
 auth:
-  apikey: dcf90a1c76161123030ac6669972dd5e
+  apikey: a6232d9e9d200f91d516e2e227dcd3f2
   password: ''
   type: null
   username: ''
@@ -52,7 +52,7 @@ embeddedsubtitles:
   unknown_as_fallback: false
 general:
   adaptive_searching: true
-  adaptive_searching_delay: 3w
+  adaptive_searching_delay: 1w
   adaptive_searching_delta: 1w
   anti_captcha_provider: null
   auto_update: true
@@ -73,15 +73,16 @@ general:
   enabled_integrations: []
   enabled_providers:
   - gestdown
-  - avistaz
+  - supersubtitles
   - tvsubtitles
   - yifysubtitles
+  - wizdom
   external_webhook_password: ''
   external_webhook_url: ''
   external_webhook_username: ''
-  flask_secret_key: 0aa2d7804c87a3c04cdf8e3dc993a2e2
+  flask_secret_key: eae0a03a4f20703afeb39885023aeadb
   hi_extension: hi
-  hostname: a37b56105b4d
+  hostname: 0ed2b6b3df7b
   ignore_ass_subs: false
   ignore_pgs_subs: false
   ignore_vobsub_subs: false
@@ -90,9 +91,9 @@ general:
   language_equals: []
   minimum_score: 90
   minimum_score_movie: 70
-  movie_default_enabled: true
-  movie_default_profile: 1
-  movie_tag_enabled: true
+  movie_default_enabled: false
+  movie_default_profile: ''
+  movie_tag_enabled: false
   multithreading: true
   notify_if_nothing_is_missing_for_signalr_event: false
   page_size: 25
@@ -103,16 +104,10 @@ general:
   postprocessing_cmd: ''
   postprocessing_threshold: 90
   postprocessing_threshold_movie: 70
-  provider_priorities:
-    avistaz: 30
-    gestdown: 20
-    opensubtitlescom: 10
-    tvsubtitles: 40
-    yifysubtitles: 50
   remove_profile_tags: []
-  serie_default_enabled: true
-  serie_default_profile: 1
-  serie_tag_enabled: true
+  serie_default_enabled: false
+  serie_default_profile: ''
+  serie_tag_enabled: false
   show_live_badge: true
   single_language: false
   skip_hashing: false
@@ -125,17 +120,16 @@ general:
   upgrade_subs: true
   use_embedded_subs: true
   use_external_webhook: false
-  use_jellyfin: false
+  use_jellyfin: true
   use_plex: false
   use_postprocessing: false
   use_postprocessing_threshold: false
   use_postprocessing_threshold_movie: false
-  use_provider_priority: true
   use_radarr: true
   use_scenename: true
   use_sonarr: true
-  use_whisper_fallback: false
-  use_whisper_fallback_series: false
+  use_whisper_fallback: true
+  use_whisper_fallback_series: true
   utf8_encode: true
   wanted_search_frequency: 6
   wanted_search_frequency_movie: 6
@@ -143,15 +137,19 @@ hdbits:
   passkey: ''
   username: ''
 jellyfin:
-  apikey: ''
-  movie_library: []
-  movie_library_ids: []
+  apikey: fd9821ab1250429db05f9b1df99fc0eb
+  movie_library:
+  - Movies
+  movie_library_ids:
+  - f137a2dd21bbc1b99aa5c0f6bf02a805
   refresh_method: immediate
-  series_library: []
-  series_library_ids: []
-  update_movie_library: false
-  update_series_library: false
-  url: ''
+  series_library:
+  - Shows
+  series_library_ids:
+  - a656b907eb3a73532e40e44b968d0225
+  update_movie_library: true
+  update_series_library: true
+  url: http://jellyfin:8096
 jimaku:
   api_key: ''
   enable_ai_subs: false
@@ -183,16 +181,6 @@ napiprojekt:
 napisy24:
   password: ''
   username: ''
-opensubtitles:
-  password: ''
-  scraper_service_url: ''
-  skip_wrong_fps: false
-  ssl: false
-  timeout: 15
-  use_tag_search: false
-  use_web_scraper: false
-  username: ''
-  vip: false
 opensubtitlescom:
   include_ai_translated: false
   include_machine_translated: false
@@ -208,7 +196,7 @@ plex:
   client_identifier: ''
   disable_auto_migration: false
   email: ''
-  encryption_key: 2pm60wKC1334BUp2lpUaVuLRyXHSdprp3VA1PfJglr0
+  encryption_key: MTYRftdeQDApENH1FXEQtd2Aq83T7TusfuAKu7qB7VU
   ip: 127.0.0.1
   migration_attempted: false
   migration_successful: false
@@ -230,7 +218,6 @@ plex:
   update_series_library: false
   user_id: ''
   username: ''
-  verify_ssl: false
 postgresql:
   database: ''
   enabled: false
@@ -249,7 +236,7 @@ proxy:
   url: ''
   username: ''
 radarr:
-  apikey: 0f92b94d62fe4b2a95b3d5ebd622a427
+  apikey: f440c4e6837c49318c7e9957f30caa6a
   base_url: ''
   defer_search_signalr: false
   excluded_tags: []
@@ -260,14 +247,13 @@ radarr:
   ip: radarr
   movies_sync: 60
   movies_sync_on_live: true
-  only_monitored: true
+  only_monitored: false
   port: 7878
   ssl: false
-  sync_only_monitored_movies: true
+  sync_only_monitored_movies: false
   use_ffprobe_cache: true
-  verify_ssl: false
 sonarr:
-  apikey: ba1d55a1c9ba45739399447866a6e5b7
+  apikey: fa82be671bf54faa994c0631edc25b70
   base_url: ''
   defer_search_signalr: false
   exclude_season_zero: false
@@ -278,17 +264,15 @@ sonarr:
   full_update_hour: 4
   http_timeout: 60
   ip: sonarr
-  only_monitored: true
+  only_monitored: false
   port: 8989
   series_sync: 60
   series_sync_on_live: true
   ssl: false
-  sync_only_monitored_episodes: true
-  sync_only_monitored_series: true
+  sync_only_monitored_episodes: false
+  sync_only_monitored_series: false
   use_ffprobe_cache: true
-  verify_ssl: false
 subdl:
-  anime_mode: false
   api_key: ''
 subf2m:
   user_agent: ''
@@ -312,9 +296,9 @@ subsync:
   subsync_movie_threshold: 70
   subsync_threshold: 90
   use_original_language: false
-  use_subsync: false
-  use_subsync_movie_threshold: false
-  use_subsync_threshold: false
+  use_subsync: true
+  use_subsync_movie_threshold: true
+  use_subsync_threshold: true
 subx:
   api_key: ''
 titlovi:
@@ -332,14 +316,6 @@ translator:
   gemini_model: gemini-2.0-flash
   lingarr_token: ''
   lingarr_url: http://lingarr:9876
-  openrouter_api_key: ''
-  openrouter_encryption_key: ''
-  openrouter_max_concurrent: 2
-  openrouter_model: google/gemini-2.5-flash-preview-05-20
-  openrouter_parallel_batches: 4
-  openrouter_reasoning: disabled
-  openrouter_temperature: 0.3
-  openrouter_url: http://subtitle-translator:8765
   translator_info: true
   translator_type: google_translate
 turkcealtyaziorg:

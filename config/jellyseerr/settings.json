@@ -1,11 +1,11 @@
 {
- "clientId": "bd3a055a-0fa2-4eea-902c-da1ebce3e923",
- "vapidPrivate": "a01hu0YDId1Xtdv_sWn6_oeGsq5z-Vyh5IXI-7VV5bY",
- "vapidPublic": "BJ8m2LpMyZmch6hLnmLUIrUIx1uMSbl1_GZKDZvRD-Nr9OmGCt535yyzf73b0XUNQ9oeSZFuOwOxSYjCzc2ftPc",
+ "clientId": "8fa63200-f3fa-439c-a0c9-f48db6c99673",
+ "vapidPrivate": "gIIuypxxV7gGuQl5ZFjBx6HDa_8HolTNDwye_PVNzek",
+ "vapidPublic": "BKKhTtZph3yfG7LIE6y9EcE9QdP7VTppqFtGnn3UufigGS7tr5bM-abqbrKmRiw6XxcAOdSw2tDw3YdTvKuysxw",
  "main": {
-  "apiKey": "MTc3NjYyMDI1ODQ2MmFkYWY2YTNjLWVhOWMtNDkyNS04Y2YzLTBiY2RjNzM2NzJiZg==",
+  "apiKey": "MTc4NTM1NjIzMTgyMGFjNDM5Y2U5LWI4MjMtNDQ0MS1iNDUxLTgxMzkzYmIxZjgwYg==",
   "applicationTitle": "Jellyseerr",
-  "applicationUrl": "https://jellyseerr.vamshislab.com",
+  "applicationUrl": "",
   "cacheImages": false,
   "defaultPermissions": 32,
   "defaultQuotas": {
@@ -36,12 +36,12 @@
   "libraries": []
  },
  "jellyfin": {
-  "name": "aa2e71c6bf4a",
+  "name": "vamshi_hp",
   "ip": "jellyfin",
   "port": 8096,
   "useSsl": false,
   "urlBase": "",
-  "externalHostname": "https://jellyfin.vamshislab.com",
+  "externalHostname": "",
   "jellyfinForgotPasswordUrl": "",
   "libraries": [
    {
@@ -57,8 +57,8 @@
     "type": "show"
    }
   ],
-  "serverId": "3b7bf31d74a4418a8d9b202fcb638c73",
-  "apiKey": "fa8d954417574d42859311fb96bdec89"
+  "serverId": "5a166533a2454b2f8a61f616435c14d1",
+  "apiKey": "fd9821ab1250429db05f9b1df99fc0eb"
  },
  "tautulli": {},
  "radarr": [
@@ -66,9 +66,8 @@
    "name": "Radarr",
    "hostname": "radarr",
    "port": 7878,
-   "apiKey": "0f92b94d62fe4b2a95b3d5ebd622a427",
+   "apiKey": "f440c4e6837c49318c7e9957f30caa6a",
    "useSsl": false,
-   "baseUrl": "",
    "activeProfileId": 5,
    "activeProfileName": "Ultra-HD",
    "activeDirectory": "/data/media/movies",
@@ -87,13 +86,11 @@
    "name": "Sonarr",
    "hostname": "sonarr",
    "port": 8989,
-   "apiKey": "ba1d55a1c9ba45739399447866a6e5b7",
+   "apiKey": "fa82be671bf54faa994c0631edc25b70",
    "useSsl": false,
-   "baseUrl": "",
    "activeProfileId": 5,
    "activeProfileName": "Ultra-HD",
    "activeDirectory": "/data/media/tv",
-   "activeAnimeDirectory": "",
    "tags": [],
    "animeTags": [],
    "is4k": false,
@@ -211,13 +208,13 @@
    "schedule": "0 0 5 * * *"
   },
   "radarr-scan": {
-   "schedule": "0 0 */1 * * *"
+   "schedule": "0 0 4 * * *"
   },
   "sonarr-scan": {
-   "schedule": "0 0 */1 * * *"
+   "schedule": "0 30 4 * * *"
   },
   "availability-sync": {
-   "schedule": "0 0 */1 * * *"
+   "schedule": "0 0 5 * * *"
   },
   "download-sync": {
    "schedule": "0 * * * * *"
@@ -229,7 +226,7 @@
    "schedule": "0 */5 * * * *"
   },
   "jellyfin-full-scan": {
-   "schedule": "0 0 */1 * * *"
+   "schedule": "0 0 3 * * *"
   },
   "image-cache-cleanup": {
    "schedule": "0 0 5 * * *"
