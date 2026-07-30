@@ -97,9 +97,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Toronto
+      - RADARR_API_KEY=${RADARR_API_KEY}
     volumes:
       - ./config/radarr:/config
       - ./data:/data
+      - ./init-scripts/radarr-init.sh:/custom-cont-init.d/radarr-init.sh:ro
     networks:
       media-network:
         ipv4_address: 172.20.0.12
@@ -148,8 +150,10 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Toronto
+      - PROWLARR_API_KEY=${PROWLARR_API_KEY}
     volumes:
       - ./config/prowlarr:/config
+      - ./init-scripts/prowlarr-init.sh:/custom-cont-init.d/prowlarr-init.sh:ro
     networks:
       media-network:
         ipv4_address: 172.20.0.14
@@ -164,9 +168,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Toronto
+      - BAZARR_API_KEY=${BAZARR_API_KEY}
     volumes:
       - ./config/bazarr:/config
       - ./data/media:/data/media
+      - ./init-scripts/bazarr-init.sh:/custom-cont-init.d/bazarr-init.sh:ro
     networks:
       media-network:
         ipv4_address: 172.20.0.18
@@ -181,13 +187,34 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Toronto
+      - SONARR_API_KEY=${SONARR_API_KEY}
     volumes:
       - ./config/sonarr:/config
       - ./data:/data
+      - ./init-scripts/sonarr-init.sh:/custom-cont-init.d/sonarr-init.sh:ro
     networks:
       media-network:
         ipv4_address: 172.20.0.13
     restart: unless-stopped
+
+  auto-configurator:
+    build:
+      context: ./auto-configurator
+    container_name: auto-configurator
+    env_file: .env
+    volumes:
+      - ./config:/config
+    depends_on:
+      - radarr
+      - sonarr
+      - prowlarr
+      - bazarr
+      - qbittorrent
+      - jellyfin
+      - jellyseerr
+    networks:
+      media-network:
+        ipv4_address: 172.20.0.19
 
 networks:
   media-network:

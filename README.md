@@ -111,6 +111,17 @@ The stack intentionally keeps host ports in the `7000` range to make the environ
 - Subtitle availability indicators
 - Direct links to each underlying service
 
+### Zero-Touch Deployment & Auto-Configuration
+
+A custom `auto-configurator` Python container orchestrates the setup of the entire stack from scratch:
+- Automatically injects predefined API keys into Radarr, Sonarr, Prowlarr, Bazarr, Jellyfin, and Jellyseerr using `init-scripts/` and direct API calls.
+- Configures media size limits (e.g. 10GB for movies, 2GB for shows).
+- Directly connects Radarr and Sonarr to qBittorrent, Prowlarr, and Bazarr.
+- Seeds Jellyseerr to bypass the initial setup wizard.
+- Sets up instant Webhook notifications so Jellyfin immediately scans new downloads.
+- Adds top public indexers directly into Prowlarr.
+- Ensures Radarr and Sonarr prioritize "Original Language" audio profiles.
+
 ### Backend Integration Layer
 
 The Express backend in [`backend/server.js`](backend/server.js) provides API endpoints that normalize multiple services into one dashboard-friendly API:
@@ -147,6 +158,14 @@ The Express backend in [`backend/server.js`](backend/server.js) provides API end
 |   `-- torrents/
 |-- docker-compose.yml
 |-- .env.example
+|-- auto-configurator/
+|   |-- Dockerfile
+|   `-- setup.py
+|-- init-scripts/
+|   |-- bazarr-init.sh
+|   |-- prowlarr-init.sh
+|   |-- radarr-init.sh
+|   `-- sonarr-init.sh
 `-- README.md
 ```
 
@@ -159,6 +178,7 @@ The Express backend in [`backend/server.js`](backend/server.js) provides API end
 | Frontend | HTML, CSS, JavaScript |
 | Media | Jellyfin |
 | Automation | Radarr, Sonarr, Prowlarr, Jellyseerr |
+| Configuration | Python `requests`, SQLite, shell scripts |
 | Downloads | qBittorrent |
 | Subtitles | Bazarr, OpenSubtitles scraper |
 | Remote access | Cloudflare Tunnel profile |
@@ -183,18 +203,13 @@ cd media_server_lab
 
 ```bash
 cp .env.example .env
-```
-
-For local-only use, the default placeholder is enough. For remote access, set:
-
-```env
-TUNNEL_TOKEN=your-cloudflare-tunnel-token
+# Edit .env to add your own API keys and tokens
 ```
 
 ### 3. Start the stack
 
 ```bash
-docker compose up -d
+docker compose up -d --build
 ```
 
 Open the dashboard:
