@@ -208,13 +208,13 @@
    "schedule": "0 0 5 * * *"
   },
   "radarr-scan": {
-   "schedule": "0 0 4 * * *"
+   "schedule": "0 0 */1 * * *"
   },
   "sonarr-scan": {
-   "schedule": "0 30 4 * * *"
+   "schedule": "0 0 */1 * * *"
   },
   "availability-sync": {
-   "schedule": "0 0 5 * * *"
+   "schedule": "0 0 */4 * * *"
   },
   "download-sync": {
    "schedule": "0 * * * * *"
@@ -226,7 +226,7 @@
    "schedule": "0 */5 * * * *"
   },
   "jellyfin-full-scan": {
-   "schedule": "0 0 3 * * *"
+   "schedule": "0 0 */6 * * *"
   },
   "image-cache-cleanup": {
    "schedule": "0 0 5 * * *"

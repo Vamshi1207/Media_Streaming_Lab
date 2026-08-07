@@ -1,0 +1,7 @@
+linuxserver/radarr: 6.4.2-nightly
+linuxserver/jellyfin: 10.11.11ubu2604-ls43
+linuxserver/prowlarr: 2.6.2-nightly
+linuxserver/bazarr: 1.6.1-development
+linuxserver/sonarr: 4.0.19.2979-ls320
+fallenbagel/jellyseerr/: 2.7.3
+binhex/arch-qbittorrent/: 5.2.3-3-01-libtorrentv1

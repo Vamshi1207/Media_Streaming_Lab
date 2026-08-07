@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const multer = require("multer");
 const http = require("http");
+const crypto = require("crypto");
 
 const app = express();
 const upload = multer({ dest: "/tmp/uploads/" });
@@ -279,6 +280,341 @@ async function getJellyseerrMediaDetails(media) {
   } catch (_error) {
     return {};
   }
+}
+
+function normalizeSearchText(value) {
+  return String(value || "")
+    .replace(/\.[A-Za-z0-9]{2,4}$/g, "")
+    .replace(/[._]+/g, " ")
+    .replace(/\[(.*?)\]|\((.*?)\)/g, " $1 $2 ")
+    .replace(/\b(480p|720p|1080p|2160p|4k|bluray|blu[- ]?ray|web[- ]?dl|webrip|x264|x265|h264|h265|aac|dts|yts|yify|proper|repack|remux|hdr|dv|ddp|multi)\b/gi, " ")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function parseTorrentMetadata(fileBuffer, fallbackName) {
+  let offset = 0;
+  let infoRange = null;
+  let torrentName = null;
+
+  function readValue(inInfoDictionary = false) {
+    const rawStart = offset;
+    const token = fileBuffer[offset];
+
+    if (token === 105) { // i
+      offset += 1;
+      const end = fileBuffer.indexOf(101, offset);
+      if (end === -1) {
+        throw new Error("Invalid torrent file: unterminated integer");
+      }
+      const value = Number(fileBuffer.slice(offset, end).toString("utf8"));
+      offset = end + 1;
+      return { value, rawStart, rawEnd: offset };
+    }
+
+    if (token === 108) { // l
+      offset += 1;
+      const list = [];
+      while (fileBuffer[offset] !== 101) {
+        list.push(readValue(inInfoDictionary).value);
+      }
+      offset += 1;
+      return { value: list, rawStart, rawEnd: offset };
+    }
+
+    if (token === 100) { // d
+      offset += 1;
+      const dict = {};
+      while (fileBuffer[offset] !== 101) {
+        const key = readValue(inInfoDictionary).value;
+        const value = readValue(inInfoDictionary || key === "info");
+        dict[key] = value.value;
+
+        if (key === "info") {
+          infoRange = { start: value.rawStart, end: value.rawEnd };
+        }
+
+        if (inInfoDictionary && (key === "name" || key === "name.utf-8") && typeof value.value === "string" && value.value.trim()) {
+          torrentName = value.value;
+        }
+      }
+      offset += 1;
+      return { value: dict, rawStart, rawEnd: offset };
+    }
+
+    if (token >= 48 && token <= 57) { // string
+      let colon = offset;
+      while (fileBuffer[colon] !== 58) {
+        colon += 1;
+        if (colon >= fileBuffer.length) {
+          throw new Error("Invalid torrent file: malformed string length");
+        }
+      }
+      const length = Number(fileBuffer.slice(offset, colon).toString("utf8"));
+      const valueStart = colon + 1;
+      const valueEnd = valueStart + length;
+      if (Number.isNaN(length) || valueEnd > fileBuffer.length) {
+        throw new Error("Invalid torrent file: bad string length");
+      }
+      const value = fileBuffer.slice(valueStart, valueEnd).toString("utf8");
+      offset = valueEnd;
+      return { value, rawStart, rawEnd: offset };
+    }
+
+    throw new Error(`Invalid torrent file: unexpected token ${String.fromCharCode(token || 0)}`);
+  }
+
+  const parsed = readValue(false).value;
+  const torrentFolderName = (torrentName || path.basename(fallbackName, path.extname(fallbackName)) || "torrent")
+    .trim()
+    .replace(/[\\/]/g, " ");
+
+  if (!infoRange) {
+    throw new Error("Invalid torrent file: missing info dictionary");
+  }
+
+  const infoHash = crypto.createHash("sha1").update(fileBuffer.slice(infoRange.start, infoRange.end)).digest("hex").toUpperCase();
+
+  return {
+    torrentName: torrentFolderName,
+    infoHash,
+    data: parsed,
+  };
+}
+
+function chooseLookupMatch(results, searchText) {
+  if (!Array.isArray(results) || !results.length) {
+    return null;
+  }
+
+  const normalizedSearch = normalizeSearchText(searchText);
+  const exact = results.find(item => normalizeSearchText(item.title || item.name || item.originalTitle || item.originalName) === normalizedSearch);
+  if (exact) {
+    return exact;
+  }
+
+  const prefix = results.find(item => normalizeSearchText(item.title || item.name || item.originalTitle || item.originalName).startsWith(normalizedSearch));
+  if (prefix) {
+    return prefix;
+  }
+
+  return results[0];
+}
+
+async function ensureArrMediaFromTorrent(category, torrentName) {
+  const lookupTerm = normalizeSearchText(torrentName);
+
+  if (!lookupTerm) {
+    return null;
+  }
+
+  if (category === "radarr") {
+    const [results, existing, rootFolders, profiles] = await Promise.all([
+      fetchRadarr(`/api/v3/movie/lookup?term=${encodeURIComponent(lookupTerm)}`),
+      fetchRadarr("/api/v3/movie"),
+      fetchRadarr("/api/v3/rootfolder"),
+      fetchRadarr("/api/v3/qualityprofile"),
+    ]);
+
+    const match = chooseLookupMatch(results, lookupTerm);
+    if (!match?.tmdbId) {
+      return null;
+    }
+
+    if (existing.some(movie => movie.tmdbId === match.tmdbId)) {
+      return match;
+    }
+
+    const rootFolderPath = rootFolders[0]?.path;
+    const qualityProfileId = profiles[0]?.id;
+
+    if (!rootFolderPath || !qualityProfileId) {
+      throw new Error("Radarr missing root folder or quality profile");
+    }
+
+    await fetchRadarr("/api/v3/movie", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: match.title || match.originalTitle || torrentName,
+        tmdbId: match.tmdbId,
+        year: match.year,
+        images: match.images,
+        qualityProfileId,
+        rootFolderPath,
+        monitored: true,
+        addOptions: { searchForMovie: false },
+      }),
+    });
+
+    return match;
+  }
+
+  if (category === "sonarr") {
+    const [results, existing, rootFolders, profiles] = await Promise.all([
+      fetchSonarr(`/api/v3/series/lookup?term=${encodeURIComponent(lookupTerm)}`),
+      fetchSonarr("/api/v3/series"),
+      fetchSonarr("/api/v3/rootfolder"),
+      fetchSonarr("/api/v3/qualityprofile"),
+    ]);
+
+    const match = chooseLookupMatch(results, lookupTerm);
+    if (!match?.tvdbId) {
+      return null;
+    }
+
+    if (existing.some(series => series.tvdbId === match.tvdbId)) {
+      return match;
+    }
+
+    const rootFolderPath = rootFolders[0]?.path;
+    const qualityProfileId = profiles[0]?.id;
+
+    if (!rootFolderPath || !qualityProfileId) {
+      throw new Error("Sonarr missing root folder or quality profile");
+    }
+
+    await fetchSonarr("/api/v3/series", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: match.title || match.name || torrentName,
+        tvdbId: match.tvdbId,
+        year: match.year,
+        images: match.images,
+        qualityProfileId,
+        rootFolderPath,
+        monitored: true,
+        addOptions: { searchForMissingEpisodes: false },
+      }),
+    });
+
+    return match;
+  }
+
+  return null;
+}
+
+
+async function waitForQbittorrentTorrent(infoHash, timeoutMs = 30000) {
+  const deadline = Date.now() + timeoutMs;
+
+  while (Date.now() < deadline) {
+    try {
+      const torrents = await fetchQbittorrent("/api/v2/torrents/info");
+      const torrent = torrents.find(item => String(item.hash || "").toUpperCase() === String(infoHash || "").toUpperCase());
+
+      if (torrent) {
+        return torrent;
+      }
+    } catch (_error) {
+      // keep polling until the torrent is visible
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  }
+
+  return null;
+}
+
+async function renameQbittorrentTorrentForArr(infoHash, category, canonicalTitle) {
+  if (!infoHash || !canonicalTitle) {
+    return false;
+  }
+
+  const torrent = await waitForQbittorrentTorrent(infoHash);
+  if (!torrent) {
+    return false;
+  }
+
+  let files = [];
+  try {
+    files = await fetchQbittorrent(`/api/v2/torrents/files?hash=${encodeURIComponent(infoHash)}`);
+  } catch (_error) {
+    return false;
+  }
+
+  if (!Array.isArray(files) || !files.length) {
+    return false;
+  }
+
+  const videoFiles = files.filter(file => /\.(mkv|mp4|avi|mov|wmv|m4v)$/i.test(file.name || file.path || ""));
+  const targetFile = videoFiles[0] || files[0];
+  const oldName = targetFile.name || targetFile.path;
+
+  if (!oldName) {
+    return false;
+  }
+
+  const ext = path.extname(oldName);
+  const newName = files.length === 1
+    ? `${canonicalTitle}${ext}`
+    : canonicalTitle;
+
+  const endpoint = files.length === 1
+    ? "/api/v2/torrents/renameFile"
+    : "/api/v2/torrents/renameFolder";
+
+  const cookie = await loginToQbittorrent();
+  const response = await fetch(`${QBITTORRENT_URL}${endpoint}`, {
+    method: "POST",
+    headers: {
+      "Cookie": cookie,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      hash: infoHash,
+      oldPath: oldName,
+      newPath: newName,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || `Rename failed with status ${response.status}`);
+  }
+
+  const categoryPath = category === "sonarr" ? "/data/torrents/tv" : "/data/torrents/movies";
+  const scanPath = files.length === 1 ? path.join(categoryPath, `${newName}`) : path.join(categoryPath, canonicalTitle);
+  await triggerDownloadedScan(category, scanPath, infoHash);
+  return true;
+}
+
+async function triggerDownloadedScan(category, folderPath, downloadClientId) {
+  const commandName = category === "sonarr" ? "DownloadedEpisodesScan" : category === "radarr" ? "DownloadedMoviesScan" : null;
+
+  if (!commandName) {
+    return null;
+  }
+
+  const apiUrl = category === "sonarr" ? SONARR_URL : RADARR_URL;
+  const apiKey = category === "sonarr" ? getSonarrApiKey() : getRadarrApiKey();
+
+  if (!apiKey) {
+    throw new Error(`${category} API key is unavailable.`);
+  }
+
+  const response = await fetch(`${apiUrl}/api/v3/command`, {
+    method: "POST",
+    headers: {
+      "X-Api-Key": apiKey,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: commandName,
+      path: folderPath,
+      downloadClientId,
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(errorText || `Command failed with status ${response.status}`);
+  }
+
+  return response.json();
 }
 
 function summarizeServiceError(error) {
@@ -1148,8 +1484,17 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
   try {
     const category = req.body.category || "radarr";
     const savepath = category === "sonarr" ? "/data/torrents/tv" : "/data/torrents/movies";
-    
     const fileBuffer = fs.readFileSync(req.file.path);
+    const torrentMeta = parseTorrentMetadata(fileBuffer, req.file.originalname);
+    const torrentFolderPath = path.join(savepath, torrentMeta.torrentName);
+
+    let matchedMedia = null;
+    try {
+      matchedMedia = await ensureArrMediaFromTorrent(category, torrentMeta.torrentName);
+    } catch (mediaError) {
+      console.warn(`⚠️ Could not seed ${category} media from torrent name:`, mediaError.message);
+    }
+
     const formData = new FormData();
     formData.append("torrents", new Blob([fileBuffer]), req.file.originalname);
     formData.append("savepath", savepath);
@@ -1172,7 +1517,36 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
       throw new Error(`Submit failed: ${errorText || response.status}`);
     }
 
-    return res.json({ success: true });
+    const canonicalTitle = category === "radarr"
+      ? `${matchedMedia?.title || torrentMeta.torrentName}${matchedMedia?.year ? ` (${matchedMedia.year})` : ""}`
+      : `${matchedMedia?.title || torrentMeta.torrentName}${matchedMedia?.year ? ` (${matchedMedia.year})` : ""}`;
+
+    let renamed = false;
+    if (canonicalTitle) {
+      try {
+        renamed = await renameQbittorrentTorrentForArr(torrentMeta.infoHash, category, canonicalTitle);
+      } catch (renameError) {
+        console.warn(`⚠️ ${category} torrent rename failed:`, renameError.message);
+      }
+    }
+
+    if (!renamed) {
+      try {
+        await triggerDownloadedScan(category, torrentFolderPath, torrentMeta.infoHash);
+      } catch (scanError) {
+        console.warn(`⚠️ ${category} download scan could not be queued:`, scanError.message);
+      }
+    }
+
+    return res.json({
+      success: true,
+      torrentName: torrentMeta.torrentName,
+      infoHash: torrentMeta.infoHash,
+      category,
+      savePath: savepath,
+      matchedTitle: canonicalTitle,
+      renamed,
+    });
   } catch (error) {
     return res.status(502).json({ error: summarizeServiceError(error) });
   } finally {

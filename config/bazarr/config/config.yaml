@@ -19,7 +19,7 @@ anticaptcha:
 assrt:
   token: ''
 auth:
-  apikey: a6232d9e9d200f91d516e2e227dcd3f2
+  apikey: 004d4dd81b67fbc5a07504e0a98bf684
   password: ''
   type: null
   username: ''
@@ -137,7 +137,7 @@ hdbits:
   passkey: ''
   username: ''
 jellyfin:
-  apikey: fd9821ab1250429db05f9b1df99fc0eb
+  apikey: 004d4dd81b67fbc5a07504e0a98bf684
   movie_library:
   - Movies
   movie_library_ids:
@@ -191,7 +191,7 @@ pipocas:
   password: ''
   username: ''
 plex:
-  apikey: ''
+  apikey: 004d4dd81b67fbc5a07504e0a98bf684
   auth_method: apikey
   client_identifier: ''
   disable_auto_migration: false
@@ -236,7 +236,7 @@ proxy:
   url: ''
   username: ''
 radarr:
-  apikey: f440c4e6837c49318c7e9957f30caa6a
+  apikey: 004d4dd81b67fbc5a07504e0a98bf684
   base_url: ''
   defer_search_signalr: false
   excluded_tags: []
@@ -253,7 +253,7 @@ radarr:
   sync_only_monitored_movies: false
   use_ffprobe_cache: true
 sonarr:
-  apikey: fa82be671bf54faa994c0631edc25b70
+  apikey: 004d4dd81b67fbc5a07504e0a98bf684
   base_url: ''
   defer_search_signalr: false
   exclude_season_zero: false
@@ -280,7 +280,7 @@ subf2m:
 subsarr:
   base_url: ''
 subsource:
-  apikey: ''
+  apikey: 004d4dd81b67fbc5a07504e0a98bf684
 subsro:
   api_key: ''
 subsync:
