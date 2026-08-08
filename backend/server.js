@@ -1603,7 +1603,7 @@ app.get("/", (_req, res) => {
   res.sendFile(path.join(FRONTEND_PATH, "index.html"));
 });
 
-app.listen(3000, () => {
+app.listen(3000, '0.0.0.0', () => {
   console.log("🚀 Server running on port 3000");
   // Auto-configure qBittorrent category paths after a short delay to allow qBittorrent to be ready
   setTimeout(setupQbittorrentCategories, 5000);

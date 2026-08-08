@@ -48,7 +48,6 @@ services:
       - qbittorrent
     networks:
       msl-network:
-        ipv4_address: 172.25.0.16
     restart: unless-stopped
 
   cloudflared:
@@ -63,7 +62,6 @@ services:
       - media-server
     networks:
       msl-network:
-        ipv4_address: 172.25.0.17
     restart: unless-stopped
 
   qbittorrent:
@@ -85,7 +83,6 @@ services:
       - ./data:/data
     networks:
       msl-network:
-        ipv4_address: 172.25.0.11
     restart: unless-stopped
 
   radarr:
@@ -104,7 +101,6 @@ services:
       - ./init-scripts/radarr-init.sh:/custom-cont-init.d/radarr-init.sh:ro
     networks:
       msl-network:
-        ipv4_address: 172.25.0.12
     restart: unless-stopped
 
   jellyfin:
@@ -122,7 +118,6 @@ services:
       - ./data/media:/data/media:ro
     networks:
       msl-network:
-        ipv4_address: 172.25.0.10
     restart: unless-stopped
 
   jellyseerr:
@@ -138,7 +133,6 @@ services:
       - ./config/jellyseerr:/app/config
     networks:
       msl-network:
-        ipv4_address: 172.25.0.15
     restart: unless-stopped
 
   prowlarr:
@@ -156,7 +150,6 @@ services:
       - ./init-scripts/prowlarr-init.sh:/custom-cont-init.d/prowlarr-init.sh:ro
     networks:
       msl-network:
-        ipv4_address: 172.25.0.14
     restart: unless-stopped
 
   bazarr:
@@ -175,7 +168,6 @@ services:
       - ./init-scripts/bazarr-init.sh:/custom-cont-init.d/bazarr-init.sh:ro
     networks:
       msl-network:
-        ipv4_address: 172.25.0.18
     restart: unless-stopped
 
   sonarr:
@@ -194,7 +186,6 @@ services:
       - ./init-scripts/sonarr-init.sh:/custom-cont-init.d/sonarr-init.sh:ro
     networks:
       msl-network:
-        ipv4_address: 172.25.0.13
     restart: unless-stopped
 
   auto-configurator:
@@ -202,6 +193,8 @@ services:
       context: ./auto-configurator
     container_name: auto-configurator
     env_file: .env
+    environment:
+      - PYTHONUNBUFFERED=1
     volumes:
       - ./config:/config
     depends_on:
@@ -212,13 +205,31 @@ services:
       - qbittorrent
       - jellyfin
       - jellyseerr
+      - flaresolverr
     networks:
       msl-network:
-        ipv4_address: 172.25.0.19
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    environment:
+      - LOG_LEVEL=info
+      - TZ=America/Toronto
+    ports:
+      - "7900:8191"
+    networks:
+      msl-network:
+    restart: unless-stopped
+
+  opensubtitles-scraper:
+    image: ghcr.io/vamshi1207/opensubtitles-scraper-custom:v2
+    container_name: opensubtitles-scraper
+    environment:
+      - TZ=America/Toronto
+    networks:
+      msl-network:
+    restart: unless-stopped
 
 networks:
   msl-network:
     driver: bridge
-    ipam:
-      config:
-        - subnet: 172.25.0.0/16

@@ -1,7 +1,0 @@
-linuxserver/radarr: 6.3.0.10514-ls313
-linuxserver/jellyfin: 10.11.11
-linuxserver/prowlarr: 2.5.2.5491-ls156
-linuxserver/bazarr: v1.6.0-ls357
-linuxserver/sonarr: 4.0.19.2979-ls320
-fallenbagel/jellyseerr/: 2.7.3
-binhex/arch-qbittorrent/: 5.2.3-3-01-libtorrentv1

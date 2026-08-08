@@ -226,6 +226,10 @@ Start the Cloudflare Tunnel profile:
 docker compose --profile remote-access up -d
 ```
 
+## Troubleshooting
+
+If you encounter issues with Cloudflare tunnel connections (e.g. 502 Bad Gateway), subnet clashes, or stale `/etc/hosts` entries, please see the [Troubleshooting Guide](TROUBLESHOOTING.md) for quick fixes.
+
 ## Operational Highlights
 
 ```mermaid

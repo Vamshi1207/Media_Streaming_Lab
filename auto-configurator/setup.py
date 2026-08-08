@@ -39,7 +39,7 @@ def wait_for_services():
 
 def seed_jellyfin():
     print("Seeding Jellyfin...")
-    db_path = "/config/jellyfin/data/jellyfin.db"
+    db_path = "/config/jellyfin/data/data/jellyfin.db"
     # Wait for Jellyfin to create the DB
     for _ in range(30):
         if os.path.exists(db_path):
@@ -161,7 +161,41 @@ def config_servarr(name, url, api_key, max_size, profile_name="Original Language
         requests.put(f"{url}/api/v3/languageprofile/{p['id']}", headers=headers, json=p)
         print(f"Updated Language Profile in {name}")
 
-def config_prowlarr():
+def config_prowlarr_proxy():
+    print("Configuring FlareSolverr proxy in Prowlarr...")
+    headers = {"X-Api-Key": PROWLARR_API_KEY, "Content-Type": "application/json"}
+    
+    # Get or Create Tag 'flaresolverr'
+    tags = requests.get("http://prowlarr:9696/api/v1/tag", headers=headers).json()
+    tag = next((t for t in tags if t["label"] == "flaresolverr"), None)
+    if not tag:
+        tag = requests.post("http://prowlarr:9696/api/v1/tag", headers=headers, json={"label": "flaresolverr"}).json()
+    tag_id = tag["id"]
+
+    proxies = requests.get("http://prowlarr:9696/api/v1/indexerproxy", headers=headers).json()
+    if not any(p["name"] == "FlareSolverr" for p in proxies):
+        schema = requests.get("http://prowlarr:9696/api/v1/indexerproxy/schema", headers=headers).json()
+        flare_schema = next(s for s in schema if s["implementation"] == "FlareSolverr")
+        flare_schema["name"] = "FlareSolverr"
+        flare_schema["tags"] = [tag_id]
+        for f in flare_schema["fields"]:
+            if f["name"] == "host":
+                f["value"] = "http://flaresolverr:8191"
+        try:
+            res = requests.post("http://prowlarr:9696/api/v1/indexerproxy", headers=headers, json=flare_schema)
+            res.raise_for_status()
+            print("Added FlareSolverr proxy to Prowlarr")
+        except Exception as e:
+            print(f"Failed to add FlareSolverr proxy: {e}")
+    else:
+        flare_proxy = next(p for p in proxies if p["name"] == "FlareSolverr")
+        if tag_id not in flare_proxy["tags"]:
+            flare_proxy["tags"].append(tag_id)
+            requests.put(f"http://prowlarr:9696/api/v1/indexerproxy/{flare_proxy['id']}", headers=headers, json=flare_proxy)
+            
+    return tag_id
+
+def config_prowlarr(tag_id):
     print("Configuring Prowlarr...")
     headers = {"X-Api-Key": PROWLARR_API_KEY, "Content-Type": "application/json"}
     
@@ -196,7 +230,8 @@ def config_prowlarr():
         ("1337x", "Cardigann", "1337x"),
         ("YTS", "Yts", "YTS"),
         ("EZTV", "Eztv", "EZTV"),
-        ("TorrentGalaxy", "Cardigann", "TorrentGalaxy")
+        ("LimeTorrents", "Cardigann", "LimeTorrents"),
+        ("TorrentDownload", "Cardigann", "TorrentDownload")
     ]
     schema = requests.get("http://prowlarr:9696/api/v1/indexer/schema", headers=headers).json()
     for name, impl, def_name in known_indexers:
@@ -204,8 +239,15 @@ def config_prowlarr():
             try:
                 ind = next(s for s in schema if s["name"] == def_name)
                 ind["name"] = name
+                ind["appProfileId"] = 1
+                ind["enable"] = True
+                if name in ["1337x", "EZTV"]:
+                    ind["tags"] = [tag_id]
                 # Just post, don't test
-                requests.post("http://prowlarr:9696/api/v1/indexer", headers=headers, json=ind)
+                res = requests.post("http://prowlarr:9696/api/v1/indexer", headers=headers, json=ind)
+                res.raise_for_status()
+            except StopIteration:
+                print(f"Failed to add indexer {name}: Not found in schema")
             except Exception as e:
                 print(f"Failed to add indexer {name}: {e}")
     print("Added Indexers to Prowlarr")
@@ -214,7 +256,8 @@ if __name__ == "__main__":
     seed_jellyfin()
     seed_jellyseerr()
     wait_for_services()
-    config_servarr("Radarr", "http://radarr:7878", RADARR_API_KEY, 10000)
+    config_servarr("Radarr", "http://radarr:7878", RADARR_API_KEY, 8000)
     config_servarr("Sonarr", "http://sonarr:8989", SONARR_API_KEY, 2000)
-    config_prowlarr()
+    tag_id = config_prowlarr_proxy()
+    config_prowlarr(tag_id)
     print("Auto-configuration complete!")
