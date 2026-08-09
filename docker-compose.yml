@@ -115,7 +115,7 @@ services:
       - TZ=America/Toronto
     volumes:
       - ./config/jellyfin:/config
-      - ./data/media:/data/media:ro
+      - ./data/media:/data/media
     networks:
       msl-network:
     restart: unless-stopped

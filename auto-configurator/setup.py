@@ -108,15 +108,24 @@ def config_servarr(name, url, api_key, max_size, profile_name="Original Language
     
     # 1. Add qBittorrent
     clients = requests.get(f"{url}/api/v3/downloadclient", headers=headers).json()
-    if not any(c["name"] == "qBittorrent" for c in clients):
+    qb_client = next((c for c in clients if c["name"] == "qBittorrent"), None)
+    if not qb_client:
         schema = requests.get(f"{url}/api/v3/downloadclient/schema", headers=headers).json()
-        qb = next(s for s in schema if s["implementation"] == "QBittorrent")
-        qb["name"] = "qBittorrent"
-        for f in qb["fields"]:
-            if f["name"] == "host": f["value"] = "qbittorrent"
-            if f["name"] == "username": f["value"] = QBITTORRENT_USERNAME
-            if f["name"] == "password": f["value"] = QBITTORRENT_PASSWORD
-        requests.post(f"{url}/api/v3/downloadclient", headers=headers, json=qb)
+        qb_client = next(s for s in schema if s["implementation"] == "QBittorrent")
+        qb_client["name"] = "qBittorrent"
+        
+    for f in qb_client["fields"]:
+        if f["name"] == "host": f["value"] = "qbittorrent"
+        if f["name"] == "username": f["value"] = QBITTORRENT_USERNAME
+        if f["name"] == "password": f["value"] = QBITTORRENT_PASSWORD
+        if f["name"] == "movieCategory": f["value"] = "movies"
+        if f["name"] == "tvCategory": f["value"] = "tv"
+        
+    if "id" in qb_client:
+        requests.put(f"{url}/api/v3/downloadclient/{qb_client['id']}", headers=headers, json=qb_client)
+        print(f"Updated qBittorrent in {name}")
+    else:
+        requests.post(f"{url}/api/v3/downloadclient", headers=headers, json=qb_client)
         print(f"Added qBittorrent to {name}")
 
     # 2. Max Size
@@ -141,6 +150,22 @@ def config_servarr(name, url, api_key, max_size, profile_name="Original Language
             if f["name"] == "updateLibrary": f["value"] = True
         requests.post(f"{url}/api/v3/notification", headers=headers, json=mb)
         print(f"Added Jellyfin Notification to {name}")
+        
+    # Jellyseerr Webhook Notification
+    if not any(n["name"] == "Jellyseerr" for n in notifs):
+        schema = requests.get(f"{url}/api/v3/notification/schema", headers=headers).json()
+        wh = next(s for s in schema if s["implementation"] == "Webhook")
+        wh["name"] = "Jellyseerr"
+        wh["onDownload"] = True
+        wh["onUpgrade"] = True
+        app_name = name.lower()
+        webhook_url = f"http://jellyseerr:5055/api/v1/webhook/{app_name}"
+        
+        for f in wh["fields"]:
+            if f["name"] == "url": f["value"] = webhook_url
+            if f["name"] == "method": f["value"] = 1 # POST
+        requests.post(f"{url}/api/v3/notification", headers=headers, json=wh)
+        print(f"Added Jellyseerr Webhook to {name}")
         
     # 4. Remote Path Mapping
     mappings = requests.get(f"{url}/api/v3/remotePathMapping", headers=headers).json()
@@ -252,6 +277,16 @@ def config_prowlarr(tag_id):
                 print(f"Failed to add indexer {name}: {e}")
     print("Added Indexers to Prowlarr")
 
+def config_qbittorrent():
+    print("Configuring qBittorrent...")
+    session = requests.Session()
+    login = session.post("http://qbittorrent:8080/api/v2/auth/login", data={"username": QBITTORRENT_USERNAME, "password": QBITTORRENT_PASSWORD})
+    if login.text == "Ok.":
+        session.post("http://qbittorrent:8080/api/v2/app/setPreferences", data={"json": json.dumps({"save_path": "/data/torrents/"})})
+        print("Set qBittorrent default download path to /data/torrents/")
+    else:
+        print("Failed to login to qBittorrent")
+
 if __name__ == "__main__":
     seed_jellyfin()
     seed_jellyseerr()
@@ -260,4 +295,5 @@ if __name__ == "__main__":
     config_servarr("Sonarr", "http://sonarr:8989", SONARR_API_KEY, 2000)
     tag_id = config_prowlarr_proxy()
     config_prowlarr(tag_id)
+    config_qbittorrent()
     print("Auto-configuration complete!")
