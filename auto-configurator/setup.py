@@ -167,16 +167,6 @@ def config_servarr(name, url, api_key, max_size, profile_name="Original Language
         requests.post(f"{url}/api/v3/notification", headers=headers, json=wh)
         print(f"Added Jellyseerr Webhook to {name}")
         
-    # 4. Remote Path Mapping
-    mappings = requests.get(f"{url}/api/v3/remotePathMapping", headers=headers).json()
-    if not any(m["host"] == "qbittorrent" for m in mappings):
-        requests.post(f"{url}/api/v3/remotePathMapping", headers=headers, json={
-            "host": "qbittorrent",
-            "remotePath": "/config/qBittorrent/downloads/",
-            "localPath": "/data/torrents/"
-        })
-        print(f"Added Remote Path Mapping to {name}")
-
     # 5. Language Profile
     if name == "Sonarr":
         profiles = requests.get(f"{url}/api/v3/languageprofile", headers=headers).json()
