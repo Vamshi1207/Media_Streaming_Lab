@@ -271,11 +271,40 @@ def config_qbittorrent():
     print("Configuring qBittorrent...")
     session = requests.Session()
     login = session.post("http://qbittorrent:8080/api/v2/auth/login", data={"username": QBITTORRENT_USERNAME, "password": QBITTORRENT_PASSWORD})
-    if login.text == "Ok.":
-        session.post("http://qbittorrent:8080/api/v2/app/setPreferences", data={"json": json.dumps({"save_path": "/data/torrents/"})})
-        print("Set qBittorrent default download path to /data/torrents/")
-    else:
+    if login.text != "Ok.":
         print("Failed to login to qBittorrent")
+        return
+
+    # qBittorrent can accept a setPreferences call without it actually taking effect
+    # (Downloads\SavePath gets written to disk but the live Session\DefaultSavePath does
+    # not), which has been observed right after the container's first boot. Verify the
+    # change stuck instead of trusting a 200 response.
+    for attempt in range(5):
+        session.post("http://qbittorrent:8080/api/v2/app/setPreferences", data={"json": json.dumps({"save_path": "/data/torrents/"})})
+        prefs = session.get("http://qbittorrent:8080/api/v2/app/preferences").json()
+        if prefs.get("save_path", "").rstrip("/") == "/data/torrents":
+            print("Set qBittorrent default download path to /data/torrents/")
+            break
+        print(f"qBittorrent default save path not applied yet, retrying... (attempt {attempt + 1})")
+        time.sleep(3)
+    else:
+        print("WARNING: Failed to set qBittorrent default download path after retries")
+
+    # Radarr/Sonarr tag downloads with the "movies"/"tv" categories (see movieCategory/
+    # tvCategory above). If those categories exist without their own save path, qBittorrent
+    # silently falls back to the global default above instead of /data/torrents/<category>,
+    # which breaks Radarr/Sonarr's import since they look for the file under the category path.
+    for category, save_path in [("movies", "/data/torrents/movies"), ("tv", "/data/torrents/tv")]:
+        for attempt in range(5):
+            categories = session.get("http://qbittorrent:8080/api/v2/torrents/categories").json()
+            if categories.get(category, {}).get("savePath", "").rstrip("/") == save_path:
+                print(f"qBittorrent '{category}' category save path is {save_path}")
+                break
+            endpoint = "editCategory" if category in categories else "createCategory"
+            session.post(f"http://qbittorrent:8080/api/v2/torrents/{endpoint}", data={"category": category, "savePath": save_path})
+            time.sleep(2)
+        else:
+            print(f"WARNING: Failed to set qBittorrent '{category}' category save path after retries")
 
 if __name__ == "__main__":
     seed_jellyfin()
