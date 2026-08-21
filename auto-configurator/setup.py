@@ -9,8 +9,7 @@ RADARR_API_KEY = os.getenv("RADARR_API_KEY")
 SONARR_API_KEY = os.getenv("SONARR_API_KEY")
 PROWLARR_API_KEY = os.getenv("PROWLARR_API_KEY")
 BAZARR_API_KEY = os.getenv("BAZARR_API_KEY")
-QBITTORRENT_USERNAME = os.getenv("QBITTORRENT_USERNAME")
-QBITTORRENT_PASSWORD = os.getenv("QBITTORRENT_PASSWORD")
+QBITTORRENT_API_KEY = os.getenv("QBITTORRENT_API_KEY")
 
 def wait_for_services():
     print("Waiting for services to come online...")
@@ -116,8 +115,7 @@ def config_servarr(name, url, api_key, max_size, profile_name="Original Language
         
     for f in qb_client["fields"]:
         if f["name"] == "host": f["value"] = "qbittorrent"
-        if f["name"] == "username": f["value"] = QBITTORRENT_USERNAME
-        if f["name"] == "password": f["value"] = QBITTORRENT_PASSWORD
+        if f["name"] == "apiKey": f["value"] = QBITTORRENT_API_KEY
         if f["name"] == "movieCategory": f["value"] = "movies"
         if f["name"] == "tvCategory": f["value"] = "tv"
         
@@ -270,11 +268,7 @@ def config_prowlarr(tag_id):
 def config_qbittorrent():
     print("Configuring qBittorrent...")
     session = requests.Session()
-    login = session.post("http://qbittorrent:8080/api/v2/auth/login", data={"username": QBITTORRENT_USERNAME, "password": QBITTORRENT_PASSWORD})
-    if login.text != "Ok.":
-        print("Failed to login to qBittorrent")
-        return
-
+    session.headers.update({"X-Api-Key": QBITTORRENT_API_KEY})
     # qBittorrent can accept a setPreferences call without it actually taking effect
     # (Downloads\SavePath gets written to disk but the live Session\DefaultSavePath does
     # not), which has been observed right after the container's first boot. Verify the

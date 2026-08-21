@@ -24,8 +24,7 @@ const PROWLARR_URL = process.env.PROWLARR_URL || "http://prowlarr:9696";
 const PROWLARR_CONFIG_PATH = process.env.PROWLARR_CONFIG_PATH || "/config/prowlarr/config.xml";
 const BAZARR_URL = process.env.BAZARR_URL || "http://bazarr:6767";
 const QBITTORRENT_URL = process.env.QBITTORRENT_URL || "http://qbittorrent:8080";
-const QBITTORRENT_USERNAME = process.env.QBITTORRENT_USERNAME || "admin";
-const QBITTORRENT_PASSWORD = process.env.QBITTORRENT_PASSWORD || "";
+const QBITTORRENT_API_KEY = process.env.QBITTORRENT_API_KEY || "6e93d18388f8df4f5a3e1a0b368798e8";
 const DOWNLOADS_PATH = process.env.DOWNLOADS_PATH || "/data/torrents";
 const SERVICE_EXTERNAL_PORTS = {
   "media-server": 7100,
@@ -118,8 +117,10 @@ function getJellyseerrApiKey() {
   return settings.main?.apiKey || null;
 }
 
-async function loginToQbittorrent() {
-  return "SID=bypassed";
+async function getQbittorrentHeaders() {
+  return {
+    "X-Api-Key": QBITTORRENT_API_KEY,
+  };
 }
 
 async function fetchJson(url, options = {}) {
@@ -160,20 +161,19 @@ async function fetchText(url, options = {}) {
 }
 
 async function fetchQbittorrent(endpoint) {
-  const cookie = await loginToQbittorrent();
+  const headers = await getQbittorrentHeaders();
 
   return fetchJson(`${QBITTORRENT_URL}${endpoint}`, {
-    headers: {
-      "Cookie": cookie,
-    },
+    headers: headers,
   });
 }
 
-async function qbPost(endpoint, params, cookie) {
+async function qbPost(endpoint, params) {
+  const headers = await getQbittorrentHeaders();
   const response = await fetch(`${QBITTORRENT_URL}${endpoint}`, {
     method: "POST",
     headers: {
-      "Cookie": cookie,
+      ...headers,
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: new URLSearchParams(params),
@@ -183,11 +183,10 @@ async function qbPost(endpoint, params, cookie) {
 
 async function setupQbittorrentCategories() {
   try {
-    const cookie = await loginToQbittorrent();
-    await qbPost("/api/v2/torrents/createCategory", { category: "radarr", savePath: "/data/torrents/movies" }, cookie);
-    await qbPost("/api/v2/torrents/editCategory", { category: "radarr", savePath: "/data/torrents/movies" }, cookie);
-    await qbPost("/api/v2/torrents/createCategory", { category: "sonarr", savePath: "/data/torrents/tv" }, cookie);
-    await qbPost("/api/v2/torrents/editCategory", { category: "sonarr", savePath: "/data/torrents/tv" }, cookie);
+    await qbPost("/api/v2/torrents/createCategory", { category: "radarr", savePath: "/data/torrents/movies" });
+    await qbPost("/api/v2/torrents/editCategory", { category: "radarr", savePath: "/data/torrents/movies" });
+    await qbPost("/api/v2/torrents/createCategory", { category: "sonarr", savePath: "/data/torrents/tv" });
+    await qbPost("/api/v2/torrents/editCategory", { category: "sonarr", savePath: "/data/torrents/tv" });
     console.log("✅ qBittorrent categories configured: radarr->/data/torrents/movies, sonarr->/data/torrents/tv");
   } catch (err) {
     console.warn("⚠️ Could not configure qBittorrent categories (will retry on next restart):", err.message);
@@ -557,11 +556,11 @@ async function renameQbittorrentTorrentForArr(infoHash, category, canonicalTitle
     ? "/api/v2/torrents/renameFile"
     : "/api/v2/torrents/renameFolder";
 
-  const cookie = await loginToQbittorrent();
+  const headers = await getQbittorrentHeaders();
   const response = await fetch(`${QBITTORRENT_URL}${endpoint}`, {
     method: "POST",
     headers: {
-      "Cookie": cookie,
+      ...headers,
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: new URLSearchParams({
@@ -720,19 +719,14 @@ function getExternalServiceUrl(req, serviceId) {
     return SERVICE_EXTERNAL_URLS[serviceId];
   }
 
-  const hostname = getRequestHostname(req);
-
-  if (hostname !== "localhost" && hostname !== "127.0.0.1" && hostname !== "::1") {
-    return null;
-  }
-
   const port = SERVICE_EXTERNAL_PORTS[serviceId];
 
   if (!port) {
     return null;
   }
 
-  return `${getRequestProtocol(req)}://${hostname}:${port}`;
+  const hostname = process.env.LOCAL_HOST_IP || getRequestHostname(req);
+  return `http://${hostname}:${port}`;
 }
 
 function guessContentType(fileName) {
@@ -1005,18 +999,15 @@ async function getServiceStatuses(req) {
       id: "qbittorrent",
       name: "qBittorrent",
       internalUrl: QBITTORRENT_URL,
+      externalUrl: process.env.QBITTORRENT_EXTERNAL_URL || "http://localhost:7200",
       check: async () => {
-        const cookie = await loginToQbittorrent();
+        const headers = await getQbittorrentHeaders();
         const [appVersion, webApiVersion] = await Promise.all([
           fetchText(`${QBITTORRENT_URL}/api/v2/app/version`, {
-            headers: {
-              "Cookie": cookie,
-            },
+            headers: headers,
           }),
           fetchText(`${QBITTORRENT_URL}/api/v2/app/webapiVersion`, {
-            headers: {
-              "Cookie": cookie,
-            },
+            headers: headers,
           }),
         ]);
 
@@ -1191,11 +1182,11 @@ app.delete("/api/downloads", async (_req, res) => {
       return res.json({ success: true, deleted: 0 });
     }
 
-    const cookie = await loginToQbittorrent();
+    const headers = await getQbittorrentHeaders();
     const response = await fetch(`${QBITTORRENT_URL}/api/v2/torrents/delete`, {
       method: "POST",
       headers: {
-        "Cookie": cookie,
+        ...headers,
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
@@ -1219,11 +1210,11 @@ app.delete("/api/downloads/:hash", async (req, res) => {
   if (!hash) return res.status(400).json({ error: "No hash provided" });
 
   try {
-    const cookie = await loginToQbittorrent();
+    const headers = await getQbittorrentHeaders();
     const response = await fetch(`${QBITTORRENT_URL}/api/v2/torrents/delete`, {
       method: "POST",
       headers: {
-        "Cookie": cookie,
+        ...headers,
         "Content-Type": "application/x-www-form-urlencoded",
       },
       body: new URLSearchParams({
@@ -1501,14 +1492,10 @@ app.post("/api/upload-torrent", upload.single("torrent"), async (req, res) => {
     formData.append("category", category);
     formData.append("dummy", "dummy"); // Workaround for qBittorrent multipart boundary parsing bug in Node 18+ FormData
 
-    const cookie = await loginToQbittorrent();
-
+    const headers = await getQbittorrentHeaders();
     const response = await fetch(`${QBITTORRENT_URL}/api/v2/torrents/add`, {
       method: "POST",
-      headers: {
-        "Cookie": cookie,
-        // Let fetch automatically generate the boundary for multipart/form-data
-      },
+      headers: headers,
       body: formData,
     });
 

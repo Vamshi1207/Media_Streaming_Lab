@@ -33,11 +33,10 @@ services:
       - SONARR_CONFIG_PATH=/config/sonarr/config.xml
       - PROWLARR_URL=http://prowlarr:9696
       - PROWLARR_CONFIG_PATH=/config/prowlarr/config.xml
+      - LOCAL_HOST_IP=${LOCAL_HOST_IP}
       - BAZARR_URL=http://bazarr:6767
-      - BAZARR_EXTERNAL_URL=http://127.0.0.1:7800
       - QBITTORRENT_URL=http://qbittorrent:8080
-      - QBITTORRENT_USERNAME=admin
-      - QBITTORRENT_PASSWORD=media-server-lab
+      - QBITTORRENT_API_KEY=${QBITTORRENT_API_KEY}
       - DOWNLOADS_PATH=/data/torrents
     depends_on:
       - jellyfin
@@ -67,6 +66,7 @@ services:
   qbittorrent:
     image: binhex/arch-qbittorrent:5.2.3-3-01-libtorrentv1
     container_name: qbittorrent
+    command: /bin/bash -c '/custom-init.sh && /usr/bin/dumb-init /bin/bash init.sh'
     ports:
       - "7200:8080"
       - "7201:6881"
@@ -76,11 +76,11 @@ services:
       - PGID=1000
       - TZ=America/Toronto
       - WEBUI_PORT=8080
-      - QBITTORRENT_WEBUI_USER=admin
-      - QBITTORRENT_WEBUI_PASSWORD=${QBITTORRENT_PASSWORD}
+      - QBITTORRENT_API_KEY=${QBITTORRENT_API_KEY}
     volumes:
       - ./config/qbittorrent-data:/config
       - ./data:/data
+      - ./init-scripts/qbittorrent-init.sh:/custom-init.sh:ro
     networks:
       msl-network:
     restart: unless-stopped

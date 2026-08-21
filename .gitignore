@@ -71,3 +71,12 @@ config/qbittorrent*/**/watched_folders.json
 config/qbittorrent*/**/*.fastresume
 config/qbittorrent*/**/*.torrent
 config/qbittorrent*/**/*.conf
+
+# Temporary Files
+__pycache__/
+VueTorrent/
+vuetorrent/
+*.zip
+cookies.txt
+qb_cookies.txt
+.claude/
