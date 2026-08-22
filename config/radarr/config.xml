@@ -1,10 +1,10 @@
 <Config>
+  <ApiKey>31ffaf0731fa43c9b9565349118adc49</ApiKey>
   <BindAddress>*</BindAddress>
   <Port>7878</Port>
   <SslPort>9898</SslPort>
   <EnableSsl>False</EnableSsl>
   <LaunchBrowser>True</LaunchBrowser>
-  <ApiKey>f440c4e6837c49318c7e9957f30caa6a</ApiKey>
   <AuthenticationMethod>Forms</AuthenticationMethod>
   <AuthenticationRequired>DisabledForLocalAddresses</AuthenticationRequired>
   <Branch>master</Branch>
