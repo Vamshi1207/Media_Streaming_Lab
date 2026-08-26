@@ -48,10 +48,10 @@ def seed_jellyfin():
     if os.path.exists(db_path):
         conn = sqlite3.connect(db_path)
         c = conn.cursor()
-        c.execute("CREATE TABLE IF NOT EXISTS ApiKeys (Id INTEGER PRIMARY KEY AUTOINCREMENT, AccessToken TEXT, AppName TEXT, DeviceId TEXT, AppVersion TEXT, DateCreated TEXT, DateLastActivity TEXT, UserId TEXT)")
+        c.execute("CREATE TABLE IF NOT EXISTS ApiKeys (Id INTEGER PRIMARY KEY AUTOINCREMENT, AccessToken TEXT, Name TEXT, DateCreated TEXT, DateLastActivity TEXT)")
         c.execute("SELECT * FROM ApiKeys WHERE AccessToken = ?", (JELLYFIN_API_KEY,))
         if not c.fetchone():
-            c.execute("INSERT INTO ApiKeys (AccessToken, AppName, DeviceId, DateCreated, DateLastActivity) VALUES (?, 'AutoConfig', 'auto', datetime('now'), datetime('now'))", (JELLYFIN_API_KEY,))
+            c.execute("INSERT INTO ApiKeys (AccessToken, Name, DateCreated, DateLastActivity) VALUES (?, 'AutoConfig', datetime('now'), datetime('now'))", (JELLYFIN_API_KEY,))
             conn.commit()
             print("Jellyfin API key injected!")
         conn.close()
