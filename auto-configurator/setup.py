@@ -18,7 +18,8 @@ def wait_for_services():
         ("Sonarr", f"http://sonarr:8989/api/v3/system/status?apiKey={SONARR_API_KEY}"),
         ("Prowlarr", f"http://prowlarr:9696/api/v1/system/status?apiKey={PROWLARR_API_KEY}"),
         ("Bazarr", f"http://bazarr:6767/api/system/status?apikey={BAZARR_API_KEY}"),
-        ("qBittorrent", "http://qbittorrent:8080/api/v2/app/version")
+        ("qBittorrent", "http://qbittorrent:8080/api/v2/app/version"),
+        ("Jellyseerr", "http://jellyseerr:5055/api/v1/settings/public")
     ]
     for name, url in services:
         while True:
@@ -57,49 +58,113 @@ def seed_jellyfin():
         conn.close()
 
 def seed_jellyseerr():
+    """Write Jellyseerr settings.json with current API keys and mark as initialized.
+    Always overwrites to ensure keys are up-to-date after a rebuild.
+    Runs before Jellyseerr boots so it reads the correct config on startup."""
     print("Seeding Jellyseerr...")
     settings_path = "/config/jellyseerr/settings.json"
     os.makedirs(os.path.dirname(settings_path), exist_ok=True)
-    if not os.path.exists(settings_path):
-        settings = {
-            "clientId": "auto-config-client-id",
-            "main": {
-                "apiKey": "auto-config-api-key",
-                "mediaServerType": 2
-            },
-            "jellyfin": {
-                "name": "Jellyfin",
-                "ip": "jellyfin",
-                "port": 8096,
-                "useSsl": False,
-                "apiKey": JELLYFIN_API_KEY
-            },
-            "radarr": [{
-                "name": "Radarr",
-                "hostname": "radarr",
-                "port": 7878,
-                "apiKey": RADARR_API_KEY,
-                "useSsl": False,
-                "activeProfileId": 1,
-                "activeDirectory": "/data/media/movies",
-                "isDefault": True,
-                "is4k": False
-            }],
-            "sonarr": [{
-                "name": "Sonarr",
-                "hostname": "sonarr",
-                "port": 8989,
-                "apiKey": SONARR_API_KEY,
-                "useSsl": False,
-                "activeProfileId": 1,
-                "activeDirectory": "/data/media/tv",
-                "isDefault": True,
-                "is4k": False
-            }]
+    settings = {
+        "clientId": "auto-config-client-id",
+        "main": {
+            "apiKey": "auto-config-api-key",
+            "mediaServerType": 2
+        },
+        "jellyfin": {
+            "name": "Jellyfin",
+            "ip": "jellyfin",
+            "port": 8096,
+            "useSsl": False,
+            "apiKey": JELLYFIN_API_KEY
+        },
+        "radarr": [{
+            "name": "Radarr",
+            "hostname": "radarr",
+            "port": 7878,
+            "apiKey": RADARR_API_KEY,
+            "useSsl": False,
+            "activeProfileId": 1,
+            "activeDirectory": "/data/media/movies",
+            "isDefault": True,
+            "is4k": False
+        }],
+        "sonarr": [{
+            "name": "Sonarr",
+            "hostname": "sonarr",
+            "port": 8989,
+            "apiKey": SONARR_API_KEY,
+            "useSsl": False,
+            "activeProfileId": 1,
+            "activeDirectory": "/data/media/tv",
+            "isDefault": True,
+            "is4k": False
+        }],
+        "public": {
+            "initialized": True
         }
-        with open(settings_path, 'w') as f:
-            json.dump(settings, f, indent=2)
-        print("Jellyseerr settings.json created!")
+    }
+    with open(settings_path, 'w') as f:
+        json.dump(settings, f, indent=2)
+    # Jellyseerr runs as user 1000:1000; the auto-configurator runs as root.
+    # Without this chown, Jellyseerr cannot read/write the file and crash-loops.
+    os.chown(settings_path, 1000, 1000)
+    print("Jellyseerr settings.json created!")
+
+def seed_jellyseerr_admin():
+    """Inject the Jellyfin admin user into Jellyseerr's DB so the setup wizard
+    is fully bypassed.  Call after wait_for_services() so both Jellyfin and
+    Jellyseerr are online and the DB has been created by TypeORM migrations."""
+    print("Seeding Jellyseerr admin user...")
+    db_path = "/config/jellyseerr/db/db.sqlite3"
+
+    # Wait for Jellyseerr to create its DB via TypeORM migrations
+    for _ in range(60):
+        if os.path.exists(db_path):
+            break
+        time.sleep(2)
+    else:
+        print("WARNING: Jellyseerr DB not found, skipping admin seeding")
+        return
+
+    # Get Jellyfin admin user ID so Jellyseerr can match logins
+    try:
+        r = requests.get(f"http://jellyfin:8096/Users?api_key={JELLYFIN_API_KEY}", timeout=10)
+        users = r.json()
+        admin_user = next((u for u in users if u["Name"] == "admin"), None)
+        if not admin_user:
+            print("WARNING: Jellyfin admin user not found, skipping")
+            return
+        jellyfin_user_id = admin_user["Id"]
+    except Exception as e:
+        print(f"WARNING: Could not reach Jellyfin API: {e}")
+        return
+
+    # Inject admin into Jellyseerr's user table (idempotent)
+    conn = sqlite3.connect(db_path)
+    c = conn.cursor()
+    try:
+        c.execute('SELECT COUNT(*) FROM "user" WHERE "jellyfinUserId" = ?', (jellyfin_user_id,))
+        if c.fetchone()[0] == 0:
+            c.execute(
+                'INSERT INTO "user" ("email", "username", "permissions", "avatar", '
+                '"userType", "jellyfinUserId", "jellyfinUsername") '
+                'VALUES (?, ?, ?, ?, ?, ?, ?)',
+                ('admin', 'admin', 2, '', 2, jellyfin_user_id, 'admin')
+            )
+            conn.commit()
+            print("Jellyseerr admin user injected!")
+        else:
+            print("Jellyseerr admin user already exists")
+    except Exception as e:
+        print(f"WARNING: Failed to seed Jellyseerr admin: {e}")
+    finally:
+        conn.close()
+
+    # Fix ownership on DB files
+    db_dir = os.path.dirname(db_path)
+    for name in os.listdir(db_dir):
+        os.chown(os.path.join(db_dir, name), 1000, 1000)
+    os.chown(db_dir, 1000, 1000)
 
 def config_servarr(name, url, api_key, max_size, profile_name="Original Language"):
     print(f"Configuring {name}...")
@@ -304,6 +369,7 @@ if __name__ == "__main__":
     seed_jellyfin()
     seed_jellyseerr()
     wait_for_services()
+    seed_jellyseerr_admin()
     config_servarr("Radarr", "http://radarr:7878", RADARR_API_KEY, 8000)
     config_servarr("Sonarr", "http://sonarr:8989", SONARR_API_KEY, 2000)
     tag_id = config_prowlarr_proxy()
