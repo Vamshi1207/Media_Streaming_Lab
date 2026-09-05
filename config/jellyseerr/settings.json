@@ -43,8 +43,19 @@
   "urlBase": "",
   "externalHostname": "",
   "jellyfinForgotPasswordUrl": "",
-  "libraries": [],
-  "serverId": "",
+  "libraries": [
+   {
+    "id": "f137a2dd21bbc1b99aa5c0f6bf02a805",
+    "name": "Movies",
+    "enabled": true
+   },
+   {
+    "id": "a656b907eb3a73532e40e44b968d0225",
+    "name": "Shows",
+    "enabled": true
+   }
+  ],
+  "serverId": "b7a2051bace844c3a1875082266e589e",
   "apiKey": "97276a2ef2d545f2bceecdb6c17873ae"
  },
  "tautulli": {},

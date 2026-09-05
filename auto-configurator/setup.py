@@ -64,6 +64,15 @@ def seed_jellyseerr():
     print("Seeding Jellyseerr...")
     settings_path = "/config/jellyseerr/settings.json"
     os.makedirs(os.path.dirname(settings_path), exist_ok=True)
+    existing_settings = {}
+    if os.path.exists(settings_path):
+        try:
+            with open(settings_path, 'r') as f:
+                existing_settings = json.load(f)
+        except Exception:
+            pass
+
+    existing_jellyfin = existing_settings.get("jellyfin", {})
     settings = {
         "clientId": "auto-config-client-id",
         "main": {
@@ -75,7 +84,12 @@ def seed_jellyseerr():
             "ip": "jellyfin",
             "port": 8096,
             "useSsl": False,
-            "apiKey": JELLYFIN_API_KEY
+            "apiKey": JELLYFIN_API_KEY,
+            "serverId": existing_jellyfin.get("serverId", "b7a2051bace844c3a1875082266e589e"),
+            "libraries": existing_jellyfin.get("libraries", [
+                {"id": "f137a2dd21bbc1b99aa5c0f6bf02a805", "name": "Movies", "enabled": True},
+                {"id": "a656b907eb3a73532e40e44b968d0225", "name": "Shows", "enabled": True}
+            ])
         },
         "radarr": [{
             "name": "Radarr",
