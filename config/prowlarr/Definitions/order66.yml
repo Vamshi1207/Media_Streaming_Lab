@@ -15,6 +15,7 @@ caps:
     - {id: 18, cat: PC, desc: "Apps: PC"}
     - {id: 62, cat: Console, desc: "Games: XBOX360/ALL"}
     - {id: 10, cat: PC/Games, desc: "Games: PC"}
+    - {id: 9, cat: Audio, desc: "Karaoke: All"}
     - {id: 49, cat: Movies/SD, desc: "Movies: 480p"}
     - {id: 50, cat: Movies/UHD, desc: "Movies: 4K"}
     - {id: 51, cat: Movies/BluRay, desc: "Movies: BD-R"}
@@ -30,11 +31,12 @@ caps:
     - {id: 59, cat: Movies/WEB-DL, desc: "Movies: WEBRip/Web-DL"}
     - {id: 60, cat: Movies/HD, desc: "Movies: x265"}
     - {id: 61, cat: Movies/SD, desc: "Movies: Xvid"}
+    - {id: 65, cat: Movies, desc: "Movies: Live Stand Up"}
     - {id: 22, cat: Audio, desc: "Music: MP3/Flac"}
     - {id: 26, cat: Audio, desc: "Music: SiteDJExclusivemix"}
     - {id: 41, cat: TV/HD, desc: "TV: HD"}
     - {id: 63, cat: Books/Mags, desc: "Mags: mags"}
-    - {id: 9, cat: Audio, desc: "Music: All"}
+    - {id: 64, cat: Audio, desc: "Music: Wav"}
 
   modes:
     search: [q]

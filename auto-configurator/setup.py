@@ -192,6 +192,8 @@ def config_servarr(name, url, api_key, max_size, profile_name="Original Language
         qb_client = next(s for s in schema if s["implementation"] == "QBittorrent")
         qb_client["name"] = "qBittorrent"
         
+    qb_client["enable"] = True
+    
     for f in qb_client["fields"]:
         if f["name"] == "host": f["value"] = "qbittorrent"
         if f["name"] == "apiKey": f["value"] = QBITTORRENT_API_KEY
@@ -293,7 +295,9 @@ def config_prowlarr(tag_id):
     
     # 1. Add Apps
     apps = requests.get("http://prowlarr:9696/api/v1/applications", headers=headers).json()
-    if not any(a["name"] == "Radarr" for a in apps):
+    
+    rad_app = next((a for a in apps if a["name"] == "Radarr"), None)
+    if not rad_app:
         schema = requests.get("http://prowlarr:9696/api/v1/applications/schema", headers=headers).json()
         rad = next(s for s in schema if s["implementation"] == "Radarr")
         rad["name"] = "Radarr"
@@ -303,8 +307,15 @@ def config_prowlarr(tag_id):
             if f["name"] == "baseUrl": f["value"] = "http://radarr:7878"
             if f["name"] == "apiKey": f["value"] = RADARR_API_KEY
         requests.post("http://prowlarr:9696/api/v1/applications", headers=headers, json=rad)
+    else:
+        for f in rad_app["fields"]:
+            if f["name"] == "prowlarrUrl": f["value"] = "http://prowlarr:9696"
+            if f["name"] == "baseUrl": f["value"] = "http://radarr:7878"
+            if f["name"] == "apiKey": f["value"] = RADARR_API_KEY
+        requests.put(f"http://prowlarr:9696/api/v1/applications/{rad_app['id']}", headers=headers, json=rad_app)
         
-    if not any(a["name"] == "Sonarr" for a in apps):
+    son_app = next((a for a in apps if a["name"] == "Sonarr"), None)
+    if not son_app:
         schema = requests.get("http://prowlarr:9696/api/v1/applications/schema", headers=headers).json()
         son = next(s for s in schema if s["implementation"] == "Sonarr")
         son["name"] = "Sonarr"
@@ -314,7 +325,14 @@ def config_prowlarr(tag_id):
             if f["name"] == "baseUrl": f["value"] = "http://sonarr:8989"
             if f["name"] == "apiKey": f["value"] = SONARR_API_KEY
         requests.post("http://prowlarr:9696/api/v1/applications", headers=headers, json=son)
-        print("Added Radarr and Sonarr to Prowlarr")
+    else:
+        for f in son_app["fields"]:
+            if f["name"] == "prowlarrUrl": f["value"] = "http://prowlarr:9696"
+            if f["name"] == "baseUrl": f["value"] = "http://sonarr:8989"
+            if f["name"] == "apiKey": f["value"] = SONARR_API_KEY
+        requests.put(f"http://prowlarr:9696/api/v1/applications/{son_app['id']}", headers=headers, json=son_app)
+        
+    print("Added/Updated Radarr and Sonarr in Prowlarr")
         
     # 2. Add Indexers (ignoring test failures just in case)
     indexers = requests.get("http://prowlarr:9696/api/v1/indexer", headers=headers).json()
