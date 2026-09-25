@@ -211,6 +211,8 @@ def config_servarr(name, url, api_key, max_size, profile_name="Original Language
     qualities = requests.get(f"{url}/api/v3/qualitydefinition", headers=headers).json()
     for q in qualities:
         q["maxSize"] = max_size
+        if q.get("preferredSize") is not None and q["preferredSize"] > max_size:
+            q["preferredSize"] = max_size
     requests.put(f"{url}/api/v3/qualitydefinition/update", headers=headers, json=qualities)
     print(f"Set max size limits in {name}")
     
@@ -402,8 +404,8 @@ if __name__ == "__main__":
     seed_jellyseerr()
     wait_for_services()
     seed_jellyseerr_admin()
-    config_servarr("Radarr", "http://radarr:7878", RADARR_API_KEY, 8000)
-    config_servarr("Sonarr", "http://sonarr:8989", SONARR_API_KEY, 2000)
+    config_servarr("Radarr", "http://radarr:7878", RADARR_API_KEY, 80)
+    config_servarr("Sonarr", "http://sonarr:8989", SONARR_API_KEY, 45)
     tag_id = config_prowlarr_proxy()
     config_prowlarr(tag_id)
     config_qbittorrent()
